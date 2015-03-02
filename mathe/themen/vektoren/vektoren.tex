@@ -1,0 +1,274 @@
+\input{preamble.tex}
+
+\begin{document}
+
+\heading{Vektoren}
+
+Ein Vektor ist ein n-Tupel, das eine bestimmte Richtung in der Ebene oder im Raum beschreibt.
+
+\sub{Schreibweise}
+
+Um f\"{u}r einen in der \emph{Punktschreibweise} angegebenen Punkt $A (x\, |\, y)$ einen \emph{Ortsvektor} aufzustellen, beschreibt man den Vektor vom Ursprung $0$ zu diesem Punkt $A$ als Vektor $\vec{0A} = \colvec{x\\y}$.
+
+Generell beschreibt ein \emph{Richtungsvektor} $\vec{a} = \colvec{x_{a} \\ y_{a}}$ nur eine Richtung, n\"{a}mlich um $x_{a}$ Einheiten auf der $x$-Achse und $y_{a}$ Einheiten auf der $y$-Achse. Im Raum kommt noch eine dritte Koordinate $z$ bzw. hier $z_{a}$ dazu, der den Einheitenfortschritt auf der $z$-Achse beschreibt.
+
+\sub{Grundrechnungsarten}
+
+\subsub{Vektor und Zahl}
+
+Multiplikation und Division von einem Vektor $a$ mit einer \textbf{Zahl} $n$ resultieren in einem neuen Vektor und erfolgen mittels Durchf\"{u}hrung der Operation f\"{u}r jede Koordinate des Vektors. Addition und Subtraktion eines Vektors mit einer Zahl sind nicht m\"{o}glich.
+
+Multiplikation von Vektor und Zahl: $ \vec{a} * n = \colvec{x_{a}\\y_{a}} * n  = \colvec{x_{a} * n \\ y_{a} * n}$
+
+Division von Vektor und Zahl: $ \vec{A} : n = \colvec{x_{a}\\y_{a}} : n = \colvec{x_{a} : n \\ y_{a} : n}$
+
+\subsub{Vektor und Vektor}
+
+Addition und Subtraktion von zwei Vektoren $a$ und $b$ resultieren ebenso in einem neuen Vektor, wobei jede Koordinate des einen Vektors $a$ von der des anderen Vektors $b$ abgezogen bzw. mit diesem addiert wird.
+
+Addition von Vektor und Vektor: $\vec{a} + \vec{b} = \colvec{x_{a}\\y_{a}} + \colvec{x_{b}\\y_{b}} = \colvec{x_{a} + x_{b} \\ y_{a} + y_{b}}$
+
+Subtraktion von Vektor und Vektor: $\vec{a} - \vec{b} = \colvec{x_{a}\\y_{a}} - \colvec{x_{b}\\y_{b}} = \colvec{x_{a} - x_{b} \\ y_{a} - y_{b}}$
+
+Die Multiplikation von zwei Vektoren $a$ und $b$ ergibt keinen neuen Vektor, sondern eine Zahl --- ein sogenanntes \emph{Skalares Produkt}. Dabei wird jede Koordinate des einen Vektors mit der des anderen Vektors multipliziert. Das Skalare Produkt ist dann die Summe der einzelnen Koordinateprodukte.
+
+Multiplikation von Vektor und Vektor: $\vec{a} * \vec{b} = \colvec{x_{a} \\ y_{a}} * \colvec{x_{b} \\ y_{b}} = (x_{a} * x_{b}) + (y_{a} * y_{b}) = n \in \mathbb{R}$
+
+\pagebreak
+
+\sub{Punkte und L\"{a}ngen}
+
+\subsub{Ortsvektoren}
+
+Ein Vektor $\vec{AB}$ zwischen zwei Ortsvektoren $A$ und $B$ wird mittels der \emph{Spitze-minus-Schaft} Regel berechnet:
+$$ \vec{AB} = \vec{B} - \vec{A} = \colvec{x_{b}\\y_{b}} - \colvec{x_{a}\\y_{a}} = \colvec{x_{b}-x_{a}\\y_{b}-y_{a}}$$
+
+\subsub{Betrag}
+
+Generell beschreibt ein Vektor $\vec{a}$ nur eine Richtung, um $x$ bzw. $y$ Einheiten auf der jeweiligen Achse. Man kann allerdings auch die L\"{a}nge dieses Vektors berechnen, indem man den \emph{Betrag} $|\vec{a}|$ des Vektors berechnet. Dieser basiert auf dem Satz des Pythagoras $a^2 + b^2 = c^2$, da die L\"{a}nge nichts anderes als die Hypothenuse $c$ in einem Dreieck ist, in welchem der $x$-Wert die eine Kathete $a$ und der $y$-Wert die andere Kathete $b$ ist.
+
+\begin{figure}[h!]
+  \centering
+  \large
+  \begin{tikzpicture}
+    \draw [very thick, ->]  (1, 1) node [left] {A}
+          -- (4, 4) node [left, above, midway] {\Large $|\vec{a}|$} node [right] {B};
+    \draw    (4,4)
+          -- (4, 1) node [midway, right] {y}
+          -- (1, 1) node [midway, below] {x};
+    \draw (4,1.7) arc (90:180:0.7);
+    \draw [fill=black] (3.7,1.3) circle (1.5pt);
+  \end{tikzpicture}
+\end{figure}
+
+Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so berechnet: $ |\vec{a}| = \sqrt{{x_{a}}^2 + {y_{a}}^2}$
+
+\subsub{Einheitsvektor}
+
+Ein Vektor $\vec{a}$ beschreibt eine Richtung \"{u}ber mehrere Einheiten in einem Koordinatesystem. Wenn man nur die Richtung des Vektors will, diesen aber auf eine Einheit normiert, muss man den \textbf{Einheitsvektor} $\vec{a_{0}}$ berechnen. Diesen kann man dann in die Richtung des Vektors \"{u}ber beliebig viele Einheiten abtragen. Der Einheitsvektor wird berechnet, in dem man den Vektor durch seine L\"{a}nge dividiert:
+
+$$\vec{a_{0}} = \frac{\vec{a}}{|\vec{a}|}$$
+
+\subsub{Normalvektor}
+
+Manchmal ist es wichtig, f\"{u}r einen beliebigen Vektor $\vec{a}$ jenen Vektor $\vec{n_{a}}$ zu finden, der genau normal zum Vektor $\vec{a}$ steht. $\vec{a}$ und $\vec{n_{a}}$ schlie\ss{}en somit einen rechten Winkel ($\perp$) ein. In der Ebene berechnet den Normalvektor $\vec{n_{a}}$ in dem man die Koordinaten des urspr\"{u}nglichen Vektors $\vec{a}$ vertauscht und ein Vorzeichen \"{a}ndert:
+$$ \vec{a} = \colvec{x\\y} \Rightarrow \vec{n_{a}} = \colvec{y \\ -x} \lor \colvec{-y \\ x}$$
+
+Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist immer 0}. Somit ist
+
+$$\vec{a} * \vec{n_{a}} = 0$$
+
+\pagebreak
+
+\sub{Geraden}
+
+\subsub{Parameterform}
+
+Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden. Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen:
+
+$$g: \vec{0X} = \vec{0A} + t * \vec{a}$$
+
+\subsub{Normalvektorform}
+
+Um von der Parameterform zur \textbf{Allgmeinen Form} ($ax + by = c$) bzw. zur \textbf{Normalform} ($y = kx + d$) zu kommen, muss man die Parameterform zuerst in die \textbf{Normalvektorform} umformen. Dazu ben\"{o}tigt man den Normalvektor $\vec{n_{a}}$ vom Richtungsvektor $\vec{a}$. Diesen setzt man so in die Normalvektorform ein, wo $X$ bzw. $\colvec{x\\y}$ die Parameter der Gerade sind (nicht Vektorenkoordinaten):
+
+\begin{center}
+  $X * \vec{n_{a}} = \vec{0A} * \vec{n_{a}}$
+  \extrapar
+  $\colvec{x\\y} * \colvec{x_{n_{a}}\\y_{n_{a}}} = \colvec{x_{A} \\ y_{A}} * \colvec{x_{n_{a}}\\y_{n_{a}}}$
+\end{center}
+
+\subsub{Lagebeziehungen in der Ebene}
+
+Zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$ k\"{o}nnen in der Ebene folgende \emph{Lagebeziehungen} haben:
+
+\begin{itemize}
+  \item \textbf{Parallel}
+  \par
+  Wenn zwei Geraden parallel ($\parallel$) oder ident ($\equiv$) sind, sind ihre Richtungsvektoren Vielfache von einander: $\vec{a} = \vec{b} * n$. Um zu bestimmen ob zwei Geraden parallel sind, muss man auschlie\ss{}en dass sie ident sind.
+
+\pagebreak
+
+  \item \textbf{Ident}
+  \par
+  Zwei Geraden sind ident, wenn man den Ortsvektor der einen Geraden (oder irgendeinen anderen Punkt auf dieser Geraden) gleich der anderen Geraden setzen kann, und beim L\"{o}sen der Gleichungen aller Koordinaten immer das selbe Ergebnis bekommt:
+
+  \begin{center}
+    $\vec{0A} = \vec{0B} + s * \vec{b}$
+    \extrapar
+    $\colvec{x_{A}\\y_{A}} = \colvec{x_{B}\\y_{B}} + s * \colvec{x_{b}\\y_{b}}$
+    \extrapar
+    I: $x_{A} = x_{B} + s_{1} * x_{b} \Rightarrow s_{1}$
+    \extrapar
+    II: $y_{A} = y_{B} + s_{2} * y_{b} \Rightarrow s_{2}$
+    \extrapar
+    $
+      s_{1}
+      \begin{cases}
+        = s_{2} \Rightarrow g \parallel h\\
+        \neq s_{2} \Rightarrow g \equiv h
+      \end{cases}
+    $
+  \end{center}
+
+\item \textbf{Schneidend}
+  \par
+  Sollten zwei Geraden weder parallel noch ident sein, m\"{u}ssen sie einen Schnittpunkt haben. Diesen berechnet man indem man die Parameterformen $g$ und $h$ gleichsetzt und dann f\"{u}r jede Koordinate eine Gleichung aufstellt und das Gleichssystem nach $s$ und $t$ (siehe Parameterformen von $g$ und $h$) l\"{o}st:
+
+  \begin{center}
+    $g = h$
+    \extrapar
+    $\vec{0A} + t * \vec{a} = \vec{0B} + s * \vec{b}$
+    \extrapar
+    $\colvec{x_{A}\\y_{A}} + t * \colvec{x_{a}\\y_{a}} = \colvec{x_{B}\\y_{B}} + s * \colvec{x_{b}\\y_{b}}$
+    \extrapar
+    I: $x_{A} + t * x_{a} = x_{B} + s * x_{b}$
+    \extrapar
+    II: $y_{A} + t * y_{a} = y_{B} + s * y_{b}$
+    \extrapar
+    $\Rightarrow t \Rightarrow s$
+  \end{center}
+
+  Den Schnittpunkt erh\"{a}lt man dann, indem man $t$ in die Parameterform von $g$ oder $s$ in die Parameterform von $h$ einsetzt.
+
+\end{itemize}
+
+\pagebreak
+
+\subsub{Winkel}
+
+Um den Winkel zwischen zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$ zu berechnen, verwendet man die \textbf{Vektorielle Winkelformel}:
+$$ \cos \alpha = \frac{\vec{a} * \vec{b}}{|\vec{a}| * |\vec{b}|}$$
+
+Man kann auch zuerst bestimmen, ob $\vec{a}$ und $\vec{b}$ normal zu einander stehen ($= 90\degree$), indem man ihr Skalares Produkt ($\vec{a} * \vec{b}$) berechnet (ist es 0, ist $a \perp b$).
+
+Hierbei ist es wichtig, immer einen \textbf{spitzen} Winkel ($\alpha < 90\degree$) und nie einen \textbf{stumpfen} Winkel ($90 \leq \alpha < 180$) anzugeben. Sollte $\alpha$ also stumpf sein, muss man sein spitzes Gegenst\"{u}ck berechnen: $\alpha{}' = 180 - \alpha$.
+
+\subsub{Fl\"{a}chen}
+
+Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man die \textbf{Vektorielle Fl\"{a}chenformel}:
+
+$$ A = \sqrt{{|\vec{a}|}^2 * {|\vec{b}|}^2 - {(\vec{a} * \vec{b})}^2}$$
+
+\pagebreak
+
+\subsub{Lagebeziehungen im Raum}
+
+Die Lagebeziehungen zwischen zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$ unterscheiden sich zu jenen in der Ebene nur dadurch, dass sie zus\"{a}tzlich noch \textbf{windschief} sein k\"{o}nnen. Zwei Geraden im Raum sind windschief, wenn sie weder parallel noch ident sind, und beim Schneiden der beiden Geraden das Gleichungssystem keine wahre Aussage liefert, was bedeutet, dass nur zwei der drei Koordinaten des vermeintlichen Schnittpunkts \"{u}bereinstimmten. Ein m\"{o}gliches L\"{o}sungsverfahren k\"{o}nnte so aussehen:
+
+\begin{center}
+  $ g = h$
+  \extrapar
+  $ \vec{0A} + t * \vec{a} = \vec{0B} + s * \vec{b}$
+  \extrapar
+  $ \colvec{x_{A}\\y_{A}\\z_{A}} + t * \colvec{x_{a}\\y_{a}\\z_{a}} = \colvec{x_{B}\\y_{B}\\z_{B}} + s* \colvec{x_{b}\\y_{b}\\z_{b}}$
+  \extrapar
+  I: $x_{A} + t * x_{a} = x_{B} + s * x_{b}$
+  \extrapar
+  II: $y_{A} + t * y_{a} = y_{B} + s * y_{b}$
+  \extrapar
+  III: $z_{A} + t * z_{a} = z_{B} + s * z_{b}$
+  \extrapar
+  $\text{I} \cap \text{II} \Rightarrow t$
+  \extrapar
+  $t$ in I (oder II) $\Rightarrow s$
+  \extrapar
+  $s$ und $t$ in III
+  $
+  \begin{cases}
+    w.A. \Rightarrow Schneidend\\
+    f.A. \Rightarrow Windschief
+  \end{cases}
+  $
+\end{center}
+
+\pagebreak
+
+\sub{Ebenen}
+
+Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu braucht man lediglich einen Ortsvektor $\vec{0A}$ (2D oder 3D) und zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$. Die Ebene $\epsilon$ wird dann zwischen den beiden Richtungsvektoren \zitat{aufgespannt}.
+
+\begin{figure}[h!]
+  \centering
+  \large
+  \begin{tikzpicture}
+    \draw [very thick, ->] (0,0) node [left] {A}
+          -- (0,4) node [left, midway] {\Large $\vec{a}$};
+    \draw [very thick, ->] (0,0) -- (4,0) node [below, midway] {\Large $\vec{b}$};
+    \draw [help lines] grid (4,4);
+    \draw (4,2) node [right] {\Huge $\epsilon$};
+  \end{tikzpicture}
+\end{figure}
+
+\subsub{Parameterform}
+
+Im Gegensatz zur Parameterform der Gerade kommt bei der Ebene nur noch ein zweiter Richtungsvektor hinzu:
+
+$$\epsilon: X = \vec{0A} + t * \vec{a} + s * \vec{b}$$
+
+\subsub{Kreuzprodukt}
+
+Weil man f\"{u}r eine Ebene im Raum keinen eindeutigen Normalvektor bilden kann, muss man zwischen zwei Vektoren $a$ und $b$ das Kreuzprodukt bilden. Das Kreuzprodukt liefert einen eindeutigen Normalvektor f\"{u}r eine Ebene im Raum.
+
+\begin{center}
+  $\epsilon: X = \vec{0A} + t * \vec{a} + s * \vec{b}$
+  \extrapar
+  $ \vec{a} = \colvec{x_{a}\\y_{a}\\z_{a}}$
+  \extrapar
+  $ \vec{b} = \colvec{x_{b}\\y_{b}\\z_{b}}$
+  \extrapar
+  $ \vec{n_{\epsilon}} 
+    = \vec{a} \times \vec{b} 
+    = \colvec{x_{a}\\y_{a}\\z_{a}} \times \colvec{x_{b}\\y_{b}\\z_{b}} 
+    = \colvec{y_{a} * z_{b} - z_{a} * y_{b}\\ - (x_{a} * z_{b} - z_{a} * x_{b})\\x_{a} * y_{b} - y_{a} * x_{b}}$  
+\end{center}
+
+\pagebreak
+
+\subsub{Normalvektorform}
+
+Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Ebene in der Normalvektorform darstellen:
+
+\begin{center} 
+  $\epsilon: X * \vec{n_{\epsilon}} = \vec{0A} * \vec{n_{\epsilon}}$
+  \extrapar
+  $\colvec{x\\y} * \colvec{x_{n_{\epsilon}}\\y_{n_{\epsilon}}} = \colvec{x_{A} \\ y_{A}} * \colvec{x_{n_{\epsilon}}\\y_{n_{\epsilon}}}$
+\end{center}
+
+\subsub{Lagebeziehungen}
+
+Die Lagebeziehungen von zwei Ebenen im Raum sind gleich wie jene f\"{u}r Geraden in der Ebene (Dimensionunterschied jeweils $= 1$): ident, parallel oder schneidend (kein windschief).
+
+\subsub{Winkel zwischen Geraden und Ebenen}
+
+M\"{o}chte man den Winkel zwischen einer Gerade und einer Ebene mittels der Vektoriellen Winkelformel berechnen, muss man auf zwei Dinge achten:
+
+\begin{enumerate}
+  \item Man muss den \emph{Richtungsvektor} der Gerade aber den \emph{Normalvektor} der Ebene nehmen.
+  \item Setzt man nun den Richtungsvektor der Gerade und den Normalvektor der Ebene in die Vektorielle Winkelformel ein, muss man den \emph{Komplement\"{a}rwinkel} berechnen. Der aus der Winkelformel resultierende Winkel $\alpha$ muss also von $90\degree$ subtrahiert werden:
+
+   $$\alpha' = 90\degree - \alpha$$
+   
+\end{enumerate}
+
+\end{document}
