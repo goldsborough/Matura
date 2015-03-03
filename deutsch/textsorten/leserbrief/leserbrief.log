@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  3 MAR 2015 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  3 MAR 2015 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**textanalyse.tex -recorder
-(./textanalyse.tex
+**leserbrief.tex -recorder
+(./leserbrief.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./preamble.tex (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
@@ -227,8 +227,8 @@ LaTeX Info: Redefining \oldstylenums on input line 477.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
-(./textanalyse.aux)
-\openout1 = `textanalyse.aux'.
+(./leserbrief.aux)
+\openout1 = `leserbrief.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -244,8 +244,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 5.
@@ -297,73 +296,40 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 \c@mv@tabular=\count100
 \c@mv@boldtabular=\count101
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
+(Font)              scaled to size 24.88pt on input line 9.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 7.
+(Font)              scaled to size 24.88pt on input line 9.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 9.
+(Font)              scaled to size 14.4pt on input line 11.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 9.
+(Font)              scaled to size 14.4pt on input line 11.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 11.
+(Font)              scaled to size 10.95pt on input line 18.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 11.
-
-Overfull \hbox (0.24625pt too wide) in paragraph at lines 23--24
-\OT1/LinuxLibertineT-TLF/m/n/10.95 des Tex-tes ge-nannt wer-den. Eben-so ist es
- rat-sam, den In-halt des Tex-tes in ei-nem kur-z-en, b[]undigen
- []
-
-Missing character: There is no â in font LinLibertineT-tlf-ot1!
-Missing character: There is no ¦ in font LinLibertineT-tlf-ot1!
-Missing character: There is no â in font LinLibertineT-tlf-ot1!
-Missing character: There is no ¦ in font LinLibertineT-tlf-ot1!
+(Font)              scaled to size 10.95pt on input line 24.
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 68.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.
-fd
-File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
-LinuxLibertineT-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 68.
- [2]
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 10.95pt on input line 85.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 93.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 93.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 93.
- [3] (./textanalyse.aux) ) 
+(./leserbrief.aux) ) 
 Here is how much of TeX's memory you used:
- 3918 strings out of 493117
- 62299 string characters out of 6135432
- 128775 words of memory out of 5000000
- 7351 multiletter control sequences out of 15000+600000
- 19749 words of font info for 39 fonts, out of 8000000 for 9000
+ 3865 strings out of 493117
+ 61077 string characters out of 6135432
+ 125775 words of memory out of 5000000
+ 7312 multiletter control sequences out of 15000+600000
+ 14872 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,4n,33p,1280b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/l
-ibertine/lbtn_zajy4r.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/li
-bertine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lib
-ertine/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libe
-rtine/lbtn_c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/liber
-tine/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/lib
-ertine/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/libertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
-ublic/libertine/LinLibertineTBI.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on textanalyse.pdf (3 pages, 293900 bytes).
+ 32i,4n,33p,830b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/liberti
+ne/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertin
+e/lbtn_c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine
+/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/liberti
+ne/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/lib
+ertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/libertine/LinLibertineTI.pfb>
+Output written on leserbrief.pdf (1 page, 231283 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 23 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

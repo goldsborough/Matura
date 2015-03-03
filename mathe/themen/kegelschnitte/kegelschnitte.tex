@@ -3,7 +3,193 @@
 \begin{document}
 
 \heading{Kegelschnitte}
+\thispagestyle{plain}
+
+Kegelschnitte sind geometrische Figuren, die entstehen, wenn man Kegel mit Ebenen auf verschiedene Weisen schneidet. Bei der Diskussion von Kegelschnitten sind vor allem die Konstruktion der Figuren sowie das Schneiden mit Geraden oder anderen Kegelschnitten interessant.  
+
+\sub{Kreis}
+
+Im Koordinatensystem ist ein Kreis durch einen Mittelpunkt $M$ und einen Radius $r$ exakt definiert: $$k:\,\,[\,M(x_{M}|y_{M}),\, r\,]$$
+
+Jeder Punkt $X$ auf dem Kreis $k$ hat vom Mittelpunkt $M$ den Abstand $r$, sodass gilt: $\overbar{MX} = r$
+
+Man kann mittels dem Satz des Pythagoras jeden Punkt $X$ auf dem Kreis $k$ berechnen, da die $x$- und $y$-Koordinaten des Punktes $X$ als Katheten, zusammen mit dem Radius $r$ als Hypotenuse, ein rechtwinkliges Dreieck im Kreis bilden:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		\draw [thick] 
+			  (2.5, 2.5) circle [radius=2.5];
+
+		\draw [fill=black] 
+			  (2.5, 2.5) circle [radius=1pt]
+			             node [left] {$M (x_{M} | y_{M})$}
+
+		   -- (4.5, 2.5) circle [radius=1pt]
+		   			     node [midway, below] {$x - x_{M}$}
+		             
+		   -- (4.5, 4.0) circle [radius=1pt]
+		   			     node [pos=0.4, right] {$y\,- y_{M}$}
+		   			     node [right] {$X (x | y)$}
+
+		   -- (2.5, 2.5) node [midway, above] {$r$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Durch Entnahme der korrekten Variablen aus der Grafik und Einsetzen in den Pythagor\"{a}ischen Lehrsatz erh\"{a}lt man so die \textbf{Kreisgleichung in Koordinatenform}:
+
+\begin{center}
+	$a^2 + b^2 = c^2$\\
+	$\Downarrow$\\
+	$k:\, (x - x_{M})^2 + (y - y_{M})^2 = r^2$
+\end{center}
+
+Liegt der Mittelpunkt eines Kreises mit Radius $r = 1$ im Koordinatenursprung $(0, 0)$, erh\"{a}lt man die sehr kompakte und einpr\"{a}gsame Kreisgleichung des \emph{Einheitskreises}:
+
+$$k_{E}:\,x^2 + y^2 = 1$$
+
+Multipliziert man die Kreisgleichung aus, erh\"{a}lt man die \textbf{allgemeine Kreisgleichung}:
+
+\begin{center}
+	$k:\, (x - x_{M})^2 + (y - y_{M})^2 = r^2$\\
+	$\Downarrow$\\
+	$x^2 + y^2 + ax + by + c = 0$
+\end{center}
+
+\pagebreak
+
+Um von der ausmultiplizierten, allgemeinen Kreisgleichung auf die Kreisgleichung in Koordinatenform zur\"{u}ckzukommen, muss man die allgmeine Kreisgleichung auf ein volles Quadrat erg\"{a}nzen. Beispiel: \par
+
+\emph{Die Gleichung $x^2 + y^2 + 4x - 2y - 20 = 0$ beschreibt einen Kreis. Ermittle den Mittelpunkt $M$ und den Radius $r$ des Kreises.}
+
+\begin{tabular}{l c}
+	I. Allgemeine Kreisgleichung: & $x^2 + y^2 + 4x - 2y - 20 = 0$\\
+	II. Umformung um die Erg\"{a}nzung zu erleichtern: & $(x^2 + 4x + a^2) + (y^2 - 2y + b^2) = 20$\\
+	III. Finden der passenden Variablen: & $a = 2,\, b = -1$\\
+	IV. Addition der Quadrate auf beiden Seiten der Gleichung: & $(x^2 + 4x + 4) + (y^2 - 2y + 1) = 20 + 4 + 1$\\
+	V. Zu binomischen Formeln umformen: & $(x + 2)^2 + (y - 1)^2 = 25$\\
+	VI. Vergleich mit der Kreisgleichung: & $(x - x_{M})^2 + (y - y_{M})^2 = r^2$\\
+	VII. Entnahme des Mittelpunktes: & $M (-2 | 1)$\\
+	VIII. Entnahme des Radius: & $r^2 = 25 \Rightarrow r = 5$
+\end{tabular}
+
+\subsub{Schnitt Kreis - Gerade}
+
+Um eine Gerade $g$ mit einem Kreis $k$ zu schneiden dr\"{u}ckt man eine Variable ($x$ oder $y$) aus der Geradengleichung aus und setzt sie in die Kreisgleichung von $k$ ein. Dabei erh\"{a}lt man eine quadratische Gleichung nach der nicht ausgedr\"{u}ckten Variable, welche einem entweder zwei (A), einen (B) oder keinen (C) gemeinsame(n) Punkt(e) liefert. Hierbei muss man beachten, dass es drei m\"{o}gliche Lagebeziehungen zwischen der Gerade und dem Kreis geben kann. Die Gerade kann n\"{a}mlich sein:
+
+\begin{enumerate}
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+	\titleitem{Sekante}
+
+	Die Gerade schneidet den Kreis in zwei Punkten und bildet so zwei Schnittpunkte.
+
+	\titleitem{Tangente}
+
+	Die Gerade ber\"{u}hrt den Kreis in einem Punkt --- dem \emph{Ber\"{u}hrpunkt}.
+
+	\titleitem{Passante}
+
+	Der Kreis wird von der Gerade weder geschnitten noch ber\"{u}hrt. 
+
+\end{enumerate}
+
+\subsub{Schnitt Kreis - Kreis}
+
+Zwei Kreise $k_{1}$ und $k_{2}$ schneidet man nach \"{u}blicher Methode in einem Gleichungssystem. Hierbei gibt es auch wieder verschiedene Lagebeziehung zwischen den beiden Kreisen:
+\begin{enumerate}
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+	\titleitem{Ident}
+
+	$k_{1}$ und $k_{2}$ sind gleich, ber\"{u}hren einander also in unendlich vielen Punkten: $k_{1} = k_{2}$. Diese Lagebeziehung gilt, wenn sowohl Mittelpunkt als auch Radius der beiden Kreise gleich sind. 
+
+	\titleitem{Zwei Schnittpunkte}
+
+	$k_{1}$ und $k_{2}$ \"{u}berlappen so, dass sie zwei Schnittpunkte haben.
+
+	\titleitem{Ein Ber\"{u}hrpunkt}
+
+	$k_{1}$ und $k_{2}$ ber\"{u}hren einander in genau einem einzigen Punkt.
+
+	\titleitem{Keine gemeinsamen Punkte}
+
+	$k_{1}$ und $k_{2}$ liegen entweder nebeneinander oder ineinander, schneiden oder ber\"{u}hren sich jedoch nicht. 
+
+\end{enumerate}
+
+Haben zwei Kreise einen Ber\"{u}hr- oder Schnittpunkt, kann man auch die Winkel zwischen den Tangenten der beiden Kreise in diesem Punkt berechnen. Die Richtungsvektoren $\vec{t_{1}}$ und $\vec{t_{2}}$ der Tangentengleichungen berechnet man als Normalvektoren der Vektoren von jeweils einem Mittelpunkt ($M_{1}$ , $M_{2}$) zu dem Ber\"{u}hr- oder Schnittpunkt $P$, also:
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+
+		% k_{1}
+		\draw (2.5, 2.5) circle [radius=2.5];
+
+		% M_{1}P
+		\draw [fill=black] 
+			  (2.5, 2.5) circle [radius=1pt]
+			  			 node [below] {$M_{1}$}
+
+		   -- (4.8, 3.52) circle [radius=1pt]
+		   				 node [midway, below] {$\vec{M_{1}P}$}
+		   				 node [pos=0.95, below] {P};
+
+		% t_{1}
+		\draw [<->]
+			  (2.87, 8.0)
+		   -- (6.35, 0.0) node [pos=0.13, right] {$t_{1} = \vec{n_{M_{1}P}}$ };
 
 
+		% k_{2}
+		\draw (5, 6) circle [radius=2.5];
+
+		% M_{2}P
+		\draw [fill=black] 
+			  (5.0, 6.0) circle [radius=1pt]
+			  			 node [right] {$M_{2}$}
+
+		   -- (4.8, 3.52) node [midway, right] {$\vec{M_{2}P}$};
+
+		% t_{2}
+		\draw [<->]
+			  (0.0, 3.52)
+		   -- (8.0, 3.52) node [pos=0.25, above] {$t_{2} = \vec{n_{M_{2}P}}$};
+
+		% alpha
+		\draw (6, 3.52) arc [radius=1, start angle = 0, end angle = -76];
+
+		\draw (5.4, 3.15) node [] {$\alpha$}; 
+
+	\end{tikzpicture}
+\end{figure}
+
+\extrapar
+
+\begin{table}[h!]
+\centering
+	\begin{tabular}{c c}
+		$ \vec{M_{1}P}$ & $\vec{M_{2}P}$\\
+		$ \Downarrow$ & $\Downarrow$\\
+		$\vec{t_{1}} = \vec{n_{M_{1}P}}$ & $\vec{t_{2}} = \vec{n_{M_{2}P}}$
+	\end{tabular}
+\end{table}
+
+\extrapar
+
+Den Winkel $\alpha$ berechnet man dann mittels der Vektoriellen Winkelformel: $$\cos \alpha = \frac{\vec{t_{1}} * \vec{t_{2}}}{|\vec{t_{1}}| * |\vec{t_{2}}| }$$
+
+\pagebreak
+
+\sub{Ellipse}
+
+\sub{Parabel}
+
+\sub{Hyperbel}
 
 \end{document}
