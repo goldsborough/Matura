@@ -19,7 +19,7 @@ Man kann mittels dem Satz des Pythagoras jeden Punkt $X$ auf dem Kreis $k$ berec
 	\centering
 	\begin{tikzpicture}
 
-		\draw [thick] 
+		\draw [red] 
 			  (2.5, 2.5) circle [radius=2.5];
 
 		\draw [fill=black] 
@@ -64,14 +64,21 @@ Um von der ausmultiplizierten, allgemeinen Kreisgleichung auf die Kreisgleichung
 
 \emph{Die Gleichung $x^2 + y^2 + 4x - 2y - 20 = 0$ beschreibt einen Kreis. Ermittle den Mittelpunkt $M$ und den Radius $r$ des Kreises.}
 
-\begin{tabular}{l c}
-	I. Allgemeine Kreisgleichung: & $x^2 + y^2 + 4x - 2y - 20 = 0$\\
-	II. Umformung um die Erg\"{a}nzung zu erleichtern: & $(x^2 + 4x + a^2) + (y^2 - 2y + b^2) = 20$\\
-	III. Finden der passenden Variablen: & $a = 2,\, b = -1$\\
-	IV. Addition der Quadrate auf beiden Seiten der Gleichung: & $(x^2 + 4x + 4) + (y^2 - 2y + 1) = 20 + 4 + 1$\\
-	V. Zu binomischen Formeln umformen: & $(x + 2)^2 + (y - 1)^2 = 25$\\
-	VI. Vergleich mit der Kreisgleichung: & $(x - x_{M})^2 + (y - y_{M})^2 = r^2$\\
-	VII. Entnahme des Mittelpunktes: & $M (-2 | 1)$\\
+\begin{tabular}{l l}
+	I. Allgemeine Kreisgleichung: & $x^2 + y^2 + 4x - 2y - 20 = 0$
+	\\
+	II. Umformung um die Erg\"{a}nzung zu erleichtern: & $(x^2 + 4x + a^2) + (y^2 - 2y + b^2) = 20$
+	\\
+	III. Finden der passenden Variablen: & $a = 2,\, b = -1$
+	\\
+	IV. Addition der Quadrate auf beiden Seiten der Gleichung: & $(x^2 + 4x + 4) + (y^2 - 2y + 1) = 20 + 4 + 1$
+	\\
+	V. Zu binomischen Formeln umformen: & $(x + 2)^2 + (y - 1)^2 = 25$
+	\\
+	VI. Vergleich mit der Kreisgleichung: & $(x - x_{M})^2 + (y - y_{M})^2 = r^2$
+	\\
+	VII. Entnahme des Mittelpunktes: & $M (-2 | 1)$
+	\\
 	VIII. Entnahme des Radius: & $r^2 = 25 \Rightarrow r = 5$
 \end{tabular}
 
@@ -129,7 +136,7 @@ Haben zwei Kreise einen Ber\"{u}hr- oder Schnittpunkt, kann man auch die Winkel 
 	\begin{tikzpicture}
 
 		% k_{1}
-		\draw (2.5, 2.5) circle [radius=2.5];
+		\draw [red] (2.5, 2.5) circle [radius=2.5];
 
 		% M_{1}P
 		\draw [fill=black] 
@@ -147,7 +154,7 @@ Haben zwei Kreise einen Ber\"{u}hr- oder Schnittpunkt, kann man auch die Winkel 
 
 
 		% k_{2}
-		\draw (5, 6) circle [radius=2.5];
+		\draw [blue] (5, 6) circle [radius=2.5];
 
 		% M_{2}P
 		\draw [fill=black] 
@@ -182,14 +189,334 @@ Haben zwei Kreise einen Ber\"{u}hr- oder Schnittpunkt, kann man auch die Winkel 
 
 \extrapar
 
-Den Winkel $\alpha$ berechnet man dann mittels der Vektoriellen Winkelformel: $$\cos \alpha = \frac{\vec{t_{1}} * \vec{t_{2}}}{|\vec{t_{1}}| * |\vec{t_{2}}| }$$
+Den Winkel $\alpha$ berechnet man dann mittels der Vektoriellen Winkelformel: $$\cos \alpha = \frac{\vec{t_{1}} \cdot{} \vec{t_{2}}}{|\vec{t_{1}}| \cdot{} |\vec{t_{2}}| }$$
 
 \pagebreak
 
 \sub{Ellipse}
 
-\sub{Parabel}
+Eine Ellipse kann als eine ovale Kurve oder als ein Kreis mit zwei verschiedenen Radii $a$ und $b$ f\"{u}r die x- bzw. y-Achse, anstatt nur einem Radius $r$, gesehen werden. Sie ist definiert druch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer Zahl $a > 0$. Eine vollst\"{a}ndig beschriftete Ellipse $ell$ mit einem Punkt $X$ sieht so aus:
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+
+		% ellipsis
+		\draw [red] (4, 4) circle [x radius = 3, y radius = 2];
+
+		% x axis
+		\draw [fill=black] 
+			  (0.0, 4.0)
+
+		   -- (1.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {B}
+
+		   -- (2.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$F_{2}$}
+
+		   -- (4.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {0}
+
+		   -- (6.0, 4.0) circle [radius=1.2pt]
+		    		     node [below right] {$F_{1}$}
+
+		   -- (7.0, 4.0) circle [radius=1.2pt] 
+		   			     node [below right] {A};
+
+	    % arrow tip of x axis
+	    \draw [->] (7.0, 4.0)
+	            -- (8.0, 4.0) node [below, pos = 1] {x};
+
+		% y axis
+		\draw [fill=black]
+		      (4.0, 1,0)
+		   -- (4.0, 2.0) circle [radius=1.2pt]
+		   			     node [above right] {D}
+
+		   -- (4.0, 6.0) circle [radius=1.2pt] 
+		   				 node [above right] {C};
+
+		% arrow tip of y axis
+	    \draw [->] (4.0, 6.0)
+	            -- (4.0, 7.0) node [right, pos = 1] {y};
+
+	    % X 
+	    \draw [fill=black]
+	    	  (2.0, 4.0)
+	       -- (5.5, 5.73) circle [radius=1.2pt]
+	       			      node [pos=1.07] {X}
+	       -- (6.0, 4.0);
+
+	    % a
+	    \draw [<->]
+	          (4.0, 6.6)
+	       -- (1.0, 6.6) node [midway, above] {a};
+
+	    % b
+	    \draw [<->]
+	    	  (0.5, 4.0)
+	       -- (0.5, 6.0) node [midway, right] {b};
+
+	    % e
+	    \draw [<->]
+ 	          (4.0, 3.2)
+	       -- (6.0, 3.2) node [midway, below] {e};
+
+
+	\end{tikzpicture}
+\end{figure}
+
+Hierbei sind:
+
+\begin{tabular}{l c l}
+	$A, B$ & \ldots & Schnittpunkte mit der x-Achse $\Rightarrow$ Hauptscheitel\\
+	$C, D$ & \ldots &  Schnittpunkte mit der y-Achse $\Rightarrow$ Nebenscheitel\\ 
+	$a$ & \ldots & gro\ss{}e Halbachse\\
+	$b$ & \ldots & kleine Halbachse \\ 
+	$F_{1}, F_{2}$ & \ldots & Brennpunkte\\
+	$e$ & \ldots & Lineare Exzentrizit\"{a}t\\
+\end{tabular}
+
+Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
+
+\begin{enumerate}
+	\item $\overbar{XF_{1}} + \overbar{XF_{2}} = 2a$
+	\item $a = |\vec{0A}| = |\vec{0B}| \Rightarrow A (a | 0),\, B (-a | 0)$
+	\item $b = |\vec{0C}| = |\vec{0D}| \Rightarrow C (0 | b),\, D (0 | -b)$
+	\item $e = |\vec{0F_{1}}| = |\vec{0F_{2}}| \Rightarrow F_{1} (-e | 0)\, F_{2} (e | 0)$
+	\item $e^2 = a^2 - b^2$
+\end{enumerate}
+
+Hat eine Ellipse, wie jene oben, ihre Brennpunkte symmetrisch zum Koordinatenursprung auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), sowie die gro\ss{}e Halbachse auf der $x$-Achse liegend ($A (a | 0),\, B (-a | 0)$), so spricht man von einer Ellipse in \textbf{\emph{1. Hauptlage}}. Liegen die Brennpunkte auf der y-Achse, befindet sich die Ellipse in der \emph{2. Hauptlage}. 
+
+\pagebreak
+
+Eine Ellipse $ell$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann geometrisch durch folgende Gleichung beschrieben werden:
+
+\begin{table}[h!]
+	\begin{center}
+		$ell:\, b^2x^2 + a^2y^2 = a^2b^2$\\
+		$\Downarrow$\\
+		$ell:\, \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$
+	\end{center}
+\end{table}
+
+
+\subsub{Tangenten an eine Ellipse}
+
+Um eine Tangente $t$ an eine Ellipse $ell$ in einem Punkt $P$ zu legen, muss man die Ellipse implizit differenzieren und in das Resultat dessen den Punkt $P$ einsetzen, um die Steigung $k$ der Ellipse in diesem Punkt zu erhalten. Die $x$ und $y$ Koordinaten des Punktes $P$ sowie die Steigung $k$ der Ellipse in diesem Punkt setzt man dann in die Normalform der linearen Gleichung $y = kx + d$ einsetzen, um somit die volle Gleichung der Geraden bzw. der Tangente $t$ zu bestimmen. Beispiel:
+
+\emph{Gegeben sind die Ellipse $ell: x^2 + 3y^2 = 28$ und der Punkt $P(4 | 2)$ der auf der Ellipse liegt. Bestimmte die Gleichung der Tangente $t$ an die Ellipse im Punkt P.}
+
+{ \renewcommand{\arraystretch}{2}
+
+\begin{tabular}{l l}
+	I. Ellipsengleichung: & $x^2 + 3y^2 = 28$
+	\\
+	II Implizites Differenzieren: & $2x + 3 \cdot{} 2y \cdot{} y' = 0 \Rightarrow 2x + 6yy' = 0$
+	\\
+	III. Umformung nach $y'$: & $y' = \frac{-2x}{6y} = \frac{-x}{3y}$
+	\\
+	IV. Einsetzung von $P$: & $y' = \frac{-4}{3 \cdot{} 2} = \frac{-2}{3}$
+	\\
+	V. $y'$ ist die Steigung $k$ der Tangentengleichung $t$: & $y = kx + d$
+	\\
+	VI. Einsetzung von $k$ ($ = y'$) sowie $P$ in $t$: & $2 = 4 * \frac{-2}{3} + d$
+	\\
+	VII. L\"{o}sen nach $d$: & $d = 2 - \frac{-8}{3} = \frac{14}{3}$
+	\\
+	VIII. Fertige Tangentengleichung $t$: & $y = \frac{-2}{3}x + \frac{14}{3}$
+\end{tabular}
+
+} %
+
+\pagebreak
 
 \sub{Hyperbel}
+
+Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer L\"{a}nge $a$ exakt definiert ist. Sind die Brennpunkte symmetrisch zum Koordinatenursprung und liegen auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), spricht man von einer Hyperbel in \textbf{1. Hauptlage}. Liegen die Brennpunkte auf der $y$-Achse, liegt die Hyperbel in \emph{2. Hauptlage}. Geometrisch bzw. grafisch sieht eine Hyperbel in 1. Hauptlage so aus:
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+
+		% hyperbola, left branch
+		\draw [red, domain=1.8:6.2, rotate=90] plot (\x, {0.5 * \x*\x - 4 * \x + 5});
+
+		% hyperbola, right branch
+		\draw [red, domain=-6.2:-1.8, rotate=-90] plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+
+		% x axis
+		\draw [fill=black] 
+			  (0.0, 4.0)
+
+		   -- (2.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$F_{2}$}
+
+		   -- (3.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$B$}
+
+		   -- (4.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$0$}
+
+		   -- (5.0, 4.0) circle [radius=1.2pt] 
+		   			     node [below right] {$A$}
+
+		   -- (6.0, 4.0) circle [radius=1.2pt]
+		    		     node [below right] {$F_{1}$};
+
+	    % arrow tip of x axis
+	    \draw [->] 
+	          (6.0, 4.0)
+
+	       -- (8.0, 4.0) node [below, pos = 1] {x};
+
+		% y axis
+		\draw [fill=black, ->]
+		      (4.0, 1,0)
+
+		   -- (4.0, 3.0) circle [radius=1.2pt]
+		   			     node [right] {$D$}
+
+		   -- (4.0, 5.0) circle [radius=1.2pt]
+		   				 node [right] {$C$};
+
+		% arrow tip of y axis
+		\draw [->]
+			  (4.0, 5.0)
+
+		   -- (4.0, 7.0) node [right, pos = 1] {$y$};
+
+	    % X 
+	    \draw [fill=black]
+	    	  (2.0, 4.0)
+
+	       -- (5.5, 5.0) circle [radius=1.2pt]
+	       		     	 node [pos=1.05, right] {$X$}
+	       -- (6.0, 4.0);
+
+	    % a
+	    \draw [<->]
+	          (4.0, 4.2)
+
+	       -- (5.0, 4.2) node [midway, above] {$a$};
+
+	    % b
+	    \draw [<->]
+	    	  (3.5, 4.0)
+
+	       -- (3.5, 5.0) node [pos=0.6, left] {$b$};
+
+	    % e
+	    \draw [<->]
+ 	          (4.0, 3.3)
+
+	       -- (2.0, 3.3) node [midway, below right] {$e$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Hierbei sind:
+
+\begin{tabular}{l c l}
+	$A, B$ & \ldots & Schnittpunkte mit der x-Achse $\Rightarrow$ Hauptscheitel\\
+	$C, D$ & \ldots &  Schnittpunkte mit der y-Achse $\Rightarrow$ Nebenscheitel\\ 
+	$a$ & \ldots & gro\ss{}e Halbachse\\
+	$b$ & \ldots & kleine Halbachse \\ 
+	$F_{1}, F_{2}$ & \ldots & Brennpunkte\\
+	$e$ & \ldots & Lineare Exzentrizit\"{a}t\\
+\end{tabular}
+
+Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
+
+\begin{enumerate}
+	\item $|\overbar{XF_{1}} - \overbar{XF_{2}}| = 2a$
+	\item $a = |\vec{0A}| = |\vec{0B}| \Rightarrow A (a | 0),\, B (-a | 0)$
+	\item $b = |\vec{0C}| = |\vec{0D}| \Rightarrow C (0 | b),\, D (0 | -b)$
+	\item $e = |\vec{0F_{1}}| = |\vec{0F_{2}}| \Rightarrow F_{1} (-e | 0)\, F_{2} (e | 0)$
+	\item $e^2 = a^2 + b^2$
+\end{enumerate}
+
+Eine Hyperbel $hyp$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann geometrisch durch folgende Gleichung beschrieben werden, welche sich von der Ellipsengleichung nur im Vorzeichen unterscheidet:
+
+\begin{table}[h!]
+	\begin{center}
+		$hyp:\, b^2x^2 - a^2y^2 = a^2b^2$\\
+		$\Downarrow$\\
+		$hyp:\, \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$
+	\end{center}
+\end{table}
+
+Die Asymptoten $as_{1, 2}$ einer Hyperbel sind jene Geraden, welche den beiden \"{A}sten unendlich nahe kommen ohne sie je wirklich zu ber\"{u}hren. Sie sind definiert als:
+
+$$as_{1, 2}: y = \pm \frac{b}{a}\cdot{}x$$
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+
+		% hyperbola, left branch
+		\draw [red, domain=1.8:6.2, rotate=90] plot (\x, {0.5 * \x*\x - 4 * \x + 5});
+
+		% hyperbola, right branch
+		\draw [red, domain=-6.2:-1.8, rotate=-90] plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+
+		% x axis
+		\draw [fill=black] 
+			  (0.0, 4.0)
+
+		   -- (2.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$F_{2}$}
+
+		   -- (3.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$B$}
+
+		   -- (4.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$0$}
+
+		   -- (5.0, 4.0) circle [radius=1.2pt] 
+		   			     node [below right] {$A$}
+
+		   -- (6.0, 4.0) circle [radius=1.2pt]
+		    		     node [below right] {$F_{1}$};
+
+	    % arrow tip of x axis
+	    \draw [->] 
+	          (6.0, 4.0)
+
+	       -- (8.0, 4.0) node [below, pos = 1] {x};
+
+		% y axis
+		\draw [fill=black, ->]
+		      (4.0, 1,0)
+
+		   -- (4.0, 3.0) circle [radius=1.2pt]
+		   			     node [right] {$D$}
+
+		   -- (4.0, 5.0) circle [radius=1.2pt]
+		   				 node [right] {$C$};
+
+		% arrow tip of y axis
+		\draw [->]
+			  (4.0, 5.0)
+
+		   -- (4.0, 7.0) node [right, pos = 1] {$y$};
+
+
+		% as_{1}
+		\draw [blue, dashed]
+			  (0, 1)
+		   -- (8, 7) node [pos=0.8, above left] {$as_{1}$};
+
+		% as_{2}
+		\draw [blue, dashed]
+			  (0, 7)
+		   -- (8, 1) node [pos=0.8, below left] {$as_{2}$};
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Parabel}
 
 \end{document}
