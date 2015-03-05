@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  1 MAR 2015 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  5 MAR 2015 20:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -155,16 +155,137 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \everycr=\toks19
 \minrowclearance=\skip49
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/helvet.sty
-Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+(/usr/local/texlive/2014/texmf-dist/tex/latex/libertine/libertine.sty
+Package: libertine 2014/02/19 (Bob Tennent) Supports Libertine and Biolinum fon
+ts for all LaTeX engines.
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/05/09 v2.6d package option processing (HA)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks20
+\XKV@tempa@toks=\toks21
+\XKV@depth=\count105
+File: xkeyval.tex 2014/05/09 v2.6d key=value parser (HA)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/mweights/mweights.sty
+Package: mweights 2013/07/21 (Bob Tennent) Support package for multiple-weight 
+font packages. 
+LaTeX Info: Redefining \bfseries on input line 22.
+LaTeX Info: Redefining \mdseries on input line 29.
+LaTeX Info: Redefining \rmfamily on input line 36.
+LaTeX Info: Redefining \sffamily on input line 53.
+LaTeX Info: Redefining \ttfamily on input line 70.
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2014/03/23 v1.0d Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \scshape on input line 37.
+)
+LaTeX Info: Redefining \oldstylenums on input line 477.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-)))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/libertine/LinLibertine_I.tex))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip50
+\f@ncyO@elh=\skip51
+\f@ncyO@erh=\skip52
+\f@ncyO@olh=\skip53
+\f@ncyO@orh=\skip54
+\f@ncyO@elf=\skip55
+\f@ncyO@erf=\skip56
+\f@ncyO@olf=\skip57
+\f@ncyO@orf=\skip58
+))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 
@@ -183,13 +304,22 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 5.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 5.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineT-TLF on
+ input line 5.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TLF.
+fd
+File: OT1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for OT1/
+LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 5.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -208,7 +338,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
-* \headheight=12.0pt
+* \headheight=15.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
@@ -227,187 +357,131 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
+\scratchcounter=\count106
 \scratchdimen=\dimen115
 \scratchbox=\box30
-\nofMPsegments=\count106
-\nofMParguments=\count107
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count108
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count109
 \MPscratchDim=\dimen116
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
-\everyMPtoPDFconversion=\toks21
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks23
 )
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 23.63593pt on input line 7.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 7.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 18.
+\c@mv@tabular=\count112
+\c@mv@boldtabular=\count113
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 24.88pt on input line 8.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 24.88pt on input line 8.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 19.
 
-Underfull \hbox (badness 2443) in paragraph at lines 18--18
-[]|\T1/phv/m/n/12 Konkrete Dar-stel-lung ab-strak-ter
+Underfull \hbox (badness 7631) in paragraph at lines 19--19
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Konkrete Dar-stel-lung ab-strak-ter
  []
 
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 18.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 11.39996pt on input line 18.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 12.0pt on input line 19.
 
-Underfull \hbox (badness 1596) in paragraph at lines 22--22
-[]|\T1/phv/m/n/12 Verbindung zwei-er Be-deu-tungs-
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 Redefluss; War-te-schlan-ge;
  []
 
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/it' will be
+(Font)              scaled to size 12.0pt on input line 31.
 
-Underfull \hbox (badness 3260) in paragraph at lines 22--23
-[]|\T1/phv/m/sl/12 Redefluss; War-te-schlan-ge;
- []
-
-
-Underfull \hbox (badness 5578) in paragraph at lines 26--26
-[]|\T1/phv/m/n/12 Zuschreibung mensch-li-cher Ei-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 30.
-LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 30.
-LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
-(Font)              scaled to size 11.39996pt on input line 30.
-
-Underfull \hbox (badness 1867) in paragraph at lines 30--31
-[]|\T1/phv/m/sl/12 Er kämpft \T1/phv/b/sl/12 wie \T1/phv/m/sl/12 ein Lö-we;
+Underfull \hbox (badness 1708) in paragraph at lines 31--31
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Vergleich zwi-schen zwei Din-gen
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 34--34
-[]|\T1/phv/m/n/12 Beschönigung / sanf-te-re Aus-
+Underfull \hbox (badness 10000) in paragraph at lines 35--35
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Besch[]onigung / sanf-te-re Aus-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 34--34
-\T1/phv/m/n/12 drücks-wei-se für et-was dra-ma-ti-
+Underfull \hbox (badness 4832) in paragraph at lines 35--35
+\OT1/LinuxLibertineT-TLF/m/n/12 dr[]ucksweise f[]ur et-was dra-ma-ti-
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 34--35
-[]|\T1/phv/m/n/12 ^^R  ent-schla-fen^^P \T1/phv/m/sl/12 an-statt \T1/phv/m/n/12
- ^^R  ster-
+Underfull \hbox (badness 5607) in paragraph at lines 35--36
+[]|[]  \OT1/LinuxLibertineT-TLF/m/n/12 ent-schla-fen\ \OT1/LinuxLibertineT-TLF/
+m/it/12 an-statt []  \OT1/LinuxLibertineT-TLF/m/n/12 ster-
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 50--51
-[]|\T1/phv/m/sl/12 runde Ku-gel; al-ter Greis;
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 Literaturpapst; Au-gen-krebs;
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 58.
+(Font)              <12> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <8> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 59.
 
-Underfull \hbox (badness 3058) in paragraph at lines 58--58
-[]|\T1/phv/m/n/12 Auslassung selbst-ver-ständ-li-cher,
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Auslassung selbst-verst[]andlicher,
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 58--59
-[]|\T1/phv/m/sl/12 Todesstille fürch-ter-lich; Im
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 Todesstille f[]urchterlich; Im
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 66--66
-[]|\T1/phv/m/n/12 Wiederholung glei-cher Satz-bau-
+Underfull \hbox (badness 8019) in paragraph at lines 67--67
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Wiederholung glei-cher Satz-bau-
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 66--67
-[]|\T1/phv/m/sl/12 Das Was-ser rauscht, das
+Underfull \hbox (badness 10000) in paragraph at lines 79--79
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Verbindung von zwei wie-der-
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 70--71
-\T1/phv/m/sl/12 Topf und einen Blick aus
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 junger Greis, viel-sa-gen-des
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[]|\T1/phv/m/n/12 Verbindung von zwei wie-der-
+Underfull \vbox (badness 10000) detected at line 97
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-[]|\T1/phv/m/sl/12 Ich kam, sah, sieg-te;
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+[]|\OT1/LinuxLibertineT-TLF/m/n/12 Gleichlautende oder []ahnliche
  []
 
 
-Underfull \hbox (badness 6775) in paragraph at lines 94--95
-\T1/phv/m/sl/12 Frei-heit, Glei-heit, Brü-der-
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+\OT1/LinuxLibertineT-TLF/m/n/12 W[]orter wer-den mit-ein-an-der
  []
 
 
-Underfull \vbox (badness 10000) detected at line 96
+Underfull \hbox (badness 2376) in paragraph at lines 123--123
+\OT1/LinuxLibertineT-TLF/m/n/12 wand-ten Wort-fa-mi-li-en aber ver-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-[]|\T1/phv/m/sl/12 Kuckuck; qua-ken; quiet-
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+[]|\OT1/LinuxLibertineT-TLF/b/n/12 Paronomastischer
  []
 
 
-Underfull \hbox (badness 1092) in paragraph at lines 106--107
-[]|\T1/phv/m/sl/12 Na toll!; Ei-ne schö-ne Be-
+Underfull \hbox (badness 3942) in paragraph at lines 127--128
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 der K[]onig der K[]onige; das
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-[]|\T1/phv/m/n/12 Gleichlautende oder ähn-li-che
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-\T1/phv/m/n/12 Wör-ter wer-den mit-ein-an-der
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 122--122
-[]|\T1/phv/m/n/12 Verbindung zwei-er Wör-ter aus
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 122--122
-\T1/phv/m/n/12 ver-wand-ten Wort-fa-mi-li-en aber
- []
-
-
-Underfull \hbox (badness 1975) in paragraph at lines 122--122
-\T1/phv/m/n/12 ver-schie-de-nen Wort-ar-ten (Verb,
- []
-
-
-Underfull \hbox (badness 3977) in paragraph at lines 122--123
-[]|\T1/phv/m/sl/12 jmd. ei-ne Gru-be gra-ben;
- []
-
-
-Underfull \hbox (badness 5217) in paragraph at lines 122--123
-\T1/phv/m/sl/12 noch nicht be-zahlt, aber
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 122--123
-\T1/phv/m/sl/12 nicht un-be-zahl-bar; mei-nes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
-[]|\T1/phv/b/n/12 Paronomastischer
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+[]|\OT1/LinuxLibertineT-TLF/m/it/12 Gleich\OT1/LinuxLibertineT-TLF/b/it/12 heit
+\OT1/LinuxLibertineT-TLF/m/it/12 , Frei\OT1/LinuxLibertineT-TLF/b/it/12 heit\OT
+1/LinuxLibertineT-TLF/m/it/12 ,
  []
 
 [1
@@ -415,23 +489,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--126
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] (./stilmittel.aux) ) 
 Here is how much of TeX's memory you used:
- 3339 strings out of 493117
- 44539 string characters out of 6135432
- 148838 words of memory out of 5000000
- 6774 multiletter control sequences out of 15000+600000
- 23098 words of font info for 35 fonts, out of 8000000 for 9000
+ 4957 strings out of 493117
+ 75294 string characters out of 6135432
+ 168873 words of memory out of 5000000
+ 8361 multiletter control sequences out of 15000+600000
+ 16085 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,32p,830b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,43p,830b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips
-/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvb8a
-.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on stilmittel.pdf (3 pages, 51361 bytes).
+/libertine/lbtn_zajy4r.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/
+libertine/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/l
+ibertine/lbtn_c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/li
+bertine/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+libertine/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/libertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/libertine/LinLibertineTBI.pfb></usr/local/texlive/2014/texmf-dist/font
+s/type1/public/libertine/LinLibertineTI.pfb></usr/local/texlive/2014/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on stilmittel.pdf (3 pages, 293385 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
