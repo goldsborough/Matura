@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  5 MAR 2015 20:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  5 MAR 2015 23:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -288,7 +288,7 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
-* \headheight=12.0pt
+* \headheight=15.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
@@ -332,14 +332,7 @@ LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.95pt on input line 84.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[2] (./offener-brief.aux) ) 
+ [2] (./offener-brief.aux) ) 
 Here is how much of TeX's memory you used:
  4025 strings out of 493117
  63393 string characters out of 6135432
@@ -348,15 +341,15 @@ Here is how much of TeX's memory you used:
  15575 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,11n,43p,833b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/
-libertine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/l
-ibertine/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/li
-bertine/lbtn_c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lib
-ertine/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/l
-ibertine/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
-ic/libertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/libertine/LinLibertineTI.pfb>
-Output written on offener-brief.pdf (2 pages, 243174 bytes).
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips
+/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/
+libertine/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/l
+ibertine/lbtn_c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/li
+bertine/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+libertine/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/libertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/libertine/LinLibertineTI.pfb>
+Output written on offener-brief.pdf (2 pages, 242970 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream
