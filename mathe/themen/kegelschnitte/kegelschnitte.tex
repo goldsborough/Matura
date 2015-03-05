@@ -19,8 +19,13 @@ Man kann mittels dem Satz des Pythagoras jeden Punkt $X$ auf dem Kreis $k$ berec
 	\centering
 	\begin{tikzpicture}
 
+		% circle
 		\draw [red] 
 			  (2.5, 2.5) circle [radius=2.5];
+
+		% circle label
+		\draw [red]
+			  (-0.2, 1.3) node [] {$k$};
 
 		\draw [fill=black] 
 			  (2.5, 2.5) circle [radius=1pt]
@@ -202,7 +207,12 @@ Eine Ellipse kann als eine ovale Kurve oder als ein Kreis mit zwei verschiedenen
 	\begin{tikzpicture}
 
 		% ellipsis
-		\draw [red] (4, 4) circle [x radius = 3, y radius = 2];
+		\draw [red] 
+		      (4, 4) circle [x radius = 3, y radius = 2];
+
+		% ellipsis label
+		\draw [red]
+			  (6.5, 2.2) node [] {$ell$};
 
 		% x axis
 		\draw [fill=black] 
@@ -334,17 +344,23 @@ Um eine Tangente $t$ an eine Ellipse $ell$ in einem Punkt $P$ zu legen, muss man
 
 \sub{Hyperbel}
 
-Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer L\"{a}nge $a$ exakt definiert ist. Sind die Brennpunkte symmetrisch zum Koordinatenursprung und liegen auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), spricht man von einer Hyperbel in \textbf{1. Hauptlage}. Liegen die Brennpunkte auf der $y$-Achse, liegt die Hyperbel in \emph{2. Hauptlage}. Geometrisch bzw. grafisch sieht eine Hyperbel in 1. Hauptlage so aus:
+Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer L\"{a}nge $a$ exakt definiert ist. Sind die Brennpunkte symmetrisch zum Koordinatenursprung und liegen auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), spricht man von einer Hyperbel in \textbf{1. Hauptlage}. Liegen die Brennpunkte auf der $y$-Achse, befindet sich die Hyperbel in \emph{2. Hauptlage}. Geometrisch bzw. grafisch sieht eine Hyperbel in 1. Hauptlage so aus:
 
 \begin{figure}[h!]
 \centering
 	\begin{tikzpicture}
 
 		% hyperbola, left branch
-		\draw [red, domain=1.8:6.2, rotate=90] plot (\x, {0.5 * \x*\x - 4 * \x + 5});
+		\draw [red, domain=1.8:6.2, rotate=90]
+			  plot (\x, {0.5 * \x*\x - 4 * \x + 5});
 
 		% hyperbola, right branch
-		\draw [red, domain=-6.2:-1.8, rotate=-90] plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+		\draw [red, domain=-6.2:-1.8, rotate=-90]
+		      plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+
+	    % hyperbola label
+		\draw [red]
+			  (1.0, 2.5) node [] {$hyp$};
 
 		% x axis
 		\draw [fill=black] 
@@ -456,10 +472,16 @@ $$as_{1, 2}: y = \pm \frac{b}{a}\cdot{}x$$
 	\begin{tikzpicture}
 
 		% hyperbola, left branch
-		\draw [red, domain=1.8:6.2, rotate=90] plot (\x, {0.5 * \x*\x - 4 * \x + 5});
+		\draw [red, domain=1.8:6.2, rotate=90] 
+			  plot (\x, {0.5 * \x*\x - 4 * \x + 5});
 
 		% hyperbola, right branch
-		\draw [red, domain=-6.2:-1.8, rotate=-90] plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+		\draw [red, domain=-6.2:-1.8, rotate=-90]
+			   plot (\x, {0.5 * \x*\x + 4 * \x + 13});
+
+		% hyperbola label
+		\draw [red]
+			  (1.0, 2.5) node [] {$hyp$};
 
 		% x axis
 		\draw [fill=black] 
@@ -518,5 +540,83 @@ $$as_{1, 2}: y = \pm \frac{b}{a}\cdot{}x$$
 \pagebreak
 
 \sub{Parabel}
+
+Eine Parabel ist eine Hyperbel mit nur einem Bogen bzw. mit nur einem Ast. Die Kurve einer Parabel ist exakt definiert durch einen Brennpunkt $F$ sowie eine Leitlinie $l$. Liegt der Brennpunkt $F$ auf der positiven $x$-Achse, der Scheitel der Parabel im Koordinatenursprung und ist die Leitlinie $l$ parallel zur $y$-Achse, handelt es sich um eine Parabel in \textbf{1. Hauptlage}. In diesem Fall ist die Parabel schon durch den Parameter $p$ exakt definiert.
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+
+		% parabola
+		\draw [red, domain=-6.2:-1.8, rotate=-90]
+		       plot (\x, {0.5 * \x*\x + 4 * \x + 12});
+
+		% parabola label
+		\draw [red]
+			   (5.5, 1.8) node [] {$par$};
+
+		% x axis
+		\draw [fill=black] 
+			  (0.0, 4.0)
+
+		   -- (4.0, 4.0) circle [radius=1.2pt]
+		   			     node [below left] {$0$}
+
+		   -- (5.0, 4.0) circle [radius=1.2pt]
+		    		     node [below right] {$F$};
+
+	    % arrow tip of x axis
+	    \draw [->] 
+	          (5.0, 4.0)
+
+	       -- (8.0, 4.0) node [below, pos = 1] {x};
+
+		% y axis
+		\draw [fill=black, ->]
+		      (4.0, 1,0)
+
+		   -- (4.0, 7.0) node [right, pos = 1] {$y$};
+
+	    % X 
+	    \draw [fill=black]
+	          (4.5, 5.0) circle [radius=1.2pt]
+	       		     	 node [above] {$X$}
+
+	       -- (5.0, 4.0);
+
+	    % p
+	    \draw [<->]
+	          (3.0, 3.2)
+
+	       -- (5.0, 3.2) node [midway, below left] {$p$};
+
+	    % l
+	    \draw (3.0, 1.0)
+
+	       -- (3.0, 7.0) node [pos=0.6, left] {$l$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Hierbei sind:
+
+\begin{tabular}{l c l}
+	$l$ & \ldots & Leitlinie\\
+	$F$ & \ldots & Brennpunkt\\
+	$p$ & \ldots & Abstand zwischen Leitlinie und Brennpunkt\\ 
+\end{tabular}
+
+Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
+
+\begin{enumerate}
+	\item $\overbar{XF} = \overbar{XI}$
+	\item $p = \overbar{FI}$
+	\item $F\,(\frac{p}{2} | 0)$
+	\item $l(x) = -\frac{p}{2}$
+\end{enumerate}
+
+Die Gleichung einer Parabel $par$ in 1. Hauptlage mit dem Parameter $p$ lautet:
+
+$$ y^2 = 2px$$
 
 \end{document}
