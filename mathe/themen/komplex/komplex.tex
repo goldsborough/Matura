@@ -1,0 +1,152 @@
+% Komplexe Zahlen
+
+\input{preamble.tex}
+
+\begin{document}
+% no header on first page
+\thispagestyle{plain}
+
+\heading{Komplexe Zahlen}
+
+Die Menge der Komplexen Zahlen $\mathbb{C}$ ist nach den Mengen $\mathbb{N, Z, Q}$ und $\mathbb{R}$ die letzte uns erschlossene Zahlenmenge, mit welcher vorher unl\"{o}sbare Gleichungen und Probleme nun gel\"{o}st werden k\"{o}nnen.
+
+\sub{Definitionen}
+
+Die Menge der Komplexen Zahlen besch\"{a}ftigt sich mit der Verwendung der \textbf{imagin\"{a}ren Einheit} $i$, f\"{u}r welche gilt $i^2 = -1$. Dadurch k\"{o}nnen vorher nicht l\"{o}sbare Gleichungen gel\"{o}st werden:
+
+$$x = 5 + \sqrt{-4} \Rightarrow \text{in }\mathbb{N, Z, Q, R} \text{ nicht l\"{o}sbar}$$
+
+$$x = 5 + \sqrt{4} \cdot \sqrt{-1} = 5 + 2 \cdot i \Rightarrow \text{in } \mathbb{C} \text{ l\"{o}sbar}$$
+
+Generell hat eine komplexe Zahl die Form $a + b \cdot i$, wobei $a$ als der \textbf{Realteil} und $b$ als der \textbf{Imagin\"{a}rteil} bezeichnet wird. Zahlen, die nur aus dem Imagin\"{a}rteil bestehen, also $b \cdot i$, werden \textbf{imagin\"{a}re Zahlen} genannt. Das negative Gegenst\"{u}ck zu einer komplexen Zahl $z = a + b \cdot i$ nennt man \textbf{konjugiert komplexe Zahl}: $\bar{z} = a - b \cdot i$
+
+Hierbei ist es wichtig anzumerken, dass alle Zahlenmengen unter der Menge der komplexen Zahlen dennoch in $\mathbb{C}$ enthalten sind, da jede reelle Zahl $a$ als $a + 0 \cdot i$ angeschrieben werden kann.
+
+Den \textbf{Betrag} $|z|$ einer komplexen Zahl $z = a + b \cdot i$ berechnet man gleich wie jenen eines Vektors: $|z| = \sqrt{a^2 + b^2}$. Der Grund daf\"{u}r ist, dass eine komplexe Zahl grafisch bzw. geometrisch \"{a}hnlich wie ein Vektor ein Koordinatentupel darstellt, wo $a$ die Koordinate auf der \textbf{reellen Zahlenachse} und $b$ die Koordinate auf der \textbf{imagin\"{a}ren Zahlenachse} ist:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% real axis
+		\draw [->] 
+		      (0, 0) node [below left] {0}
+		   -- (1, 0) node [below] {1}
+		   -- (2, 0) node [below] {2}
+		   -- (3, 0) node [below] {3}
+		   -- (4, 0) node [below] {4}
+		   		     node [pos=0.9, above] {reelle Achse};
+
+		 % imaginary axis
+		\draw [->]
+			  (0, 0) 
+		   -- (0, 1) node [left] {i}
+		   -- (0, 2) node [left] {2i}
+		   -- (0, 3) node [left] {3i}
+		   -- (0, 4) node [left] {4i}
+		   	         node [pos=0.9, right] {imagin\"{a}re Achse};
+
+		 % z
+		\draw [->, red]
+		      (0, 0)
+		   -- (2.94, 2.94) node [pos=0.6, above left] {$|z|$};
+
+		\draw [fill=black]
+		      (3, 3) circle [radius=1.2pt]
+		      	     node [right] {$z$};
+
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Potenzen von $i$}
+
+Der Wert der imagin\"{a}ren Einheit $i$ hoch einer Potenz $n$ ver\"{a}ndert sich in Abh\"{a}ngigkeit von $n$:
+
+$i^0 = 1$
+
+$i^1 = i$
+
+$i^2 = -1$
+
+$i^3 = i^2 \cdot i = -1 \cdot i = -i$
+
+$i^4 = i^2 \cdot i^2 = -1 \cdot (-1) = 1$
+
+$i^5 = i^4 \cdot i = 1 \cdot i = i$
+
+$i^6 = i^4 \cdot i^2 = 1 \cdot (-1) = -1$
+
+$\dots$
+
+F\"{u}r eine potenzierte imagin\"{a}re Einheit $i^n$ mit beliebigem $n$ kann man somit sagen:
+
+$$
+i^n = 
+\begin{cases}
+1 \text{, wenn } n \text{ mod } 4 = 0
+\\ 
+i \text{, wenn } n \text{ mod } 4 = 1
+\\
+-1 \text{, wenn } n \text{ mod } 4 = 2
+\\
+-i \text{, wenn } n \text{ mod } 4 = 3  
+\end{cases}
+$$
+
+\sub{Grundrechnungsarten}
+
+\subsub{Addition und Subtraktion}
+
+Zwei komplexe Zahlen $z_{1} = a + b \cdot i$ und $z_{2} = c + d \cdot i$ werden addiert bzw. subtrahiert, in dem man die jeweilige Operation f\"{u}r die Real- und Imagin\"{a}rteile der beiden komplexen Zahlen, also f\"{u}r $a$ und $c$ bzw. $b$ und $d$ durchf\"{u}hrt: $$ z_{1} + z_{2} = (a + c) + (b + d) \cdot i$$ $$ z_{1} - z_{2} = (a - c) + (b - d) \cdot i$$
+
+\subsub{Multiplikation}
+
+Bei der Multiplizierung zweier komplexer Zahlen $z_{1} = a + b \cdot i$ und $z_{2} = c + d \cdot i$ werden die beiden Zahlen miteinander ausmultipliziert: $$z_{1} \cdot z_{2} = (a + b \cdot i) \cdot (c + d \cdot i)$$
+
+Wobei man diese Multiplikation immer auf die folgende Formel reduzieren kann: $$z_{1} \cdot z_{2} = (ac - bd) + (ad + bc) \cdot i$$
+
+\pagebreak
+
+\subsub{Division}
+
+Um zwei komplexe Zahlen $z_{1} = a + b \cdot i$ und $z_{2} = c + d \cdot i$ zu dividieren, muss man die Division im Nenner als auch im Z\"{a}hler um die konjugiert komplexe Zahl des Nenners, also $\bar{z_{2}}$, erweitern. Dadurch wird der Nenner wieder zu einer reellen Zahl: 
+
+$$ 
+\frac{z_{1}}{z_{2}} = \frac{z_{1} \cdot \bar{z_{2}}}{z_{2} \cdot \bar{z_{2}}} = \frac{(a + bi) \cdot (c - di)}{(c + di) \cdot (c - di)}
+= \frac{(ac + bd) \cdot (bc - ad) \cdot i}{c^2 + d^2}
+= \frac{ac + bd}{c^2 + d^2} + \frac{bc -ad}{c^2 + b^2} \cdot i
+$$
+
+\sub{Quadratische Gleichungen}
+
+Quadratische Gleichungen der Form $x^2 + p \cdot x + q = 0$ sind in der Menge der komplexen Zahlen immer l\"{o}sbar, da nun auch negative Diskriminanten behandelt werden k\"{o}nnen. Beispiel:
+
+\emph{L\"{o}se die quadratische Gleichung $x^2 + 4x + 13 = 0$ in $\mathbb{C}$}!
+
+\begin{tabular}{l l}
+	I. Wir verwenden die kleine L\"{o}sungsformel: & $x_{1,2} = \frac{-p}{2} \pm \sqrt{\frac{p^2}{4} - q}$
+	\\ & \\
+	II. Einsetzen der Gleichung: & $x_{1,2} = \frac{-4}{2} \pm \sqrt{\frac{16}{2} - 13}$
+	\\ & \\
+	III. Vereinfachung der Gleichung nach x: & $x_{1,2} = -2 \pm \sqrt{-9}$
+	\\ & \\
+	IV. Einsetzen der imagin\"{a}ren Einheit $i$: & $x_{1,2} = -2 \pm \sqrt{9} \cdot i$
+	\\ & \\
+	V. L\"{o}sung von $x_{1, 2}$: & $x_{1, 2} = -2 \pm 3i$
+\end{tabular}
+
+\extrapar
+
+Eine quadratische Gleichung $x^2 + p \cdot x + q = 0$ mit p, q $\in \mathbb{R}$ besitzt somit in $\mathbb{C}$
+
+\begin{itemize}
+	\item zwei reelle L\"{o}sungen, wenn $D > 0$
+	\item eine reelle L\"{o}sung, wenn $D = 0$
+	\item zwei zueinander konjugiert komplexe L\"{o}sungen, wenn $D < 0$
+\end{itemize}
+
+wobei $D$ die Diskriminante unter der Wurzel der kleinen $$ x_{1, 2} = \frac{-p}{2} \pm \sqrt{D}$$ oder der gro\ss{}en $$ x_{1, 2} = \frac{-b \pm \sqrt{D}}{2a}$$ L\"{o}sungsformel ist.
+
+\end{document}
