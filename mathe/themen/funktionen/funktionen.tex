@@ -82,6 +82,14 @@ Eine Funktion $f(x)$ kann als Funktionsterm bzw. -gleichung, als Wertetabelle od
 
 Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funktionen sollte angemerkt werden, worin der Unterschied zwischen einer \textbf{Stelle} und einem \textbf{Punkt} einer Funktion liegt. Mit einer \emph{Stelle} ist immer nur der Wert der Definitionsmenge bzw. die unab\"{a}ngige Variable --- also $x$ --- gemeint. Ein \emph{Punkt} bezeichnet dagegen ein Koordinatentupel bestehend aus der unab\"{a}ngigen \emph{und} abh\"{a}ngigen Variable --- also $(x, y)$.
 
+\textbf{Nullstelle} (N) \defas jene Stelle einer Funktion, an welcher gilt $f(x) = 0 \rightarrow$ die Funktion schneidet die $x$-Achse
+
+\textbf{Spurpunkt} (S) \defas jener Punkt einer Funktion, an welcher sie eine der beiden Achsen schneidet ($x$- oder $y$-Achse)
+
+\textbf{Fixpunkt} (F) \defas jener Punkt einer Funktion, an welcher gilt $f(x) = x \rightarrow$ die Funktion schneidet die \emph{1. Mediane}
+
+\textbf{Steigung} \defas jener Wert $k$, um welchen sich eine Funktion pro $x$-Wert auf der $y$-Achse ver\"{a}ndert. Berechenbar als $k = \frac{\Delta y}{\Delta x}$ f\"{u}r jedes beliebige Intervall. $k$ ist somit der \emph{Differenzenquotient} $\rightarrow$ die durschnittliche Ver\"{a}nderung der Funktion pro $x$-Wert in diesem Intervall.
+
 \begin{figure}[h!]
 	\centering
 	\begin{tikzpicture}
@@ -110,9 +118,9 @@ Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funk
 		forget plot
 	]
 	coordinates {(0, 1) (0.333, 0.333) (0.5, 0)}
-	node [pos = 0, right] {(N), (S)}
+	node [pos = 0, right] {(S)}
 	node [pos = 0.69, above] {(F)}
-	node [pos = 1, above right] {(S)};
+	node [pos = 1, above right] {(N), (S)};
 
 	\addplot
 	[
@@ -126,15 +134,667 @@ Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funk
 	\addlegendentry{1. Mediane}
 
 	\end{axis}
+
+	\draw [dashed]
+	      (2.0, 4.0)
+	   -- (0.0, 4.0) node [midway, below] {$\Delta x = 0.5$}
+	   -- (0.0, 5.7) node [midway, left] {$\Delta y = -1$}
+	   			     node [pos=0.4, right] {\hspace{0.4cm}$k$};
 \end{tikzpicture}
 \end{figure}
 
-\textbf{Nullstelle} (N) \defas jene Stelle einer Funktion, an welcher gilt $f(x) = 0 \rightarrow$ die Funktion schneidet die $x$-Achse
+\textbf{Monotonie} \defas Beschreibung des Steigungsverhalten einer Funktion. Eine Funktion $f(x)$ ist in einem beliebigen Intervall $[x_{1}; x_{2}]$
 
-\textbf{Spurpunkt} (S) \defas jener Punkt einer Funktion, an welcher sie eine der beiden Achsen schneidet ($x$- oder $y$-Achse)
+\begin{itemize}
+	\bolditem{monoton wachsend}, wenn der Funktionswert jedes $x$-Wertes in diesem Intervall \emph{nicht kleiner} ist als jener des vorhergehenden $x$-Wertes: $f(x) \geq f(x-1) \text{ f\"{u}r } x \in [x_{1}; x_{2}]$
 
-\textbf{Fixpunkt} (F) \defas jener Punkt einer Funktion, an welcher gilt $f(x) = x \rightarrow$ die Funktion schneidet die \emph{1. Mediane}
+	\bolditem{monoton fallend}, wenn der Funktionswert jedes $x$-Wertes in diesem Intervall \emph{nicht gr\"{o}\ss{}er} ist als jener des vorhergehenden $x$-Wertes: $f(x) \leq f(x-1) \text{ f\"{u}r } x \in [x_{1}; x_{2}]$
+
+	\bolditem{streng monoton wachsend}, wenn der Funktionswert jedes $x$-Wertes in diesem Intervall \emph{stets gr\"{o}\ss{}er} ist als jener des vorhergehenden $x$-Wertes: $f(x) > f(x-1) \text{ f\"{u}r } x \in [x_{1}; x_{2}]$
+
+	\bolditem{streng monoton fallend}, wenn der Funktionswert jedes $x$-Wertes in diesem Intervall \emph{stets kleiner} ist als jener des vorhergehenden $x$-Wertes: $f(x) < f(x-1) \text{ f\"{u}r } x \in [x_{1}; x_{2}]$
+
+\end{itemize}
+
+\pagebreak
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+	% x axis
+	\draw [->] (-4, 0) -- (4, 0) node [below] {x};
+
+	% y axis
+	\draw [->] (0, -4) -- (0, 3) node [right] {y};
+
+	% SMW
+	\draw [red]
+	      (-3.5, -4)
+	   -- (-2.5, -1) node [pos=0.7, left] {Streng Monoton\par Wachsend};
+
+	% MW
+	\draw [blue]
+	      (-2.5, -1)
+	   -- (-1, -1)
+	   -- (-0.5,  2) node [midway, left] {Monoton Wachsend}
+	   -- (0.2, 2);
+
+	% MF
+	\draw [orange]
+	      ( 0.2,  2)
+	   -- ( 1, -1) node [midway, right] {Monoton Fallend}
+	   -- ( 2, -1);
+
+	% SMF
+	\draw [teal]
+	      ( 2, -1)
+	   -- ( 4, -4) node [pos=0.7, right] {Streng Monoton Fallend};
+	\end{tikzpicture}
+\end{figure}
+
+\textbf{Extrempunkt} \defas jener Punkt einer Funktion, an welchem sich das Monotonieverhalten ver\"{a}ndert. Ein Extrempunkt kann entweder ein Hochpunkt (\emph{Maximum}) oder ein Tiefpunkt (\emph{Minimum}) sein. An einer Extremstelle gilt f\"{u}r die Steigung der Funktion $k = 0$. Daher ist die \emph{Tangente} an diesen Punkt waagrecht.
+
+\textbf{Kr\"{u}mmung} \defas die Ver\"{a}nderung der Steigung einer Funktion $f(x)$ in einem bestimmten Intervall $[x_{1}; x_{2}]$. Es gibt zwei M\"{o}glichkeiten:
+
+\begin{itemize}
+	\bolditem{positiv bzw. linksgekr\"{u}mmt}, wenn die Steigung der Funktion in dem Intervall $[x_{1}; x_{2}]$ zunehmend ansteigt: $f'(x) > f'(x-1), \text{ f\"{u}r } x \in [x_{1}; x_{2}]$, f\"{u}r die zweite Ableitung gilt: $f''(x) > 0$
+
+	\bolditem{negativ bzw. rechtsgekr\"{u}mmt}, wenn die Steigung der Funktion in dem Intervall $[x_{1}; x_{2}]$ zunehmend f\"{a}llt: $f'(x) < f'(x-1), \text{ f\"{u}r } x \in [x_{1}; x_{2}]$, f\"{u}r die zweite Ableitung gilt: $f''(x) < 0$
+\end{itemize}
+
+\textbf{Wendepunkt} \defas jener Punkt einer Funktion, in welchem sich ihre Kr\"{u}mmung ver\"{a}ndert. In dem Punkt selbst ist die Kr\"{u}mmung der Funktion gleich null: $f''(x_{W}) = 0$
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			mark=left,
+			xlabel=$x$,
+			ylabel={$f(x)$},
+			axis lines = middle,
+			legend pos = outer north east
+		]
+
+		\addplot
+		[domain=-0.2:4.2, samples=100]
+		{x^3-6*x^2+9*x-2}
+		node [pos=0.1, right] {\hspace{0.8cm}$f''(x < 0)$}
+		node [pos=0.285, right] {\hspace{0.1cm}$f'(x) = 0$}
+		node [pos=0.04, right] {\hspace{4cm}$f'(x) = 0$}
+		node [pos=0.9, left] {$f''(x > 0)\,\,\,\,\,\,\,\,\,\,\,$};
+
+		\addplot
+		[mark=*]
+		coordinates {(1, 2)}
+		node [above] {Hochpunkt};
+
+		\addplot
+		[mark=*]
+		coordinates {(2, 0)}
+		node [above right] {Wendepunkt};
+
+		\addplot
+		[mark=*]
+		coordinates {(3, -2)}
+		node [below] {Tiefpunkt};
 
 
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\textbf{Sattel- bzw. Terassenpunkt} \defas jener Punkt einer Funktion, welcher sowohl Wende- als auch Extrempunkt ist, sodass gilt $f'(x) = 0 \land f''(x) = 0$
+
+\pagebreak
+
+\textbf{Symmetrie} \defas einer Funktion beschreibt ihr Symmetrieverhalten, also ob und wie sich Variablen untereinander austauschen lassen. Eine Funktion $f(x)$ kann folgendes Symmetrieverhalten aufweisen:
+
+\begin{itemize}
+	\bolditem{gerade bzw. achsensymmetrisch}, wenn die Funktion and der $y$-Achse gespiegelt ist sodass gilt $f(-x) = f(x)$
+
+	\bolditem{ungerade bzw. punktsymmetrisch}, wenn die Funktion in jedem Punkt gespiegelt ist, sodass gilt $f(-x) = -f(x)$
+\end{itemize}
+
+\begin{figure}[h!]
+	\begin{floatrow}
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					axis lines = middle
+				]
+
+				\addplot
+				[domain=-1:1]
+				{x^2};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{Achsensymmetrisch}}
+
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					axis lines = middle
+				]
+
+				\addplot
+				[domain=-1:1]
+				{x^3};
+
+				\addplot
+				[domain=-1:1, dashed, red]
+				{x};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{Punktsymmetrisch}}
+	\end{floatrow}
+\end{figure}
+
+\textbf{Periodizit\"{a}t} \defas eine Funktion $f(x)$ ist periodisch mit einer Periode $p$, wenn sich die Werte der Funktion im Abstand $p$ stets wiederholen, sodass gilt: $f(x) = f(x + p)$
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+    	\draw [->]
+    	      (-4, 0)
+    	   -- ( 4, 0) node [right] {$x$}
+    	   			  node [midway, below right] {0};
+
+    	\draw [->]
+    	      (0, -2)
+    	   -- (0,  2) node [right] {$f(x)$};
+
+    	\draw [domain=-4:4, samples=1000]
+    		   plot (\x, {sin(pi * \x r)});
+
+    	\draw [red, dashed] 
+    	      (-4, 2)
+    	   -- (-4, -2) node [below] {$-2p$};
+
+    	\draw [red, dashed] 
+    	      (-2, 2)
+    	   -- (-2, -2) node [below] {$-p$};
+
+    	\draw [red, dashed] 
+    	      (2, 2)
+    	   -- (2, -2) node [below] {$p$};
+
+    	\draw [red, dashed] 
+    	      (4, 2)
+    	   -- (4, -2) node [below] {$2p$};
+
+	\end{tikzpicture}
+\end{figure}
+
+\textbf{Asymptote} \defas jene Gerade $a$, die einer Funktion $f$ beliebig nahe kommt, ohne sie jemals zu ber\"{u}hren.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+    	\begin{axis}
+    	[
+    		y=1.2cm,
+    		xlabel=$x$,
+			ylabel={$f(x)$},
+			ymin=0, ymax=3,
+			ytick={1, 2},
+			xmin=-8, xmax=8,
+			axis lines = middle,
+			legend pos = outer north east
+    	]
+
+    	\addplot
+    	[domain=-8:8, samples=100]
+    	{1/(x^2) + 0.4};
+
+    	\addlegendentry{$x^{-2} + 1$}
+
+    	\addplot
+    	[domain=-8:8, red, dashed]
+    	{0.3};
+
+    	\addlegendentry{$Asymptote$};
+
+    	\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Funktionstypen}
+
+Generell kann eine Funktion in einer von zwei Formen angeschrieben sein, entweder in der \textbf{Normal bzw. Hauptform} oder in der \textbf{Allgemeinen Form}. Diese Formen unterscheiden sich je nach Funktionstyp.
+
+\textbf{Abszisse} \defas horizontale Achse eines Funktionsgraphen ($x$-Achse)
+
+\textbf{Ordinate} \defas vertikale Achse eines Funktionsgraphen ($y$-Achse)
+
+\subsub{Lineare Funktionen}
+
+Eine lineare Funktion $f(x)$ ist eine linear wachsende oder fallende Funktion, mit einer festgelegten, konstanten Steigung $k$, sodass gilt: $f(x + 1) = f(x) + k$. Ebenso kann eine lineare Funktion einen Abstand vom Ursprung $d$ haben, um welchen alle Werte auf der Ordinate verschoben sind.
+
+\textbf{Hauptform} \defas $y = kx + d$
+
+\textbf{Allgemeine Form} \defas $ax + by + c = 0$
+
+\textbf{Homogene Lineare Funktion} \defas eine Lineare Funktion $y = kx\,|\,k \neq 0$ ohne Abstand vom Ursprung $d$, wobei zwischen $y$- und $x$-Werten ein direktes Verh\"{a}ltnis (direkte Proportionalit\"{a}t) besteht, sodass jeder Wert $f(x)$ den Faktor $k$ mit dem $x$-Wert gemeinsam hat.
+
+\textbf{Inhomogene Lineare Funktion} \defas eine Lineare Funktion $y = kx + d \,|\, k \neq 0 \land d \neq 0$ ohne direktem Verh\"{a}ltnis zwischen $x$- und $y$-Werten (indirekte Proportionalit\"{a}t).
+
+Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $(-\frac{d}{k}|0)$.
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			xlabel = $x$,
+			ylabel = $f(x)$,
+			axis lines = middle,
+			legend pos = outer north east
+		]
+
+		\addplot
+		[domain=-4:4, blue]
+		{4*x + 1};
+
+		\addlegendentry{$4x + 1$};
+
+		\addplot
+		[domain=-4:4, red]
+		{(-5*x/2) - 3};
+
+		\addlegendentry{$-2.5x - 3$};
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+
+\pagebreak
+
+\subsub{Potenzfunktionen}
+
+Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Potenzfunktion kann einen Abstand vom Urpsrung $b$ haben, um welchen alle Funktionswerte auf der Ordinate verschoben sind. Je nachdem ob die Potenz $z$ gerade oder ungerade, positiv oder negativ ist, hat der Graph einer Potenfunktion verschiedene Formen, welche entweder punkt- oder achsensymmetrisch sind. Der Exponent $z$ einer Potenzfunktion muss $\in \mathbb{Z}$ sein. Gilt $z \in \mathbb{R}$, handelt es sich um eine \emph{Wurzelfunktion}, da jede rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann.
+
+\textbf{Hauptform} \defas $x^z + px + q = 0$
+
+\textbf{Allgemeine Form} \defas $ax^z + bx + c = 0$
+
+\extrapar
+
+\begin{figure}[h!]
+	\begin{floatrow}
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					restrict y to domain=0:6,
+					axis lines = middle,
+					legend pos = north west
+				]
+
+				\addplot [blue] {x^2};
+
+				\addlegendentry{$x^2$};
+
+				\addplot [magenta] {x^4};
+
+				\addlegendentry{$x^4$};
+
+				\addplot [cyan] {x^8};
+
+				\addlegendentry{$x^8$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{$z$ gerade und positiv $\Rightarrow f(x)$ achsensymmetrisch und $> 0$}}
+
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					restrict y to domain=-11:11,
+					axis lines = middle,
+					legend pos = north west
+				]
+
+				\addplot [blue] {x^3};
+
+				\addlegendentry{$x^3$};
+
+				\addplot [magenta] {x^5};
+
+				\addlegendentry{$x^5$};
+
+				\addplot [cyan] {x^7};
+
+				\addlegendentry{$x^7$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{$z$ ungerade und positiv $\Rightarrow f(x)$ punktsymmetrisch}}
+	\end{floatrow}
+
+	\begin{floatrow}
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					restrict y to domain=0:6,
+					restrict x to domain=-2.5:2.5,
+					axis lines = middle,
+					legend pos = north west
+				]
+
+				\addplot [blue] {x^-2};
+
+				\addlegendentry{$x^{-2}$};
+
+				\addplot [magenta] {x^-4};
+
+				\addlegendentry{$x^{-4}$};
+
+				\addplot [cyan] {x^-8};
+
+				\addlegendentry{$x^{-8}$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{$z$ gerade und negativ $\Rightarrow f(x)$ achsensymmetrisch und $> 0$}}
+
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					restrict y to domain=-12:12,
+					restrict x to domain=-2.5:2.5,
+					axis lines = middle,
+					legend pos = north west
+				]
+
+				\addplot [blue] {x^-3};
+
+				\addlegendentry{$x^{-3}$};
+
+				\addplot [magenta] {x^-5};
+
+				\addlegendentry{$x^{-5}$};
+
+				\addplot [cyan] {x^-7};
+
+				\addlegendentry{$x^{-7}$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{$z$ ungerade und negativ $\Rightarrow f(x)$ punktsymmetrisch}}
+	\end{floatrow}
+\end{figure}
+
+\pagebreak
+
+\subsub{Wurzelfunktion}
+
+Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann. Wurzelfunktionen sind daher ebenso nicht-linear wachsend oder fallend. Gilt f\"{u}r die Definitionsmenge $D_{f}$ einer Wurzelfunktion $f(x)$, dass sie $\in \mathbb{R}$, so ist die Wurzelfunktion nur f\"{u}r positive Werte der Definitionsmenge ($x$-Werte) definiert, also $\mathbb{R^+}$.
+
+\textbf{Hauptform} \defas $ax^{\frac{m}{n}} + b = a\sqrt[n]{x^m} + b = 0$
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			samples=1000,
+			xlabel=x,
+			ylabel={f(x)},
+			domain=0:20,
+			axis lines = middle,
+			legend pos = outer north east
+		]
+
+		\addplot [blue] {x^(1/2)};
+
+		\addlegendentry{$\sqrt{x}$};
+
+		\addplot [magenta] {x^(2/3)};
+
+		\addlegendentry{$\sqrt[3]{2}$};
+
+		\addplot [cyan] {x^(1/5) + 1};
+
+		\addlegendentry{$\sqrt[5]{x}$};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\subsub{Polynomfunktion}
+
+Eine Polynomfunktion ist eine Potenzfunktion bestehend aus mehreren Termen, in denen jeweils die unabh\"{a}ngige Variable $x$ mit verschiedenen Potenzen vorkommt. Sie kann einen sehr komplexen Verlauf haben und ihre Funktionswerte k\"{o}nnen durch einen Abstand vom Ursprung auf der Ordinate verschoben werden.
+Spricht man von einer Polynomfunktion $n$-ten Grades, so ist die h\"{o}chste vorkommende Potenz der Polynome $n$.
+
+\textbf{Allgemeine Form} \defas $\sum_{i=0}^{n} a_{i}x^i$
+
+Hierbei ist der erste Term $a_{0}x^0$ der Abstand vom Ursprung, da $x^0 = 1$ und somit nur $a_{0}$ als Koeffizient ohne Variable \"{u}brig bleibt.
+
+F\"{u}r eine Polynomfunktion $n$-ten Grades gibt es folgende Zusammenh\"{a}nge:
+
+\begin{itemize}
+	\item Anzahl der Nullstellen (N) =
+	      $\begin{cases}
+	      	0 \leq N \leq n\text{, wenn n gerade}\\
+	      	1 \leq N \leq n\text{, wenn n ungerade}
+	      \end{cases}$
+	\item Anzahl der Extremstellen (E) = $1 \leq E < n$
+	\item Anzahl der Wendepunkte (W) = $0 \leq W < n - 1$
+\end{itemize}
+
+\begin{figure}[t!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			samples=1000,
+			xlabel=$x$,
+			ylabel={$f(x)$},
+			domain=-3:7,
+			restrict y to domain=-10:6,
+			axis lines = middle,
+			legend pos = outer north east
+		]
+
+		\addplot [blue] {x^3 - 5*x - 4};
+
+		\addlegendentry{$x^3 - 5x + 1$};
+
+		\addplot [red] {(x^5 - 12*x^4 + 35*x^3 + 20*x^2 -156*x + 112)/56};
+
+		\addlegendentry{$(x^5 - 12x^4 + 35x^3 + 20x^2 -156x + 112) \div 56$};
+
+		\end{axis}
+	\end{tikzpicture}
+\caption*{Polynomfunktionen 3. und 5. Grades}
+\end{figure}
+
+\pagebreak
+
+\subsub{Exponentialfunktion}
+
+Die Funktionswerte einer Exponentialfunktion wachsen oder fallen exponentiell. Daher gilt f\"{u}r eine Exponentialfunktion $f(x) = ab^x$, dass $f(x + 1) = f(x) \cdot b$. Oftmals ist die Basis $b$ gleich der Euler'schen Zahl $e$, was vor allem bei Wachstums- und Zerfallsmodellen von Bedeutung ist.
+
+\textbf{Allgemeine Form} \defas $ab^x$
+
+Hierbei ist $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abst\"{a}nd vom Ursprung, da f\"{u}r $x = 0$ anf\"{a}nglich $b^0 = 1$ gilt, somit ist der Abstand vom Ursprung $a \cdot 1$. Gilt f\"{u}r eine Exponentialfunktion $a = 1$, so hat sie ihren Abstand vom Ursprung bei $y =1$, da $1 \cdot b^0 = 1$.
+
+Gilt $0 \leq b < 1$, f\"{a}llt die Funktion, da eine Zahl zwischen 0 und 1 mit sich selbst multipliziert noch kleiner wird. Zwischen $x = 0$ und $x = 1$ hat eine solche fallende Exponentialunktion hohe Funktionswerte, da die rationalen $x$-Werte zwischen 0 und 1 als Exponenten gleich einer Wurzel sind. Zieht man aus einem $b$, f\"{u}r welches gilt $0 \leq b < 1$, eine Wurzel, vergr\"{o}\ss{}ert sich der Wert.
+
+Ist $b > 1$, ergeben niedrige $x$-Werte niedrige Funktionswerte, da die Wurzel gezogen wird.
+
+\begin{figure}[h!]
+	\begin{floatrow}
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					domain=-3:4,
+					restrict y to domain=0:10,
+					axis lines = middle,
+					legend pos = north west
+				]
+
+				\addplot [blue] {2^x};
+
+				\addlegendentry{$2^x$};
+
+				\addplot [magenta] {4^x};
+
+				\addlegendentry{$4^x$};
+
+				\addplot [cyan] {2*3^x};
+
+				\addlegendentry{$-2 \cdot 3^x$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{Exponentialfunktionen mit Basen $b$ gr\"{o}\ss{}er 1}}
+
+		\ffigbox
+		{
+			\begin{tikzpicture}
+				\begin{axis}
+				[
+					samples=1000,
+					xlabel=$x$,
+					ylabel={$f(x)$},
+					domain=-5:7,
+					restrict y to domain=0:10,
+					axis lines = middle,
+					legend pos = north east
+				]
+
+				\addplot [blue] {0.5^x};
+
+				\addlegendentry{$0.5^x$};
+
+				\addplot [magenta] {0.25^x};
+
+				\addlegendentry{$0.25^x$};
+
+				\addplot [cyan] {2 * 0.75^x};
+
+				\addlegendentry{$2 \cdot 0.75^x$};
+
+				\end{axis}
+			\end{tikzpicture}
+		} {\caption*{Exponentialfunktionen mit Basen $b$ kleiner 1}}
+	\end{floatrow}
+\end{figure}
+
+\pagebreak
+
+F\"{u}r Modellierungen von Wachstum und Zerfall biologischer oder sonstiger nat\"{u}rlicher Vorg\"{a}nge wird oft die Euler'sche Zahl $e$ als Basis verwendet. Die Funktionsgleichung einer Wachstums- oder Zerfallsfunktion beeinschlie\ss{}t neben der unabh\"{a}ngigen Variable $t$ (= Zeit) noch eine Wachstums- bzw. Zerfallskonstante $\lambda$ als Exponent der Basis $e$. Der Koeffizient $a$ ist gleich der urspr\"{u}nglichen Menge des Wachstums- / Zerfallsprozesses und wird $N_{0}$ bezeichnet. 
+
+\textbf{Wachstums- bzw. Zerfallsfunktionsgleichung} \defas $N(t) = N_{0} = e^{\lambda \cdot t}$
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			samples=1000,
+			xlabel=$x$,
+			ylabel={$f(x)$},
+			restrict y to domain=-11:11,
+			axis lines = middle,
+			legend pos = north west
+		]
+
+		\addplot [red] {e^x};
+
+		\addlegendentry{$e^x$};
+
+		\end{axis}
+	\end{tikzpicture}
+\caption{Exponentielles Wachstum mit $e$ als Basis}
+\end{figure}
+
+\pagebreak
+
+\subsub{Sinus- und Cosinusfunktion}
+
+Sinus- und Cosinusfunktionen sind periodsch fallend und wachsende Funktionen, dessen Definitionswerte (oft \emph{Phase} genannt) meist in Grad oder in Radien angegeben wird. Der Phasenunterschied zwischen Cosinus- und Sinusfunktion betr\"{a}gt $90\degree$ bzw. $\frac{\pi}{2}$ Radien.
+
+\textbf{Allgemeine Sinufunktion} \defas $f(x) = a \cdot \sin(bx + c) + d$
+
+\textbf{Allgemeine Cosinusfunktion} \defas $f(x) = a \cdot \cos(bx + c) + d$
+
+Aus oben gennanter Beschreibung l\"{a}sst sich schlie\ss{}en: $\cos(x) = \sin(x + \frac{\pi}{2})$
+
+Der Faktor $a$ bestimmt die maximale Amplitude (= H\"{o}he) der Funktion. $b$ bestimmt die Periode $p$. Da Sinus- und Cosinusfunktionen im Normalfall, also wenn gilt $b=1$, eine Periode von $2\pi$ haben, gilt allgemein $p = b \cdot 2\pi$. Die Konstante $c$ ist eine beliebige Phasenverschiebung auf der Abszisse. $d$ ist ein Abstand vom Ursprung auf der Ordinate.
+
+Einige Bemerkungen:
+
+\begin{itemize}
+	\item Nullstellen der Sinusfunktion liegen bei $c$ sowie $\frac{p}{2} + c$, jene der Cosinusfunktion bei $\frac{p}{4} + c$ sowie $\frac{3p}{4} + c$
+	\item Extremstellen der Sinusfunktion liegen bei $\frac{p}{4} + c$ sowie $\frac{3p}{4} + c$, jene der Cosinusfunktion bei $c$ sowie $\frac{p}{2} + c$
+	\item $[\sin(x)]' = \cos(x)$, $[\cos(x)]' = -\sin(x)$
+	\item $[\sin(kx)]' = k \cdot \cos(kx)$, $[\cos(kx)]' = k \cdot -\sin(kx)$
+\end{itemize}
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			samples=1000,
+			xlabel=$x$,
+			ylabel={$f(x)$},
+			domain=-8:8,
+			xmin=-6, xmax=6,
+			ymin=-4, ymax=4,
+			axis lines = middle,
+			legend pos = outer north east
+		]
+
+		\addplot [blue] {sin(deg(2 * x)};
+
+		\addlegendentry{$\sin(2x)$}
+
+		\addplot [red] {3 * cos(deg(x))};
+
+		\addlegendentry{$3 \cdot \cos(x)$}
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
 
 \end{document}
