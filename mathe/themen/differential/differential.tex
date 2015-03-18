@@ -1,0 +1,125 @@
+% Differentialrechnung
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Differentialrechnung}
+
+\sub{Definition}
+
+Die Differentialrechnung besch\"{a}ftigt sich mit der Ver\"{a}nderung von unabh\"{a}ngigen und abh\"{a}ngigen Variablen einer Funktion in Abh\"{a}ngigkeit von einander. Wichtige Termini sind hierbei der Differenzenquotient, der die mittlere \"{A}nderungsrate bzw. durchschnittliche Steigung einer Funktion ausdr\"{u}ckt; der Differentialquotient, der die momentane \"{A}nderungsrate bzw. momentane Steigung beschreibt; sowie die Kurvendiskussion, bei welcher sich mit Hilfe von Differenzen- und Differentialquotient die Eigenschaften einer Funktion beschreiben lassen. 
+
+Generell l\"{a}sst sich sagen, dass sich die Differentialrechnung mit \textbf{relativen} \"{A}nderungsma\ss{}en besch\"{a}ftigt (z.B. eine relative Zunahme des Weges um 2 Meter \emph{pro} Sekunde --- Variablen in Relation zu einander) und nicht mit \textbf{absoluten} \"{A}nderungsma\ss{}en (z.B. eine absolute Zunahme des Weges um 5 Meter nach 10 Sekunden --- keine Relation zwischen den Variablen).
+
+\sub{Differenzenquotient}
+
+Der Differenzenquotient $k = \frac{\Delta y}{\Delta x}$ einer Funktion $f(x)$ ist ein \textbf{relatives \"{A}nderungsma\ss{}}, welches f\"{u}r zwei beliebiege unabh\"{a}ngige Variablen $x_{0}$ und $x_{1}$ aus der Definitionsmenge $D_{f}$ und den beiden entsprechenden abh\"{a}ngigen Variablen $f(x_{0})$ bzw. $y_{0}$ und $f(x_{1})$ bzw. $y_{1}$ aus der Wertemenge $W_{f}$, die \"{A}nderung dieser beiden Variablen in Relation zu einander beschreibt. Der daraus resultierende Wert $k$ dr\"{u}ckt aus, um wieviele Einheiten sich $f(x)$ im Intervall $[x_{0} ; x_{1}]$ ver\"{a}ndert, wenn $x$ um eine Einheit w\"{a}chst oder f\"{a}llt. Der Differenzenquotient ist somit die \textbf{mittlere \"{A}nderungsrate} bzw. die \textbf{durschnittliche Steigung} in diesem Intervall. F\"{u}r den Differenzenquotient einer Funktion $f(x)$ im Intervall $[x_{0} ; x_{1}]$ gilt somit: $$k = \frac{\Delta f(x)}{\Delta x} = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}$$
+
+Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sekantensteigung} modellieren. Die Sekantensteigung einer Funktion $f(x)$ ist die Hypotenuse des Steigungsdreiecks zwischen den Punkten $P_{0}(x_{0}|y_{0})$ und $P_{1}(x_{1}|y_{1})$.
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture} 
+
+		% x axis
+		\draw [<->] 
+		      (-1, 0) 
+		   -- (5, 0) node [pos=0.167, below right] {0}
+		   	         node [pos=0.333] {$|$}
+		   	         node [pos=0.333, below right] {$x_{0}$}
+		   			 node [pos=0.664] {$|$}
+		   			 node [pos=0.664, below right] {$x_{1}$}
+		   		     node [above] {x};
+
+		% y axis
+		\draw [<->]
+		      (0, -1)
+		   -- (0, 5) node [pos=0.333] {---}
+		   		     node [pos=0.333, above left] {$y_{0}$}
+		   			 node [pos=0.664] {---}
+		   			 node [pos=0.664, above left] {$y_{1}$}
+		   		     node [right] {y};
+
+		% function
+		\draw [samples=100, domain=-1:4]
+		      plot (\x, {((\x * \x)/4) + 1});
+
+		% steigungsdreieck
+		\draw [ ]
+			  (1, 1.25) circle [radius=1.2pt, fill=black]
+		             	node [below] {$P_{0}$}
+		   -- (3, 1.25) node [midway, below] {$\Delta x$}
+		   -- (3, 3.25) circle [radius=1.2pt, fill=black]
+		             	node [right] {$P_{1}$}
+		             	node [midway, right] {$\Delta y$};
+
+		% sekante
+		\draw [red]
+		      (-1, -0.75)
+		   -- (4.75, 5) node [midway, above left]
+		   	            {$k = \frac{\Delta y}{\Delta x}$};
+
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Differentialquotient}
+
+W\"{a}hrend der Differenzenquotient die durschnittliche Steigung in einem bestimmten Intervall $[x_{0};x_{1}]$ beschreibt, dr\"{u}ckt der Differentialquotient die \textbf{momentane Steigung} bzw. die \textbf{momentane \"{A}nderungsrate} einer Funktion an einer bestimmten Stelle $x$ aus. Der Differentialquotient an einer Stelle $x_{0}$ ist theoretisch gesehen ein Differenzenquotient in einem Intervall $[x_{0};x_{1}]$, in dem $x_{1}$ gegen $x_{0}$ und somit $\Delta x$ gegen $0$ strebt: $$\lim_{\Delta x\to0}\frac{\Delta f(x)}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{(x + \Delta x) - x}$$
+
+Geometrisch gesehen ist ein Differentialquotient einer Funktion $f(x)$ an einer Stelle $x_{0}$ die Steigung der Tangente an den Punkt $P(x_{0}|f(x_{0}))$. Diese Tangente entsteht durch eine Folge von Ann\"{a}herungen von Sekanten in einem immer kleiner werdenenden Intervall $[x_{0}, x_{1}]$. Somit kann der Differentialquotient bzw. die Tangentensteigung als Grenzwert von Sekantensteigungen gesehen werden.
+
+\begin{figure}[h!]
+\centering
+	\begin{tikzpicture} 
+
+		% x axis
+		\draw [<->] 
+		      (-1, 0) 
+		   -- (5, 0) node [pos=0.167, below right] {0}
+		   	         node [pos=0.333] {$|$}
+		   	         node [pos=0.333, below right] {$x_{0}$}
+		   		     node [above] {x};
+
+		% y axis
+		\draw [<->]
+		      (0, -1)
+		   -- (0, 5) node [pos=0.333] {---}
+		   		     node [pos=0.333, above left] {$y_{0}$}
+		   		     node [right] {y};
+
+		% function
+		\draw [samples=100, domain=-1:4.45]
+		      plot (\x, {((\x * \x)/5) + 1});
+
+		% sekanten points
+		\draw (1, 1.25) circle [radius=1.2pt, fill=black]
+						node [below] {$P_{0}$};	
+
+		% sekanten
+		\draw [blue] 
+		      (-1, -0.717)
+		   -- (4, 4.25) node [above left] {$P_{1}$}
+		   -- (4.813, 5);
+
+		\draw [magenta]
+		      (-1, -0.3)
+		   -- (3, 2.8) node [right] {$P_{2}$}
+		   -- (5, 4.35);
+
+		\draw [cyan]
+		      (-1, 0.15)
+		   -- (2, 1.8) node [below right] {$P_{3}$}
+		   -- (5, 3.45);
+
+	\end{tikzpicture}
+\end{figure}
+
+\sub{Ableiten}
+
+\ldots
+
+\end{document}
