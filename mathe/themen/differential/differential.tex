@@ -118,8 +118,409 @@ Geometrisch gesehen ist ein Differentialquotient einer Funktion $f(x)$ an einer 
 	\end{tikzpicture}
 \end{figure}
 
-\sub{Ableiten}
+\sub{Ableitung}
 
-\ldots
+Die Ableitung einer Funktion $f(x)$ ordnet jedem unabh\"{a}ngigen $x$-Wert auf der Abszisse bzw. aus der Definitionsmenge $D_f$ den Differentialquotienten an dieser Stelle als neuen Funktionswert der Ableitungsfunktion $f'(x)$ zu. 
+
+\begin{figure}[hb!]
+\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			xlabel = $x$,
+			ylabel = $f(x)$,
+			legend pos = outer north east,
+			axis lines = middle,
+			restrict y to domain = -10:10,
+			samples = 100
+		]
+
+			\addplot [magenta] {x^3 - 3*x^2 - x + 3};
+
+			\addlegendentry{$f(x) = x^3 - 3x^2 - x + 3$};
+
+			\addplot [blue] {3*x^2 - 6*x - 1};
+
+			\addlegendentry{$f'(x) = 3x^2 - 6x - 1$};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+Um eine Funktion abzuleiten, gibt es mehrere Verfahren bzw. Regeln: die Potenzregel, die Kettenregel, die Quotientenregel sowie die Reziprokregel. Ebenso gibt es bestimmte Eigenheiten einiger Funktionstypen im Bezug auf ihre Ableitungen, welche genannt werden sollten.
+
+\subsub{Potenzregel}
+
+Die Potenzregel ist f\"{u}r Terme der Form $ax^b\,|\,b \in \mathbb{Z}$ geeignet. Alle anderen Ableitungsregeln lassen sich auf die Potenzregel zur\"{u}ckf\"{u}hren: $$[ax^b]' = b \cdot ax^{b-1}$$
+
+\emph{Beispiel}: $f(x) = 3x^4 - 8x^3 - 5x^2 + 13x - 21$
+
+\begin{tabular}{l l}
+	I. Anwendung der Potenzregel beim ersten Term: & $[3x^4]' = 4 \cdot 3x^{4-1}  12x^3$
+	\extrapar \\
+	II. Anwendung der Potenzregel beim zweiten Term: & $[-8x^3]' = 4 \cdot (-8x^{3-1}) = 24x^2$
+	\extrapar \\
+	III. Anwendung der Potenzregel beim dritten Term & $[5x^2]' = 2 \cdot 5x^{2-1} = 10x$
+	\extrapar \\
+	IV. Anwendung der Potenzregel beim vierten Term: & $[13x]' = [13x^1]' = 1 \cdot 13x^{1 - 1} = 13$
+	\extrapar \\
+	V. Konstanter Term f\"{a}llt weg: & $[21]' = [21x^0]' = 0 \cdot 21x^{0-1} = 0$
+\end{tabular}
+
+\emph{Ergebnis}: $f'(x) = 12x^3 - 24x^2 - 10x + 13$
+
+\subsub{Produktregel}
+
+Die Produktregel wird zur Ableitung eines Produktes zweiter Funktion bzw. Funktionsgliedern $u(x)$ und $v(x)$ angewendet, in welchen beide Male die unabh\"{a}nigige Variable $x$ enthalten ist. Die Produktregel ist eine effiziente Methode die Ausmultiplikation der Funktionen zu vermeiden (wodurch die Ableitungsfunktion jedoch auch berechnet werden k\"{o}nnte): $$ [u(x) \cdot v(x)]' = u' \cdot v + v' \cdot u$$
+
+\emph{Beispiel}: $f(x) = (x^2 - 5) \cdot (x^3 + 4x + 12)$
+
+\begin{tabular}{l l}
+	I. Bestimmung der ersten Termgruppe: & $u(x) = x^2 - 5$
+	\extrapar \\
+	II. Bestimmung der zweiten Termgruppe: & $v(x) = x^3 + 4x + 12$
+	\extrapar \\
+	III. Ableiten von $u(x)$: & $u'(x) = 2x$
+	\extrapar \\
+	IV. Ableiten von $v(x)$: & $v'(x) = 3x^2 + 4$
+	\extrapar \\
+	V. Anwendung der Produktregel: & $u' \cdot v + v' \cdot u = 2x \cdot (x^3 + 4x + 1) + (3x^2 + 4) \cdot (x^2 - 5)$
+	\extrapar \\
+	VI. Ausmultiplizieren: & $(2x^4 + 8x^2 + 2x) + (3x^4 - 15x^2 + 4x^2 - 20)$
+\end{tabular}
+
+\emph{Ergebnis}: $f'(x) = 5x^4 - 3x^2 + 2x - 20$
+
+\pagebreak
+
+\subsub{Quotientenregel}
+
+Die Quotientenregel wird dann verwendet, wenn die Funktion Br\"{u}che enth\"{a}lt, in welchen die unab\"{a}ngige Variable $x$ sowohl im Nenner $v(x)$ als auch im Z\"{a}hler $u(x)$ vorkommt: $$\left[\frac{u(x)}{v(x)}\right]' = \frac{u' \cdot v - v' \cdot u}{v^2}$$
+\emph{Beispiel}: $f(x) = \frac{5x^3 + 9x - 7}{4-x^2}$
+
+\begin{tabular}{l l}
+	I. Bestimmung der ersten Termgruppe: & $u(x) = 5x^3 + 9x - 7$
+	\extrapar \\
+	II. Bestimmung der zweiten Termgruppe: & $v(x) = 4 - x^2$
+	\extrapar \\
+	III. Ableiten von $u(x)$: & $u'(x) = 15x^2 + 9$
+	\extrapar \\
+	IV. Ableiten von $v(x)$: & $v'(x) = 2x$
+	\extrapar \\
+	V. Anwendung der Quotientenregel: & $\frac{u' \cdot v - v' \cdot u}{v^2} = \frac{(15x^2 + 9) \cdot (4-x^2) - (2x) \cdot (5x^3 + 9x - 7)}{(4-x^2)^2}$
+	\extrapar \\
+	VI. Ausmultiplizieren: & $\frac{(60x^2 - 15x^4 + 36 - 9x^2) - (10x^4 + 18x^2 - 14)}{x^4 - 8x^2 + 16}$
+\end{tabular}
+
+R\"{u}ckf\"{u}hrung auf Potenzregel bzw. Produktregel:\hspace{1cm}$\frac{u(x)}{v(x)} = u(x) \cdot [v(x)]^{-1}$
+
+\emph{Ergebnis}: $f'(x) = \frac{-25x^4 +33x^2 + 50}{x^4 - 8x^2 + 16}$:
+
+\subsub{Reziprokregel}
+
+Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft, wenn der Z\"{a}hler $u(x)$ gleich 1 ist, sodass f\"{u}r die Funktion $f(x)$ gilt, dass sie eine \emph{Reziprokfunktion} der Form $\frac{1}{v(x)}$ ist: $$\left[\frac{1}{v(x)}\right]' = \frac{-v}{v^2}$$
+\emph{Beispiel}: $f(x) = \frac{1}{1 - x^2}$
+
+\begin{tabular}{l l}
+	I. Ermittlung der Termgruppe: & $v(x) = 1 - x^2$
+	\extrapar \\
+	II. Ableiten von $v(x)$: & $v'(x) = -2x$
+	\extrapar \\
+	III. Anwendung der Reziprokregel: & $\frac{-v'}{v^2} = \frac{2x}{(1-x^2)^2}$
+\end{tabular}
+
+\emph{Ergebnis}: $f'(x) = \frac{2x}{x^4 - 2x^2 + 1}$
+
+R\"{u}ckf\"{u}hrung auf die Quotientenregel: \hspace{1cm} $\left[\frac{u(x)}{v(x)}\right]' = \left[\frac{1}{v(x)}\right]' = \frac{[1]' \cdot v - v' \cdot 1}{v^2} = \frac{0 \cdot v - v'}{v^2} = \frac{-v'}{v^2}$
+
+\subsub{Kettenregel}
+
+Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine weitere Funktion $v(x)$ enth\"{a}lt, wobei beide Funktionen Terme mit der unabh\"{a}ngigen Variable $x$ besitzen. Hierbei muss man die \"{a}u\ss{}ere Ableitung $[u(v)]'$ mit der inneren $v'$ multiplizieren: $$[u(v(x))]' = v' \cdot [u(v)]'$$
+\emph{Beispiel}: $f(x) = (3x - 4)^2$
+
+\begin{tabular}{l l}
+	I. Bestimmung des inneren Gliedes: & $v(x) = 3x - 4$
+	\extrapar \\
+	II. Bestimmung des \"{a}u\ss{}eren Gliedes: & $u(v(x)) = [v(x)]^2$
+	\extrapar \\
+	III. Ableiten des inneren Gliedes: & $v'(x) = 3x$
+	\extrapar \\
+	IV. Ableiten des \"{a}u\ss{}eren Gliedes: & $[u(v(x))]' = 2 * (3x - 4) = 6x - 8$
+	\extrapar \\
+	V. Anwendung der Kettenregel: & $v' \cdot [u(v)]' = 3x \cdot (6x - 8)$
+\end{tabular}
+
+\emph{Ergebnis}: $f'(x) = 18x^2 - 24x$
+
+\sub{Kurvendiskussion}
+
+Die Kurvendisskussion besch\"{a}ftigt sich mit der Analyse der Nulls-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie, der Steigung sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an den Wendepunkt, der sogenannte \emph{Wendetangente}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, welche sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion gleich null ist. 
+
+Beispiel:
+
+\emph{Gib f\"{u}r die Funktion $f(x) = x^4 - 3x^2 + 2x$ die Wende- und Extrempunkte sowie die Nullstellen, samt Vielfachheit, an. Beschreibe ebenso die Monotonie der Funktion. Fertige eine Skizze an.}
+
+\textbf{Schritt I: Ableitungen der Funktion $f(x)$ anschreiben}
+
+$f(x) = x^4 - 3x^2 + 2x$
+
+$f'(x) = 4x^3 - 6x + 2$
+
+$f''(x) = 12x^2 - 6$
+
+\textbf{Schritt II: Nullstellen finden}
+
+Da es sich bei $f(x)$ um eine Polynomfunktion 4. Grades handelt, kann man sie nicht direkt in eine der beiden L\"{o}sungsformeln einsetzen, welche nur f\"{u}r Polynomfunktionen 2. Grades anwendbar sind. Daher muss man zuerst zwei Nullstellen durch Probieren sowie Abspalten finden. 
+
+\pagebreak
+
+Man sieht bei $f(x)$, dass der konstante Term nicht vorhanden bzw. gleich 0 ist, was bedeutet, dass die Funktion bei $x=0$ keinen Abstand vom Ursprung hat. Somit erf\"{a}hrt man schon, dass die erste Nullstelle $N_{1}$ im Ursprung liegt: $N_{1} = 0$
+
+Danach f\"{u}hrt man eine Polynomdivision von $f(x)$ durch $x-N_{1}$. Da $N_{1}$ gleich 0 ist, ist die Polynomdivision auf eine Division durch $x$ reduziert: $$\frac{f(x)}{x} = \frac{x^4 - 3x^2 + 2x}{x} = x^3 - 3x + 2$$ Die n\"{a}chste Nullstelle findet man auf die selbe Weise durch Abspalten von $x^3 - 3x + 2 = 0$. Diesmal ist der konstante Term $k$ gleich $2$. Die neue Nullstelle ist jener $x$-Wert, f\"{u}r welchen bei Einsetzen in diese Gleichung gilt $0=0$. Diesen $x$-Wert findet man nur durch Probieren. Mit Sicherheit liegt der Wert zwischen $-k$ und $k$ und ist meistens ein Teiler von $k$. Daher versucht man in diesem Fall zuerst $\pm 1$ und $\pm 2$ einzusetzen. Man erf\"{a}hrt somit, dass die zweite Nullstelle $N_{2}$ bei $x=1$ liegt. Mit diesem Wert f\"{u}hrt man nun wieder eine Polynomdivision durch:
+
+\begin{eq}
+$(x^3 - 3x + 2) \div (x - 2) = x^2 + x - 2$
+$\underline{-x^3 + x^2}$
+
+$x^2 - 3x + 2$
+
+$\underline{-x^2 + x}$
+
+$-2x + 2$
+
+$\underline{2x - 2}$
+
+$0$ Rest
+
+\end{eq}
+
+Die neue Funktion lautet somit $x^2 + x - 2$. Da es sich hierbei um eine Funktion zweiten Grades handelt, kann man sie in die Gro\ss{}e L\"{o}sungsformel einsetzen, welche f\"{u}r Funktionen des Schemas $ax^2 + bx + c$ anwendbar ist: $$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$ Da der Koeffizient $a$ hierbei gleich $0$ ist, k\"{o}nnte man ebenso in die Kleine L\"{o}sungsformel f\"{u}r Funktionen des Schemas $x^2 + px + q$ einsetzen: $$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$ In diesem Fall sind aber alle Koeffizienten, also $a$ bei $ax^2$ sowie $b$ bei $bx$ gleich null. Daher ist es noch effizienter, einfach einen $x$-Wert herauszuheben:
+
+\begin{eq}
+$x^2 + x - 2 = 0$
+
+$x(x + 1) = 2$
+
+$x_{1} = 2$
+
+$x + 1 = 2\,|\,-1$
+
+$x_{2} = 1$
+\end{eq}
+
+Die dritte Nullstelle $N_{3}$ liegt somit bei $2$ und die vierte Nullstelle $N_{4}$ liegt bei $1$. Da schon $N_{2}$ bei $1$ lag, handelt sich bei $N_{2}$ bzw. $N_{4}$ um eine \emph{zweifache Nulstelle}. 
+
+Nun sind also alle Nullstellen gefunden: $N_{1}(0|0),\, N_{2,4}(1|0),\, N_{3}(2|0)$
+
+\pagebreak
+
+\textbf{Schritt III: Extrempunkte finden}
+
+Als n\"{a}chstes gilt es, die Hoch- und Tiefpunkte, also die Extrempunkte, der Funktion zu finden. Zun\"{a}chst sei wieder angemerkt, dass der Unterschied zwischen einer Stelle und einem Punkt jener ist, dass eine Stelle nur den $x$-Wert auf der Abszisse nennt, w\"{a}hrend ein Punkt ein Zahlentupel bestehend aus der Stelle und ihrem Funktionswert ist.
+
+An einer Extremstelle ist die Steigung gleich $0$, da sich die Monotonie der Funktion genau im Extrempunkt \"{a}ndert (die Tangente an einen Extrempunkt ist waagrecht). Daher besch\"{a}ftigen wir uns mit der ersten Ableitung $f'(x)$ der Funktion $f(x)$ und bestimmen die Extrempunkte, in dem wir die Ableitung $f'(x)$ gleich 0 setzen: $$4x^3 - 6x + 2 = 0$$
+
+Da es sich hierbei wieder um eine Funktion dritten Grades handelt, gilt es eine Extremstelle durch probieren zu finden. Setzt man folglich Teiler des konstanten Terms $2$, also $\pm 1$ und $\pm 2$, ein, erh\"{a}lt man die erste Extremstelle $E_{1}$ bei $x = 1$. Mit diesem Wert f\"{u}hrt man erneut eine Polynomdivision durch:
+
+\begin{eq}
+$(4x^3 - 6x + 2) \div (x - 1) = 4x^2 + 4x - 2$
+
+$\underline{-4x^3 + 4x^2}$
+
+$4x^2 - 6x + 2$
+
+$\underline{-4x^2 + 4x}$
+
+$-2x + 2$
+
+$\underline{2x - 2}$
+
+$0$ Rest
+\end{eq}
+
+Die neue Funktion $4x^2 + 4x - 2$ dividiert man zun\"{a}chst durch $2$: $$\frac{4x^2 + 4x - 2}{2} = 2x^2 + 2x - 1$$
+
+Hierbei liegt wieder eine Funktion 2. Grades vor, welche in eine der beiden L\"{o}sungsformeln eingesetzt werden kann. F\"{u}r die Kleine L\"{o}sungsformel m\"{u}sste der Koeffizient des quadratischen Terms ($2x^2$) gleich $1$ sein. Da dies hier nicht der Fall ist und eine weitere Division durch $2$ das Problem nicht wirklich vereinfacht, setzt man in die Gro\ss{}e L\"{o}sungsformel ein:
+
+\begin{eq}
+$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+$x_{1,2} = \frac{-2 \pm \sqrt{(-2)^2 - 4 \cdot 2 \cdot (-1)}}{2 \cdot 2} = \frac{-2 \pm \sqrt{12}}{4}$
+
+$x_{1} = \frac{-2 - \sqrt{2}}{4} = -1.37$
+
+$x_{2} = \frac{-2 + \sqrt{2}}{4} = 0.37$
+\end{eq}
+
+\pagebreak
+
+Die beiden restlichen Extremstellen liegen also bei $x = -1.37$ und $x = 0.37$.  Durch Einsetzen der $x$-Werte der drei Extremstellen in die Funktionsgleichung $f(x)$ erh\"{a}lt man die Funktionswerte dieser Stellen: $$E_{1}(1 | 0),\, E_{2}(-1.37|-4.85), \, E_{3}(0.37|0.35)$$
+
+Letztlich kann es noch von Interesse sein, ob es sich bei einem bestimmten Extrempunkt um einen Hoch- oder um einen Tiefpunkt handelt. Dies erf\"{a}hrt man durch die Kr\"{u}mmung der Funktion an der Extremstelle. Ist die Kr\"{u}mmung negativ, liegt ein Hochpunkt vor; ist die Kr\"{u}mmung positiv, handelt es sich um einen Tiefpunkt. Ist die Kr\"{u}mmung jedoch null, liegt an dieser Stelle ebenso eine Wendestelle. Solch ein Punkt, welcher sowohl Extrem- also auch Wendepunkt ist, wird \emph{Sattel-} oder \emph{Terassenpunkt} genannt:
+
+\begin{tabular}{l l l l l}
+$E_{1}(1 | 0)$ & $\rightarrow$ & $f''(1) > 0$ & $\rightarrow$ & Tiefpunkt
+\\
+&&&&
+\\
+$E_{2}(-1.37 | -4.85)$ & $\rightarrow$ & $f''(-1.37) < 0$ & $\rightarrow$& Hochpunkt
+\\
+&&&&
+\\
+$E_{3}(0.37 | 0.35)$ & $\rightarrow$ & $f''(0.37) > 0$ & $\rightarrow$& Tiefpunkt
+\end{tabular}
+
+\textbf{Schritt IV: Wendepunkte finden}
+
+An einem Wendepunkt einer beliebigen Funktion \"{a}ndert sich stets das Kr\"{u}mmungsverhalten, also von positiv zu negativ oder umgekehrt. Daher ist an einem Wendepunkt die Kr\"{u}mmung gleich null. Somit gilt es, jene Stelle zu bestimmen, an welcher die zweite Ableitung $f''(x)$, welche die Kr\"{u}mmung der Funktion $f(x)$ beschreibt, gleich $0$ ist: $12x^2 - 6 = 0$
+
+Diese Funktion hat nur einen Term, welcher die unab\"{a}ngige Variable $x$ enth\"{a}lt: $12x^2$. Daher ist es sinnlos, diese Funktion in eine der beiden L\"{o}sungsformeln einzusetzen. Man formt einfach um:
+
+\begin{eq}
+$12x^2 - 6 = 0 \,|\,+ 6$
+
+$12x^2 = 6 \,|\, \div 12$
+
+$x^2 = 0.5 \,|\, \sqrt{}$
+
+$x_{1, 2} = \pm \sqrt{0.5}$
+
+$x_{1} = \sqrt{0.5}$
+
+$x_{2} = - \sqrt{0.5}$
+\end{eq}
+
+Durch Einsetzten der gefundenden Wende\emph{stellen} in die urspr\"{u}ngliche Funktionsgleichung $f(x)$, erh\"{a}lt man die beiden vollst\"{a}ndigen Wende\emph{punkte} der Funktion:
+
+\begin{tabular}{l l l l l}
+$x_{1} = \sqrt{0.5}$ & $\rightarrow$ & $f(\sqrt{0.5}) = 0.16$ & $\rightarrow$ & $W_{1}(\sqrt{0.5} | 0.16)$
+\\
+&&&&
+\\
+$x_{1} = -\sqrt{0.5}$ & $\rightarrow$ & $f(-\sqrt{0.5}) = -2.67$ & $\rightarrow$ & $W_{1}(-\sqrt{0.5} | -2.67)$
+\end{tabular}
+
+\pagebreak
+
+\textbf{Schritt V: Wendetangenten finden}
+
+Die Wendetangenten $t_{W_{1,2}}$ sind jene Geraden, welche die Funktion genau in den Wendepunkten ber\"{u}hren. Man findet sie durch einfaches Einsetzten der Wendekoordinaten in die allgmeine lineare Funktionsgleichung $y = kx + d$. Die Steigung k erh\"{a}lt man durch die erste Ableitung, in welche man die $x$-Koordinate des Wendepunktes einsetzt. Den Abstand vom Ursprung $d$ errechnet man sich folglich durch L\"{o}sen der linearen Funktionsgleichung. Den ersten Wendepunkt $W_{1}(\sqrt{0.5}|0.16)$ findet man somit durch die folgenden Schritte:
+
+\begin{tabular}{l l}
+	I. Aufstellen der linearen Funktionsgleichung: & $y = kx + d$
+	\\
+	II. Berechnung der Steigung an der Wendestelle: & $f'(\sqrt{0.5}) = -0.83$
+	\\
+	III. Einsetzen in die Funktionsgleichung: & $0.16 = \sqrt{0.5} \cdot -0.83 + d$
+	\\
+	IV. L\"{o}sen nach d: & $d = 0.75$
+	\\
+	V. Fertige Wendetangente $t_{W_{1}}$: & $y = -0.83x + 0.75$
+\end{tabular}
+
+Das selbe Verfahren wendet man auch f\"{u}r den zweiten Wendepunkt $W_{2}$ an, um die zweite Wendetangente $t_{W_{2}}$ zu finden.
+
+\textbf{Schritt VI. Skizze anfertigen}
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			xlabel = $x$,
+			ylabel = $y$,
+			axis lines = middle,
+			legend pos = outer north east,
+			restrict y to domain = -7:7,
+			samples = 1000
+		]
+
+			\addplot [blue] {x^4 - 3*x^2 + 2*x};
+
+			\addlegendentry{$f(x) = x^4 - 3x^2 + 2x$};
+
+
+			\addplot [magenta] {4*x^3 - 6*x + 2};
+
+			\addlegendentry{$f'(x) = 4x^3 - 6x + 2$};
+
+
+			\addplot[cyan] {12*x^2 - 6};
+
+			\addlegendentry{$f''(x) = 12x^2 - 6$};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\textbf{Schritt VII. Monotonie beschreiben}
+
+Die Monotonie einer Funktion bezieht sich auf ihr Steigungsverhalten, welches sich an den Extrempunkten ver\"{a}ndert. Ebenso erh\"{a}lt man durch die Kr\"{u}mmung der Funktion in einem bestimmten Intervall Informationen \"{u}ber ihre Monotonie. Ist die Kr\"{u}mmung negativ, wird die Steigung zunehmend negativer. Ist die Kr\"{u}mmung positiv, wird auch die Steigung in diesem Intervall zunehmend positiver. Da die Steigung an einer Extremstelle gleich 0 ist, darf diese Stelle nie zu einem Monotonieintervall dazugez\"{a}hlt werden. Das selbe trifft auch auf plus oder minus unendlich ($\infty$) zu. Somit gilt f\"{u}r die oben skizzierte Funktion $f(x)$:
+
+\begin{tabular}{l l l l}
+	Streng monoton wachsend in den Intervallen: & $] -1.37\,; 0.37\,[$ & $\land$ & $]\, 1\,; \infty \, [$
+	\\
+	&&&
+	\\
+	Streng monoton fallend in den Intervallen: & $] -\infty\,; -1.37\,[$ & $\land$ & $] \, 0.37\,; 1 \, [$
+\end{tabular}
+
+\pagebreak
+
+\sub{Finden von Polynomfunktionen}
+
+Mit Hilfe der Differentialrechnung ist es m\"{o}glich, eine Polynomfunktion beliebigen Grades mit nur wenigen Angaben zu finden. Pro Grad einer Polynomfunktion enth\"{a}lt sie eine weitere Variable, entweder als Koeffizient oder als konstanter Term bzw. Abstand vom Ursprung. Daher ben\"{o}tigt man zum Finden einer Polynomfunktion $n$-ten Grades mindestens $n$ Angaben zur Funktion oder einer ihrer Ableitungen.
+
+Beispiel:
+
+\emph{Der Graph einer Polynomfunktion 3. Grades besitzt den Tiefpunkt $T(3|-2)$ und den Wendepunkt $W(2|2)$. Wie lautet der Funktionsterm?}
+
+\textbf{Schritt I: Aufstellen von Funktionsgleichung und Ableitungen}
+
+Zun\"{a}chst ist es immer von Vorteil, die allgemeine Funktionsgleichung sowie jene der Ableitungen aufzustellen. F\"{u}r eine Funktion 3. Grades lauten diese:
+
+$f(x) = ax^3 + bx^2 + cx + d$
+
+$f'(x) = 3ax^2 + 2bx + c$
+
+$f''(x) = 6ax + 2b$
+
+\textbf{Schritt II: Interpretation der Angaben}
+
+Die Funktion besitzt \zitat{besitzt den Tiefpunkt $T(3|-2)$}. Daraus l\"{a}sst sich zum Ersten schlie\ss{}en, dass der Funktionswert der Funktion an der Stelle $x = 3$ gleich $-2$ ist. Dies kann man sofort in die Funktionsgleichung $f(x)$ einsetzen: $$f(3) = -2$$ $$27a + 9b + 3c + d = -3$$ Zum Zweiten handelt es sich hierbei um einen Extrempunkt. Daher muss die Steigung an der Stelle $x = 3$ gleich $0$ sein: $$f'(3) = 0$$ $$27a + 6b + c = 0$$ Ebenso findet man auf der Funktion \zitat{den Wendepunkt $W(2|2)$}. Wieder ergibt sich daraus ein Funktionswert: $$f(2) = 3$$ $$8a + 4b + 2c + d = 0$$ An einer Wendestelle ver\"{a}ndert sich die Kr\"{u}mmung der Funktion, daher ist die zweite Ableitung an dieser Stelle gleich 0: $$f''(2) = 0$$ $$12a + 2b = 0$$
+
+Somit haben sich f\"{u}r die Funktion 3. Grades nicht nur die ben\"{o}tigten 3, sondern sogar 4 Informationseinheiten finden lassen.
+
+\pagebreak
+
+\textbf{Schritt III: Schneiden der gefundenen Gleichungen}
+
+Nun gilt es, die gefundenen Gleichungen zu schneiden und somit alle Variablen der Funktion zu finden.
+
+I. $27a + 9b + 3c + d = -3$
+
+II. $27a + 6b + c = 0$
+
+III. $8a + 4b + 2c + d = 0$
+
+IV. $12a + 2b = 0$
+
+
+I $\cap\,-\text{II }\rightarrow$ V
+
+V $\cap\,-\text{III }\rightarrow$ VI
+
+VI $\cap \text{ II} \div -2 \rightarrow$ VII
+
+VII $\rightarrow a = 2$
+
+$a$ in VI $\rightarrow b = -12$
+
+$a, b$ in III $\rightarrow c = 18$
+
+$a, b, c$ in II $\rightarrow d = -2$
+
+Die fertige Funktion lautet demnach: $f(x) = 2x^3 - 12x^2 + 18x - 2$ 
 
 \end{document}

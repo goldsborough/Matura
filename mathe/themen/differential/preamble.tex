@@ -72,7 +72,7 @@
 
 \newcommand{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
-\newcommand{\extrapar}{\par\vspace{\baselineskip}}
+\newcommand{\extrapar}{\vspace{\parskip}\par}
 
 \newcommand{\zitat}[1]{\foreignquote{german}{#1}}
 
@@ -81,3 +81,7 @@
 \newcommand{\titleitem}[1]{\bolditem{#1}\par}
 
 \newcommand{\defas}{ \dots \,\,}
+
+\newenvironment{eq}
+{\begin{flushleft} \setlength{\parskip}{0.2cm}}
+{\end{flushleft}}
