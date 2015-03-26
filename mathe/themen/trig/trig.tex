@@ -1,0 +1,143 @@
+% Trigonometrie
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Trigonometrie}
+
+\sub{Definition}
+
+Die Trigonometrie behandelt die Dreiecksvermessung, von rechtenwinkeligen sowie anderen Dreiecken im Einheitskreis sowie allgmein. Wichtige Funktionen sind hierbei $\sin, \cos$ sowie $\tan$, mit welchen man den Sinus- und Cosinussatz bilden kann. Ebenso spielt der Satz des Pythagoras eine bedeutende Rolle.
+
+\sub{Schreibweisen}
+
+Allgemein ist f\"{u}r die Trigonometrie wichtig, dass man Punkte in einem Koordinatensystem als Kartesische Koordinaten oder als Polarkoordinaten anschreiben kann. 
+
+Ein kartesisches Koordinatentupel $P (x | y)$ besteht aus einer Variable $x$, welche einen Abstand auf der Abszisse beschreibt, sowie einer Variable $y$, welche die Position des Punktes auf der Ordinate angibt. Ein Beispiel w\"{a}re der Punkt $P(3 | 4)$.
+
+In Polarschreibweise wird ein Punkt $P [r, \phi]$ durch einen Winkel $\phi$, der eine Richtung zwischen $0$ und $360$ Grad angibt, sowie einen Abstand vom Ursprung $r$ (Radius) in die Richtung des Winkels beschrieben. Der Punkt $P$ w\"{a}re als Polarkoordinatentupel so angegeben: $P [5; 53.13\degree]$
+
+\sub{Sinus und Cosinus im Einheitskreis}
+
+Sowohl die Sinusfunktion $sin(x)$ als auch die Cosinusfunktion $cos(x)$ beschreiben Seitenverh\"{a}ltnisse zwischen den Seiten $a, b, c$ eines rechtwinkeligen Dreiecks. Besonders im Einheitskreis sind diese Verh\"{a}ltnisse von Interesse. Ein Einheitskreis $k$ ist jener Kreis, dessen Mittelpunkt $M (0 | 0)$ im Ursprung liegt und dessen Radius $r$ eine L\"{a}nge von $1$ besitzt. Geometrisch wird ein Einheitskreis durch die Gleichung $x^2 + y^2 = 1$ beschrieben.
+
+Am Einheitskreis kann jeder Punkt $P$ in Polarform mit $P [1;\phi]$ und in Kartesischer Form mit $P [\cos \phi; \sin \phi]$ angegeben werden. Die Steigung $k$ der Hypothenuse jenes rechtwinkligen Dreiecks, welches zwischen der $x$- und $y$-Koordinate des Punktes aufgespannt wird und im Falle des Einheitskreises stets eine L\"{a}nge von $r = 1$ hat, wird durch die Tangensfunktion $\tan \phi$ beschrieben. Daraus folgt:
+
+$\sin \phi$ \defas $y$-Koordinate des Punktes $P$
+
+$\cos \phi$ \defas $x$-Koordinate des Punktes $P$
+
+$\tan \phi$ \defas Steigung $k$ der Hypotenuse im Punkt $P \Rightarrow \tan \phi = \frac{\sin \phi}{\cos \phi}$
+
+In dem zwischen $x = \cos \phi$ und $y = \sin \phi$ aufgespannten rechtwinkligen Dreieck mit Hypotenuse $r = 1$, kann man die Seitenverh\"{a}ltnisse auch durch den Satz des Pythagoras $a^2 + b^2 = c^2$ beschreiben: $$\sin^2 \phi + \cos^2 \phi = 1$$
+
+\pagebreak
+
+\begin{figure}[t!]
+\centering
+	\begin{tikzpicture}
+
+		% x Achse
+		\draw [<->]
+		      (-4, 0)
+		   -- (-3, 0) node [above left] {$-1$}
+		   -- ( 3, 0) node [above right] {$1$}
+		   			  node [below, pos=0.7] {$x = \cos \phi$}
+		   -- ( 4, 0) node [above] {$x$};
+
+		% y Achse
+		\draw [<->]
+		      (0, -4)
+		   -- (0, -3) node [below right] {$-1$}
+		   -- (0,  3) node [above right] {$1$}
+		   -- (0,  4) node [right] {$y$};
+
+		% Quadrant nodes
+		\draw ( 3,  3.5) node {I}
+		      (-3,  3.5) node {II}
+		      (-3, -3.5) node {III}
+		      ( 3, -3.5) node {IV};
+
+		% Kreis
+		\draw (0, 0) circle [radius=3cm]
+		      		 node [below left] {$0$};
+
+		% Dreieick
+		\draw (0, 0)
+		   -- (2.121, 2.121) node [midway, above, rotate = 45]
+		   				          {$k = \tan \phi$}
+		   					 node [above right] {$P (x | y)$}
+		   -- (2.121, 0)     node [midway, right] {$y = \sin \phi$};
+
+
+		% Winkelbogen
+		\draw (1, 0) arc [start angle = 0, end angle = 45, radius = 1cm];
+
+		% Angle node
+		\draw (0.6, 0.25) node {$\phi$};
+
+
+	\end{tikzpicture}
+	\caption*{Ein Einheitskreis mit Mittelpunkt $M (0 | 0)$ und $r = 1$, in welchem zwischen $x = \cos \phi$ und $y = \sin \phi$ ein rechtwinkliges Dreieck mit $\phi = 45\degree$ aufgespannt ist.}
+\end{figure}
+
+Die L\"{a}nge der $y$-Kathete dieses rechtwinkligen Dreiecks ist in der oberen H\"{a}lte des Einheitskreises, also Quadranten I und II, stets positiv und in der unteren H\"{a}lfte, also Quadranten III und IV, negativ. Man \"{u}berlege sich dazu den Verlauf der Sinusfunktion $\sin(x)$. Sie beginnt mit $x = y = 0$, findet nach $x = \frac{\pi}{2}$ ihr Maximum, wo $y = 1$, f\"{a}llt dann bis zu $(x = \pi | y = 0)$ und wechselt dann ihr Vorzeichen. Gegens\"{a}tzlich dazu wechselt das Vorzeichen der $x$-Kathete nach Quadranten I und III, was auch mit dem Verlauf der Cosinusfunktion $\cos(x)$ \"{u}bereinstimmt. Aus diesen Beobachtungen folgt:
+
+\begin{table}[h!]
+	\begin{tabular}{c | c | c | c}
+		Quadrant & Winkel & $\sin \phi$ & $\cos \phi$
+		\\ \hline
+		I & $0 < 90$ & + & +
+		\\ 
+		II & $90 < 180$ & + & -
+		\\
+		III & $180 < 270$ & - & -
+		\\
+		IV & $270 < 360$ & - & +
+		\\
+	\end{tabular}
+\end{table}
+
+\sub{Sinus und Cosinus im rechtwinkligen Dreieck}
+
+Wie vorhin angemerkt, beschreiben Sinus und Cosinus Verh\"{a}ltnisse zwischen den Seiten $a, b$ und $c$ in einem rechtwinkligen Dreieck. In diesem bezeichnet man die dem Winkel $\phi$ gegen\"{u}berliegende Seite als \emph{Gegenkathete}, die anliegende als \emph{Ankathete} und die l\"{a}ngste Seite als \emph{Hypotenuse}. Gegen- und Ankathete fallen unter den Sammelbegriff \emph{Kathete}. F\"{u}r einen Winkel $0 < \phi \leq 90$ gilt in einem rechtwinkligen Dreieck somit:
+
+\begin{center}
+$\sin \phi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}}$
+\hspace{1cm}
+$\cos \phi = \frac{\text{Ankathete}}{\text{Hypotenuse}}$
+\hspace{1cm}
+$\tan \phi = \frac{\text{Gegenkathete}}{\text{Ankathete}}$
+\end{center}
+
+Nimmt man die Tatsache unter Betracht, dass im Einheitskreis die Hypotenuse $r$ stets die L\"{a}nge $1$ besitzt, wird klar, das $\sin \phi$ gleich der $y$-Koordinate bzw. der L\"{a}nge der Gegenkathete des Steigungsdreiekcs ist, da dann gilt $\sin \phi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}} = \frac{y}{1} = y$. Selbes gilt f\"{u}r $x$ und $\cos \phi$.
+
+
+\begin{figure}[t!]
+	\begin{tikzpicture}
+
+		% Triangle
+		\draw (0, 0)
+		   -- (4, 0) node [midway, below] {Ankathete}
+		   -- (4, 3) node [midway, right] {Gegenkathete}
+		   -- (0, 0) node [midway, above, rotate = 37] {Hypotenuse};
+
+		% Right angle arc
+		\draw (4, 0.75) arc [radius = 0.75cm, start angle = 90, end angle = 180];
+
+		% Right angle dot
+		\draw [fill=black] (3.7, 0.3) circle [radius=1.2pt];
+
+		% Phi arc
+		\draw (1.2, 0) arc [radius=1.2cm, start angle = 0, end angle = 37];
+
+		% Phi dot
+		\draw (0.8, 0.3) node {$\phi$};
+
+	\end{tikzpicture}
+	\caption*{Ein rechtwinkliges Dreieck mit Gegen- und Ankathete sowie Hypotenuse und Winkel $\phi$}
+\end{figure}
+
+\end{document}
