@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage[german]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage{libertine}
+
+\usepackage[libertine]{newtxmath}
+
+\usepackage{tikz}
+
+\usepackage{gensymb}
+
+\usepackage{fancyhdr}
+
+\usepackage{amsfonts}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.10}
+
+\usepackage{multicol}
+
+\usepackage{caption}
+
+\usepackage{floatrow}
+
+\usepackage[labelfont=bf]{caption}
+
+\everymath{\displaystyle}
+
+% Header / footer settings
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.2mm}
+\fancyhead[C]{Trigonometrie}
+\renewcommand{\footrulewidth}{0.2mm}
+\fancyfoot[L]{Peter Goldsborough}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\today}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0mm}%
+	\renewcommand{\footrulewidth}{0.2mm}%
+	\fancyfoot[L]{Peter Goldsborough}
+	\fancyfoot[C]{\thepage}
+	\fancyfoot[R]{\today}
+}
+
+
+\setlength{\headheight}{15pt}
+
+\setlength{\parindent}{0pt}
+
+\addtolength{\parskip}{\baselineskip}
+
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\newcommand{\heading}[1]{\begin{center}\Huge \textbf{#1}\end{center}\par}
+
+\newcommand{\sub}[1]{\vspace{\parskip}{\LARGE\textbf{#1}}}
+
+\newcommand{\subsub}[1]{{\Large \textbf{#1}}}
+
+\newcommand{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+\newcommand{\extrapar}{\vspace{\parskip}\par}
+
+\newcommand{\zitat}[1]{\foreignquote{german}{#1}}
+
+\newcommand{\bolditem}[1]{\item \textbf{#1}}
+
+\newcommand{\titleitem}[1]{\bolditem{#1}\par}
+
+\newcommand{\defas}{ \dots \,\,}
+
+\newenvironment{eq}
+{\begin{flushleft} \setlength{\parskip}{0.2cm}}
+{\end{flushleft}}
