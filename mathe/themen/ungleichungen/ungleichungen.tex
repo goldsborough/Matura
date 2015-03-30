@@ -1,0 +1,153 @@
+% Ungleichungen
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Ungleichungen}
+
+Ungleichungen geben mit Hilfe der Relationszeichen $<, \leq, \geq$ und $>$ Gr\"{o}\ss{}verh\"{a}ltnisse zwischen Termen an. Ebenso wie Gleichungen in Gleichungssystemen gel\"{o}st werden k\"{o}nnen, k\"{o}nnen auch Ungleichungen in Systemen aufgestellt und so zur L\"{o}sung und zum Finden der gesuchten Variablen, die das Ungleichungssystem erf\"{u}llen, f\"{u}hren.
+
+\sub{Relationen}
+
+Ungleichungsrelationen k\"{o}nnen zwischen zwei Termen bestehen, jedoch auch zwischen mehr als zwei, wenn man diese verkettet. Generell gibt es folgende Relationen zwischen zwei Termen $a$ und $b$:
+\begin{itemize}
+	\item $a < b$ \defas a ist kleiner als b
+	\item $a \leq b$ \defas a ist kleiner oder gleich b
+	\item $a \geq b$ \defas a ist gr\"{o}\ss{}er oder gleich b
+	\item $a > b$ \defas a ist gr\"{o}\ss{}er als b
+\end{itemize}
+
+\sub{Schreibweisen}
+
+Es gibt verschiedene Weisen, eine Ungleichung anzuschreiben, welche allesamt g\"{u}ltig sind:
+
+\subsub{Intervallschreibweise}
+
+In der Intervallschreibweise werden Grenzen einer Ungleichung durch Schranken angegeben, entweder $[$ bzw. $]$, f\"{u}r inklusive Grenzen ($\leq$ und $\geq$), oder $]$ bzw. $[$ f\"{u}r exklusive Grenzen ($<$ und $>$). Ist ein Term nur auf einer Seite begrenzt, wird die andere Grenze mit plus oder minus $\infty$ angegeben. Eine unendliche Grenze muss immer exklusiv sein. Beispiele:
+\begin{center}
+	$a < x \leq b \rightarrow x \in \,]a;b]$
+
+	$a < x < b \rightarrow x \in \,]a;b[$
+
+	$x < a \rightarrow x \in \,]-\infty;a[$
+
+	$x \geq b \rightarrow x \in \,[b;\infty[$
+\end{center}
+
+\subsub{Mengenschreibweise}
+
+Gibt man einen Ungleichung in der Mengenschreibweise an, muss man die Menge der reellen Zahlen auf eine bestimmte Kondition, die von der Ungleichung abh\"{a}ngt, eingrenzen. Die Menge selbst wird als L\"{o}sungsemenge $\mathbb{L}$ bezeichnet. Beispiele:
+\begin{center}
+	$a < x \leq b \rightarrow \mathbb{L} = \{x \in \mathbb{R}\,|\,a < x \leq b\}$
+
+	$x \geq b \rightarrow \mathbb{L} = \{x \in \mathbb{R}\,|\,x \geq b \}$
+\end{center}
+
+\pagebreak
+
+\subsub{Grafische Darstellung}
+
+Ebenso ist es m\"{o}glich, eine Ungleichung grafisch auf einem Zahlenstrahl darzustellen. Exklusive Schranken werden dabei mit einem Ring, inklusive mit einem Kreis dargestellt. Beispiel:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+
+	% Zahlenstrahl
+	\draw [<->]
+	      (-4, 0)
+	   -- ( 4, 0) node [midway, below left] {0}
+	   			  node [midway] {$|$};
+
+	% a
+	\draw [red]
+	      (-3, 0.5) circle [radius=2pt]
+	                node [above] {$a$};
+
+
+	\draw [red] (-2.9, 0.5) -- (1, 0.5);
+
+	\draw (1, 0.5) -- (4, 0.5);
+
+	% b
+	\draw [red, fill=red]
+		  ( 1, 1) circle [radius=2pt]
+		  	       node [above] {$b$}
+		-- (-3, 1);
+
+	\draw (-3, 1) -- (-4, 1);
+
+	\end{tikzpicture}
+	\caption*{$a < x \leq b$}
+\end{figure}
+
+\sub{Ungleichungssysteme}
+
+In einem Ungleichungssystem existieren f\"{u}r einen Term mehrere Ungleichungen, welche alle m\"{o}gliche, g\"{u}ltige Werte f\"{u}r den Term beschreiben. Einzelne Ungleichungen eines Systems werden mit den logischen Operatoren $\land$ (\zitat{und}) bzw. $\lor$ (\zitat{oder}) verbunden. Alle Ungleichungen eines Systems m\"{u}ssen erf\"{u}llt sein. Beispiele:
+
+$x < a \land x > b \rightarrow \mathbb{L} = \{x \in \mathbb{R}\,|\,x < a \land x > b\}$
+
+$x \geq a \lor x > b \rightarrow x \in [a;\infty[\, \lor \,]b;\infty[$
+
+\sub{\"{A}quivalenzumformungen}
+
+\"{A}quivalenzumformungen werden bei Ungleichungen prinzipiell gleich wie bei Gleichungen durchgef\"{u}hrt, indem man auf beiden Seiten der (Un-)Gleichung einen Term addiert, subtrahiert, mit ihm multipliziert oder dividiert. Jedoch muss bei einer Ungleichung das Relationszeichen umgekehrt werden, wenn mit einer negativen Zahl multipliziert oder dividiert wird:
+
+$-ax < b \,|\, \div (-a) \Rightarrow x > \frac{-b}{a}$
+
+$\frac{x}{-a} \geq b \,|\, \cdot (-a) \Rightarrow x \leq -ab$
+
+\sub{Fallunterscheidung bei Quadratischen Ungleichungen}
+
+Quadratische Gleichungen bestehen aus zwei Linearfaktoren $x_1$ und $x_2$. Je nach Vorzeichen der einzelnen Linearfaktoren ver\"{a}ndert sich das Vorzeichen ihres Produktes. Zwei gleiche Vorzeichen, $+ \land +$ oder $- \land -$, ergeben eine positives Produkt; zwei verschiedene Vorzeichen, $- \land +$ oder $+ \land -$, ergeben ein negatives Produkt. Daher muss man bei einer quadratischen Ungleichung zwischen den je zwei F\"{a}llen unterscheiden, die zum Vorzeichen f\"{u}hren k\"{o}nnen welches von der Ungleichung angegeben wird. Ist eine quadratische Gleichung schon in der Normalform $x^2 + px + q = 0$ angegeben, m\"{u}ssen die beiden Linearfaktoren erst durch L\"{o}sen der Gleichung gefunden werden. 
+
+\pagebreak
+
+Beispiel: \emph{L\"{o}se die quadratischen Ungleichung $x^2 + 3x - 4 \leq 0$}
+
+\begin{table}[h!]
+	\begin{tabular}{p{0.3cm} p{10cm} l}
+		I. & Gleichung l\"{o}sen um Linearfaktoren zu finden: & $x_{1,2} = -\frac{3}{2} \pm \sqrt{\frac{9}{4} + 4}$ 
+		\\ && \\
+		II. & Linearfaktoren: & $x_1 = 1\,,\,x_2 = -4$
+		\\ && \\
+		III. & Quadratische Ungleichung mit Linearfaktoren anschreiben: & $(x - 1)(x + 4) \leq 0$
+		\\ && \\
+		IV. & Erste M\"{o}glichkeit, dass das Produkt kleiner gleich 0 ist, ist das der erste Faktor $x - 1$ positiv und der zweite negativ $x + 4$ ist: & $x - 1 > 0 \,\land\, x + 4 < 0$
+		\\ && \\
+		V. & L\"{o}sen des ersten Ungleichungssystems ergibt eine leere Menge: & $\mathbb{L}_I = \{ \}$
+		\\ && \\
+		VI. & Zweiter Fall: & $x - 1 < 0$ und $x + 4 > 0$
+		\\ && \\
+		VII. & L\"{o}sen des zweiten Ungleichungssystems ergibt: & $\mathbb{L}_{II} = \{ x \in \mathbb{R} \,|\, -4 < x < 1\}$
+		\\ && \\
+		VIII. & Die L\"{o}sungsmenge $\mathbb{L}$ ist die Vereinigung von $\mathbb{L}_{I}$ und $\mathbb{L}_{II}$: & $\mathbb{L} = \mathbb{L}_I \cap \mathbb{L}_{II} = \,]-4;1 \,[$
+	\end{tabular}
+\end{table}
+
+\sub{Bruchungleichungen}
+
+Auch bei Bruchungleichungen der Form $\frac{a}{x - b} < 0$ ist es erforderlich, verschiedene F\"{a}lle zu betrachten, da ein negativer Nenner, bei Multiplikation beider Seiten der Ungleichungen mit diesem, das Relationszeichen umkehren w\"{u}rde. Des Weiteren muss man bei Bruchungleichen zuerst die Defintionsmenge bestimmen, da der Nenner nicht 0 sein darf.
+
+Beispiel: \emph{L\"{o}se die Bruchungleichung $\frac{3x}{5 - x} > 4$}
+
+\begin{table}[h!]
+	\begin{tabular}{p{0.3cm} p{8.5cm} l}
+		I. & Bestimmung der Definitionsmenge: & $5 - x = 0 \Rightarrow x = 5 \Rightarrow \mathbb{D} = \mathbb{R} \backslash \{5\}$
+		\\ && \\
+		II. & Erste Fall, wo $5 - x$ positiv ist: & $5 - x > 0$
+		\\ && \\
+		III. & L\"{o}sen der Ungleichung, wobei $>$ bleibt: & $\frac{3x}{5 - x} > 4 \,|\, \cdot (5 - x) \Rightarrow x > \frac{20}{7}$
+		\\ && \\
+		IV. & Nun haben wir ein erstes Ungleichungssystem: & $5 - x > 0 \land x > \frac{20}{7}$
+		\\ && \\
+		V. & L\"{o}sen des Ungleichungssystems ergibt $\mathbb{L}_{I}$: & $\mathbb{L}_{I} = \,\left]\frac{20}{7};5\,\right[$
+		\\ && \\
+		VI. & Selbes Verfahren f\"{u}r $5 - x < 0$, ergibt $\mathbb{L}_{II}$ (leere Menge): & $\mathbb{L}_{II} = \{ \}$
+		\\ && \\
+		VII. & L\"{o}sungsmenge $\mathbb{L}$ als Vereinigung von $\mathbb{L}_{I}$ und $\mathbb{L}_{II}$: & $\mathbb{L} = \mathbb{L}_I \cap \mathbb{L}_{II} = \left\{x \in \mathbb{R} \,|\, \frac{20}{7} < x < 5 \right\}$
+	\end{tabular}
+\end{table}
+
+\end{document}
