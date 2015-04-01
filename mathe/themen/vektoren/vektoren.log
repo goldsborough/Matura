@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  2 MAR 2015 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  1 APR 2015 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -941,8 +941,6 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 18.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 18.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 20.
  [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -958,59 +956,58 @@ LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 10.5pt on input line 56.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.9pt on input line 56.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 69.
 
-[2] [3] [4] [5]
-Overfull \hbox (54.94887pt too wide) in paragraph at lines 178--179
-\OT1/LinuxLibertineT-TLF/m/n/10.95 nur zwei der drei Ko-or-di-na-ten des ver-me
-int-li-chen Schnitt-punkts []ubereinstimmten. Ein m[]ogliches L[]osungsverfahre
-n
- []
+[2] [3] [4] [5] [6]
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 18.2pt on input line 218.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 13.7pt on input line 218.
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 24.88pt on input line 218.
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 18.2pt on input line 218.
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 13.7pt on input line 218.
+ [7] [8] [9]
 
-[6]
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 18.2pt on input line 220.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 13.7pt on input line 220.
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 220.
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 18.2pt on input line 220.
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 13.7pt on input line 220.
- [7] [8] (./vektoren.aux) ) 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] [11] [12] (./vektoren.aux) ) 
 Here is how much of TeX's memory you used:
- 16790 strings out of 493117
- 312418 string characters out of 6135432
- 353996 words of memory out of 5000000
- 19844 multiletter control sequences out of 15000+600000
+ 16802 strings out of 493117
+ 312600 string characters out of 6135432
+ 355010 words of memory out of 5000000
+ 19856 multiletter control sequences out of 15000+600000
  69212 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,54p,828b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/
-newtx/libertinealt.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libe
-rtine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/
-8r.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_xogrp
-z.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_c7kyj5
-.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_lu7m2n.
-enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLiberti
-neT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinLib
-ertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/libertine/L
-inLibertineTI.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/newtx/
-fxlri-5letters.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/newtx
-/fxlri-7letters.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/newt
-x/rntxmi.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtx
-mi.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/newtx/txex-bar.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/
-texlive/2014/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive
-/2014/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/newtx/zxlr.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/newtx/zxlri.pfb>
-Output written on vektoren.pdf (8 pages, 446418 bytes).
+ 57i,16n,54p,828b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/
+dvips/newtx/libertinealt.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvip
+s/libertine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips
+/base/8r.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn
+_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_
+c7kyj5.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libertine/lbtn_l
+u7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/libertine/LinL
+ibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/libertine/
+LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/liber
+tine/LinLibertineTI.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+newtx/fxlri-5letters.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/newtx/fxlri-7letters.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/newtx/rntxmi.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfon
+ts/rtxmi.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/rtx
+r.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/newtx/txex-bar.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive
+/2014/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2014/
+texmf-dist/fonts/type1/public/newtx/zxlr.pfb></usr/local/texlive/2014/texmf-dis
+t/fonts/type1/public/newtx/zxlri.pfb>
+Output written on vektoren.pdf (12 pages, 470690 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
