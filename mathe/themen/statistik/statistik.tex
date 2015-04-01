@@ -1,0 +1,259 @@
+% Statistik
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Statistik}
+
+\sub{Definition}
+
+In der Statistik werden Daten bzw. Datens\"{a}tze untersucht und ihre Eigenschaften beschrieben. Wichtige Begriffe sind hierbei das arithmetische Mittel $\bar{x}$, der Median $\tilde{x}$, der Modus, die Spannweite, die Varianz $V$ sowie die Standardabweichung $\sigma$ einer Stichprobe, die auf bestimmte Merkmale untersucht wird. Ebenso ist es wichtig zu verstehen, dass Daten auf verschiedene Weisen dargestellt werden k\"{o}nnen, etwa in einem Kreis-, S\"{a}ulen-, Pikto-, Stab-, Boxplot oder St\"{a}nglblattdiagramm. 
+
+\sub{Grundbegriffe}
+
+\textbf{Grundgesamtheit} \defas die Menge aller f\"{u}r eine statistische Untersuchung relevanten Objekte. Beispiel: alle Sch\"{u}ler und Sch\"{u}lerinnen einer Volksschule in Fresach.
+
+\textbf{Stichprobe} \defas die Teilmenge der Grundgesamtheit, f\"{u}r die statistische Merkmale erhoben werden. Sie sollte m\"{o}glichst repr\"{a}sentativ f\"{u}r die Grundgesamtheit stehen. Beispiel: zehn zuf\"{a}llig gew\"{a}hlte Sch\"{u}ler der oben genannten Volksschule.
+
+\textbf{Merkmal} \defas die statistisch relevante Variable die bei der Stichprobe untersucht wird. Beispiel: die K\"{o}rpergr\"{o}\ss{}e der oben genannten zehn zuf\"{a}llig gew\"{a}hlten Sch\"{u}ler. 
+
+Es gibt verschiedene Kategorien von Merkmalen, f\"{u}r welche unterschiedliche Eigenschaften interessant sind:
+
+\begin{itemize}
+
+	\titleitem{Nominalskala}
+
+	Merkmale werden entsprechend einer Kategorie geordnet: Alter, Nationalit\"{a}t, Geschlecht, Sprache usw.
+
+	\titleitem{Ordinalskala}
+
+	Merkmale werden nach Gr\"{o}\ss{}e oder Rang geordnet: Bildungsniveau, Dienstgrad, Platzierung bei einem Wettbewerb.
+
+	\titleitem{Metrische Skala}
+
+		\begin{itemize}
+
+			\bolditem{Diskrete Merkmale} \defas aufz\"{a}hlbare Variablen $\in \mathbb{N}$: Alter, Einwohnerzahl usw.
+
+			\bolditem{Stetige Merkmale} \defas durch Messung bestimmte Variablen $\in \mathbb{R}$: L\"{a}nge, Gewicht
+
+		\end{itemize}
+
+\end{itemize}
+
+\textbf{Absolute H\"{a}ufigkeit} \defas die absolute Anzahl einer statistischen Variable ohne Relation zur Stichprobe. Beispiel: 4 Sch\"{u}ler sind 8 Jahre alt.
+
+\textbf{Relative H\"{a}ufigkeit} \defas die Anzahl einer statistischen Variable in Relation zur Stichprobe. Beispiel: 4 von 10 Sch\"{u}lern sind 8 Jahre alt ($4 \div 10 = 40\%$)
+
+\pagebreak
+
+\sub{Darstellungsformen}
+
+\subsub{Urliste}
+
+Am Anfang jeder statistischen Untersuchung steht eine Urliste, welche die gefundenen Merkmale der Stichprobe auflistet. Beispiel: die K\"{o}rpergr\"{o}\ss{}e (in cm) der zehn zuf\"{a}llig gew\"{a}hlten Sch\"{u}lerinnen und Sch\"{u}ler einer Volksschule in Fresach: $$\{ 153, 164, 112, 160, 160, 210, 155, 153, 112, 153 \}$$
+
+\subsub{St\"{a}nglblattdiagramm}
+
+Im ersten Schritt w\"{u}rde man diese Urliste ordnen, wozu man ein St\"{a}nglblattdiagramm als Hilfe anfertigen kann. In einem St\"{a}nglblattdiagramm werden in einer Tabelle in der ersten Spalte konstantere Stellen der statistischen Variablen angegeben und in der zweiten Spalte variierendere Stellen.
+
+\begin{table}[h!]
+	\begin{tabular}{l | l}
+		11 & 2, 2
+		\\
+		15 & 3, 3, 3, 5
+		\\
+		16 & 0, 0, 4
+		\\
+		21 & 0
+	\end{tabular}
+\end{table}
+
+Aus diesem St\"{a}nglblattdiagramm kann man folglich die geordneten Merkmale auslesen und in eine neue, geordnete Urliste geben: $$\{ 112, 112, 153, 153, 153, 155, 160, 160, 164, 210\}$$
+
+\subsub{S\"{a}ulendiagramm}
+
+Ein S\"{a}ulendiagramm stellt die absoluten H\"{a}ufigkeiten der einzelnen statistischen Variablen als S\"{a}ulen auf einer Skala dar.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			symbolic x coords = {
+		     112,
+			 153,
+			 155,
+			 160,
+			 164,
+			 210
+			},
+			 ytick=data
+		]
+
+		\addplot [ybar, fill=black]
+		         coordinates
+		         {
+		         	(112, 2)
+		         	(153, 3)
+		         	(155, 1)
+		         	(160, 2)
+		         	(164, 1)
+		         	(210, 1)
+		         };
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\subsub{Stabdiagramm}
+
+Gegens\"{a}tzlich zum S\"{a}ulendiagramm bildet ein Stabdiagramm nicht die absoluten, sondern die relativen H\"{a}ufigkeiten der Daten ab.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			symbolic x coords = {
+		     112,
+			 153,
+			 155,
+			 160,
+			 164,
+			 210
+			},
+			ytick=data
+		]
+
+		\addplot [ycomb]
+		         coordinates
+		         {
+		         	(112, 0.2)
+		         	(153, 0.3)
+		         	(155, 0.1)
+		         	(160, 0.2)
+		         	(164, 0.1)
+		         	(210, 0.1)
+		         };
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure} 
+
+\subsub{Kreisdiagramm}
+
+Ein Kreisdiagramm stellt ebenso wie ein Stabdiagramm die relativen H\"{a}ufigkeiten einzelner Daten eines Datensatzen dar. Dabei steht der ganze Kreis f\"{u}r $100 \%$ der H\"{a}ufigkeit. Die relative Fl\"{a}che einzelner Kreissektoren ist dabei im Verh\"{a}ltnis zur Gesamtfl\"{a}che des Kreises equivalent zu den relativen H\"{a}ufigkeiten der Daten im Verh\"{a}ltnis zum Gesamtdatensatz.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+	[
+		pie chart,
+    	slice type={112}{cyan},
+    	slice type={153}{red},
+    	slice type={155}{gray},
+    	slice type={160}{magenta},
+    	slice type={164}{lime},
+    	slice type={210}{orange},
+    	pie values/.style={font={\small}},
+    	scale=3
+	]
+
+	\pie{}{20/112, 30/153, 10/155, 20/160, 10/164, 10/210}
+    %\pie[xshift=2.2cm,values of coltello/.style={pos=1.1}]%
+
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Eigenschaften}
+
+\subsub{Arithmetisches Mittel}
+
+Das arithmetische Mittel $\bar{x}$ eines Datensatzes, auch Mittel- oder Durchschnittswert genannt, wird berechnet, in dem man die Summe aller Daten durch ihre Anzahl dividiert: $$\bar{x} = \frac{\sum_{i=0}^{n} x_i}{n} = \frac{x_{0} + x_{1} + x_{2} + ... + x_{n}}{n}$$ Ebenso kann man das arithmetische Mittel als die Summe aller erhobenen Werte, multipliziert mit ihrer absoluten H\"{a}ufigkeit, dividiert durch die Gesamtanzahl sehen: $$\bar{x} = \frac{\sum_{i=0}^{n} h_{A}(i) \cdot x_{i}}{n}$$ Man kann sich die Division durch N auch sparen, in dem man mit den relativen H\'{a}ufigkeiten arbeitet, da in diesen ist die Relativit\"{a}t schon inbegriffen ist: $$\bar{x} = \sum_{i=0}^{n} h_{R}(i) \cdot x_{i}$$ F\"{u}r den oben beschriebenen Datensatz der K\"{o}rpergr\"{o}\ss{}en der zehn Sch\"{u}lerinnen und Sch\"{u}ler einer Volksschule in Fresach w\"{a}re das arithmetische Mittel somit: 
+
+$$\bar{x} = \frac{112 + 112 + 153 + 153 + 153 + 155 + 160 + 160 + 164 + 210}{10} = 153.2$$ oder $$\bar{x} = \frac{2 \cdot 112 + 3 \cdot 153 + 1 \cdot 155 + 2 \cdot 160 + 1 \cdot 164 + 1 \cdot 210}{10} = 153.2$$ oder $$\bar{x} = 0.2 \cdot 112 + 0.3 \cdot 153 + 0.1 \cdot 155 + 0.2 \cdot 160 + 0.1 \cdot 164 + 0.1 \cdot 210 = 153.2$$
+
+\subsub{Median}
+
+Der Median $\tilde{x}$ eines Datensatzes ist jener Wert, der in der Mitte der geordneten Urliste steht. Bei ungerader Gesamtanzahl $n$ ist gibt es einen definitiven Wert in der Mitte bei Position $\ceil{\frac{n}{2}}$. Bei gerader Anzahl muss das arithmetische Mittel zwischen den beiden mittleren Werten genommen werden ($d(x)$ sei die Datensatzfunktion): $$\tilde{x} = \frac{d(\frac{n}{2}) + d(\frac{n}{2} + 1)}{2}$$ Der Volkssch\"{u}lerdatensatz hat eine gerade Gesamtanzahl von 10, der Median liegt also beim arithmetischen Mittel aus den Werten bei $10 \div 2 = 5$ und $10 \div 2 + 1 = 6$. $$\tilde{x} = \frac{153 + 155}{2} = 154$$ Generell ist der Median dann ein sicherer, aussagekr\"{a}ftigerer Wert als das arithmetische Mittel, wenn es im Datensatz Ausrei\ss{}er gibt, die das arithmetische Mittel stark beeinflussen k\"{o}nnten, den Median aber nicht.
+
+\pagebreak
+
+\subsub{Modus}
+
+Der Modus, oft Modalwert genannt, bzw. die Modi oder Modalwerte eines Datensatzes sind jene Werte, die am h\"{u}figsten vorkommen. Der Modus des vorhin genannten Datensatzes ist 153, weil dieser Wert mit einer absoluten H\"{a}ufigkeit von 3 am \"{o}ftesten gefunden wurde.
+
+
+\subsub{Spannweite}
+
+Die Spannweite einer Stichprobe ist die Differenz zwischen dem Maximum und Minimum der Werte. Sie beschreibt, wie sehr die Werte maximal von einander abweichen. Bei den Volksch\"{u}lern betr\"{a}gt die Spannweite $210 - 112 = 98$. $$\text{Spannweite } = x_{max} - x_{min}$$
+
+\subsub{Varianz und Standardabweichung}
+
+Die Standardabweichung $\sigma$ beschreibt die durschnittliche Abweichung der Daten einer Stichprobe vom arithmetischen Mittel $\bar{x}$. Sie legt fest, in welchem Intervall $[\bar{x} - \sigma ; \bar{x} + \sigma]$ sich der Gro\ss{}teil der Daten befindet, bzw. um welchen Wert die Daten um das arithmetische Mittel streuen. Die Differenzen zwischen den einzelnen Werten und $\bar{x}$ werden quadriert, um ihr Vorzeichen aufzuheben. $$\sigma = \sqrt{\frac{\sum_{i=0}^{n} (x_{i} - \bar{x})^2}{n}} = \sqrt{\frac{(x_{0} - \bar{x})^2 + (x_{1} - \bar{x})^2 + (x_{2} - \bar{x})^2 + ... + (x_{n} - \bar{x})^2}{n}}$$
+
+Ebenso kann man zuerst den Mittelwert aus den quadrierten Werten berechnen und dann die Differenz zwischen diesem Mittelwert und dem quadrierten arithmetischen Mittel berechnen: $$\sigma = \sqrt{{\sum_{i=0}^{n} x_{i}^2}{n} - \bar{x}^2} = \sqrt{\frac{x_{0}^2 + x_{1}^2 + x_{2}^2 + ... x_{n}^2}{n} - \bar{x}^2}$$
+
+Die Varianz $V$ bzw. $\sigma^2$ ist das Quadrat der Standardabweichung: $V = \sigma^2$
+
+\pagebreak
+
+\sub{Boxplotdiagramme}
+
+Letztlich sollten noch Boxplotdiagramme untersucht werden. Sie stellen alle bis hierhin beschriebenen Begriffe in einem Diagramm bildlich dar. Man nehme wieder den Datensatz der Volkssch\"{u}ler aus Fresach: $$\{ 112, 112, 153, 153, 153, 155, 160, 160, 164, 210\}$$
+
+Das dazugeh\"{o}rige Boxplotdiagramm w\"{a}re:
+
+\extrapar
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			x=0.12cm,
+			y=5cm,
+			ytick={},
+			yticklabels={}
+		]
+
+		\addplot+[black, 
+	    boxplot prepared={ median=155,
+					       lower whisker=112,
+					       lower quartile=152,
+					       upper quartile=160,
+					       upper whisker=210 }]
+		coordinates {};
+
+		\draw (0, 30) node {Minimum};
+
+		\draw (950, 30) node {Maximum};
+
+		\draw (370, 30) node {$Q_{1}$};
+
+		\draw (510, 30) node {$Q_{3}$};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+Auf dieser Skala werden Maximum und Minimum als Grenzen des Diagramms links und rechts eingezeichnet. Der mittlere Strich im Kasten ist der Median, die beiden weiteren Striche links und rechts vom Median sind die Quartile $Q_{1}$ und $Q_{2}$. Also:
+
+\textbf{Minimum} \defas untere Grenze des Boxplotdiagramms
+
+\textbf{Maximum} \defas obere Grenze des Boxplotdiagramms
+
+\textbf{Erstes Quartil $Q_{1}$} \defas der Median der Datenreihe zwischen Minimum und Median $\tilde{x}$. Zwischen dem Minimum und dem ersten Quartil liegen $25\%$ der Werte, dar\"{u}ber die restlichen $75\%$. Zwischen $Q_{1}$ und dem Median liegen auch $25\%$.
+
+\textbf{Zweites Quartil $Q_{2}$} \defas der Median $\tilde{x}$ der Datenreihe wird zwischen $Q_{1}$ und $Q_{3}$ eingezeichnet. \"{U}ber und unter dem Median liegen 50 Prozent der Werte.
+
+\textbf{Drittes Quartil $Q_{3}$} \defas der Median der Datenreihe zwischen Maximum und Median $\tilde{x}$. Zwischen Maximum und diesem Quartil liegen $25\%$ der Werte, zwischen Minimum und $Q_{3}$ die unteren $75\%$.
+
+\textbf{Quartilsabstand} \defas die Differenz zwischen $Q_{1}$ und $Q_{3}$. In diesem Intervall liegen die H\"{a}lfte ($50 \%$) aller Werte.
+
+
+
+\end{document}
