@@ -157,12 +157,11 @@ Ein Kreisdiagramm stellt ebenso wie ein Stabdiagramm die relativen H\"{a}ufigkei
     	slice type={160}{magenta},
     	slice type={164}{lime},
     	slice type={210}{orange},
-    	pie values/.style={font={\small}},
-    	scale=3
+    	pie values/.style={font={}},
+    	scale=4
 	]
 
 	\pie{}{20/112, 30/153, 10/155, 20/160, 10/164, 10/210}
-    %\pie[xshift=2.2cm,values of coltello/.style={pos=1.1}]%
 
 	\end{tikzpicture}
 \end{figure}
@@ -173,7 +172,7 @@ Ein Kreisdiagramm stellt ebenso wie ein Stabdiagramm die relativen H\"{a}ufigkei
 
 \subsub{Arithmetisches Mittel}
 
-Das arithmetische Mittel $\bar{x}$ eines Datensatzes, auch Mittel- oder Durchschnittswert genannt, wird berechnet, in dem man die Summe aller Daten durch ihre Anzahl dividiert: $$\bar{x} = \frac{\sum_{i=0}^{n} x_i}{n} = \frac{x_{0} + x_{1} + x_{2} + ... + x_{n}}{n}$$ Ebenso kann man das arithmetische Mittel als die Summe aller erhobenen Werte, multipliziert mit ihrer absoluten H\"{a}ufigkeit, dividiert durch die Gesamtanzahl sehen: $$\bar{x} = \frac{\sum_{i=0}^{n} h_{A}(i) \cdot x_{i}}{n}$$ Man kann sich die Division durch N auch sparen, in dem man mit den relativen H\'{a}ufigkeiten arbeitet, da in diesen ist die Relativit\"{a}t schon inbegriffen ist: $$\bar{x} = \sum_{i=0}^{n} h_{R}(i) \cdot x_{i}$$ F\"{u}r den oben beschriebenen Datensatz der K\"{o}rpergr\"{o}\ss{}en der zehn Sch\"{u}lerinnen und Sch\"{u}ler einer Volksschule in Fresach w\"{a}re das arithmetische Mittel somit: 
+Das arithmetische Mittel $\bar{x}$ eines Datensatzes, auch Mittel- oder Durchschnittswert genannt, wird berechnet, in dem man die Summe aller Daten durch ihre Anzahl dividiert: $$\bar{x} = \frac{\sum_{i=0}^{n} x_i}{n} = \frac{x_{0} + x_{1} + x_{2} + ... + x_{n}}{n}$$ Ebenso kann man das arithmetische Mittel als die Summe aller erhobenen Werte, multipliziert mit ihrer absoluten H\"{a}ufigkeit, dividiert durch die Gesamtanzahl sehen: $$\bar{x} = \frac{\sum_{i=0}^{n} h_{A}(i) \cdot x_{i}}{n}$$ Man kann sich die Division durch N auch sparen, in dem man mit den relativen H\'{a}ufigkeiten arbeitet, da in diesen die Relativit\"{a}t schon inbegriffen ist: $$\bar{x} = \sum_{i=0}^{n} h_{R}(i) \cdot x_{i}$$ F\"{u}r den oben beschriebenen Datensatz der K\"{o}rpergr\"{o}\ss{}en der zehn Sch\"{u}lerinnen und Sch\"{u}ler einer Volksschule in Fresach w\"{a}re das arithmetische Mittel somit: 
 
 $$\bar{x} = \frac{112 + 112 + 153 + 153 + 153 + 155 + 160 + 160 + 164 + 210}{10} = 153.2$$ oder $$\bar{x} = \frac{2 \cdot 112 + 3 \cdot 153 + 1 \cdot 155 + 2 \cdot 160 + 1 \cdot 164 + 1 \cdot 210}{10} = 153.2$$ oder $$\bar{x} = 0.2 \cdot 112 + 0.3 \cdot 153 + 0.1 \cdot 155 + 0.2 \cdot 160 + 0.1 \cdot 164 + 0.1 \cdot 210 = 153.2$$
 
@@ -185,7 +184,7 @@ Der Median $\tilde{x}$ eines Datensatzes ist jener Wert, der in der Mitte der ge
 
 \subsub{Modus}
 
-Der Modus, oft Modalwert genannt, bzw. die Modi oder Modalwerte eines Datensatzes sind jene Werte, die am h\"{u}figsten vorkommen. Der Modus des vorhin genannten Datensatzes ist 153, weil dieser Wert mit einer absoluten H\"{a}ufigkeit von 3 am \"{o}ftesten gefunden wurde.
+Der Modus, oft Modalwert genannt, bzw. die Modi oder Modalwerte eines Datensatzes sind jene Werte, die am h\"{a}ufigsten vorkommen. Der Modus des vorhin genannten Datensatzes ist 153, weil dieser Wert mit einer absoluten H\"{a}ufigkeit von 3 am \"{o}ftesten gefunden wurde.
 
 
 \subsub{Spannweite}
@@ -196,7 +195,7 @@ Die Spannweite einer Stichprobe ist die Differenz zwischen dem Maximum und Minim
 
 Die Standardabweichung $\sigma$ beschreibt die durschnittliche Abweichung der Daten einer Stichprobe vom arithmetischen Mittel $\bar{x}$. Sie legt fest, in welchem Intervall $[\bar{x} - \sigma ; \bar{x} + \sigma]$ sich der Gro\ss{}teil der Daten befindet, bzw. um welchen Wert die Daten um das arithmetische Mittel streuen. Die Differenzen zwischen den einzelnen Werten und $\bar{x}$ werden quadriert, um ihr Vorzeichen aufzuheben. $$\sigma = \sqrt{\frac{\sum_{i=0}^{n} (x_{i} - \bar{x})^2}{n}} = \sqrt{\frac{(x_{0} - \bar{x})^2 + (x_{1} - \bar{x})^2 + (x_{2} - \bar{x})^2 + ... + (x_{n} - \bar{x})^2}{n}}$$
 
-Ebenso kann man zuerst den Mittelwert aus den quadrierten Werten berechnen und dann die Differenz zwischen diesem Mittelwert und dem quadrierten arithmetischen Mittel berechnen: $$\sigma = \sqrt{{\sum_{i=0}^{n} x_{i}^2}{n} - \bar{x}^2} = \sqrt{\frac{x_{0}^2 + x_{1}^2 + x_{2}^2 + ... x_{n}^2}{n} - \bar{x}^2}$$
+Ebenso kann man zuerst den Mittelwert aus den quadrierten Werten berechnen und dann die Differenz zwischen diesem Mittelwert und dem quadrierten arithmetischen Mittel berechnen: $$\sigma = \sqrt{\frac{\sum_{i=0}^{n} x_{i}^2}{n} - \bar{x}^2} = \sqrt{\frac{x_{0}^2 + x_{1}^2 + x_{2}^2 + ... + x_{n}^2}{n} - \bar{x}^2}$$
 
 Die Varianz $V$ bzw. $\sigma^2$ ist das Quadrat der Standardabweichung: $V = \sigma^2$
 
