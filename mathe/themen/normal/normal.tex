@@ -17,11 +17,11 @@ Viele Zufallsprozesse oder andere nat\"{u}rliche Verteilungen folgen ann\"{a}her
 	\textbf{$X \sim \mathcal{N}(\mu; \sigma)$} & \defas eine normalverteilte Zufallsvariable $X$ mit den Parametern $\mu$ und $\sigma$
 \end{tabular}
 
-Es ist wichtig anzumerken, dass eine normalverteilte Zufallsvariable nicht diskret, sondern stetig ist. Eine diskrete Zufallsvariable, beispielsweise jene bei der Binomialen oder Hypergeometrischen Verteilung, kann nur nat\"{u}rliche Zahlenwerte aus einer vordefinierten Teilmenge $\Omega \subset \mathbb{N}$ annehmen, der sogenannten \emph{Ereignismenge}. Gegens\"{a}tzlich dazu kann eine stetige Zufallsvariable alle m\"{o}glichen Werte aus der Menge der reellen Zahlen $\mathbb{R}$ annehmen, da sie durch Messung entsteht. Da es f\"{u}r eine reelle Zahl $r$ stets einen Nachfolger und Vorg\"{a}nger, stets eine kleinere und eine gr\"{o}\ss{}ere Zahl gibt, kann eine stetige Zufallsvariable eine unendliche Anzahl an Ereigniswerten annehmen. So kann man beispielsweise bei einer stetigen Zufallsvariable, f\"{u}r welche die Grundmenge $\mathbb{G}$ die Menge der reellen Zahlen $\mathbb{R}$ ist, niemals einen Wasserstand, eine F\"{u}llmenge oder eine Baumh\"{o}he genau, \emph{auf das Atom} berechnen. Man kann immer nur ein Intervall betrachten, in welchem sich die stetige, reelle Zufallsvariable befindet. Denn die Wahrscheinlichkeit f\"{u}r einen exakten Wert, beispielsweise einen Meter Wasserstand, auf das Atom genau, kein Wasserstoff mehr oder wenige,r ist immer gleich null. 
+Es ist wichtig anzumerken, dass eine normalverteilte Zufallsvariable nicht diskret, sondern stetig ist. Eine diskrete Zufallsvariable, beispielsweise jene bei der Binomialen oder Hypergeometrischen Verteilung, kann nur nat\"{u}rliche Zahlenwerte aus einer vordefinierten Teilmenge $\Omega \subset \mathbb{N}$ annehmen, der sogenannten \emph{Ereignismenge}. Gegens\"{a}tzlich dazu kann eine stetige Zufallsvariable alle m\"{o}glichen Werte aus der Menge der reellen Zahlen $\mathbb{R}$ annehmen, da sie durch Messung entsteht. Da es f\"{u}r eine reelle Zahl $r$ stets eine kleinere und eine gr\"{o}\ss{}ere Zahl gibt, kann eine stetige Zufallsvariable eine unendliche Anzahl an Ereigniswerten annehmen. So kann man beispielsweise bei einer stetigen Zufallsvariable, f\"{u}r welche die Grundmenge $\mathbb{G}$ die Menge der reellen Zahlen $\mathbb{R}$ ist, niemals einen Wasserstand, eine F\"{u}llmenge oder eine Baumh\"{o}he genau, \emph{auf das Atom} berechnen. Man kann immer nur ein Intervall betrachten, in welchem sich die stetige, reelle Zufallsvariable befindet. Denn die Wahrscheinlichkeit f\"{u}r einen exakten Wert, beispielsweise einen Meter Wasserstand, auf das Atom genau, kein Wasserstoff mehr oder weniger, ist immer gleich null. 
 
-Daraus folgt dass die Wahrscheinlichkeitsberechnung bei der Normalverteilung immer f\"{u}r Intervalle gilt und somit ein Integral ist. Berechnet man die Wahrscheinlichkeit, dass die normalverteilte, stetige Zufallsvariable $X$ einen Wert aus einem Intervall $]x_{0}; x_{1}[$ (oder $[x_{0};x_{1}]$) annimmt, so berechnet man das Integral der Normalverteilung in diesem Intervall. Man spricht bei der Normalverteilung also von einer \emph{Wahrscheinlichkeitsdichtefunktion}, bzw. Probability-density-function (PDF).
+Daraus folgt, dass die Wahrscheinlichkeitsberechnung bei der Normalverteilung immer f\"{u}r Intervalle gilt und somit ein Integral ist. Berechnet man die Wahrscheinlichkeit, dass die normalverteilte, stetige Zufallsvariable $X$ einen Wert aus einem Intervall $]x_{0}; x_{1}[$ (oder $[x_{0};x_{1}]$) annimmt, so berechnet man das Integral der Normalverteilung in diesem Intervall. Man spricht bei der Normalverteilung also von einer \emph{Wahrscheinlichkeitsdichtefunktion}, bzw. Probability-density-function (PDF).
 
-Die Wahrscheinlichkeit, dass eine normalverteilte Zufallsvariable $X \sim \mathcal{N}(2; 0.4)$ einen Wert zwischen $x_{0}$ und $x_{1}$ annimmt ist grafisch folgenderma\ss{}en dargestellt ($\mu$ bestimmt $x$-Position, $\sigma$ bestimmt Breite und H\"{o}he der Kurve):
+Eine normalverteilte Zufallsvariable $X \sim \mathcal{N}(2; 0.4)$ ist grafisch folgenderma\ss{}en dargestellt ($\mu$ bestimmt $x$-Position, $\sigma$ bestimmt Breite und H\"{o}he der Kurve):
 
 \vspace{0.25cm}
 
@@ -88,7 +88,7 @@ Die Verteilungsfunktion der Standardnormalverteilung ist jene Funktion $\Phi(z)$
 
 M\"{o}chte man die Wahrscheinlichkeit berechnen, dass $Z$ nicht h\"{o}chstens, sondern mindestens $z$ betr\"{a}gt, also die Fl\"{a}che unter der Kurve nach $z$, von $z$ bis $+\infty$, so w\"{a}re dies entweder die Gegenwahrscheinlichkeit zu $\Phi(z)$, also $1 - \Phi(z)$, oder $\Phi(-z)$, da das Intervall \"{u}ber $z$ die selbe Fl\"{a}che hat wie das Intervall bis $-z$, also das symmetrische Gegen\"{u}ber auf der anderen Seite von $\mu$ bzw. der $y$-Achse.
 
-Die Wahrscheinlichkeit, dass $Z$ in einem bestimmten Intervall $]z_{1}, z_{2}[$ liegt, w\"{a}re $\Phi(z_{2})$, also die Fl\"{a}che unter der Kurve bis zum von $-\infty$ weiter entfernten $z$-Wert zu berechnen, minus $\Phi(z_{1})$, der Fl\"{a}che unter der Kurve bis zum n\"{a}her bei $\infty$ liegenden $z$, um somit die Differenz der beiden Fl\"{a}chen zu erhalten. Formal gesehen: $$\Phi(z_{1} < Z < z_{2}) = \Phi(z_{2}) - \Phi(z_{1})$$ 
+Die Wahrscheinlichkeit, dass $Z$ in einem bestimmten Intervall $]z_{1}; z_{2}[$ liegt, w\"{a}re $\Phi(z_{2})$, also die Fl\"{a}che unter der Kurve bis zum von $-\infty$ weiter entfernten $z$-Wert zu berechnen, minus $\Phi(z_{1})$, der Fl\"{a}che unter der Kurve bis zum n\"{a}her bei $-\infty$ liegenden $z$, um somit die Differenz der beiden Fl\"{a}chen zu erhalten. Formal gesehen: $$\Phi(z_{1} < Z < z_{2}) = \Phi(z_{2}) - \Phi(z_{1})$$ 
 
 Letztlich gibt es noch die Funktion $D(z_{\varepsilon})$, welche equivalent zu $\Phi(z_{\varepsilon}) - \Phi(-z_{\varepsilon})$ ist. Sie ist also f\"{u}r symmetrische Intervalle $[\mu - \varepsilon ;  \mu + \varepsilon]$ anwendbar. $D(z_{\varepsilon})$ ist ebenso equivalent zu $2 \cdot \Phi(z_{\varepsilon}) - 1$. Der Beweis f\"{u}r den letzten Ausdruck liegt darin, dass bei einem symmetrischen Intervall mit Parameter $\varepsilon$ die untere Grenze gleich weit von $\mu$ entfernt ist wie die obere, sprich das Intervall \"{u}ber $\mu + \varepsilon$ ist das selbe wie jenes unter $\mu - \varepsilon$. Da die Wahrscheinlichkeit, dass $Z$ \"{u}ber einem bestimmten $z$ liegt, gleich $1 - \Phi(z)$, kann man diesen Ausdruck f\"{u}r die untere Grenze substituieren: $$D(z_{\varepsilon}) = \Phi(z_{\varepsilon}) - (1 - \Phi(z_{\varepsilon})) = 2 \cdot \Phi(z_{\varepsilon}) - 1$$
 
@@ -178,7 +178,7 @@ Letztlich sei noch anzumerken, dass man jede nicht-standardisierte Normalverteil
 
 Um nun die Wahrscheinlichkeit $p$ eines Zufallsereignises bei einer nicht-standardisierten Normalverteilung $\mathcal{N}(\mu; \sigma)$ zu berechnen, muss man zuerst den Parameter $z$ mittels der $z$-Transformation berechnen und dann den passenden Wahrscheinlichkeitswert aus einer $\Phi$-Tabelle entnehmen.
 
-\textbf{Beispiel}: \emph{Eine Zufallsvariable ist normalverteilt mit $Z \sim \mathcal{N}(\mu=1.04; \sigma=0.02)$, berechne die Wahrscheinlichkeit dass die Zufallsvariable einen Wert zwischen $1$ und $1.1$ annimmt.}
+\textbf{Beispiel}: \emph{Eine Zufallsvariable $X$ ist normalverteilt mit $X \sim \mathcal{N}(\mu=1.04; \sigma=0.02)$, berechne die Wahrscheinlichkeit dass die Zufallsvariable einen Wert zwischen $1$ und $1.1$ annimmt.}
 
 \begin{table}[h!]
 	\begin{tabular}{l l}
@@ -200,7 +200,7 @@ Um nun die Wahrscheinlichkeit $p$ eines Zufallsereignises bei einer nicht-standa
 	\begin{tabular}{p{10cm} l}
 	I. Durchf\"{u}hrung der $z$-Transformation f\"{u}r $x = 1.02$: & $z = \frac{x - \mu}{\sigma} = \frac{1.02 - 1.04}{0.02} = -1$
 	\\ & \\
-	II. Da es gilt $p(Z > x)$ zu ermitteln, also die Fl\"{a}che unter der Kurve zwischen $x$ und $+\infty$, muss entweder die Gegenwahrscheinlichkeit von $\Phi(z)$ berechnet, also $1 - \Phi(z)$, oder das Vorzeichen von $z$ invertiert werden: $\Phi(-z)$. &
+	II. Da es gilt $p(X > x)$ zu ermitteln, also die Fl\"{a}che unter der Kurve zwischen $x$ und $+\infty$, muss entweder die Gegenwahrscheinlichkeit von $\Phi(z)$ berechnet, also $1 - \Phi(z)$, oder das Vorzeichen von $z$ invertiert werden: $\Phi(-z)$. &
 	\\ & \\
 	III. Ermittlung der Wahrscheinlichkeit f\"{u}r $z$ aus der $\Phi$-Tabelle: & $1 - \Phi(-1) = \Phi(1) = 0.8413$
 	\end{tabular}
@@ -212,7 +212,7 @@ Um nun die Wahrscheinlichkeit $p$ eines Zufallsereignises bei einer nicht-standa
 	\begin{tabular}{p{10cm} l}
 	I. Durchf\"{u}hrung der $z$-Transformation f\"{u}r $x = 1$: & $z = \frac{x - \mu}{\sigma} = \frac{1 - 1.04}{0.02} = -2$
 	\\ & \\
-	II. Da es hier gilt $p(Z < x)$ zu ermitteln, also die Fl\"{a}che unter der Kurve zwischen $-\infty$ und $x$, kann man $\Phi(z)$ verwenden. &
+	II. Da es hier gilt $p(X < x)$ zu ermitteln, also die Fl\"{a}che unter der Kurve zwischen $-\infty$ und $x$, kann man $\Phi(z)$ verwenden. &
 	\\ & \\
 	III. Ermittlung der Wahrscheinlichkeit f\"{u}r $z$ aus der $\Phi$-Tabelle: & $\Phi(-2) = 0.0288$
 	\end{tabular}
@@ -220,13 +220,13 @@ Um nun die Wahrscheinlichkeit $p$ eines Zufallsereignises bei einer nicht-standa
 
 Allgemein gilt also: 
 
-\textbf{$Z$ geringer als $x$}: $P(Z < x) = \Phi(z) = \Phi\left(\frac{x - \mu}{\sigma}\right)$
+\textbf{$X$ geringer als $x$}: $P(X < x) = \Phi(z) = \Phi\left(\frac{x - \mu}{\sigma}\right)$
 
-\textbf{$Z$ d gr\"{o}\ss{}er als} $x$: $P(Z > x) = 1 - \Phi(z) = 1 - \Phi\left(\frac{x - \mu}{\sigma}\right) = \Phi(-z) = \Phi\left[-\left(\frac{x - \mu}{\sigma}\right)\right]$
+\textbf{$X$ gr\"{o}\ss{}er als} $x$: $P(X > x) = 1 - \Phi(z) = 1 - \Phi\left(\frac{x - \mu}{\sigma}\right) = \Phi(-z) = \Phi\left[-\left(\frac{x - \mu}{\sigma}\right)\right]$
 
-\textbf{Symmetrisches Intervall}: $P(x_{1} < Z < x_{2}) = 2 \cdot \Phi(z_{2}) - 1 = 2 \cdot \Phi\left(\frac{x_{2} - \mu}{\sigma}\right) - 1$
+\textbf{Symmetrisches Intervall}: $P(x_{1} < X < x_{2}) = 2 \cdot \Phi(z_{2}) - 1 = 2 \cdot \Phi\left(\frac{x_{2} - \mu}{\sigma}\right) - 1$
 
-\textbf{Asymmetrisches Intervall}: $P(x_{1}<Z<x_{2}) = \Phi(z_{2}) - \Phi(z_{1}) = \Phi\left(\frac{x_{2} - \mu}{\sigma}\right) - \Phi\left(\frac{x_{1} - \mu}{\sigma}\right)$
+\textbf{Asymmetrisches Intervall}: $P(x_{1}< X < x_{2}) = \Phi(z_{2}) - \Phi(z_{1}) = \Phi\left(\frac{x_{2} - \mu}{\sigma}\right) - \Phi\left(\frac{x_{1} - \mu}{\sigma}\right)$
 
 \sub{$X$ bestimmen}
 
@@ -274,7 +274,7 @@ Berechnung von $x$ f\"{u}r $P(Z < x) = 0.15$: $x = z \cdot \sigma + \mu \Rightar
 	\caption*{Veranschaulichung}
 \end{figure}
 
-Hierbei muss man zuerst definieren, wie man $Z$ am besten berechnet. In dieser Aufgabenstellung ist im Grunde genommen nur die obere Grenze des symmetrischen Intervalls relevant. Das hei\ss{}t, man m\"{u}sste lediglich den $x$-Wert der oberen Grenze berechnen und von diesem $\mu$ subtrahieren, um somit $\varepsilon$ zu erhalten. Diesen $x$-Wert erhalten wir, in dem wir die Wahrscheinlichkeit $p$ in Anbetracht ziehen, dass $Z$ weniger als $x$ ist: $P(Z < \mu + \varepsilon)$. Diese Wahrscheinlichkeit geht jedoch von $-\infty$ bist $x$, ist also nicht $0.95$, sondern $0.95$ plus die Wahrscheinlichkeit dass geringer als die untere Grenze ist: $p + P(Z < \mu - \varepsilon)$. Analysiert man die Problemstellung weiter, erkennt man dass diese Wahrscheinlichkeit $P(Z < \mu - \varepsilon)$ gleich $0.5 \cdot (1 - p)$ ist. Dies folgt daraus, dass die Wahrscheinlichkeit au\ss{}erhalb des Intervalls links und recht zusammen $1 - p$ ist, einzeln daher die H\"{a}lfte davon. Der $x$-Wert der oberen Grenze $\mu + \varepsilon$ muss also sein: 
+Hierbei muss man zuerst definieren, wie man $Z$ am besten berechnet. In dieser Aufgabenstellung ist im Grunde genommen nur die obere Grenze des symmetrischen Intervalls relevant. Das hei\ss{}t, man m\"{u}sste lediglich den $x$-Wert der oberen Grenze berechnen und von diesem $\mu$ subtrahieren, um somit $\varepsilon$ zu erhalten. Diesen $x$-Wert erhalten wir, in dem wir die Wahrscheinlichkeit $p$ in Anbetracht ziehen, dass $Z$ weniger als $x$ ist: $P(Z < \mu + \varepsilon)$. Diese Wahrscheinlichkeit geht jedoch von $-\infty$ bis $x$, ist also nicht $0.95$, sondern $0.95$ plus die Wahrscheinlichkeit, dass $Z$ geringer als die untere Grenze ist: $p + P(Z < \mu - \varepsilon)$. Analysiert man die Problemstellung weiter, erkennt man dass diese Wahrscheinlichkeit $P(Z < \mu - \varepsilon)$ gleich $0.5 \cdot (1 - p)$ ist. Dies folgt daraus, dass die Wahrscheinlichkeit au\ss{}erhalb des Intervalls links und rechts zusammen $1 - p$ ist, einzeln daher die H\"{a}lfte davon. Der $x$-Wert der oberen Grenze $\mu + \varepsilon$ muss also sein: 
 
 $$x = z \cdot \sigma + \mu \Rightarrow \Phi^{-1}\left(p + \frac{1 -p}{2}\right) \cdot \sigma + \mu$$ 
 
@@ -296,7 +296,7 @@ Oftmals ist nur die Standardabweichung $\sigma$, ein Wert f\"{u}r die Zufallsvar
 
 \textbf{Beispiel}: \emph{Bestimme den Erwartungswert $\mu$ so, dass bei einer Standardabweichung $\sigma = 2$ die standardnormalverteilte Zufallsvariable $Z$ zu $95 \%$ einen Wert h\"{o}her als 495 annimmt.}
 
-Bei der Berechnung von $\mu$ muss man hier darauf achten, dass $p = P(Z > X)$. Das hei\ss{}t, dass der $z$ Wert entweder f\"{u}r die Gegenwahrscheinlichkeit $1 - p$ berechnet werden oder sein Vorzeichen ver\"{a}ndert werden muss: $$P(Z > X) \Rightarrow \Phi^{-1}(1 - p) = -\Phi^{-1}(p)$$ $\mu$ wird dann so bestimmt: $$\mu = -z \cdot \sigma + x = -[-\Phi^{-1}(p)] \cdot \sigma + x = 1.645 \cdot 2 + 495 = 495.3$$ Allgemein:
+Bei der Berechnung von $\mu$ muss man hier darauf achten, dass $p = P(Z > X)$. Das hei\ss{}t, dass der $z$ Wert entweder f\"{u}r die Gegenwahrscheinlichkeit $1 - p$ berechnet werden oder sein Vorzeichen ver\"{a}ndert werden muss: $$P(Z > X) \Rightarrow \Phi^{-1}(1 - p) = -\Phi^{-1}(p)$$ $\mu$ wird dann so bestimmt: $$\mu = -z \cdot \sigma + x = -[-\Phi^{-1}(p)] \cdot \sigma + x = 1.645 \cdot 2 + 495 = 498.3$$ Allgemein:
 
 \textbf{Wenn $p$ f\"{u}r $P(Z < X)$:} $\mu = -z \cdot \sigma + x = -\Phi^{-1}(p) \cdot \sigma + x$
 
@@ -306,7 +306,7 @@ Bei der Berechnung von $\mu$ muss man hier darauf achten, dass $p = P(Z > X)$. D
 
 \sub{$\sigma$ bestimmen}
 
-Zur Berechnung der Standardabweichung $\sigma$ geht man \"{a}hnlich vor wie bei jener des Erwartungswertes: $$z = \frac{x - \mu}{\sigma} = \sigma = \frac{x - \mu}{z} = \frac{x - \mu}{\Phi^{-1}(p)}$$
+Zur Berechnung der Standardabweichung $\sigma$ geht man \"{a}hnlich vor wie bei jener des Erwartungswertes: $$z = \frac{x - \mu}{\sigma}$$ $$\Downarrow$$ $$ \sigma = \frac{x - \mu}{z} = \frac{x - \mu}{\Phi^{-1}(p)}$$
 
 \textbf{Beispiel}: \emph{Ermittle die Standardabweichung $\sigma$ so, dass es ein symmetrisches Intervall $]\mu - \varepsilon ; \mu + \varepsilon[$ mit $\varepsilon = 1$ geben kann, in welchem sich die Zufallsvariable $Z$ zu $95 \%$ befindet.}
 
