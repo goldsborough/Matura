@@ -19,7 +19,7 @@ Generell beschreibt ein \emph{Richtungsvektor} $\vec{a} = \colvec{x_{a} \\ y_{a}
 
 Multiplikation und Division von einem Vektor $a$ mit einer Zahl $n$ resultieren in einem neuen Vektor und erfolgen mittels Durchf\"{u}hrung der Operation f\"{u}r jede Koordinate des Vektors. Addition und Subtraktion eines Vektors mit einer Zahl sind nicht m\"{o}glich.
 
-Multiplikation von Vektor und Zahl: $ \vec{a} * n = \colvec{x_{a}\\y_{a}} * n  = \colvec{x_{a} * n \\ y_{a} * n}$
+Multiplikation von Vektor und Zahl: $ \vec{a} \cdot n = \colvec{x_{a}\\y_{a}} \cdot n  = \colvec{x_{a} \cdot n \\ y_{a} \cdot n}$
 
 Division von Vektor und Zahl: $ \vec{A} : n = \colvec{x_{a}\\y_{a}} \div n = \colvec{x_{a} \div n \\ y_{a} \div n}$
 
@@ -33,7 +33,7 @@ Subtraktion von Vektor und Vektor: $\vec{a} - \vec{b} = \colvec{x_{a}\\y_{a}} - 
 
 Die Multiplikation von zwei Vektoren $a$ und $b$ ergibt keinen neuen Vektor, sondern eine Zahl --- ein sogenanntes \emph{Skalares Produkt}. Dabei wird jede Koordinate des einen Vektors mit der des anderen Vektors multipliziert. Das Skalare Produkt ist dann die Summe der einzelnen Koordinatenprodukte.
 
-Multiplikation von Vektor und Vektor: $\vec{a} * \vec{b} = \colvec{x_{a} \\ y_{a}} * \colvec{x_{b} \\ y_{b}} = (x_{a} * x_{b}) + (y_{a} * y_{b}) = n \in \mathbb{R}$
+Multiplikation von Vektor und Vektor: $\vec{a} \cdot \vec{b} = \colvec{x_{a} \\ y_{a}} \cdot \colvec{x_{b} \\ y_{b}} = (x_{a} \cdot x_{b}) + (y_{a} \cdot y_{b}) = n \in \mathbb{R}$
 
 \pagebreak
 
@@ -77,7 +77,7 @@ $$ \vec{a} = \colvec{x\\y} \Rightarrow \vec{n_{a}} = \colvec{y \\ -x} \lor \colv
 
 Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist immer 0}. Somit ist
 
-$$\vec{a} * \vec{n_{a}} = 0$$
+$$\vec{a} \cdot \vec{n_{a}} = 0$$
 
 \pagebreak
 
@@ -87,26 +87,26 @@ $$\vec{a} * \vec{n_{a}} = 0$$
 
 Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden. Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen:
 
-$$g: \vec{0X} = \vec{0A} + t * \vec{a}$$
+$$g: \vec{0X} = \vec{0A} + t \cdot \vec{a}$$
 
 \subsub{Normalvektorform}
 
 Um von der Parameterform zur \textbf{Allgmeinen Form} ($ax + by = c$) bzw. zur \textbf{Normalform} ($y = kx + d$) zu kommen, muss man die Parameterform zuerst in die \textbf{Normalvektorform} umformen. Dazu ben\"{o}tigt man den Normalvektor $\vec{n_{a}}$ vom Richtungsvektor $\vec{a}$. Diesen setzt man so in die Normalvektorform ein, wo $X$ bzw. $\colvec{x\\y}$ die Parameter der Gerade sind (nicht Vektorenkoordinaten):
 
 \begin{center}
-  $X * \vec{n_{a}} = \vec{0A} * \vec{n_{a}}$
+  $X \cdot \vec{n_{a}} = \vec{0A} \cdot \vec{n_{a}}$
   \extrapar
-  $\colvec{x\\y} * \colvec{x_{n_{a}}\\y_{n_{a}}} = \colvec{x_{A} \\ y_{A}} * \colvec{x_{n_{a}}\\y_{n_{a}}}$
+  $\colvec{x\\y} \cdot \colvec{x_{n_{a}}\\y_{n_{a}}} = \colvec{x_{A} \\ y_{A}} \cdot \colvec{x_{n_{a}}\\y_{n_{a}}}$
 \end{center}
 
 \subsub{Lagebeziehungen in der Ebene}
 
-Zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$ k\"{o}nnen in der Ebene folgende \emph{Lagebeziehungen} haben:
+Zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ $$h: X = \vec{0B} + s \cdot \vec{b}$$ k\"{o}nnen in der Ebene folgende \emph{Lagebeziehungen} haben:
 
 \begin{itemize}
   \item \textbf{Parallel}
   \par
-  Wenn zwei Geraden parallel ($\parallel$) oder ident ($\equiv$) sind, sind ihre Richtungsvektoren Vielfache von einander: $\vec{a} = \vec{b} * n$. Um zu bestimmen ob zwei Geraden parallel sind, muss man auschlie\ss{}en dass sie ident sind.
+  Wenn zwei Geraden parallel ($\parallel$) oder ident ($\equiv$) sind, sind ihre Richtungsvektoren Vielfache von einander: $\vec{a} = \vec{b} \cdot n$. Um zu bestimmen ob zwei Geraden parallel sind, muss man auschlie\ss{}en dass sie ident sind.
 
 \pagebreak
 
@@ -115,13 +115,13 @@ Zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$
   Zwei Geraden sind ident, wenn man den Ortsvektor der einen Geraden (oder irgendeinen anderen Punkt auf dieser Geraden) gleich der anderen Geraden setzen kann, und beim L\"{o}sen der Gleichungen aller Koordinaten immer das selbe Ergebnis bekommt:
 
   \begin{center}
-    $\vec{0A} = \vec{0B} + s * \vec{b}$
+    $\vec{0A} = \vec{0B} + s \cdot \vec{b}$
     \extrapar
-    $\colvec{x_{A}\\y_{A}} = \colvec{x_{B}\\y_{B}} + s * \colvec{x_{b}\\y_{b}}$
+    $\colvec{x_{A}\\y_{A}} = \colvec{x_{B}\\y_{B}} + s \cdot \colvec{x_{b}\\y_{b}}$
     \extrapar
-    I: $x_{A} = x_{B} + s_{1} * x_{b} \Rightarrow s_{1}$
+    I: $x_{A} = x_{B} + s_{1} \cdot x_{b} \Rightarrow s_{1}$
     \extrapar
-    II: $y_{A} = y_{B} + s_{2} * y_{b} \Rightarrow s_{2}$
+    II: $y_{A} = y_{B} + s_{2} \cdot y_{b} \Rightarrow s_{2}$
     \extrapar
     $
       s_{1}
@@ -139,13 +139,13 @@ Zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$
   \begin{center}
     $g = h$
     \extrapar
-    $\vec{0A} + t * \vec{a} = \vec{0B} + s * \vec{b}$
+    $\vec{0A} + t \cdot \vec{a} = \vec{0B} + s \cdot \vec{b}$
     \extrapar
-    $\colvec{x_{A}\\y_{A}} + t * \colvec{x_{a}\\y_{a}} = \colvec{x_{B}\\y_{B}} + s * \colvec{x_{b}\\y_{b}}$
+    $\colvec{x_{A}\\y_{A}} + t \cdot \colvec{x_{a}\\y_{a}} = \colvec{x_{B}\\y_{B}} + s \cdot \colvec{x_{b}\\y_{b}}$
     \extrapar
-    I: $x_{A} + t * x_{a} = x_{B} + s * x_{b}$
+    I: $x_{A} + t \cdot x_{a} = x_{B} + s \cdot x_{b}$
     \extrapar
-    II: $y_{A} + t * y_{a} = y_{B} + s * y_{b}$
+    II: $y_{A} + t \cdot y_{a} = y_{B} + s \cdot y_{b}$
     \extrapar
     $\Rightarrow t \Rightarrow s$
   \end{center}
@@ -159,34 +159,34 @@ Zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$
 \subsub{Winkel}
 
 Um den Winkel zwischen zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$ zu berechnen, verwendet man die \textbf{Vektorielle Winkelformel}:
-$$ \cos \alpha = \frac{\vec{a} * \vec{b}}{|\vec{a}| * |\vec{b}|}$$
+$$ \cos \alpha = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}$$
 
-Man kann auch zuerst bestimmen, ob $\vec{a}$ und $\vec{b}$ normal zu einander stehen ($= 90\degree$), indem man ihr Skalares Produkt ($\vec{a} * \vec{b}$) berechnet (ist es 0, ist $a \perp b$).
+Man kann auch zuerst bestimmen, ob $\vec{a}$ und $\vec{b}$ normal zu einander stehen ($= 90\degree$), indem man ihr Skalares Produkt ($\vec{a} \cdot \vec{b}$) berechnet (ist es 0, ist $a \perp b$).
 
 Hierbei ist es wichtig, immer einen \textbf{spitzen} Winkel ($\alpha < 90\degree$) und nie einen \textbf{stumpfen} Winkel ($90 \leq \alpha < 180$) anzugeben. Sollte $\alpha$ also stumpf sein, muss man sein spitzes Gegenst\"{u}ck berechnen: $\alpha{}' = 180 - \alpha$.
 
 \subsub{Fl\"{a}chen}
 
-Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelograme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 * {|\vec{b}|}^2 - {(\vec{a} * \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{\sqrt{{|\vec{a}|}^2 * {|\vec{b}|}^2 - {(\vec{a} * \vec{b})}^2}}{2} = \frac{|\vec{a} \times \vec{b}|}{2}$$
+Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelograme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{\sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2}}{2} = \frac{|\vec{a} \times \vec{b}|}{2}$$
 
 \pagebreak
 
 \subsub{Lagebeziehungen im Raum}
 
-Die Lagebeziehungen zwischen zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h: X = \vec{0B} + s * \vec{b}$$ unterscheiden sich zu jenen in der Ebene nur dadurch, dass sie zus\"{a}tzlich noch \textbf{windschief} sein k\"{o}nnen. Zwei Geraden im Raum sind windschief, wenn sie weder parallel noch ident sind, und beim Schneiden der beiden Geraden das Gleichungssystem keine wahre Aussage liefert, was bedeutet, dass nur zwei der drei Koordinaten des vermeintlichen Schnittpunkts \"{u}bereinstimmten. Ein m\"{o}gliches \\ L\"{o}sungsverfahren k\"{o}nnte so aussehen:
+Die Lagebeziehungen zwischen zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ $$h: X = \vec{0B} + s \cdot \vec{b}$$ unterscheiden sich zu jenen in der Ebene nur dadurch, dass sie zus\"{a}tzlich noch \textbf{windschief} sein k\"{o}nnen. Zwei Geraden im Raum sind windschief, wenn sie weder parallel noch ident sind, und beim Schneiden der beiden Geraden das Gleichungssystem keine wahre Aussage liefert, was bedeutet, dass nur zwei der drei Koordinaten des vermeintlichen Schnittpunkts \"{u}bereinstimmten. Ein m\"{o}gliches \\ L\"{o}sungsverfahren k\"{o}nnte so aussehen:
 
 \begin{center}
   $ g = h$
   \extrapar
-  $ \vec{0A} + t * \vec{a} = \vec{0B} + s * \vec{b}$
+  $ \vec{0A} + t \cdot \vec{a} = \vec{0B} + s \cdot \vec{b}$
   \extrapar
-  $ \colvec{x_{A}\\y_{A}\\z_{A}} + t * \colvec{x_{a}\\y_{a}\\z_{a}} = \colvec{x_{B}\\y_{B}\\z_{B}} + s* \colvec{x_{b}\\y_{b}\\z_{b}}$
+  $ \colvec{x_{A}\\y_{A}\\z_{A}} + t \cdot \colvec{x_{a}\\y_{a}\\z_{a}} = \colvec{x_{B}\\y_{B}\\z_{B}} + s\cdot \colvec{x_{b}\\y_{b}\\z_{b}}$
   \extrapar
-  I: $x_{A} + t * x_{a} = x_{B} + s * x_{b}$
+  I: $x_{A} + t \cdot x_{a} = x_{B} + s \cdot x_{b}$
   \extrapar
-  II: $y_{A} + t * y_{a} = y_{B} + s * y_{b}$
+  II: $y_{A} + t \cdot y_{a} = y_{B} + s \cdot y_{b}$
   \extrapar
-  III: $z_{A} + t * z_{a} = z_{B} + s * z_{b}$
+  III: $z_{A} + t \cdot z_{a} = z_{B} + s \cdot z_{b}$
   \extrapar
   $\text{I} \cap \text{II} \Rightarrow t$
   \extrapar
@@ -205,7 +205,7 @@ Die Lagebeziehungen zwischen zwei Geraden $$g: X = \vec{0A} + t * \vec{a}$$ $$h:
 
 \sub{Ebenen}
 
-Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu braucht man lediglich einen Ortsvektor $\vec{0A}$ (2D oder 3D) und zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$. Die Ebene $\epsilon$ wird dann zwischen den beiden Richtungsvektoren \zitat{aufgespannt}.
+Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu braucht man lediglich einen Ortsvektor $\vec{0A}$ (2D oder 3D) und zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$. Die Ebene $\varepsilon$ wird dann zwischen den beiden Richtungsvektoren \zitat{aufgespannt}.
 
 \begin{figure}[h!]
   \centering
@@ -215,7 +215,7 @@ Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu brauch
           -- (0,4) node [left, midway] {\Large $\vec{a}$};
     \draw [very thick, ->] (0,0) -- (4,0) node [below, midway] {\Large $\vec{b}$};
     \draw [help lines] grid (4,4);
-    \draw (4,2) node [right] {\Huge $\epsilon$};
+    \draw (4,2) node [right] {\Huge $\varepsilon$};
   \end{tikzpicture}
 \end{figure}
 
@@ -223,30 +223,30 @@ Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu brauch
 
 Im Gegensatz zur Parameterform der Gerade kommt bei der Ebene nur noch ein zweiter Richtungsvektor hinzu:
 
-$$\epsilon: X = \vec{0A} + t * \vec{a} + s * \vec{b}$$
+$$\varepsilon: X = \vec{0A} + t \cdot \vec{a} + s \cdot \vec{b}$$
 
 \subsub{Kreuzprodukt}
 
 Weil man f\"{u}r eine Ebene im Raum keinen eindeutigen Normalvektor bilden kann, muss man zwischen zwei Vektoren $a$ und $b$ das Kreuzprodukt bilden. Das Kreuzprodukt liefert einen eindeutigen Normalvektor f\"{u}r eine Ebene im Raum.
 
 \begin{center}
-  $\epsilon: X = \vec{0A} + t * \vec{a} + s * \vec{b}$
+  $\varepsilon: X = \vec{0A} + t \cdot \vec{a} + s \cdot \vec{b}$
   \extrapar
   $ \vec{a} = \colvec{x_{a}\\y_{a}\\z_{a}}$
   \extrapar
   $ \vec{b} = \colvec{x_{b}\\y_{b}\\z_{b}}$
   \extrapar
-  $ \vec{n_{\epsilon}} 
+  $ \vec{n_{\varepsilon}} 
     = \vec{a} \times \vec{b} 
     = \colvec{x_{a}\\y_{a}\\z_{a}} \times \colvec{x_{b}\\y_{b}\\z_{b}} 
-    = \colvec{y_{a} * z_{b} - z_{a} * y_{b}\\ - (x_{a} * z_{b} - z_{a} * x_{b})\\x_{a} * y_{b} - y_{a} * x_{b}}$  
+    = \colvec{y_{a} \cdot z_{b} - z_{a} \cdot y_{b}\\ - (x_{a} \cdot z_{b} - z_{a} \cdot x_{b})\\x_{a} \cdot y_{b} - y_{a} \cdot x_{b}}$  
 \end{center}
 
 \pagebreak
 
 \subsub{Normalvektorform}
 
-Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Ebene in der Normalvektorform darstellen: $$\epsilon: X * \vec{n_{\epsilon}} = \vec{0A} * \vec{n_{\epsilon}}$$ $$\colvec{x\\y} * \colvec{x_{n_{\epsilon}}\\y_{n_{\epsilon}}} = \colvec{x_{A} \\ y_{A}} * \colvec{x_{n_{\epsilon}}\\y_{n_{\epsilon}}}$$
+Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Ebene in der Normalvektorform darstellen: $$\varepsilon: X \cdot \vec{n_{\varepsilon}} = \vec{0A} \cdot \vec{n_{\varepsilon}}$$ $$\colvec{x \\ y \\ z} \cdot \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}} = \colvec{x_{A} \\ y_{A} \\ z_{A}} \cdot \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}}$$
 
 \subsub{Normalabstand}
 
@@ -311,22 +311,22 @@ Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene 
 \begin{enumerate}
   \item{\textbf{Parameterform}}
 
-  Sind die Gerade $g$ und Ebene $\epsilon$ in Parameterform gegeben, kann man sie gleichsetzen und das daraus entstehende Gleichungssystem l\"{o}sen.
+  Sind die Gerade $g$ und Ebene $\varepsilon$ in Parameterform gegeben, kann man sie gleichsetzen und das daraus entstehende Gleichungssystem l\"{o}sen.
   $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + u \cdot \colvec{x_u \\ y_u \\ z_u}$$ 
 
-  $$\epsilon: \vec{0X} = \colvec{x_E \\ y_E \\ z_E} + s \cdot \colvec{x_s \\ y_s \\ z_s} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$ 
+  $$\varepsilon: \vec{0X} = \colvec{x_E \\ y_E \\ z_E} + s \cdot \colvec{x_s \\ y_s \\ z_s} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$ 
 
-  $$g = \epsilon$$ 
+  $$g = \varepsilon$$ 
 
   $$\colvec{x_A \\ y_A \\ z_A} + u \cdot \colvec{x_u \\ y_u \\ z_u} = \colvec{x_E \\ y_E \\ z_E} + s \cdot \colvec{x_s \\ y_s \\ z_s} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
 
   \item{\textbf{Normalvektorform}}
 
-  Ist die Gerade $g$ in Parameterform aber die Ebene $\epsilon$ in Normalvektorform, muss man die $x, y und z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
+  Ist die Gerade $g$ in Parameterform aber die Ebene $\varepsilon$ in Normalvektorform, muss man die $x, y und z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
 
   $$x_g = x_A \cdot t \cdot x_t$$ $$y_g = y_A \cdot t \cdot y_t$$ $$z_g = z_A \cdot t \cdot z_t$$
 
-  $$x_g, y_g, z_g \text{ in } \epsilon: ax + by + cz = d$$ $$ a(x_A \cdot t \cdot x_t) + b(y_A \cdot t \cdot y_t) + c(z_g = z_A \cdot t \cdot z_t) = d$$
+  $$x_g, y_g, z_g \text{ in } \varepsilon: ax + by + cz = d$$ $$ a(x_A \cdot t \cdot x_t) + b(y_A \cdot t \cdot y_t) + c(z_g = z_A \cdot t \cdot z_t) = d$$
 
   $$\Rightarrow \text{nach t l\"{o}sen}$$
 
@@ -337,42 +337,42 @@ Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene 
 
 \subsub{Ebene und Ebene}
 
-Die Lagebeziehungen von zwei Ebenen $\epsilon_{1}$ und $\epsilon_{2}$ $$\epsilon_{1}: a_{1}x + b_{1}y + c_{1}z = d_{1}$$ $$\epsilon_{2}: a_{2}x + b_{2}y + c_{2}z = d_{2}$$ im Raum sind gleich wie jene f\"{u}r Geraden in der Ebene (Dimensionunterschied jeweils $= 1$): ident, parallel oder schneidend (kein windschief).
+Die Lagebeziehungen von zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ $$\varepsilon_{1}: a_{1}x + b_{1}y + c_{1}z = d_{1}$$ $$\varepsilon_{2}: a_{2}x + b_{2}y + c_{2}z = d_{2}$$ im Raum sind gleich wie jene f\"{u}r Geraden in der Ebene (Dimensionunterschied jeweils $= 1$): ident, parallel oder schneidend (kein windschief).
 
 \begin{itemize}
 
   \item{\textbf{Parallel}}
 
-  Zwei Ebenen $\epsilon_{1}$ und $\epsilon_{2}$ sind dann parallel, wenn ihre Normalvektoren Vielfache von einander sind. Den Normalvektor kann man an den Koeffizienten der Variablen $x, y$ und $z$ ablesen.
-  $$\epsilon_{1}: 4x - 3y + 5z = 7 \Rightarrow \vec{n}_{1} = \colvec{4 \\ -3 \\ 5}$$
-  $$\epsilon_{2}: 12x -9y + 15z = 6 \Rightarrow \vec{n}_{2} = \colvec{12 \\ -9 \\ 15}$$
+  Zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ sind dann parallel, wenn ihre Normalvektoren Vielfache von einander sind. Den Normalvektor kann man an den Koeffizienten der Variablen $x, y$ und $z$ ablesen.
+  $$\varepsilon_{1}: 4x - 3y + 5z = 7 \Rightarrow \vec{n}_{1} = \colvec{4 \\ -3 \\ 5}$$
+  $$\varepsilon_{2}: 12x -9y + 15z = 6 \Rightarrow \vec{n}_{2} = \colvec{12 \\ -9 \\ 15}$$
   $$n_{1} \cdot 3 = n_{2}$$
 
   \item{\textbf{Ident}}
 
   Sind noch dazu die Parameter $d_{1}$ und $d_{2}$ Vielfache von einander, so sind die Ebenengleichungen equivalent und die Ebenen somit ident.
 
-  $$\epsilon_{1}: 4x - 3y + 5z = 2$$
-  $$\epsilon_{2}: 12x -9y + 15z = 6$$
-  $$\epsilon_{1} \cdot 3 = \epsilon_{2}$$
+  $$\varepsilon_{1}: 4x - 3y + 5z = 2$$
+  $$\varepsilon_{2}: 12x -9y + 15z = 6$$
+  $$\varepsilon_{1} \cdot 3 = \varepsilon_{2}$$
 
   \item{\textbf{Schneidend}}
 
-  Letztlich k\"{o}nnen sich zwei Ebenen $\epsilon_{1}$ und $\epsilon_{2}$ noch schneiden und somit eine Schnittgerade bilden. Man erkennt, ob sich zwei Ebenen schneiden, daran, dass sie weder parallel noch ident sind. Da dreidimensionale Ebenen drei Parameter $x, y$ und $z$ besitzen, ist ein Gleichungssystem zwischen zwei Ebenen nicht definitiv l\"{o}sbar. Mann setzt daher den letzten Parameter $z = t$ und berechnet somit die $x, y$ und $z$ Werte in Abh\"{a}ngigkeit des Parameters $t$, wodurch man folglich eine Gerade in Parameterform bilden kann.
+  Letztlich k\"{o}nnen sich zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ noch schneiden und somit eine Schnittgerade bilden. Man erkennt, ob sich zwei Ebenen schneiden, daran, dass sie weder parallel noch ident sind. Da dreidimensionale Ebenen drei Parameter $x, y$ und $z$ besitzen, ist ein Gleichungssystem zwischen zwei Ebenen nicht definitiv l\"{o}sbar. Mann setzt daher den letzten Parameter $z = t$ und berechnet somit die $x, y$ und $z$ Werte in Abh\"{a}ngigkeit des Parameters $t$, wodurch man folglich eine Gerade in Parameterform bilden kann.
 
-  $$\epsilon_{1}: x - 2y + 2z = 3$$ $$\epsilon_{2}: 2x + y - z = 1$$
+  $$\varepsilon_{1}: x - 2y + 2z = 3$$ $$\varepsilon_{2}: 2x + y - z = 1$$
 
   \begin{table}[h!]
     \begin{tabular}{l l}
     I. Gleichsetzen von $z$ mit dem Parameter $t$: & $z = t$
     \\
-    II. Einsetzen von $t$ in $\epsilon_{1}$: & $\epsilon_{1}: x - 2y + 2t = 3$
+    II. Einsetzen von $t$ in $\varepsilon_{1}$: & $\varepsilon_{1}: x - 2y + 2t = 3$
     \\
-    III. Einsetzen von $t$ in $\epsilon_{2}$: & $\epsilon_{2}: 2x + y - t = 1$
+    III. Einsetzen von $t$ in $\varepsilon_{2}$: & $\varepsilon_{2}: 2x + y - t = 1$
     \\
-    IV. L\"{o}sen nach $y$: & $\epsilon_{1} \cdot (-2) \cap \epsilon_{2} \Rightarrow y = -1 + t$
+    IV. L\"{o}sen nach $y$: & $\varepsilon_{1} \cdot (-2) \cap \varepsilon_{2} \Rightarrow y = -1 + t$
     \\
-    V. Finden von $x$: & $y$ in $\epsilon_{2} \Rightarrow x = 1$
+    V. Finden von $x$: & $y$ in $\varepsilon_{2} \Rightarrow x = 1$
     \\
     VI. Somit ist: & $x = 1 + t \cdot 0$
     \\
@@ -395,11 +395,11 @@ Um den Abstand zwischen einem Punkt $P$ und einer Gerade $g$ zu berechnen, gibt 
 \begin{enumerate}
   \item{\textbf{Virtuelle Ebene}}
 
-  F\"{u}r die erste Methode ist es notwendig, den Richtungsvektor $\vec{g}$ der Gerade als Normalvektor einer virtuellen Ebene $\epsilon$ zu sehen, welche durch den Punkt $P$ geht. $$g: \vec{0X} = \vec{0A} + t \cdot \vec{g} \Rightarrow \vec{g} = \vec{n_{\epsilon}}$$ $$\epsilon: \vec{0X} \cdot \vec{n_{\epsilon}} = \vec{n_{\epsilon}} \cdot \vec{0P}$$
+  F\"{u}r die erste Methode ist es notwendig, den Richtungsvektor $\vec{g}$ der Gerade als Normalvektor einer virtuellen Ebene $\varepsilon$ zu sehen, welche durch den Punkt $P$ geht. $$g: \vec{0X} = \vec{0A} + t \cdot \vec{g} \Rightarrow \vec{g} = \vec{n_{\varepsilon}}$$ $$\varepsilon: \vec{0X} \cdot \vec{n_{\varepsilon}} = \vec{n_{\varepsilon}} \cdot \vec{0P}$$
 
   Wenn man die Gerade $g$ mit der Ebene wieder schneidet, erh\"{a}lt man einen Schnittpunkt $S$. Von diesem Schnittpunkt aus kann man den Vektor $\vec{SP}$ berechnen, dessen Betrag der Abstand $d$ der Gerade $g$ zum Punkt $P$ ist. 
 
-  \item{\textbf{Normalprojektion}}
+  \item{\textbf{Normalabstand}}
 
   Die zweite M\"{o}glichkeit ist es, den Normalabstand $d$ von der Gerade zum Punkt $P$ zu berechnen. Dies erfolg mittels der folgenden Formel zur Berechnung des Normalabstandes, wo $A$ der Ortsvektor der Gerade $g$ mit dem Richtungsvektor $\vec{g}$ bzw. dessen Einheitsvektor $\vec{g_{0}}$ ist: $$d = |\vec{AP} \times \vec{g_{0}}|$$
 
@@ -407,16 +407,16 @@ Um den Abstand zwischen einem Punkt $P$ und einer Gerade $g$ zu berechnen, gibt 
 
 \subsub{Abstand von Punkt und Ebene}
 
-Ebenso gibt es zur Berechnung des Abstandes eines Punktes $P$ zu einer Ebene $\epsilon$ zwei M\"{o}glichkeiten:
+Ebenso gibt es zur Berechnung des Abstandes eines Punktes $P$ zu einer Ebene $\varepsilon$ zwei M\"{o}glichkeiten:
 
 \begin{enumerate}
   \item{\textbf{Gerade mit Normalvektor}}
 
-  In diesem Fall berechnet man zuerst den Normalvektor $\vec{n_{\epsilon}}$ der Ebene, und stellt dann eine Gerade $g$ auf, die durch den Punkt $P$ geht: $$g: \vec{0X} = \vec{0P} + t \cdot \vec{n_{\epsilon}}$$ Diese Gerade schneidet man dann mit der Ebene, um einen Schnittpunkt $S$ zu erhalten. Der gesuchte Abstand $d$ ist dann der Betrag des Vektors $\vec{SP}$
+  In diesem Fall berechnet man zuerst den Normalvektor $\vec{n_{\varepsilon}}$ der Ebene, und stellt dann eine Gerade $g$ auf, die durch den Punkt $P$ geht: $$g: \vec{0X} = \vec{0P} + t \cdot \vec{n_{\varepsilon}}$$ Diese Gerade schneidet man dann mit der Ebene, um einen Schnittpunkt $S$ zu erhalten. Der gesuchte Abstand $d$ ist dann der Betrag des Vektors $\vec{SP}$
 
   \item{\textbf{Hesse'sche Abstandsformel}}
 
-  Ebenso ist es m\"{o}glich, mit Hilfe der Hesse'schen Abstandsformel bzw. der Normalprojektion den Abstand $d$ zu berechnen. Hierbei berechnet man wieder den Normalvektor $\vec{n_{\epsilon}}$ der Ebene $\epsilon$ und stellt so eine Gerade $g$ durch den Punkt $P$ auf. Ebenso ben\"{o}tigt man den Einheitsvektor $\vec{n_{0}}$ des Normalvektors der Ebene, sowie einen beliebig gew\"{a}hlten Punkt $A$ auf der Ebene. Die Hesse'sche Abstandsformel lautet dann: $$d = |\vec{PA} \cdot \vec{n_{0}}|$$
+  Ebenso ist es m\"{o}glich, mit Hilfe der Hesse'schen Abstandsformel bzw. der Normalprojektion den Abstand $d$ zu berechnen. Hierbei berechnet man wieder den Normalvektor $\vec{n_{\varepsilon}}$ der Ebene $\varepsilon$ und stellt so eine Gerade $g$ durch den Punkt $P$ auf. Ebenso ben\"{o}tigt man den Einheitsvektor $\vec{n_{0}}$ des Normalvektors der Ebene, sowie einen beliebig gew\"{a}hlten Punkt $A$ auf der Ebene. Die Hesse'sche Abstandsformel lautet dann: $$d = |\vec{PA} \cdot \vec{n_{0}}|$$
 
 \end{enumerate}
 
