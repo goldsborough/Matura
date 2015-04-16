@@ -8,7 +8,7 @@
 
 4. What is a waveform, show and play sine wave
 
-5. Additive synthesis, what is and how can it be used to create a saw wave
+5. Additive synthesis, what is it and how can it be used to create a saw wave
 
 6. Play saw wave
 
