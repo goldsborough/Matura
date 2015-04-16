@@ -16,6 +16,10 @@
 
 \usepackage{tikz}
 
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.10}
+
 \usepackage{gensymb}
 
 \usepackage{fancyhdr}
@@ -27,7 +31,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.2mm}
-\fancyhead[C]{Vektoren}
+\fancyhead[C]{Integral}
 \renewcommand{\footrulewidth}{0.2mm}
 \fancyfoot[L]{Peter Goldsborough}
 \fancyfoot[C]{\thepage}
@@ -62,6 +66,6 @@
 
 \newcommand{\zitat}[1]{\foreignquote{german}{#1}}
 
-\newcommand{\bolditem}[1]{\textbf{#1}}
+\newcommand{\bolditem}[1]{\item \textbf{#1}}
 
-\newcommand{\titleitem}[1]{\bolditem{#1}}
+\newcommand{\titleitem}[1]{\bolditem{#1} \par}

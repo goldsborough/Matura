@@ -7,6 +7,610 @@
 
 \heading{Integral}
 
+Die Integralrechnung besch\"{a}ftigt sich mit der Berechnung von Fl\"{a}cheninhalten unter Kurven. Diese k\"{o}nnen entweder als Summe von Rechtecksfl\"{a}chen angen\"{a}hert oder mittels dem Integrationsverfahren genau bestimmt werden. Im Bereich der Analysis ist das Integrieren einer Funktion die inverse Operation zum Differenzieren.
 
+\sub{Produktsummen}
+
+Das Integral einer Kurve kann in einem Ann\"{a}herungsverfahren durch Summen von Fl\"{a}cheninhalten einfacher Figuren wie Rechtecken, Dreiecken oder Trapezen approximiert werden, da die Berechnung ihrer Fl\"{a}chen vergleichsweise einfach ist. Verwendet man Rechtecke f\"{u}r die Approximierung, so ist das Integral eine Summe vieler kleiner Rechtecke. Die Breite $\Delta x$ dieser Rechtecke ist hierbei ein festgelegter, konstanter Abstand auf der $x$-Achse, welcher die Funktion in die Intervalle $[0; \Delta x], [\Delta x; 2 \cdot \Delta x], [2 \cdot \Delta x; 3 \cdot \Delta x], ...$ teilt. F\"{u}r ein beliebiges Intervall $[a; b]$ einer Funktion, das in $N$ Teilintervalle geteilt werden soll, wird $\Delta x$ mittels der Formel $\Delta x = \frac{b - a}{N}$ berechnet. Die L\"{a}nge jeden Rechtecks ist der jeweilige Funktionswert $f(x)$ an den einzelnen Intervallsgrenzen. Das Integral ist somit eine Summe vieler Produkte: eine \emph{Produktsumme}. 
+
+Es gibt vier verschiedene M\"{o}glichkeiten, Rechtecke unter einer Kurve aufzuspannen und so eine Produktsumme zu bilden: als Untersumme, Obersumme, Linkssumme oder Rechtssumme.
+
+\subsub{Untersumme}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   				node [pos=0.2, below] {$\Delta x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {0.25 * (\x - 4)^2});
+
+		% First rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 2.25)
+		   -- (0, 2.25);
+
+		% First node
+		\draw [fill=black]
+		 	  (1, 2.25) circle [radius=1.2pt]
+		   				node [above right] {$min_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 1)
+		   -- (1, 1);
+
+		% Second node
+		\draw [fill=black]
+		 	  (2, 1) circle [radius=1.2pt]
+			         node [above right] {$min_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (3, 0)
+		   -- (3, 0.25)
+		   -- (2, 0.25);
+
+		% Third node
+		\draw [fill=black]
+		 	  (3, 0.25) circle [radius=1.2pt]
+			         node [above right] {$min_3$};
+
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	\begin{tikzpicture}
+
+	% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   				node [pos=0.2, below] {$\Delta x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$}
+		   				node [pos=0.8, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {-0.2 * \x^2 + 4});
+
+		% First rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 3.8)
+		   -- (0, 3.8);
+
+		% First node
+		\draw [fill=black]
+		 	  (1, 3.8) circle [radius=1.2pt]
+		   		     node [above right] {$min_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 3.2)
+		   -- (1, 3.2);
+
+		% Second node
+		\draw [fill=black]
+		 	  (2, 3.2) circle [radius=1.2pt]
+			         node [above right] {$min_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (3, 0)
+		   -- (3, 2.2)
+		   -- (2, 2.2);
+
+		% Third node
+		\draw [fill=black]
+		 	  (3, 2.2) circle [radius=1.2pt]
+			           node [above right] {$min_3$};
+
+		% Fourth rectangle
+		\draw [red]
+		      (4, 0)
+		   -- (4, 0.8)
+		   -- (3, 0.8);
+
+		% Fourth node
+		\draw [fill=black]
+		 	  (4, 0.8) circle [radius=1.2pt]
+			           node [above right] {$min_4$};
+
+	\end{tikzpicture}
+\end{figure}
+
+F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $min_i$ jedes Intervalls als L\"{a}nge genommen: $$A_U = \sum_{i=1}^{N} f(min_i) \cdot \Delta x$$ F\"{a}llt die Funktion, liegt der kleinste Funktionswert jedes Intervalls meist am rechten Ende. Steigt die Funktion, bestimmt bei der Untersumme meist der Funktionswert der linken Intervallsgrenze die L\"{a}nge des Rechtecks. Die Breite $\Delta x$ ist bei allen Produktsummen ein konstanter Faktor, mit ihm kann also auch nachtr\"{a}glich multipliziert werden: $$A_U = \Delta x \cdot \sum_{i=1}^{N} f(min_i)$$
+
+\pagebreak
+
+\subsub{Obersumme}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   				node [pos=0.2, below] {$\Delta x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {0.25 * (\x - 4)^2});
+
+		% First rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 4)
+		   -- (0, 4);
+
+		% First node
+		\draw [fill=black]
+		 	  (0, 4) circle [radius=1.2pt]
+		   			 node [left] {$max_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 2.25)
+		   -- (1, 2.25);
+
+		% Second node
+		\draw [fill=black]
+		 	  (1, 2.25) circle [radius=1.2pt]
+			            node [left] {$max_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (3, 0)
+		   -- (3, 1)
+		   -- (2, 1);
+
+		% Third node
+		\draw [fill=black]
+		 	  (2, 1) circle [radius=1.2pt]
+			         node [left] {$max_3$};
+
+	\end{tikzpicture}
+	%
+	\hspace{1.5cm}
+	%
+	\begin{tikzpicture}
+
+	% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   				node [pos=0.2, below] {$\Delta x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$}
+		   				node [pos=0.8, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {-0.2 * \x^2 + 4});
+
+		% First rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 4)
+		   -- (0, 4);
+
+		% First node
+		\draw [fill=black]
+		 	  (0, 4) circle [radius=1.2pt]
+		   		     node [left] {$max_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 3.8)
+		   -- (1, 3.8);
+
+		% Second node
+		\draw [fill=black]
+		 	  (1, 3.8) circle [radius=1.2pt]
+			         node [above right] {$max_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (3, 0)
+		   -- (3, 3.2)
+		   -- (2, 3.2);
+
+		% Third node
+		\draw [fill=black]
+		 	  (2, 3.2) circle [radius=1.2pt]
+			           node [above right] {$max_3$};
+
+		% Fourth rectangle
+		\draw [red]
+		      (4, 0)
+		   -- (4, 2.2)
+		   -- (3, 2.2);
+
+		% Fourth node
+		\draw [fill=black]
+		 	  (3, 2.2) circle [radius=1.2pt]
+			           node [above right] {$max_4$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Gegens\"{a}tzlich zur Untersumme $A_U$ bestimmt bei der Obersumme $A_O$ nicht der kleinste Funktionswert jeden Intervalls die L\"{a}nge des Rechtecks, sondern der gr\"{o}\ss{}te Funktionswert: $$A = \Delta x \cdot \sum_{i=1}^{N} f(max_i)$$ Man bemerke, dass die Rechtecke der Obersumme jenen der Untersumme stark \"{a}hneln. So ergibt es sich, dass die Obersumme berechnet werden kann, indem man die Rechtecke der Untersumme um ein $\Delta x$ verschiebt, das letzte Untersummenrechteck verwirft und das erste Rechteck mit dem maximalen Intervallswert neu berechnet ($min_N$ ist die Minimalstelle des letzten von $N$ Intervallen):
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$}
+		   				node [pos=0.8, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {0.25 * \x^2});
+
+		% First rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 0.25)
+		   -- (2, 0.25);
+
+		% First node
+		\draw [fill=black]
+		 	  (1, 0.25) circle [radius=1.2pt]
+		   			    node [above left] {$min_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 1)
+		   -- (3, 1);
+
+		% Second node
+		\draw [fill=black]
+		 	  (2, 1) circle [radius=1.2pt]
+			         node [left] {$min_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (3, 0)
+		   -- (3, 2.25)
+		   -- (4, 2.25)
+		   -- (4, 0);
+
+		% Third node
+		\draw [fill=black]
+		 	  (3, 2.25) circle [radius=1.2pt]
+			         node [left] {$min_3$};
+
+	\end{tikzpicture}
+	%
+	\begin{tikzpicture}[font=\Large]
+		% y scaling
+		\draw (0, -0.5) (0, 4.5);
+
+		% x scaling
+		\draw (-1, 0) (1, 0);
+
+		\draw (0, 2) node {$\Rightarrow$};
+	\end{tikzpicture}
+	%
+	\begin{tikzpicture}
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   			    node [above] {$x$}
+		   			    node [pos=0.2, below] {$\Delta x$}
+		   				node [pos=0.4, below] {$\Delta x$}
+		   				node [pos=0.6, below] {$\Delta x$}
+		   				node [pos=0.8, below] {$\Delta x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +4.5) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:4] plot(\x, {0.25 * \x^2});
+
+		% First rectangle
+		\draw [red]
+		      (0, 0.25)
+		   -- (1, 0.25);
+
+		% First node
+		\draw [fill=black]
+		 	  (1, 0.25) circle [radius=1.2pt]
+		   			 node [above left] {$min_1$};
+
+		% Second rectangle
+		\draw [red]
+		      (1, 0)
+		   -- (1, 1)
+		   -- (2, 1);
+
+		% Second node
+		\draw [fill=black]
+		 	  (2, 1) circle [radius=1.2pt]
+		   			 node [above left] {$min_2$};
+
+		% Third rectangle
+		\draw [red]
+		      (2, 0)
+		   -- (2, 2.25)
+		   -- (3, 2.25)
+		   -- (3, 0);
+
+		% Third node
+		\draw [fill=black]
+		 	  (3, 2.25) circle [radius=1.2pt]
+			            node [above left] {$min_3$};
+
+		% Fourth rectangle
+		\draw [blue]
+		      (3, 2.25)
+		   -- (3, 4)
+		   -- (4, 4)
+		   -- (4, 0);
+
+		% Fourth node
+		\draw [fill=black]
+		 	  (4, 4) circle [radius=1.2pt]
+			         node [above left] {$max_4$};
+
+	\end{tikzpicture}
+\end{figure}
+
+$$A_O = A_U - \Delta x \cdot f(min_N) + \Delta x \cdot f(max_1)$$ $$\Downarrow$$ $$A_O = A_U + \Delta x \cdot (f(max_1) - f(min_N))$$
+
+Da die Obersumme h\"{o}her ist als die wirkliche Fl\"{a}che unter der Kurve und die Untersumme niedriger, kann der Fl\"{a}cheninhalt der Kurve mit Relationszeichen zwischen Unter- und Obersumme eingeschr\"{a}nkt werden: $$A_U < A < A_O$$
+
+\pagebreak
+
+\subsub{Linkssumme}
+
+Die Linkssumme unterscheidet nicht zwischen minimalen oder maximalen Funktionswerten, sondern setzt die L\"{a}nge jeden Rechtecks stets an das linke Ende jeden Intervalls:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+3.0, 0) node [midway, below] {$A_L$}
+		   				node [above] {$x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +3.0) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:2.5] plot(\x, {\x^3 - 4.5*\x^2 + 6 * \x});
+
+		% Rectangles
+		\foreach \x in {0.5,1,...,2}
+		{
+			\draw [red]
+				  (\x, {(\x-0.5)^3 - 4.5*(\x-0.5)^2 + 6 * (\x-0.5)})
+			   -- (\x, {\x^3 - 4.5*\x^2 + 6 * \x})
+			   -- (\x + 0.5, {\x^3 - 4.5*\x^2 + 6 * \x})
+			   -- (\x + 0.5, 0);
+
+
+			\draw [fill=black] (\x, {\x^3 - 4.5*\x^2 + 6 * \x})
+						       circle [radius=0.9pt];
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+$$A_L = \Delta x \cdot \sum_{i=0}^{N - 1} f(i \cdot \Delta x)$$
+
+\subsub{Rechtssumme}
+
+Zur Berechnung der Rechtssumme wird die L\"{a}nge jeden Rechtecks immer am Funktionswert der rechten Intervallsgrenze gemessen:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+
+		% x axis
+		\draw [->]
+		      (-0.5, 0) 
+		   -- (+3.0, 0) node [midway, below] {$A_R$}
+		   				node [above] {$x$};
+
+		% y axis
+		\draw [->]
+		      (0, -0.5)
+		   -- (0, +3.0) node [right] {$f(x)$};
+
+		% Graph
+		\draw [domain=0:2.5] plot(\x, {\x^3 - 4.5*\x^2 + 6 * \x});
+
+		% Rectangles
+		\foreach \x in {0.5,1,...,2.5}
+		{
+			\draw [red]
+				  (\x - 0.5, {(\x-0.5)^3 - 4.5*(\x-0.5)^2 + 6 * (\x-0.5)})
+			   -- (\x - 0.5, {\x^3 - 4.5*\x^2 + 6 * \x})
+			   -- (\x, {\x^3 - 4.5*\x^2 + 6 * \x})
+			   -- (\x, 0);
+
+			   \draw [fill=black] (\x, {\x^3 - 4.5*\x^2 + 6 * \x})
+						          circle [radius=0.9pt];
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+$$A_R = \Delta x \cdot \sum_{i=1}^{N} f(i \cdot \Delta x)$$
+
+\pagebreak
+
+\sub{Das Bestimmte Integral}
+
+Ebenso wie der Differentialquotient, also die momentane \"{A}nderung einer Funktion an einer bestimmten Stelle $x$, ein Grenzwert von Differenzenquotienten ist, in dem das Intervall [$x$ ; $x + \Delta x$] des Differenzenquotienten infinitisemal klein ist und $\Delta x$ somit gegen null strebt, ist auch ein Integral das Resultat eines Grenzwerts. W\"{a}chst n\"{a}mlich die Anzahl $N$ an Rechtecken, mit denen man die Fl\"{a}che unter einer Kurve als Produktsumme ann\"{a}hert, wird $\Delta x$ immer kleiner und diese Ann\"{a}herung somit immer genauer. Das bestimmte Integral, welches die Fl\"{a}che unter einer Funktion in einem bestimmten Intervall $[a ; b]$ exakt berechnet, l\"{a}sst sich also mit Hilfe eines Limes und den vorhin beschriebenen Produktsummen definieren: $$\int_{a}^{b} f(x) \,dx = \lim_{N \rightarrow \infty} \sum_{i=1}^{N} f(x_i) \cdot \Delta x = \lim_{\Delta x \rightarrow 0} \sum_{i=1}^{N} f(x_i) \cdot \Delta x$$ Bei einem bestimmten Integral $\int_{a}^{b} f(x) \, dx$ beschreiben $a$ und $b$ somit die untere sowie obere Intervallsgrenze. $f(x)$ ist die im Intervall $[a ; b]$ zu integrierende Funktion --- der Integrand. Der Ausdruck $dx$ bestimmt die Variable, nach der man integriert --- in diesem Fall $x$. Der Ausdruck $dx$ sollte immer angegeben werden und ist besonders f\"{u}r das Integral multivariabler Funktionen wichtig: $$\int_{a}^{b} f(x) = \int_{a}^{b} (2x^3 - 4z + y) \rightarrow \text{ Integration nach welcher Variable?}$$ Es sei angemerkt, dass Fl\"{a}chenst\"{u}cke unter der der Abszisse ein negatives Vorzeichen besitzen. Soll also die absolute Fl\"{a}che, die eine Funktion mit der Absizsse einschlie\ss{}t, berechnet werden, muss der Betrag aller negativen Fl\"{a}chensegmente verwendet werden. Ist jedoch nach dem Wert des bestimmten Integral in diesem Intervall gefragt, nicht nach der Fl\"{a}che, so m\"{u}ssen alle Vorzeichen --- positiv und negativ --- beibehalten werden:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		\begin{axis}
+		[
+			xlabel=$x$,
+			ylabel=$f(x)$,
+			samples=1000,
+			axis lines = middle
+		]
+
+			\addplot [domain=-0.2:2.2] {(\x - 1)^3 -\x + 1};
+
+		\end{axis}
+
+		\draw (2, 3.75) node {\Large $A_1$};
+
+		\draw (5, 1.75) node {\Large $A_2$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Absolute mit der $x$-Achse eingeschlossene Fl\"{a}che $A$ der Funktion: $$A = |A_1| + |A_2| = \left|\,\int_{0}^{1}f(x)\,dx\,\right| + \left|\,\int_{1}^{2}f(x)\,dx\,\right|$$ Bestimmtes Integral: $\int_{0}^{2} f(x)\,dx = A_1 + A_2$
+
+\pagebreak
+
+\sub{Stammfunktionen}
+
+Ein wichtiger Begriff im Zusammenhang mit der Integralrechnung ist die sogennante \zitat{Stammfunktion} einer Funktion, welche eine genau Berechnung des bestimmten Integral erm\"{o}glicht. Da die Stammfunktion $F(x)$ das Resultat der Integration --- dem Gegenteil der Differenzierung --- einer Funktion $f(x)$ ist, ist die erste Ableitung $F'(x)$ der Stammfunktion wiederum die urspr\"{u}ngliche Funktion $f(x)$. Eine Stammfunktion $F(x)$, welche equivalent zum \emph{unbestimmten} Integral ist, wird als Integral ohne Integrationsgrenzen angeschrieben: $$F(x) = \int f(x)\,dx$$ Da Konstanten bei der Differenzierung einer Funktion wegfallen, besitzt jede Funkion $f(x)$ nicht nur eine, sondern unendlich viele Stammfunktionen, welche sich nur durch eine reelle Integrationskonstante $C$ voneinander unterscheiden. Sind $F(x)$ und $G(x)$ zwei Stammfunktionen einer Funktion $f(x)$, gilt somit: $$F'(x) = G'(x) = f(x)$$ Eine besondere Eigenschaft von Stammfunktionen ist, dass sie die Berechnung des bestimmten Integrals einer Funktion in einem beliebigen Intervall $[a ; b]$ erm\"{o}glichen. Der vorhin vorgestellte Grenzwert aus Produktsummen als Definition des Integrals liefert noch keine eindeutige Rechenmethode zur genauen Bestimmung seines Wertes. Kennt man eine Stammfunktion $F(x)$ einer Funktion $f(x)$, so ist das bestimmte Integral dieser Funktion in einem beliebigen Intervall $[a ; b]$ die Differenz der Funktionswerte der Stammfunktion an diesen Stellen. Die Integration einer Funktion in den Grenzen von $a$ nach $b$ wird hierbei durch einen vertikalen Strich angedeutet. $$\int_a^b f(x) \, dx = F(x) \, \Big|_a^b F(b) - F(a)$$
+
+\sub{Integrationsregeln}
+
+Aus der Definition des Integrals, der Stammfunktion sowie dem Verh\"{a}ltnis zwischen Differential- und Integralrechnung lassen sich einige Regeln der Integration festlegen. Allen voran steht die \emph{Potenzregel}, welche die Bestimmung der Stammfunktion $F(x)$ einer Funktion $f(x)$ erm\"{o}glicht. M\"{o}chte man einen Term des Schemas $x^n$ integrieren, bzw. f\"{u}r diesen eine Stammfunktion finden, so erh\"{o}ht man die Potenz der unabh\"{a}ngigen Variable um $1$ und dividiert den Term dadurch: $$\int (x^n) \, dx = \frac{x^{n + 1}}{n + 1}$$
+
+\begin{itemize}
+	\titleitem{Summenregel} 
+
+	Das bestimmte Integral der Summe aus zwei Funktionen $f(x)$ und $g(x)$ in einem beliebigen Intervall $[a ; b]$ ist gleich der Summe der einzelnen Integrale: $$\int_a^b [f(x) + g(x)] \,dx = \int_a^b f(x) \, dx + \int_a^b g(x) \, dx$$ Auch allgemein gilt dass die Stammfunktion einer Summe aus zwei Funktionen gleich der Summe ihrer Stammfunktionen ist: $$\int [f(x) + g(x)]\,dx = F(x) + G(x)$$
+
+	\titleitem{Faktorregel}
+
+	Konstante Faktoren $k \in \mathbb{R}$ einer Funktion $f(x)$ bleiben beim Integrieren sowie beim Bilden einer Stammfunktion erhalten: $$\int_a^b [k \cdot f(x)] \, dx = k \cdot \int_a^b f(x) \, dx$$ $$\int [k \cdot f(x)] \, dx = k \cdot F(x)$$
+
+	\titleitem{Kombinationsregel}
+
+	Die Summe bestimmter Integrale einer Funktion in zwei benachbarten Intervallen $[a ; b]$ $[b ; c]$ ist gleich dem bestimmten Integral im gesamten Intervall $[a ; c]$: $$\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x)\, dx$$ Dies kann auch auf beliebig viele benachbarte Intervalle mit den jeweiligen Intervallsgrenzen $a_i$ und $b_i$ des $i$-ten Intervalls erweitert werden. Sei $N$ die Anzahl der benachbarten Teilintervalle: $$\sum_{i=1}^{N} \int_{a_i}^{b_i} f(x) \, dx = \int_{a_1}^{b_N} f(x) \, dx$$
+
+	\titleitem{Nullregel}
+
+	Ist die Differenz $b - a$ zwischen den Integrationsgrenzen $a$ und $b$ gleich null, so ist das Integral der Funktion in diesen Grenzen gleich null: $$b - a = 0 \rightarrow \int_{a}^{b} f(x) \, dx = 0$$
+
+	\titleitem{Vertauschungsregel}
+
+	Kehrt man die Integrationsgrenzen $a$ und $b$ eines bestimmten Integrals einer Funktion um, so \"{a}ndert sich das Vorzeichen des Integrals in diesen Grenzen: $$\int_a^b f(x) \, dx = -\int_b^a f(x) \, dx$$
+
+	Dies folgt daraus, dass das bestimmte Integral einer Funktion in einem Intervall $[a ; b]$ die Differenz zwischen den Funktionswerten der Stammfunktion an den Stellen $a$ und $b$ ist. Kehrt man die Integrationsgrenzen um, werden Minuend und Subtrahend dieser Differenz vertauscht: $$\int_a^b f(x) \, dx = F(b) - F(a)$$ $$\int_b^a f(x) \, dx = F(a) - F(b)$$
+
+\end{itemize}
+
+\pagebreak
+
+\sub{Integrale elementarer Funktionen}
+
+Nicht alle Integrale sind leicht zu bestimmen, vor allem jene elementarer Funktionen wie der Sinus-, Cosinus-, Wurzel-, Logarithmus- oder Euler'schen Funktion. Die Ableitung dieser Funktionen zu finden ist meist leichter.
+
+\vspace{\parskip}
+
+\begin{table}[h!]
+	\centering
+	\large
+	\begin{tabular}{| c c c |}
+		\hline
+		&& \\
+		$f(x)$ & $\longleftrightarrow$ & $F(x)$
+		\\ && \\ \hline && \\
+		$e^x$ & $\longleftrightarrow$ & $e^x$
+		\\ && \\
+		$x^{-1}$ & $\longleftrightarrow$ & $\ln x$
+		\\ && \\
+		$\sqrt{x}$ & $\longleftrightarrow$ & $\frac{2}{3}\sqrt{x^3}$
+		\\ && \\
+		$sin(x)$ & $\longleftrightarrow$ & $-\cos(x)$
+		\\ && \\
+		$cos(x)$ & $\longleftrightarrow$ & $\sin(x)$
+		\\ && \\
+		$\frac{1}{\cos^2 x}$ & $\longleftrightarrow$ & $\tan x$
+		\\ && \\
+		$a^x$ & $\longleftrightarrow$ & $\frac{a^x}{\ln a}$
+		\\ && \\
+		$e^{ax}$ & $\longleftrightarrow$ & $\frac{e^{ax}}{a}$
+		\\ && \\
+		$x^n$ & $\longleftrightarrow$ & $\frac{x^{n + 1}}{n + 1}$
+		\\ && \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\vspace{\parskip}
+
+Die Integration der Wurzelfunktion $\sqrt{x}$ sollte erl\"{a}utert werden. Jede Wurzel der Form $\sqrt[m]{x^n}$ kann als Potenz der Form $x^{\frac{n}{m}}$ angeschrieben werden. Daher w\"{a}re die Quadratwurzel von $x$ gleich $x$ hoch $\frac{1}{2}$. Wendet man nun die Potenzregel an, erh\"{o}ht man die Potenz des Terms um 1 und dividiert schlie\ss{}lich dadurch: $$\int \sqrt{x} \,dx = \int x^{\frac{1}{2}} \,dx = \cfrac{x^{\frac{3}{2}}}{\cfrac{1}{2} + \cfrac{2}{2}} = \cfrac{\sqrt{x^3}}{\cfrac{3}{2}} = \frac{2}{3} \sqrt{x^3}$$
+
+\pagebreak
+
+\sub{Berechnung von eingeschlossenen Fl\"{a}chen}
+
+\sub{Volumsberechnungen}
+
+\sub{Rotationsk\"{o}rper}
 
 \end{document}
