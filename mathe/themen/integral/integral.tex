@@ -501,7 +501,9 @@ $$A_R = \Delta x \cdot \sum_{i=1}^{N} f(i \cdot \Delta x)$$
 
 \sub{Das Bestimmte Integral}
 
-Ebenso wie der Differentialquotient, also die momentane \"{A}nderung einer Funktion an einer bestimmten Stelle $x$, ein Grenzwert von Differenzenquotienten ist, in dem das Intervall [$x$ ; $x + \Delta x$] des Differenzenquotienten infinitisemal klein ist und $\Delta x$ somit gegen null strebt, ist auch ein Integral das Resultat eines Grenzwerts. W\"{a}chst n\"{a}mlich die Anzahl $N$ an Rechtecken, mit denen man die Fl\"{a}che unter einer Kurve als Produktsumme ann\"{a}hert, wird $\Delta x$ immer kleiner und diese Ann\"{a}herung somit immer genauer. Das bestimmte Integral, welches die Fl\"{a}che unter einer Funktion in einem bestimmten Intervall $[a ; b]$ exakt berechnet, l\"{a}sst sich also mit Hilfe eines Limes und den vorhin beschriebenen Produktsummen definieren: $$\int_{a}^{b} f(x) \,dx = \lim_{N \rightarrow \infty} \sum_{i=1}^{N} f(x_i) \cdot \Delta x = \lim_{\Delta x \rightarrow 0} \sum_{i=1}^{N} f(x_i) \cdot \Delta x$$ Bei einem bestimmten Integral $\int_{a}^{b} f(x) \, dx$ beschreiben $a$ und $b$ somit die untere sowie obere Intervallsgrenze. $f(x)$ ist die im Intervall $[a ; b]$ zu integrierende Funktion --- der Integrand. Der Ausdruck $dx$ bestimmt die Variable, nach der man integriert --- in diesem Fall $x$. Der Ausdruck $dx$ sollte immer angegeben werden und ist besonders f\"{u}r das Integral multivariabler Funktionen wichtig: $$\int_{a}^{b} f(x) = \int_{a}^{b} (2x^3 - 4z + y) \rightarrow \text{ Integration nach welcher Variable?}$$ Es sei angemerkt, dass Fl\"{a}chenst\"{u}cke unter der der Abszisse ein negatives Vorzeichen besitzen. Soll also die absolute Fl\"{a}che, die eine Funktion mit der Absizsse einschlie\ss{}t, berechnet werden, muss der Betrag aller negativen Fl\"{a}chensegmente verwendet werden. Ist jedoch nach dem Wert des bestimmten Integral in diesem Intervall gefragt, nicht nach der Fl\"{a}che, so m\"{u}ssen alle Vorzeichen --- positiv und negativ --- beibehalten werden:
+Ebenso wie der Differentialquotient, also die momentane \"{A}nderung einer Funktion an einer bestimmten Stelle $x$, ein Grenzwert von Differenzenquotienten ist, in dem das Intervall [$x$ ; $x + \Delta x$] des Differenzenquotienten infinitisemal klein ist und $\Delta x$ somit gegen null strebt, ist auch ein Integral das Resultat eines Grenzwerts. W\"{a}chst n\"{a}mlich die Anzahl $N$ an Rechtecken, mit denen man die Fl\"{a}che unter einer Kurve als Produktsumme ann\"{a}hert, wird $\Delta x$ immer kleiner und diese Ann\"{a}herung somit immer genauer. Bei einer sehr gro\ss{}en Anzahl an Rechtecken $N$ konvergieren also Minimum und Maximum, Untersumme und Obersumme jeden Intervalls in einem Wert. Das bestimmte Integral, welches die Fl\"{a}che unter einer Funktion in einem bestimmten Intervall $[a ; b]$ exakt berechnet, l\"{a}sst sich also mit Hilfe eines Limes und den vorhin beschriebenen Produktsummen definieren: $$\int_{a}^{b} f(x) \,dx = \lim_{N \rightarrow \infty} \sum_{i=1}^{N} f(x_i) \cdot \Delta x = \lim_{\Delta x \rightarrow 0} \sum_{i=1}^{N} f(x_i) \cdot \Delta x$$ Bei einem bestimmten Integral $\int_{a}^{b} f(x) \, dx$ beschreiben $a$ und $b$ somit die untere sowie obere Intervallsgrenze. $f(x)$ ist die im Intervall $[a ; b]$ zu integrierende Funktion --- der Integrand. Der Ausdruck $dx$ bestimmt die Variable, nach der man integriert --- in diesem Fall $x$. Der Ausdruck $dx$ sollte immer angegeben werden und ist besonders f\"{u}r das Integral multivariabler Funktionen wichtig: $$\int_{a}^{b} f(x) = \int_{a}^{b} (2x^3 - 4z + y) \rightarrow \text{ Integration nach welcher Variable?}$$ 
+
+Es sei angemerkt, dass Fl\"{a}chenst\"{u}cke unter der der Abszisse ein negatives Vorzeichen besitzen. Soll also die absolute Fl\"{a}che, die eine Funktion mit der Absizsse einschlie\ss{}t, berechnet werden, muss der Betrag aller negativen Fl\"{a}chensegmente verwendet werden. Ist jedoch nach dem Wert des bestimmten Integral in diesem Intervall gefragt, nicht nach der Fl\"{a}che, so m\"{u}ssen alle Vorzeichen --- positiv und negativ --- beibehalten werden:
 
 \begin{figure}[h!]
 	\centering
@@ -536,16 +538,24 @@ Ein wichtiger Begriff im Zusammenhang mit der Integralrechnung ist die sogennant
 
 \sub{Integrationsregeln}
 
-Aus der Definition des Integrals, der Stammfunktion sowie dem Verh\"{a}ltnis zwischen Differential- und Integralrechnung lassen sich einige Regeln der Integration festlegen. Allen voran steht die \emph{Potenzregel}, welche die Bestimmung der Stammfunktion $F(x)$ einer Funktion $f(x)$ erm\"{o}glicht. M\"{o}chte man einen Term des Schemas $x^n$ integrieren, bzw. f\"{u}r diesen eine Stammfunktion finden, so erh\"{o}ht man die Potenz der unabh\"{a}ngigen Variable um $1$ und dividiert den Term dadurch: $$\int (x^n) \, dx = \frac{x^{n + 1}}{n + 1}$$
+Aus der Definition des Integrals, der Stammfunktion sowie dem Verh\"{a}ltnis zwischen Differential- und Integralrechnung lassen sich einige Regeln der Integration festlegen. Allen voran steht die \emph{Potenzregel}, welche die Bestimmung der Stammfunktion $F(x)$ einer Funktion $f(x)$ erm\"{o}glicht. M\"{o}chte man einen Term des Schemas $x^n$ integrieren, bzw. f\"{u}r diesen eine Stammfunktion finden, so erh\"{o}ht man die Potenz der unabh\"{a}ngigen Variable um $1$ und dividiert den Term dadurch: $$\int (x^n) \, dx = \frac{x^{n + 1}}{n + 1}$$ Da konstante Werte wie die Zahl $7$ oder $\pi$ Koeffizienten $k$ eines Terms der Form $k \cdot x^0$ sind, fallen sie nicht wie bei der Differenzialrechnung weg, sondern werden Koeffizienten der unabh\"{a}ngigen Variable $x$: $$\int 7 \, dx = \int (7 \cdot x^0) \, dx = 7 \cdot \frac{x^1}{1} = 7x$$ 
+
+\textbf{Beispiel}: \emph{Integriere die Funktion $f(x) = 3x^4 + 6x^2 -7x + 1$.}
+
+\begin{center}
+	$\int 3x^4 \, dx = \frac{3}{5}x^5$ \hspace{1cm} $\int 6x^2 \, dx = \frac{6}{3}x^3 = 2x^3$ \hspace{1cm} $\int -7x \, dx = -\frac{7}{2}x^2$ \hspace{1cm} $\int 1 \, dx = \frac{1}{1}x = x$
+\end{center}
+
+\textbf{Ergebnis}: $\int f(x) \, dx = F(x) = \frac{3}{5}x^5 + 2x^3 -\frac{7}{2}x^2 + x$
 
 \begin{itemize}
 	\titleitem{Summenregel} 
 
-	Das bestimmte Integral der Summe aus zwei Funktionen $f(x)$ und $g(x)$ in einem beliebigen Intervall $[a ; b]$ ist gleich der Summe der einzelnen Integrale: $$\int_a^b [f(x) + g(x)] \,dx = \int_a^b f(x) \, dx + \int_a^b g(x) \, dx$$ Auch allgemein gilt dass die Stammfunktion einer Summe aus zwei Funktionen gleich der Summe ihrer Stammfunktionen ist: $$\int [f(x) + g(x)]\,dx = F(x) + G(x)$$
+	Das bestimmte Integral der Summe aus zwei Funktionen $f(x)$ und $g(x)$ in einem beliebigen Intervall $[a ; b]$ ist gleich der Summe der einzelnen Integrale: $$\int_a^b \big[f(x) + g(x)\big] \,dx = \int_a^b f(x) \, dx + \int_a^b g(x) \, dx$$ Auch allgemein gilt dass die Stammfunktion einer Summe aus zwei Funktionen gleich der Summe ihrer Stammfunktionen ist: $$\int \big[f(x) + g(x)\big]\,dx = F(x) + G(x)$$
 
 	\titleitem{Faktorregel}
 
-	Konstante Faktoren $k \in \mathbb{R}$ einer Funktion $f(x)$ bleiben beim Integrieren sowie beim Bilden einer Stammfunktion erhalten: $$\int_a^b [k \cdot f(x)] \, dx = k \cdot \int_a^b f(x) \, dx$$ $$\int [k \cdot f(x)] \, dx = k \cdot F(x)$$
+	Konstante Faktoren $k \in \mathbb{R}$ einer Funktion $f(x)$ bleiben beim Integrieren sowie beim Bilden einer Stammfunktion erhalten: $$\int_a^b \big[k \cdot f(x)\big] \, dx = k \cdot \int_a^b f(x) \, dx$$ $$\int \big[k \cdot f(x)\big] \, dx = k \cdot F(x)$$
 
 	\titleitem{Kombinationsregel}
 
@@ -574,7 +584,9 @@ Nicht alle Integrale sind leicht zu bestimmen, vor allem jene elementarer Funkti
 \begin{table}[h!]
 	\centering
 	\large
-	\begin{tabular}{| c c c |}
+	\begin{tabular}{| >{\centering\arraybackslash}p{1.5cm}
+	 				  c
+	 				  >{\centering\arraybackslash}p{1.5cm} |}
 		\hline
 		&& \\
 		$f(x)$ & $\longleftrightarrow$ & $F(x)$
@@ -587,7 +599,7 @@ Nicht alle Integrale sind leicht zu bestimmen, vor allem jene elementarer Funkti
 		\\ && \\
 		$sin(x)$ & $\longleftrightarrow$ & $-\cos(x)$
 		\\ && \\
-		$cos(x)$ & $\longleftrightarrow$ & $\sin(x)$
+		$\cos(x)$ & $\longleftrightarrow$ & $\sin(x)$
 		\\ && \\
 		$\frac{1}{\cos^2 x}$ & $\longleftrightarrow$ & $\tan x$
 		\\ && \\
@@ -609,8 +621,249 @@ Die Integration der Wurzelfunktion $\sqrt{x}$ sollte erl\"{a}utert werden. Jede 
 
 \sub{Berechnung von eingeschlossenen Fl\"{a}chen}
 
+Gilt es, die Fl\"{a}che zwischen zwei beliebigen Funktionen berechnen, so muss man die Differenz ihrer Integrale bestimmen. Hierbei sei angemerkt, dass die berechnete, eingeschlossene Fl\"{a}che dann positiv ist, wenn der kleinere Fl\"{a}cheninhalt (der \emph{unteren} Funktion) vom gr\"{o}\ss{}eren Fl\"{a}cheninhalt (der \emph{oberen} Funktion) abgezogen wird.Andernfalls muss der Betrag des negativen Fl\"{a}chenst\"{u}cks verwendet werden --- die absolute Fl\"{a}che bleibt gleich. Ebenso sei angemerkt, dass stets von Schnittpunkt zu Schnittpunkt integriert werden sollte, da sich die Lagebeziehungen der Funktionen ver\"{a}ndern k\"{o}nnen und somit das Vorzeichen der einzelnen Teilintegrale. F\"{u}r die Berechnung der von zwei Funktionen $f(x)$ und $g(x)$ umschlossenen Fl\"{a}che $A$ gilt somit: $$A = \left| \, \int_a^b \big[f(x) - g(x)\big] \, dx \, \right|$$
+
+\textbf{Beispiel}: \emph{Berechne die Fl\"{a}che, die von den Funktionen $f(x) = x^3 - 2x^2 + 2$ und $g(x) = x + 1$ eingeschlossen wird.}
+
+\extrapar
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			x=3cm,
+			xlabel = $x$,
+			ylabel = $f(x)$,
+			axis lines = middle,
+			legend pos = outer north east,
+			samples = 100,
+			domain=-0.9:2.4,
+			mark size = 1.2pt
+		]
+			% f(x)
+			\addplot [red] {x^3 - 2*x^2 + 2};
+
+			\addlegendentry{$f(x) = x^3 - 2x^2 + 2$};
+
+			% g(x)
+			\addplot [black] {x + 1};
+
+			\addlegendentry{$g(x) = x + 1$};
+
+			% Intersection point 1
+			\addplot [mark=*] coordinates {(-0.8, 0.2)};
+
+			% Intersection point 2
+			\addplot [mark=*] coordinates {(0.55, 1.55)};
+
+			% Intersection point 3
+			\addplot [mark=*] coordinates {(2.25, 3.25)};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+Der Grafik kann man entnehmen, dass die beiden Funktionen drei Schnittpunkte besitzen und daher zwei Fl\"{a}chenst\"{u}cke einschlie\ss{}en. Das erste Fl\"{a}chenst\"{u}ck $A_1$ wird von den Funktionen im Intervall $[-0.8 ; 0.55]$ umschlossen. Das zweite Fl\"{a}chenst\"{u}ck $A_2$ liegt im Intervall $[0.55 ; 2.25]$. Diese Intervallsgrenzen legt man als Integrationsgrenzen fest und berechnet anschlie\ss{}end das bestimmte Integral der Differenz der beiden Funktionen in diesen Grenzen. Addiert man die beiden positiven Teilfl\"{a}chen $A_1$ und $A_2$ erh\"{a}lt man die gesamte Fl\"{a}che $A$. Im ersten Intervall sollte das Integral von $g(x) - f(x)$ bestimmt werden, um somit eine positive Fl\"{a}che zu erhalten. Konvers ist es im zweiten Intervall ratsam, $f(x)$ von $g(x)$ zu subtrahieren. 
+
+In beiden F\"{a}llen kann ebenso der Betrag des Integrals verwendet werden, dann spielen die Anordnung von Minuend und Subtrahent keine Rolle. Ebenso kann man sich durch Verwendung des Betrags Rechenarbeit sparen, da es gen\"{u}gt, eine Stammfunktion $H(x) = f(x) - g(x)$ zu bestimmten, welche dann mittels dem Betrag f\"{u}r beide Teilintegrale g\"{u}ltig ist.
+
+Berechnung der Stammfunktion $H(x)$ von $f(x) - g(x)$: 
+
+$$H(x) = \int \big[ f(x) - g(x) \big] \, dx = \int \big[ (x^3 - 2x^2 + 2) - (x + 1)\big] \, dx = \frac{1}{4}x^4 + \frac{2}{3}x^3 - \frac{1}{2}x^2 + x$$
+
+\pagebreak
+
+Anschlie\ss{}end kann das erste Teilintegral $A_1$ in den Grenzen $[-0.8 ; 0.55]$ bestimmt werden: $$A_1 = \int_{-0.8}^{0.55} \big[ f(x) - g(x)\big] \, dx = H(x) \, \Big|_{-0.8}^{0.55} = H(0.55) - H(-0.8) \approx -1$$ Sowie das zweite Teilintegral $A_2$ in den Grenzen $[0.55 ; 2.25]$: $$A_2 = \int_{0.55}^{2.25} \big[ f(x) - g(x)\big] \, dx = H(x) \, \Big|_{0.55}^{2.25} = H(2.25) - H(0.55) \approx 1.8$$ Die gesamte, von den beiden Funktionen umschlossene Fl\"{a}che $A$ ist somit die Summe der beiden absoluten Teilfl\"{a}chen: $$A = | A_1 | + | A_2 | \approx 2.8$$
+
 \sub{Volumsberechnungen}
 
+Ein weiteres Anwendungsgebiet der Integralrechnung ist die Berechenung von Volumen. Ebenso wie das Integral dazu verwendet werden kann, eine Fl\"{a}che als Summe vieler kleiner Rechtecke zu bilden, kann das Volumen eines K\"{o}rpers als Summe der Volumina vieler kleiner Quader berechnet werden. Das Volumen eines Prismas oder Zylinders ist allgemein $G \cdot h$, wo $G$ die Grundfl\"{a}che und $h$ die H\"{o}he des Prismas bzw. des Zylinders ist. 
+
+Bei der Fl\"{a}chenberechnung wurde das bestimmte Integral gebildet, indem die Breite der einzelnen Rechtecke der Produktsummen gegen Null strebte. Bei der Volumsberechnung hingegen strebt die H\"{o}he der einzelnen Quader gegen Null. Der andere Faktor dieser Produktsumme, die Querschnittsfl\"{a}che (bzw. Grundl\"{a}che jeden Quaders) $G$, muss als Funktion der $z$-Koordinate definiert werden. Dies folgt daraus, dass sich die Breite und L\"{a}nge der Querschnittsfl\"{a}che vieler K\"{o}rper (z.B. quadratische Pyramiden) mit der H\"{o}he ver\"{a}ndern. Das bestimmte Integral zur Berechnung des Volumens eines K\"{o}rpers in der H\"{o}he von $z = a$ bis $z = b$ sei somit definiert als: $$V = \lim_{\Delta z \rightarrow 0} \sum_{i=1}^{N} A(z_i) \cdot \Delta z = \int_a^b A(z) \, dz$$
+
+Die folgende Abbildung zeigt eine quadratische Pyramide. Die Querschnittsfl\"{a}che $A(z)$, hier in Rot, wird mit ansteigendem $z$ kleiner. Die jeweilige H\"{o}he $h$ jeden Quaders strebt gegen null, ist also infinitisemal klein.
+
+\begin{figure}[h!]
+
+	\centering
+
+	\begin{tikzpicture}
+	[
+		scale=1.5,
+		declare function = {A(\z) = 2 - \z/2;}
+	]
+
+		\tikzstyle{every node}=[font=\scriptsize]
+
+		\begin{axis}
+		[	
+			xlabel = $x$,
+			ylabel = $y$,
+			zlabel = $z$,
+			ticks=none,
+			axis lines = middle,
+			samples = 25
+		]
+
+		% Pyramid, first part
+		\addplot3 [mark=none]
+		          coordinates {
+		          				(-2, -2, 0)
+		          				(+2, -2, 0)
+		          				( 0,  0, 4)
+		          				(-2, -2, 0)
+		          				(-2, +2, 0)
+		          				( 0,  0, 4)
+		          				(+2, +2, 0)
+		          				(+2, -2, 0)
+		          			  };
+
+		% Pyramid, second part
+        \addplot3 [mark=none]
+		          coordinates {
+		          				(-2, +2, 0)
+		          				(+2, +2, 0)
+		          			  };
+
+		\foreach \z in {0, 1, 2, 3}
+		{
+			\addplot3 [mark=none, fill=red, opacity=0.5]
+			          coordinates {
+			          				(-A(\z), -A(\z), \z)
+			          				(-A(\z), +A(\z), \z)
+			          				(+A(\z), +A(\z), \z)
+			          				(+A(\z), -A(\z), \z)
+			          				(-A(\z), -A(\z), \z)
+			          			  };
+		}
+
+		% To extend domain
+		\addplot3 [mark=none] coordinates {(-2.5, 0, 0) (2.5, 0, 0)};
+
+		\addplot3 [mark=none] coordinates {(0, -2.5, 0) (0, 2.5, 0)};
+
+		\addplot3 [mark=none] coordinates {(0, 0, 4.5)};
+
+		\end{axis}
+
+	\end{tikzpicture}
+
+\end{figure}
+
+\pagebreak
+
+\textbf{Beispiel}: \emph{Berechne das Volumen eines Zirkuszelts, dessen quadratische Querschnittsfl\"{a}che in der H\"{o}he z eine Seitenl\"{a}nge nach $a(z) = 8 \cdot (4 - \sqrt{z})$ besitzt. Abmessungen in m.}
+
+Zuerst muss eine Funktion $A(z)$ f\"{u}r die Querschnittsfl\"{a}che $A$ in der H\"{o}he $z$ gefunden werden. Da die Querschnittsfl\"{a}che quadratisch ist, ist sie das Quadrat ihrer Seitenl\"{a}nge $a$. Die Seitenl\"{a}nge des Zirkuszelts ist in Abh\"{a}ngigkeit der H\"{o}he laut Angabe definiert als $a(z) = 8 \cdot (4 - \sqrt{z})$. Somit gilt f\"{u}r die Querschnittsfl\"{a}che $A(z)$: $$A(z) = a(z)^2 = \left[ 8 \cdot (4 - \sqrt{z}) \right]^2 = 64 \cdot (16 -8\sqrt{z} + z)$$ Diese Querschnittsl\"{a}che kann nun nach $dz$ integriert werden, um so das Volumen des Zirkuszelts zu bestimmen. Daf\"{u}r m\"{u}ssen jedoch zuerst die Integrationsgrenzen gefunden werden. Die untere Grenze befindet sich bei $z = 0$, da das Zirkuszelt am Boden liegt. Die obere Grenze kann als $z = 16$ gefunden werden, da $a(16) = 0$. Das bestimmte Integral liefert nun das Volumen $V$: $$V = \int_{0}^{16} A(z) \, dz = \int_{0}^{16} \left[ 64 \cdot (16 -8\sqrt{z} + z) \right] \, dz = 64 \cdot \left( 16z -\frac{16}{3}\sqrt{z^3} + \frac{1}{2}z^2 \right) \, \bigg|_{0}^{16} \approx 2731$$
+
+\textbf{Ergebnis}: Das Volumen des Zirkuszelts betr\"{a}gt $2731 \, m^3$.
+
 \sub{Rotationsk\"{o}rper}
+
+Eine besondere Form der Volumsberechnung besch\"{a}ftigt sich mit dem Finden von Volumina von Rotationsk\"{o}rpern. Rotationsk\"{o}rper entstehen, indem man eine Funktion, beispielsweise $y = \sqrt{x}$, um eine der beiden Achsen --- $x$ oder $y$ --- rotieren l\"{a}sst. Die Rotationsachse wird hierbei die \emph{Erzeugende} des Rotationsk\"{o}rpers genannt. Bei Rotationsk\"{o}rpern liegen den einzelnen Produktsummen keine Quader, sondern Zylinder vor. Das Volumen eines Zylinders ist in Abh\"{a}ngigkeit des Radius definiert als: $$V(r) = G \cdot h = r^2 \pi \cdot h$$ Die unabh\"{a}ngige Variable der Funktion $V(r)$ ist hierbei der Radius $r$ des Zylinders. Bei Rotationsk\"{o}rpern ist der Radius einzelner Zylinder jedoch selbst ebenso abh\"{a}ngig, da er sich mit steigendem $x$- bzw. $y$-Argument --- je nach Rotationsachse --- ver\"{a}ndert. Die H\"{o}he $h$ der Zylinder strebt beim bestimmten Integral wiederum gegen null. Diese H\"{o}he ist bei Rotationsk\"{o}rpern um die $x$-Achse gleich $\Delta x$ und bei Rotationsk\"{o}rpern um die $y$-Achse gleich $\Delta y$.
+
+Rotiert die Funktion bzw. der K\"{o}rper um die $x$-Achse, wird das Volumen $V_x$ berechnet. Der Radius der einzelnen Zylinder ist hierbei equivalent zum Funktionswert $f(x)$ bzw. $y$ an jeder Stelle $x$ der Funktion. Im Intervall $[x_1 ; x_2 ]$ wird das Volumen eines um die $x$-Achse rotierenden Funktionsgraphen somit durch folgendes bestimmtes Integral berechnet: $$V_x = \lim_{\Delta x \rightarrow 0} \, \sum_{i=1}^{N} r_i^2 \pi \cdot \Delta x = \int_{x_1}^{x_2} (y^2 \pi) \, dx = \pi \cdot \int_{x_1}^{x_2} y^2 \, dx$$ 
+
+Wird um die $y$-Achse rotiert, muss die Funktion zuerst nach der abh\"{a}ngigen Variable umgeformt werden. Bei der oben angegeben Wurzelfunktion w\"{a}re die nach $x$ umgeformte Funktion: $x = y^2$. Das Volumen eines um die $y$-Achse rotierenden K\"{o}rpers wird mit $V_y$ angegeben. In den Integrationsgrenzen von $y_1$ bis $y_2$ ist das bestimmte Integral eines um die $y$-Achse rotierenden Funktionsgraphen definiert durch: $$V_x = \lim_{\Delta y \rightarrow 0} \, \sum_{i=1}^{N} r_i^2 \pi \cdot \Delta y = \int_{y_1}^{y_2} (x^2 \pi) \, dy = \pi \cdot \int_{y_1}^{y_2} x^2 \, dy$$ 
+
+\pagebreak
+
+\textbf{Beispiel}: \emph{Die Kurve $f(x) = \sqrt{x}$ rotiert im Intervall $[0;4]$ um die $x$-Achse. Berechne das Volumen des daraus entstehenden Rotationsk\"{o}rpers.}
+
+Da der Funktionsgraph um die $x$-Achse rotieren soll, ist der Radius der einzelnen Zylinder der Produktsumme bzw. des bestimmten Integrals gleich dem Funktionswert $f(x)$ an jeder Stelle $x \in [0 ; 4]$. Daher wird f\"{u}r die Querschnittsfl\"{a}chenformel (= Fl\"{a}chenformel eines Kreises) $A = r^2 \pi$ der Radius durch die Funktion $f(x)$ ersetzt, in Abh\"{a}ngigkeit des Fortschritts auf der $x$-Achse. Das Volumen des Rotationsk\"{o}rpers im Intervall $[0 ; 4]$ ist folglich das bestimmte Integral der Querschnittsfl\"{a}che in Abh\"{a}ngigkeit von $x$. Integriert wird nach $dx$, da die H\"{o}he der einzelnen Zylinder gegen Null strebt. Wird der Ausdruck $f(x)$ letztlich noch als $y$ angeschrieben, l\"{a}sst sich das Volumen so berechnen: $$V_x = \pi \cdot \int_0^4 y^2 \, dx = \pi \cdot \int_0^4 (\sqrt{x})^2 \, dx = \pi \cdot \int_0^4 x \, dx = \pi \cdot \frac{x^2}{2} \, \, \bigg|_0^4 = 8\pi$$
+
+\textbf{Ergebnis}: Das Volumen des Rotationsk\"{o}rpers betr\"{a}gt $8\pi$ Volumseinheiten. 
+
+\textbf{Beispiel}: \emph{Der Graph der Funktion $f(x) = 4 - 2x$ rotiert im Intervall $[0 ; 4]$ um die $y$-Achse. Berechne das Volumen des daraus entstehenden Rotationsk\"{o}rpers.}
+
+Hier muss die Funktion $f(x)$ zuerst nach $x$ umgeformt werden, da der K\"{o}rper um die $y$-Achse rotiert. Das bedeutet, dass der Radius der Zylinder gleich der $x$-Variable ist und sich in Abh\"{a}ngigkeit der H\"{o}he bzw. des $y$-Arguments ver\"{a}ndert. Die nach $x$-umgeformte Funktion lautet: $$y = 4 - 2x \Rightarrow x = 2 - \frac{y}{2}$$ Anschlie\ss{}end kann auch gleich das Quadrat der Funktion berechnet werden, da dieses bei der Berechnung des Volumens ben\"{o}tigt wird: $$x^2 = \left(2 - \frac{y}{2}\right)^2 = -\frac{y^2}{4} - 2y + 4$$ Somit kann das Volumen des um die $y$-Achse rotierenden K\"{o}rpers berechnet werden: $$V_y = \pi \cdot \int_0^4 x^2 \, dy = \pi \cdot \int_0^4 \left( -\frac{y^2}{4} - 2y + 4 \right) \, dy = \pi \cdot \left( -\frac{y^3}{12} - y^2 + 4y \right) \,\, \bigg |_0^4 = \frac{324}{5} \pi $$
+
+\textbf{Ergebnis}: Der Rotationsk\"{o}rper hat ein Volumen von $\frac{324}{5}\pi$ Volumseinheiten.
+
+\pagebreak
+
+\sub{Analysis}
+
+In Verbindung mit der Analysis sei zur Integralrechnung gesagt, dass sie ein Ableitungsverfahren r\"{u}ckg\"{a}ngig macht. Man nehme eine Weg-Zeit Funktion $s(t)$. Diese hat als unabh\"{a}ngige Variable auf der Abszisse die verstrichene Zeit $t$ sowie als abh\"{a}ngige Variable auf der Ordinate den zur\"{u}ckgelegten Weg $s(t)$. Bildet man die erste Ableitung $s'(t)$, so ist dies die Geschwindigkeitsfunktion $v(t)$, welche die Ver\"{a}nderung des Weges relativ zur verstrichenen Zeit bzw. die momentane \"{A}nderungsrate der Weg-Zeit Funktion zu jedem Zeitpunkt $t$ beschreibt. Die unabh\"{a}ngige Variable der Funktion $v(t)$ ist immer noch die Zeit $t$, die abh\"{a}ngige Variable nun jedoch nicht mehr der zur\"{u}ckgelegte Weg $s$, sondern die Geschwindigkeit $s/t$. Die zweite Ableitung der Weg-Zeit Funktion nennt sich Beschleunigungsfunktion und wird mit $a(t)$ angegeben. Die Beschleunigungsfunktion beschreibt die Ver\"{a}nderung der Geschwindigkeit relativ zur Zeit, hat als abh\"{a}ngige Variable daher $s/t^2$. Daher wird klar, dass das Ableiten einer Funktion equivalent zur Division ihrer abh\"{a}ngigen Variable (hier $s$, $s/t$, $s/t^2$) durch ihre unabg\"{a}ngige Variable (hier $t$) ist: $$s'(t) = v(t) \rightarrow s/t$$
+
+Ein Integrationsverfahren ist das genaue Gegenst\"{u}ck zum Ableiten einer Funktion. Integriert man eine Funktion $f(x)$, so kann man dies entweder als das Aufheben der letzten Ableitung oder als das Bilden einer Stammfunktion sehen. Leitet man eine Funktion $s(t)$ ab, wird ihre abh\"{a}ngige durch ihre unabh\"{a}ngige Variable dividiert. Integriert man eine Funktion hingegen, so wird ihre abh\"{a}ngige Variable mit ihrer unabh\"{a}ngigen \emph{multipliziert}: $$\int v(t) = s(t) \rightarrow s/t \cdot t = s$$ Einige bekannte und wichtige Zusammenh\"{a}nge, die sich so modellieren lassen, sind hier aufgelistet:
+
+\begin{itemize}
+	\item Weg $\longleftrightarrow$ Geschwindigkeit $\longleftrightarrow$ Beschleunigung
+
+	\item Arbeit $\longleftrightarrow$ Leistung
+
+	\item Ladung $\longleftrightarrow$ Stromst\"{a}rke
+
+	\item Wassermenge $\longleftrightarrow$ Flussrate
+\end{itemize}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% t axis line
+		\draw [->] (0, 0) -- (6, 0) node [above] {$t\, [s]$};
+
+		% t axis legend
+		\draw (3, -1) node {Zeit};
+
+		% t axis ticks
+		\foreach \t/\s in {0/4, 1/2, 2/2, 3/3, 4/3, 5/0}
+		{
+			\draw (\t, 0) node [below] {$\t$} -- (\t, \s);
+		}
+
+		% s axis line (rest is drawn above)
+		\draw [->] (0, 4) -- (0, 4.5) node [right] {$v(t) \, [m/s]$};
+
+		% s axis legend
+		\draw (-1, 2.25) node [rotate=90] {Geschwindigkeit};
+
+		% s axis ticks
+		\foreach \s in {1, 2, 3, 4}
+		{
+			\draw (0,\s) node {$-$} node [left] {$\s$};
+		}
+
+ 		% path
+ 		\draw (0, 4) -- (1, 2) -- (2, 2) -- (3, 3) -- (4, 3) -- (5, 0);
+
+ 		\draw (3, -1.9) node {$\int v(t) \rightarrow$ Zur\"{u}ckgelegter Weg in Metern $[m]$};
+	\end{tikzpicture}
+	%
+	%
+	%
+	\begin{tikzpicture}
+		% t axis line
+		\draw [->] (0, 0) -- (6, 0) node [above] {$t\, [s]$};
+
+		% t axis legend
+		\draw (3, -1) node {Zeit};
+
+		% t axis ticks
+		\foreach \t/\s in {0/1, 1/1, 2/2, 3/2, 4/3, 5/3}
+		{
+			\draw (\t, 0) node [below] {$\t$} -- (\t, \s);
+		}
+
+		% P axis line (rest is drawn above)
+		\draw [->] (0, 1) -- (0, 4.5) node [right] {$P(t) \, [J/s = W]$};
+
+		% P axis legend
+		\draw (-1, 2.25) node [rotate=90] {Leistung};
+
+		% P axis ticks
+		\foreach \s in {1, 2, 3, 4}
+		{
+			\draw (0,\s) node {$-$} node [left] {$\s$};
+		}
+
+ 		% path
+ 		\draw (0, 1) -- (1, 1) -- (2, 2) -- (3, 2) -- (4, 3) -- (5, 3);
+
+ 		\draw (3, -1.9) node {$\int v(t) \rightarrow$ Vollbrachte Arbeit in Joule $[J]$};
+	\end{tikzpicture}
+\end{figure}
 
 \end{document}
