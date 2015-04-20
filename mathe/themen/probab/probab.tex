@@ -1,0 +1,422 @@
+% Probability
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Wahrscheinlichkeit}
+
+Die Wahrscheinlichkeitsrechnung umfasst die Untersuchung und Beschreibung von Zufallsexperimenten sowie -ereignissen. Bei der Diskussion der Wahrscheinlichkeitsrechnung sind vor allem Begriffe wie \emph{Zufallsereignis}, \emph{Zufallsvariable}, \emph{Ereignismenge}, \emph{Erwartungswert} oder \emph{Standardabweichung} wichtig. Ein ebenso essentieller Bestandteil der Wahrscheinlichkeitsrechnung ist die Kombinatorik, durch welche sich Kombinationen und Permutationen von Ereignissen ermitteln lassen. Unter bestimmten Bedingungen wird die Modellierung eines Zufallsexperiment durch die \emph{Binomialverteilung} m\"{o}glich, welchem ein \emph{Bernoulli-Experiment} zu Grunde liegt. 
+
+\sub{Zufallsexperimente}
+
+Ein Zufallsexperiment wie das Werfen einer M\"{u}nze oder eines W\"{u}rfels ist ein Prozess, dessen Resultat so irregul\"{a}r ist, dass es nicht definitiv vorhergesagt werden kann. Dennoch hat dieses Zufallsexperiment, sofern es diskret ist, einen bestimmten Ergebnisraum. Dieser Ergebnisraum wird \emph{Ergebnismenge} $\Omega$ genannt und umfasst alle m\"{o}glichen Ergebnisse des Zufallsversuchs. Ein einzelnes Element der Ergebnismenge $\Omega$ wird dabei als \emph{Elementarereignis} $\omega$ bezeichnet. Liefert ein Zufallsversuch mehrere Elementarereignisse, werden diese in einem \emph{Ereignis} zusammengefasst. Ein Ereignis $A$ ist also eine Teilmenge der Ergebnismenge $\Omega$. F\"{u}r jedes Ereignis $A$ existiert au\ss{}erdem ein logisches \emph{Gegenereignis} $A'$. Dieses umfasst alle Elementarereignisse der Ergebnismenge, au\ss{}er jene des Ereignisses $A$. 
+
+\textbf{Ergebnismenge $\Omega$} \defas Alle bei einem Zufallsversuch m\"{o}glichen Ergebnisse: $\Omega = \{ \omega_1, \omega_2, ..., \omega_n\}$
+
+\textbf{Elementarereignis} \defas Ein Element der Ergebnismenge: $\omega \in \Omega$
+
+\textbf{Ereignis $A$} \defas Die Menge aller bei einem Zufallsversuch auftretenden Elementarereignisse: $A \subseteq \Omega$
+
+\textbf{Gegenereignis $A'$} \defas Die Menge aller $\omega$, die bei einem Ereignis nicht auftreten: $A' = \Omega \setminus A$
+
+\sub{Wahrscheinlichkeit von Ereignissen}
+
+Die \emph{theoretische} Wahrscheinlichkeit eines Zufallsereignisses ist ihr relativer Anteil an der Ergebnismenge. Beispielsweise ist die theoretische Wahrscheinlichkeit, eine beliebige Zahl zu w\"{u}rfeln, jeweils $1 \div 6 \approx 0.167$. Dies folgt daraus, dass der relative Anteil des Ereignises $A$, welches eine beliebige Zahl umfasst, genau ein Sechstel der Ergebnismenge $\Omega$ ausmacht, welches sechs Zahlen umfasst. F\"{u}hrt man ein solches Zufallsexperiment durch, wird man jedoch merken, dass die relative H\"{a}ufigkeit eines Ereignisses bei einer kleinen Versuchsserie stark von der theoretischen Wahrscheinlichkeit abweicht. Beispielsweise ist es meistens nicht der Fall, dass bei sechs W\"{u}rfen eines W\"{u}rfels jede Zahl genau einmal vorkommt. Erst bei einer gro\ss{}en Anzahl an Durchf\"{u}hrungen n\"{a}hert sich die relative H\"{a}ufigkeit eines Ereignisses seiner theoretischen Wahrscheinlichkeit. So mag nach sechs W\"{u}rfen eines W\"{u}rfels die relative H\"{a}ufigkeit jeder Zahl meist stark von den theoretisch erwarteten $\tilde{} 16.67$ Prozent abweichen, so wird sie sich jedoch nach einer sehr langen Versuchsreihe --- eine Million W\"{u}rfe --- stark an die theoretische Wahrscheinlichkeit n\"{a}hren. Dieses Ph\"{a}nomen wird das \zitat{empirische Gesetz der gro\ss{}en Zahlen} genannt.
+
+\pagebreak
+
+\textbf{Theoretische Wahrscheinlichkeit} \defas der relative Anteil eines Ereignisses an der Ergebnismenge
+
+\textbf{Empirische Wahrscheinlichkeit} \defas die H\"{a}ufigkeit eines Zufallsreignisses relativ zur Versuchsserie
+
+Die Theoretische Wahrscheinlchkeit ist also der Grenzwert der relativen H\"{a}ufigkeit bzw. der empirischen Wahrscheinlichkeit bei einer unendlich langen Versuchsserie: $$\text{Theoretische Wahrscheinlichkeit} = \lim_{n \rightarrow \infty} \frac{\text{H\"{a}ufigkeit eines Ereignisses}}{\text{L\"{a}nge der Verssuchserie } n}$$
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=6.5cm,
+			xlabel = {L\"{a}nge der Versuchsserie},
+			ylabel = {Relative H\"{a}ufigkeit},
+			axis lines = left,
+			grid = major
+		]
+
+		\addplot [teal] table [mark=none, x=n, y=p] {data/p10.dat};
+
+		\addlegendentry{10 W\"{u}rfe};
+
+		\end{axis}
+	\end{tikzpicture}
+	%
+	\vspace{0.3cm}
+	%
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=6.5cm,
+			xlabel = {L\"{a}nge der Versuchsserie},
+			ylabel = {Relative H\"{a}ufigkeit},
+			axis lines = left,
+			grid=major,
+			scaled y ticks=false,
+			yticklabel style={/pgf/number format/fixed},
+			ytick={0.1, 0.12, ..., 0.167},
+			legend pos = south east
+		]
+
+		\addplot [red] table [mark=none, x=n, y=p] {data/p1000.dat};
+
+		\addlegendentry{1000 W\"{u}rfe};
+
+		\end{axis}
+	\end{tikzpicture}
+	%
+	\vspace{0.3cm}
+	%
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=6.5cm,
+			xlabel = {L\"{a}nge der Versuchsserie},
+			ylabel = {Relative H\"{a}ufigkeit},
+			axis lines = left,
+			grid=major,
+			xtick={200000,400000,600000,800000,1000000},
+			xticklabel style={/pgf/number format/fixed},
+			scaled x ticks=false,
+			ytick={0.165, 0.166, ..., 0.17},
+			yticklabel style={/pgf/number format/precision=4},
+			legend pos = south east
+		]
+
+		\addplot [blue] table [mark=none, x=n, y=p] {data/p1000000.dat};
+
+		\addlegendentry{1000000 W\"{u}rfe};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+Noch einige Definitionen:
+
+\begin{itemize}
+	\item Jedes Elementarereignis $\omega$ sowie jedes Ereignis $A$ besitzen eine Wahrscheinlichkeit zwischen null und eins: $0 \leq P(A) \leq 1 \,\,\forall\,\, A \subseteq \Omega$
+
+	\item Die Wahrscheinlichkeit eines Ereignisses, welches nicht g\"{a}nzlich Teilmenge der Ergebnismenge $\Omega$ ist, betr\"{a}gt stets null: $P(A) = 0 \,\,\forall\,\, A \nsubseteq \Omega$
+
+	\item Ebenso ist die Wahrscheinlichkeit, dass kein Ereignis eintritt, gleich null: $P(\varnothing) = 0$
+
+	\item Die Wahrscheinlichkeit, dass irgendein beliebiges Ereignis eintritt ist gleich eins: $P(\omega) = 1$
+
+	\item Die Wahrscheinlichkeit eines Gegenereignisses $A'$ ist gleich der Gegenwahrscheinlichkeit des Ereignisses $A$: $P(A') = 1 - P(A)$
+\end{itemize}
+
+\sub{Kombinatorik}
+
+In vielen F\"{a}llen gibt mehrere M\"{o}glichkeiten, aus der Ergebnismenge $\Omega$ das selbe Ereignis $A \subseteq \Omega$ zu bilden. Ist beispielsweise die Reihenfolge der Elemente des Ereignisses $A = \{\omega_1, \omega_2, \omega_3\}$ egal, so gibt es $3 \cdot 2 \cdot 1 = 6$ M\"{o}glichkeiten, die Reihenfolge zu ver\"{a}ndern, in der die Elementarereignisse auftreten. Diese M\"{o}glichkeiten werden \emph{Variationen} genannt. Die Untersuchung der Variationen eines Zufallsversuchs ist ein Teilgebiet der Kombinatorik, welche sich ebenso mit den \emph{Permutationen} sowie \emph{Kombinationen} von Ereignissen besch\"{a}ftigt.
+
+Allgemein sei gesagt, dass die gesamte Anzahl an M\"{o}glichkeiten eines $k$-stufigen kombinatorischen Versuchs gleich dem Produkt der M\"{o}glichkeiten jeder Stufe ist. Dies nennt sich die \emph{Produktregel der Kombinatorik}. Gibt es beispielsweise in der ersten Stufe eines Zufallsversuchs f\"{u}nf M\"{o}glichkeiten, ein f\"{u}r das Ereignis $A$ g\"{u}nstiges Elementarereignis auszuw\"{a}hlen, in der zweite Stufe vier M\"{o}glichkeiten und in der dritten drei M\"{o}glichkeiten, so ist die Gesamtanzahl an M\"{o}glichkeiten gleich $5 \cdot 4 \cdot 3 = 60$.
+
+\subsub{Permutationen}
+
+Die Anzahl an Permutationen einer Menge von Ereignissen oder Objekten beschreibt die Anzahl an M\"{o}glichkeiten, diese Objekte in einer bestimmten Reihenfolge und ohne Wiederholung anzuordnen. Dabei muss jedes Objekt der Menge pro Anordnung genau einmal ausgew\"{a}hlt werden. Die Anzahl an Permutationen von $n$ Objekten l\"{a}sst durch ihre Fakult\"{a}t $n!$ beschreiben. Der Ausdruck $n!$ ist dabei equivalent zur folgenden Produktserie: $$n \cdot (n - 1) \cdot (n - 2) \cdot ... \cdot 1 = \prod_{k=0}^{n - 1} n - k$$ Es l\"{a}sst sich also festhalten: $$n! \, \defas \text{Anzahl an Permutationen von $n$ Objekten ohne Wiederholung}$$
+
+\beispiel{Wie viele M\"{o}glichkeiten gibt es, 3 \"{A}pfel, 5 Menschen und 8 Kartoffeln zu essen, wenn man jedes Objekt einer Nahrungsform aufgegessen haben muss, bevor man eine neue Nahrungsform zu verspeisen beginnt?}
+
+Man beginnt bei den \"{A}pfeln. F\"{u}r diese gibt es zuerst drei M\"{o}glichkeiten, einen Apfel zu essen. Danach ist es einer weniger, also gibt es in der zweiten Stufe des Versuchs nur mehr zwei M\"{o}glichkeiten, einen Apfel zu essen. Ist der Zweite gegessen, bleibt nur mehr eine einzige M\"{o}glichkeit, einen Apfel zu essen, da es nur mehr einen gibt. Somit ist die Anzahl an Permutationen f\"{u}r die \"{A}pfel gleich $3! = 3 \cdot 2 \cdot 1 = 6$. Das selbe Verfahren f\"{u}hrt zu $5! = 120$ Permutationen f\"{u}r die Menge der Menschen und $8! = 40320$ f\"{u}r die Menge der Kartoffeln. Da alle Objekte einer Nahrungsform gegessen werden m\"{u}ssen, bevor eine neue begonnen wird (z.B. zuerst Menschen, dann Kartoffeln, dann \"{A}pfel), gibt es nochmals $3! = 6$ M\"{o}glichkeiten, die einzelnen \zitat{Bl\"{o}cke} anzureihen. Insgesamt gibt es also: $$(3! \cdot 5! \cdot 8!) \cdot 3! = 174\,182\,400 \text{ M\"{o}glichkeiten}$$
+
+Untersucht man hingegen die Anzahl an Permutationen mit Wiederholung von Objekten, so kann jedes der $n$ Objekte $n$ mal vorkommen: $$n^n \defas \text{Anzahl an Permutationen von $n$ Objekten mit Wiederholung}$$
+
+\subsub{Variationen}
+
+Die Anzahl an Variationen $(n)_k$ von $k$ aus $n$ Objekten beschreibt die Anzahl an M\"{o}glichkeiten, aus den $n$ Objekten $k$ in einer bestimmten Reihenfolge auszuw\"{a}hlen. Dabei darf keines der $k$ Objekte doppelt gew\"{a}hlt werden. Man \"{u}berlege sich, dass es zuerst $n$ M\"{o}glichkeiten gibt, dann $n-1$, dann $n-2$ usw. bis $n-k$. Gilt $k = n$, so ist dies equivalent zur Fakult\"{a}t von $n$ und somit zur Berechnung der Permutationen einer Menge von Objekten. Die Berechnung der Variationen einer Menge von Objekten ist also gewisserma\ss{}en eine verk\"{u}rzte Form der Berechnung ihrer Permutationen. Ebenso kann eine Permutation als eine Sonderform einer Variation gesehen werden, f\"{u}r die gilt $k = n$. Allgemein sei also definiert: $$(n)_k = \prod_{i=1}^{k} n - (k + i) \defas \text{Anzahl an Variationen von $k$ aus $n$ Objekten, ohne Wiederholung.} $$
+
+\beispiel{Wie viele M\"{o}glichkeiten gibt es, aus 32 Sportmannschaften bei einem Turnier einen Erst-, einen Zweit- und einen Drittplatzierten zu finden?}
+
+F\"{u}r den ersten Platz gibt es 32 m\"{o}gliche Teams. Ist ein Sieger gefunden, verbleiben 31 Mannschaften f\"{u}r den zweiten Platz. Somit gibt es letztlich 30 M\"{o}glichkeiten, den Drittplatzierten zu bestimmen. Insgesamt gibt es also: $$(32)_3 = 32 \cdot 31 \cdot 30 = 29 \, 760 \text{ M\"{o}glichkeiten}$$
+
+Ist die Anzahl an Variationen von $k$ aus $n$ Objekten in einer bestimmten Reihenfolge \emph{mit} Wiederholung gesucht, so gibt es f\"{u}r jedes der $k$ Objekte $n$ M\"{o}glichkeiten: $$n^k \defas \text{Anzahl an Variationen von $k$ aus $n$ Objekten, mit Wiederholung}$$
+
+\subsub{Kombinationen}
+
+Die Anzahl an Kombinationen $\colvec{n \\ k}$ einer Menge von $n$ Objekten ist definiert als die Anzahl an M\"{o}glichkeiten, $k$ Objekte aus den $n$ in \emph{beliebiger} Reihenfolge und ohne Wiederholung auszuw\"{a}hlen. Dieser Wert wird auch \emph{Binomialkoeffizient} genannt. Die Tatsache, dass aus $n$ Objekten $k$ ohne Wiederholung ausgew\"{a}hlt werden sollen, l\"{a}sst auf eine Berechnung \"{a}hnlich jener der Variationen von $k$ aus $n$ Objekten schlie\ss{}en. Diese Anzahl w\"{a}re also gleich $(n)_k$. Da nun aber die Reihenfolge egal ist, muss noch ein weiterer Schritt folgen. Eine beliebige Reihenfolge bedeutet, dass zwei Ereignisse $A_1$ und $A_2$ dasselbe Ereignis sind, wenn $A_2$ eine Permuation von $A_1$ darstellt. Sei $A_1 = \{\omega_1, \omega_2, \omega_3\}$ und $A_2 = \{ \omega_2, \omega_3, \omega_1\}$. W\"{a}re die Reihenfolge nicht egal, wie bei der Berechnung der Variationen, so w\"{a}ren $A_1$ und $A_2$ separate, von einander komplett verschiedene Ereignisse. Beide w\"{u}rden jeweils als eine M\"{o}glichkeit bzw. eine Variation z\"{a}hlen. Da nun aber bei der Berechnung der Kombinationen die Reihenfolge der $k$ aus $n$ Objekten beliebig sein darf, sind $A_1$ und $A_2$ zueinander equivalent. Somit z\"{a}hlen beide nur als eine einzige Kombinationsm\"{o}glichkeit, nicht als zwei.
+
+Wie wird nun diese Eigenschaft, dass die Reihenfolge der $k$ Objekte egal ist, in die Berchnung der Kombinationen miteinbezogen? Man \"{u}berlege sich, dass es f\"{u}r $k$ Objekte $k!$ M\"{o}glichkeiten gibt, diese $k$ Objekte in ihrer Reihenfolge untereinander umzutauschen --- $k!$ Permutationen. Ist nun also $(n)_k$ die Anzahl an Variationen von $k$ aus $n$ Objekten, so ist die Anzahl an Kombinationen von $k$ aus $n$ Objekten gleich $(n)_k$ dividiert durch die Anzahl an Permutationen der $k$ Objekte: $$\text{Kombinationen } = \frac{\text{Variationen}}{\text{Permutationen}}$$ $$\Downarrow$$ $$ \colvec{n \\ k} = \frac{(n)_k}{k!} = \frac{n \cdot (n - 1) \cdot ... \cdot (n - k + 1)}{k \cdot (k - 1) \cdot ... \cdot 1}$$ Eine bekanntere Schreibweise dieser Formel lautet: $$\colvec{n \\ k} = \frac{n!}{k! \, (n - k)!}$$ Bei n\"{a}herer Analyse dieser Formel zeigt sich, dass sie equivalent zur oberen ist. Expandiert man die Ausdr\"{u}cke $n!$ und $(n - k)!$ der bekannten Formel, so wird klar, dass der Ausdruck $(n - k)!$ die letzten $n - k$ Terme der Fakult\"{a}t von $n$ wegk\"{u}rzt. Sei $n = 5$ und $k = 3$: $$\frac{n!}{k! \, (n - k)!} = \frac{5!}{3! \, (5 - 3)!} = \frac{5 \cdot 4 \cdot 3 \cdot (2 \cdot 1)}{3 \cdot 2 \cdot 1 \cdot (2 \cdot 1)}$$ Die eingeklammerten Terme k\"{u}rzen sich weg: $$\frac{5 \cdot 4 \cdot 3 \cdot \cancel{(2 \cdot 1)}}{3 \cdot 2 \cdot 1 \cdot \cancel{(2 \cdot 1)}} = \frac{5 \cdot 4 \cdot 3}{3 \cdot 2 \cdot 1}$$ Dieser Ausdruck ist nun equivalent zur hergeleiteten Formel. Man setze $n = 5$ und $k = 3$ ein: $$\frac{(n)_k}{k!} = \frac{(5)_3}{3!} = \frac{5 \cdot 4 \cdot 3}{3 \cdot 2 \cdot 1}$$
+
+\beispiel{Vier Personen begr\"{u}\ss{}en einander. Wieviele Begr\"{u}\ss{}ungen sind das?}
+
+Untersucht man die Bedingungen der Kombination der Personen erkennt man: 
+
+\begin{enumerate}
+	\item Es gibt keine Wiederholung zwischen einzelnen Personen. Hat Person $A$ Person $B$ begr\"{u}\ss{}t, darf Person $A$ Person $B$ nicht mehr begr\"{u}\ss{}en. 
+
+	\item Die Reihenfolge der Begr\"{u}\ss{}ungen ist egal bzw. beliebig. Hat Person $C$ Person $D$ begr\"{u}\ss{}t, muss Person $D$ Person $C$ nicht auch noch begr\"{u}\ss{}en. 
+\end{enumerate}
+
+Es gilt also die m\"{o}glichen Kombinationen der Begr\"{u}\ss{}ungen zu suchen, ohne Wiederholung und ohne Reihenfolge der Personen. Wieviele M\"{o}glichkeiten gibt es also, aus vier Personen jeweils zwei nach diesen Bedingungen auszuw\"{a}hlen? $$\colvec{n \\ k} = \colvec{4 \\ 2} = \frac{4!}{2! \, (4 - 2)!} = 6 \text{ M\"{o}glichkeiten}$$
+
+\pagebreak
+
+\sub{Laplace Wahrscheinlichkeit}
+
+Bei einem Laplace'schen Zufallsexperiment hat jedes der $n$ Elementarereignissse $\omega$ aus der Ergebnismenge $\Omega$ die selbe Wahrscheinlichkeit: $$P(\omega) = \frac{1}{n}$$ Sind mehrere Elementarereignisse f\"{u}r ein bestimmtes Ereignis $A$ g\"{u}nstig, so werden die Wahrscheinlichkeiten der einzelnen Elementarereignisse addiert. F\"{u}r $N$ g\"{u}nstige Elementarereignisse $\omega$ eines Ereignisses $A$ gilt somit: $$P(A) = \sum_{i=1}^{N} P(\omega_i) = \sum_{i=0}^{N} \frac{1}{n}$$ Von dieser Summe l\"{a}sst sich die bekannte Laplace'sche Wahrscheinlichkeitsregel herleiten, welche besagt, dass die Wahrscheinlichkeit eines Ereignisses gleich der Anzahl der g\"{u}nstigen F\"{a}lle, dividiert durch die Anzahl der m\"{o}glichen F\"{a}lle ist: $$P(A) = \frac{|A|}{|\Omega|} = \frac{\text{Anzahl der f\"{u}r $A$ g\"{u}nstigen F\"{a}lle}}{\text{Anzahl der m\"{o}glichen F\"{a}lle}}$$
+
+\beispiel{Wie gro\ss{} ist die Wahrscheinlichkeit, vier mal hintereinander eine ungerade Zahl zu w\"{u}rfeln?}
+
+Die Ergebnismenge $\Omega$ umfasst alle 6 m\"{o}glichen Augenzahlen des W\"{u}rfels: $$\Omega = \{ 1, 2, 3, 4, 5, 6\}$$ F\"{u}r das gesuchte Ereignis $A$ ist es g\"{u}nstig, entweder eine 1, eine 3 oder eine 5 zu w\"{u}rfeln. Die Anzahl der g\"{u}nstigen ist also 3. Die Wahrscheinlichkeit f\"{u}r $A$ betr\"{a}gt daher: $$P(A) = \frac{|A|}{|\omega|} = \frac{3}{6} = 0.5$$ Dieses Ereignis soll vier mal hintereinander wiederholt werden: $$P(A)^4 = 0.5^4 = 0.5 \cdot 0.5 \cdot 0.5 \cdot 0.5 = 0.0625$$
+
+\beispiel{In einer Klasse sind 12 M\"{a}dchen und 15 Knaben. 5 Personen werden gepr\"{u}ft, wie gro\ss{} ist die Wahrscheinlichkeit, dass 2 M\"{a}dchen und 3 Burschen gepr\"{u}ft werden?} 
+
+Die Ergebnismenge $\Omega$ umfasst hier alle m\"{o}glichen Kombinationen von 5 M\"{a}dchen (M) oder Knaben (K) aus der Menge aller Sch\"{u}lerinnen und Sch\"{u}ler der Klasse: $$\Omega = \{ MMMMM, MMMMK, MMMKK, ..., KKKKK\}$$ Die Anzahl dieser Kombinationen ist: $\colvec{23 \\ 5}$. Das gesuchte Ereignis $A$ ist jene Teilmenge von $\Omega$, welche alle M\"{o}glichkeiten umfasst, von 12 M\"{a}dchen genau 2 auszuw\"{a}hlen $\rightarrow \colvec{12 \\ 2}$ und von 15 Knaben genau 3 auszuw\"{a}hlen $\rightarrow \colvec{15 \\ 3}$. Daher gilt f\"{u}r die Wahrscheinlichkeit des Ereignisses $A$, dass genau 2 M\"{a}dchen und 3 Knaben gepr\"{u}ft werden: $$P(A) = \frac{|A|}{|\Omega|} = \frac{\colvec{12 \\ 2} \cdot \colvec{15 \\ 3}}{\colvec{23 \\ 5}}$$
+
+\pagebreak
+
+\sub{Baumdiagramme und Pfadregeln}
+
+Bei mehrstufigen Zufallsversuchen ist es oft vorteilhaft, die einzelnen Stufen und deren Ab\"{a}ngigkeiten in einem Baumdiagramm zu visualisieren. Daf\"{u}r seien zwei Regeln definiert:
+
+\begin{enumerate}
+	\titleitem{Summenregel} Die Wahrscheinlichkeit, dass Ereignis $A$ oder Ereignis $B$ eintritt, ist gleich der Summe der einzelnen Wahrscheinlichkeiten: $P(A \lor B) = P(A) + P(B)$
+
+	\titleitem{Produktregel} Die Wahrscheinlichkeit, dass Ereignis $A$ und Ereignis $B$ eintritt, ist gleich dem Produkt der einzelnen Wahrscheinlichkeiten: $P(A \land B) = P(A) + P(B)$
+\end{enumerate}
+
+\beispiel{In einer Urne liegen 4 rote und 6 blaue Kugeln. Drei Kugeln werden ohne Zur\"{u}cklegen gezogen. Wie gro\ss{} ist die Wahrscheinlichkeit, zuerst eine rote, dann eine blaue, dann eine rote zu ziehen (1)? Wie gro\ss{} ist die Wahrscheinlichkeit, nur gleichfarbige Kugeln zu ziehen (2) ?}
+
+Bei diesen Beispielen liegen herk\"{o}mmliche Laplace Wahrscheinlichkeiten vor. Es gibt insgesamt $n$ Kugeln, wobei jedes Elementarereignis $\omega$ (jede Kugel) aus der Ergebnismenge $\Omega$ eine Wahrscheinlichkeit von $n^{-1}$ hat, gezogen zu werden. F\"{u}r das erste m\"{o}gliche Ereignis $A$, dass eine rote Kugel gezogen wird, sind vier Elementarereignisse g\"{u}nstig. F\"{u}r das zweite Ereignis $B$, dass eine blaue Kugel gezogen wird, sind sechs $\omega$ g\"{u}nstig. Die Anzahl an m\"{o}glichen betr\"{a}gt 10. Somit kann f\"{u}r die Wahrscheinlichkeiten der einzelnen Ereignisse festgelegt werden: $$P(A) = \frac{4}{10} \hspace{2cm} P(B) = \frac{6}{10}$$ Nun ist aber die Wahrscheinlichkeit von mehreren bestimmten Ereignissen hintereinander gefragt. Wichtig ist, dass die Kugeln ohne Zur\"{u}cklegen gezogen werden. Das bedeutet, dass die Anzahl an Kugeln pro Ziehung schrumpft, somit auch die Wahrscheinlichkeiten der beiden m\"{o}glichen Ereignisse. Problemstellung $(1)$ fragt nach der Wahrscheinlichkeit, dass zuerst Ereignis $A = Rot$, dann Ereignis $B = Blau$ und dann wieder Ereignis $A$ eintritt. Man bemerke, dass hierbei die Reihenfolge wichtig ist. Daher muss dem Baumdiagramm genau in dieser Reihung gefolgt werden. Da die Ereignisse hier w\"{o}rtlich mit einem \zitat{und} verbunden werden (Ereignis $A$ und $B$ und dann $A$), muss die Produktregel angewandt werden. Man kann den gew\"{u}nschten Pfad in einem Baumdiagramm visualisieren:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+
+		\draw [fill=red, very thick]
+			  (1.5, 2) circle [radius=0.25cm];
+
+		\draw [dashed, very thick, red]
+		      (1.5, 2.25)
+		   -- (3.5, 3) node [pos=0.25, above left] 
+		   		     	    {$\frac{4}{10}$};
+
+        \draw [fill=cyan, very thick]
+			  (5.5, 2) circle [radius=0.25cm]
+			  (5.5, 2.25)
+		   -- (3.5, 3) node [pos=0.25, above right] 
+		   					{$\frac{6}{10}$};
+
+		 \newcount\current
+
+		\foreach \i/\a/\b in {0.5/$\frac{3}{9}$/$\frac{6}{9}$,
+						      4.5/$\frac{4}{9}$/$\frac{5}{9}$}
+		{
+			\draw [fill=red, very thick]
+				  (\i, 1) circle [radius=0.25cm]
+				  (\i, 1.25)
+			   -- (\i + 0.82322, 1.82322) node [pos=0.25, above left] {\a};
+
+			\draw [fill=cyan, very thick]
+				  (\i+2, 1) circle [radius=0.25cm];
+
+			\current \i\relax
+
+			\ifnum\current=0.5
+				\draw [very thick, dashed, cyan]
+				      (\i+2, 1.25)
+			       -- (\i + 1.17677,1.82322) node [pos=0.25, above right] {\b};
+
+			\else
+				\draw [very thick]
+				  	  (\i+2, 1.25)
+			   	   -- (\i + 1.17677,1.82322) node [pos=0.25, above right] {\b};
+			\fi
+		}
+
+		\foreach \i/\a/\b in {0/$\frac{2}{8}$/$\frac{6}{8}$,
+		 				      2/$\frac{3}{8}$/$\frac{5}{8}$,
+		 				      4/$\frac{3}{8}$/$\frac{5}{8}$,
+		 				      6/$\frac{4}{8}$/$\frac{4}{8}$}
+		{
+			\draw [fill=red, very thick]
+				  (\i, 0) circle [radius=0.25cm];
+
+			\current \i\relax
+
+			\ifnum\current=2
+				\draw [very thick, dashed, red]
+				       (\i, 0.25)
+			        -- (\i+0.32322,0.82322) node [pos=0.25, above left]  {\a};
+			\else
+				\draw [very thick]
+				       (\i, 0.25)
+			        -- (\i+0.32322,0.82322) node [pos=0.25, above left]  {\a};
+			\fi
+
+            \draw [fill=cyan, very thick]
+				  (\i+1, 0) circle [radius=0.25cm]
+				  (\i+1, 0.25)
+			   -- (\i + 0.67677, 0.82322) node [pos=0.25, above right] {\b};
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+\vspace{\parskip}
+
+Die Wahrscheinlichkeit betr\"{a}gt also: $${\color{red} \frac{4}{10}} \cdot {\color{cyan} \frac{6}{9}} \cdot {\color{red} \frac{3}{8}} = 0.1 = 10 \%$$
+
+\pagebreak
+
+Die zweite Problemstellung erfordert die Anwendung der Summenregel. Dies folgt daraus, dass es hier mehrere (zwei) M\"{o}glichkeiten gibt, die gew\"{u}nschte Serie an Ereignissen zu bilden (\zitat{Alle rot \textbf{oder} alle blau}). Diese Ereignisserien k\"{o}nnen unabh\"{a}ngig von einander eintreten, ihre Wahrscheinlichkeiten werden also nach der Summenregel addiert. Die einzelnen Wahrscheinlichkeiten der Ereignisse dieser Serien werden wie gehabt nach der Produktregel multipliziert. Orientiert man sich an einem Baumdiagramm, so w\"{a}ren die beiden g\"{u}nstigen Pfade jene, die immer links (rot) oder immer rechts (blau) gehen:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+
+		\draw [fill=red, very thick]
+			  (1.5, 2) circle [radius=0.25cm];
+
+		\draw [dashed, very thick, red]
+		      (1.5, 2.25)
+		   -- (3.5, 3) node [pos=0.25, above left] 
+		   		     	    {$\frac{4}{10}$};
+
+        \draw [fill=cyan, very thick]
+			  (5.5, 2) circle [radius=0.25cm];
+
+		\draw [very thick, cyan, dashed]
+			  (5.5, 2.25)
+		   -- (3.5, 3) node [pos=0.25, above right] 
+		   					{$\frac{6}{10}$};
+
+		 \newcommand{\settings}{}
+		 \newcount\current
+
+		\foreach \i/\a/\b in {0.5/$\frac{3}{9}$/$\frac{6}{9}$,
+						      4.5/$\frac{4}{9}$/$\frac{5}{9}$}
+		{
+			\current \i\relax
+
+			\draw [very thick, fill=red]
+				  (\i, 1) circle [radius=0.25cm];
+
+			\ifnum\current=0.5
+				\renewcommand{\settings}{[very thick, dashed, red]}
+			\else
+				\renewcommand{\settings}{[very thick]}
+			\fi
+
+			\draw \settings
+				  (\i, 1.25)
+			   -- (\i + 0.82322, 1.82322) node [pos=0.25, above left] {\a};
+
+			\draw [very thick, fill=cyan]
+				  (\i+2, 1) circle [radius=0.25cm];
+
+			\ifnum\current=4.5
+				\renewcommand{\settings}{[very thick, dashed, cyan]}
+
+			\else
+				\renewcommand{\settings}{[very thick]}
+
+			\fi
+
+			\draw \settings
+				  (\i+2, 1.25)
+			   -- (\i+1.17677,1.82322) node [pos=0.25, above right] {\b};
+		}
+
+		\foreach \i/\a/\b in {0/$\frac{2}{8}$/$\frac{6}{8}$,
+		 				      2/$\frac{3}{8}$/$\frac{5}{8}$,
+		 				      4/$\frac{3}{8}$/$\frac{5}{8}$,
+		 				      6/$\frac{4}{8}$/$\frac{4}{8}$}
+		{
+			\current \i\relax
+
+			\draw [very thick, fill=red]
+				  (\i, 0) circle [radius=0.25cm];
+
+			\ifnum\current=0
+				\renewcommand{\settings}{[very thick, dashed, red]}
+				
+			\else
+				 \renewcommand{\settings}{[very thick]}
+			\fi
+
+			\draw \settings
+				  (\i, 0.25)
+			   -- (\i+0.32322,0.82322) node [pos=0.25, above left]  {\a};
+
+			\draw [fill=cyan, very thick]
+				  (\i+1, 0) circle [radius=0.25cm];
+
+			\ifnum\current=6
+				\renewcommand{\settings}{[very thick, dashed, cyan]}
+			\else
+			    \renewcommand{\settings}{[very thick]}
+			\fi			
+
+			\draw \settings
+				  (\i+1, 0.25)
+			   -- (\i+0.67677,0.82322) node [pos=0.25, above right] {\b};
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+\vspace{\parskip}
+
+Die Wahrscheinlichkeit betr\"{a}gt daher: $$\left({\color{red} \frac{4}{10} \cdot \frac{3}{9} \cdot \frac{2}{8}}\right) + \left({\color{cyan} \frac{6}{10} \cdot \frac{5}{9} \cdot \frac{4}{8}}\right) = 0.2 = 20 \%$$
+
+\sub{Diskrete Zufallsvariablen}
+
+Eine diskrete Zufallsvariable $X$, auch \emph{Zufallsgr\"{o}\ss{}e} genannt ist eine Abbildung der Ergebnismenge in die Menge der nat\"{u}rlichen Zahlen: $$X: \Omega \rightarrow \mathbb{N}$$ Die Ergebnismenge $\Omega$ muss nun z\"{a}hlbare Werte enthalten, die als nat\"{u}rliche Zahlen repr\"{a}sentiert werden k\"{o}nnen. Die Ereignismenge von zwei W\"{u}rfeln k\"{o}nnte ihre Zahlenmenge enthalten, welche als nat\"{u}rliche Zahl darstellbar ist. Gegens\"{a}tzlich dazu l\"{a}sst sich die Ereignismenge $\Omega = \{ \text{Kopf, Zahl} \}$ eines M\"{u}nzwurfs nicht direkt einer Zufallsvariable zuordnen. Es ist jedoch dennoch m\"{o}glich, wenn man die Elementarereignisse enumeriert, sodass Kopf $= 0$ und $Zahl = 1$ und somit $\Omega = \{0 , 1\}$. Die Wahrscheinlichkeit $P$, mit der die Zufallsvariable $X$ den Wert $x \in \mathbb{N}$ annimmt, wird durch die Wahrscheinlichkeitsfunktion $f: \mathbb{N} \rightarrow [0 ; 1]$ beschrieben. Die Funktion $f$ bildet also die Menge der nat\"{u}rlichen Zahlen --- jene Werte, welche die diskrete Zufallsvariable $X$ annehmen kann --- auf das Intervall $[0 ; 1]$ ab. Die Funktion $f(x)$ wird dabei die \emph{Wahrscheinlichekitsverteilung} der Zufallsvariable genannt: $$f(x) = P(X = x)$$ Es sei angemerkt, dass die Wahrscheinlichkeitsfunktion bzw. -verteilung nur f\"{u}r die Elemente der Ergebnismenge $\Omega$ Werte gr\"{o}\ss{}er null annimmt. Dies folgt daraus, dass die Wahrscheinlichkeit f\"{u}r ein Ereignis $A$, dass Elementarereignisse umfasst, die nicht $\in \Omega$ sind, gleich null sein muss. So kann ein W\"{u}rfel beispielsweise nie die Zahl 7 annehmen, daher ist $P(X = 7) = 0$. Dasselbe gilt f\"{u}r alle $x < 1$ sowie alle $x > 6$.
+
+\pagebreak
+
+Der folgende Graph bildet die Wahrscheinlichkeitsverteilung f\"{u}r eine diskrete Zufallsvariable $X$ im Zusammenhang mit dem Ziehen einer Kugel aus einer Urne ab. In dieser Urne befinden sich insgesamt 10 Kugeln, von denen 3 blau, 5 rot und 2 gr\"{u}n sind. $X$ ordnet dabei jedem Elementarereignis $\omega$ der Ergebnismenge $\Omega = {\text{Blau, Rot, Gr\"{u}n}}$ einen entsprechenden Definitionswert $\in \mathbb{N}$ zu. Da die Elementarereignisse hier keine Zahlen sind, m\"{u}ssen sie enumeriert werden. Sei also Blau $= 1$, Rot $= 2$ und Gr\"{u}n $= 3$. Nun sind alle $\omega \in \mathbb{N}$, k\"{o}nnen also als Definitionswerte bzw. $x$-Werte in einem Funktionsgraphen abgebildet werden. Die Wahrscheinlichkeitsfunktion $f(x)$ ordnet dann jedem dieser Deifnitionswerte einen entsprechenden Funktionswert zu, welcher die Wahrscheinlichkeit beschreibt, dass die Zufallsvariable $X$ diesen Definitionswert $x$ annimmt:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=6cm,
+			xlabel={$x$},
+			xmin=0,
+			xmax=5,
+			xtick={0, 1, ..., 5},
+			ylabel={$f(x) \rightarrow P(X = x)$},
+			ymin=0,
+			ymax=0.75,
+			grid = both,
+			axis lines=middle
+		]
+
+			\addplot [mark=*, blue] coordinates {(1, 3/10)};
+
+			\addplot [mark=*, red] coordinates {(2, 5/10)};
+
+			\addplot [mark=*, nicegreen] coordinates {(3, 2/10)};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\sub{Erwartungswert und Standardabweichung}
+
+\sub{Binomialverteilung}
+
+\subsub{Bernoulli}
+
+\subsub{Binomial}
+
+\end{document}

@@ -14,11 +14,25 @@
 
 \usepackage[libertine]{newtxmath}
 
+\usepackage[dvipsnames, usenames]{xcolor}
+
+\definecolor{nicegreen}{HTML}{009933}
+
 \usepackage{tikz}
 
 \usepackage{gensymb}
 
 \usepackage{fancyhdr}
+
+\usepackage{cancel}
+
+\usepackage{calc}
+
+\usepackage{etoolbox}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.6}
 
 \everymath{\displaystyle}
 
@@ -27,7 +41,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.2mm}
-\fancyhead[C]{Vektoren}
+\fancyhead[C]{Wahrscheinlichkeit}
 \renewcommand{\footrulewidth}{0.2mm}
 \fancyfoot[L]{Peter Goldsborough}
 \fancyfoot[C]{\thepage}
@@ -42,6 +56,27 @@
 	\fancyfoot[R]{\today}
 }
 
+\newcommand{\power}[2]
+{
+	\ifnum#2=0
+		#1 1\relax
+	\else
+		\ifnum#2=1
+			\relax
+		\else
+
+			\newcount\x
+			\x \the#1\relax
+
+			\foreach \ in {2,...,#2}
+			{
+				\global \multiply \x by \the#1\relax
+			}
+
+			\global #1 \the\x
+		\fi
+	\fi
+}
 
 \setlength{\headheight}{15pt}
 
@@ -49,6 +84,7 @@
 
 \addtolength{\parskip}{\baselineskip}
 
+\newcommand{\defas}{ \dots \,\,}
 
 \newcommand{\heading}[1]{\begin{center}\Huge \textbf{#1}\end{center}\par}
 
@@ -62,6 +98,8 @@
 
 \newcommand{\zitat}[1]{\foreignquote{german}{#1}}
 
-\newcommand{\bolditem}[1]{\textbf{#1}}
+\newcommand{\bolditem}[1]{\item \textbf{#1}}
 
-\newcommand{\titleitem}[1]{\bolditem{#1}}
+\newcommand{\titleitem}[1]{\bolditem{#1} \par’}
+
+\newcommand{\beispiel}[1]{\textbf{Beispiel}: \emph{#1}}
