@@ -6,6 +6,11 @@
 
 \usepackage{amssymb}
 
+\usepackage{eurosym}
+
+\let\normaleuro\euro
+\renewcommand{\euro}{{\,\footnotesize \normaleuro}}
+
 \usepackage[german]{babel}
 
 \usepackage[autostyle=true]{csquotes}
@@ -100,6 +105,6 @@
 
 \newcommand{\bolditem}[1]{\item \textbf{#1}}
 
-\newcommand{\titleitem}[1]{\bolditem{#1} \par’}
+\newcommand{\titleitem}[1]{\bolditem{#1} \par}
 
 \newcommand{\beispiel}[1]{\textbf{Beispiel}: \emph{#1}}
