@@ -9,7 +9,7 @@
 
 \sub{Definition}
 
-Eine Funktion $f$ ist eine eindeutige Zuordnung zwischen einer unabh\"{a}ngigen \textbf{Definitionsmenge} $D$ und einer von dieser abh\"{a}ngigen \textbf{Wertemenge} $W$. F\"{u}r jeden zul\"{a}ssigen, unabh\"{a}ngigen Eingabewert $x$ legt eine Funktion $f(x)$ eindeutig einen von $x$ abh\"{a}ngigen Funktions- bzw. Ausgabewert $y$ fest.
+Eine Funktion $f$ ist eine eindeutige Zuordnung zwischen einer unabh\"{a}ngigen \textbf{Definitionsmenge} $\mathbb{D}$ und einer von dieser abh\"{a}ngigen \textbf{Wertemenge} $\mathbb{W}$. F\"{u}r jeden zul\"{a}ssigen, unabh\"{a}ngigen Eingabewert $x$ legt eine Funktion $f(x)$ eindeutig einen von $x$ abh\"{a}ngigen Funktions- bzw. Ausgabewert $y$ fest.
 
 F\"{u}r eine Funktion $f(x)$ gilt somit:
 
@@ -17,9 +17,9 @@ F\"{u}r eine Funktion $f(x)$ gilt somit:
 
 \textbf{Abh\"{a}ngige Variable} \defas $y$ bzw. $f(x)$
 
-\textbf{Definitionsmenge} $D_{f}$ \defas Menge aller zul\"{a}ssigen, unabh\"{a}ngigen Eingabewerte $x$
+\textbf{Definitionsmenge} $\mathbb{D}_{f}$ \defas Menge aller zul\"{a}ssigen, unabh\"{a}ngigen Eingabewerte $x$
 
-\textbf{Wertemenge} $W_{f}$ \defas Menge aller auftretenden, von $x$ bzw. $D_{f}$ abh\"{a}ngigen Funktionswerte $y$
+\textbf{Wertemenge} $\mathbb{W}_{f}$ \defas Menge aller auftretenden, von $x$ bzw. $\mathbb{D}_{f}$ abh\"{a}ngigen Funktionswerte $y$
 
 \textbf{Funktionsgleichung} \defas
 
@@ -60,7 +60,7 @@ Eine Funktion $f(x)$ kann als Funktionsterm bzw. -gleichung, als Wertetabelle od
 		axis lines = middle,
 		xlabel = $x$,
 		ylabel = {$f(x) = 2x + 1$},
-		ytick = {1, 2, 3, 4, 5}
+		ytick = {0, 1, 2, 3, 4, 5}
 	]
 
 	\addplot
@@ -80,9 +80,9 @@ Eine Funktion $f(x)$ kann als Funktionsterm bzw. -gleichung, als Wertetabelle od
 
 \sub{Wichtige Begriffe}
 
-Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funktionen sollte angemerkt werden, worin der Unterschied zwischen einer \textbf{Stelle} und einem \textbf{Punkt} einer Funktion liegt. Mit einer \emph{Stelle} ist immer nur der Wert der Definitionsmenge bzw. die unab\"{a}ngige Variable --- also $x$ --- gemeint. Ein \emph{Punkt} bezeichnet dagegen ein Koordinatentupel bestehend aus der unab\"{a}ngigen \emph{und} abh\"{a}ngigen Variable --- also $(x, y)$.
+Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funktionen sollte angemerkt werden, worin der Unterschied zwischen einer \textbf{Stelle} und einem \textbf{Punkt} einer Funktion liegt. Mit einer \emph{Stelle} ist immer nur der Wert der Definitionsmenge bzw. die unab\"{a}ngige Variable --- also $x$ --- gemeint. Ein \emph{Punkt} bezeichnet dagegen ein Koordinatentupel bestehend aus der unabh\"{a}ngigen \emph{und} abh\"{a}ngigen Variable --- also $(x| y)$.
 
-\textbf{Nullstelle} (N) \defas jene Stelle einer Funktion, an welcher gilt $f(x) = 0 \rightarrow$ die Funktion schneidet die $x$-Achse
+\textbf{Nullstelle} (N) \defas jene Stelle $x$ einer Funktion, an welcher gilt $f(x) = 0 \rightarrow$ die Funktion schneidet die $x$-Achse
 
 \textbf{Spurpunkt} (S) \defas jener Punkt einer Funktion, an welcher sie eine der beiden Achsen schneidet ($x$- oder $y$-Achse)
 
@@ -170,7 +170,7 @@ Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funk
 	% SMW
 	\draw [red]
 	      (-3.5, -4)
-	   -- (-2.5, -1) node [pos=0.7, left] {Streng Monoton\par Wachsend};
+	   -- (-2.5, -1) node [pos=0.7, left] {Streng Monoton Wachsend};
 
 	% MW
 	\draw [blue]
@@ -244,7 +244,7 @@ Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funk
 	\end{tikzpicture}
 \end{figure}
 
-\textbf{Sattel- bzw. Terassenpunkt} \defas jener Punkt einer Funktion, welcher sowohl Wende- als auch Extrempunkt ist, sodass gilt $f'(x) = 0 \land f''(x) = 0$
+\textbf{Sattel- bzw. Terassenpunkt} \defas jener Punkt einer Funktion, welcher sowohl Wende- als auch Extrempunkt ist, sodass gilt $f'(x) = f''(x) = 0$
 
 \pagebreak
 
@@ -374,7 +374,7 @@ Vor der Beschreibung bzw. Diskussion wichtiger Begriffe im Zusammenhang mit Funk
 
 \sub{Funktionstypen}
 
-Generell kann eine Funktion in einer von zwei Formen angeschrieben sein, entweder in der \textbf{Normal bzw. Hauptform} oder in der \textbf{Allgemeinen Form}. Diese Formen unterscheiden sich je nach Funktionstyp.
+Generell kann eine Funktion in einer von zwei Formen angeschrieben sein, entweder in der \textbf{Normal- bzw. Hauptform} oder in der \textbf{Allgemeinen Form}. In der Allgemeinen Form sind alle Variablen auf einer Seite der Funktionsgleichung. In der Normal- bzw. Hauptform sind abh\"{a}ngige und unabh\"{a}ngige Variablen auf gegen\"{u}berliegenden Seiten.
 
 \textbf{Abszisse} \defas horizontale Achse eines Funktionsgraphen ($x$-Achse)
 
@@ -392,7 +392,7 @@ Eine lineare Funktion $f(x)$ ist eine linear wachsende oder fallende Funktion, m
 
 \textbf{Inhomogene Lineare Funktion} \defas eine Lineare Funktion $y = kx + d \,|\, k \neq 0 \land d \neq 0$ ohne direktem Verh\"{a}ltnis zwischen $x$- und $y$-Werten.
 
-Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $\left(-\frac{d}{k}|0\right)$.
+Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $\left(-\frac{d}{k} \, | \, 0\right)$.
 
 \begin{figure}[h!]
 \centering
@@ -401,6 +401,7 @@ Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $\left(-\frac{d}{k}|0
 		[
 			xlabel = $x$,
 			ylabel = $f(x)$,
+			ytick={-10,-5,5,10},
 			axis lines = middle,
 			legend pos = outer north east
 		]
@@ -425,9 +426,9 @@ Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $\left(-\frac{d}{k}|0
 
 \subsub{Potenzfunktionen}
 
-Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Potenzfunktion kann einen Abstand $c$ vom Ursprung haben, um welchen alle Funktionswerte auf der Ordinate verschoben sind. Je nachdem ob die Potenz $z$ gerade oder ungerade, positiv oder negativ ist, hat der Graph einer Potenfunktion verschiedene Formen, welche entweder punkt- oder achsensymmetrisch sind. Ist der Exponent $z$ einer Potenzfunktion $\in \mathbb{Z^+}$, liegt eine direkte Proportionalit\"{a}t vor, ist er $\in \mathbb{Z^-}$ sind $x$ und $y$ indirekt proportional. Gilt $z \in \mathbb{Q}$, handelt es sich um eine \emph{Wurzelfunktion}, da jede rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann.
+Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Potenzfunktion kann einen Abstand $b$ vom Ursprung haben, um welchen alle Funktionswerte auf der Ordinate verschoben sind. Je nachdem ob die Potenz $z$ gerade oder ungerade, positiv oder negativ ist, hat der Graph einer Potenfunktion verschiedene Formen, welche entweder punkt- oder achsensymmetrisch sind. Ist der Exponent $z$ einer Potenzfunktion $\in \mathbb{Z^+}$, liegt eine direkte Proportionalit\"{a}t vor, ist er $\in \mathbb{Z^-}$ sind $x$ und $y$ indirekt proportional. Gilt $z \in \mathbb{Q} / \mathbb{Z}$, handelt es sich um eine \emph{Wurzelfunktion}, da jede rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann.
 
-\textbf{Hauptform} \defas $ax^z + b$
+\textbf{Hauptform} \defas $y = ax^z + b$
 
 \extrapar
 
@@ -460,7 +461,7 @@ Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Pot
 
 				\end{axis}
 			\end{tikzpicture}
-		} {\caption*{$z$ gerade und positiv $\Rightarrow f(x)$ achsensymmetrisch und $> 0$}}
+		} {\caption*{$z$ gerade und positiv $\Rightarrow f(x)$ achsensymmetrisch}}
 
 		\ffigbox
 		{
@@ -492,6 +493,8 @@ Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Pot
 		} {\caption*{$z$ ungerade und positiv $\Rightarrow f(x)$ punktsymmetrisch}}
 	\end{floatrow}
 
+	\vspace{2cm}
+
 	\begin{floatrow}
 		\ffigbox
 		{
@@ -521,7 +524,7 @@ Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Pot
 
 				\end{axis}
 			\end{tikzpicture}
-		} {\caption*{$z$ gerade und negativ $\Rightarrow f(x)$ achsensymmetrisch und $> 0$}}
+		} {\caption*{$z$ gerade und negativ $\Rightarrow f(x)$ achsensymmetrisch}}
 
 		\ffigbox
 		{
@@ -559,9 +562,9 @@ Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Pot
 
 \subsub{Wurzelfunktion}
 
-Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann. Wurzelfunktionen sind daher ebenso nicht-linear wachsend oder fallend. Gilt f\"{u}r die Definitionsmenge $D_{f}$ einer Wurzelfunktion $f(x)$, dass sie $\in \mathbb{R}$, so ist die Wurzelfunktion nur f\"{u}r positive Werte der Definitionsmenge ($x$-Werte) definiert, also $\mathbb{R^+}$.
+Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann. Wurzelfunktionen sind daher ebenso nicht-linear wachsend oder fallend. Ist die Grundmenge $\mathbb{G}$ die Menge der rellen Zahlen $\mathbb{R}$, so ist die Wurzelfunktion nur f\"{u}r positive Werte der Definitionsmenge ($x$-Werte) definiert, also $\mathbb{R^+}$.
 
-\textbf{Hauptform} \defas $ax^{\frac{m}{n}} + b = a\sqrt[n]{x^m} + b = 0$
+\textbf{Hauptform} \defas $y = ax^{\frac{m}{n}} + b = a\sqrt[n]{x^m} + b$
 
 \begin{figure}[h!]
 \centering
@@ -582,7 +585,7 @@ Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rational
 
 		\addplot [magenta] {x^(2/3)};
 
-		\addlegendentry{$\sqrt[3]{2}$};
+		\addlegendentry{$\sqrt[3]{x^2}$};
 
 		\addplot [cyan] {x^(1/5) + 1};
 
@@ -597,7 +600,7 @@ Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rational
 Eine Polynomfunktion ist eine Potenzfunktion bestehend aus mehreren Termen, in denen jeweils die unabh\"{a}ngige Variable $x$ mit verschiedenen Potenzen vorkommt. Sie kann einen sehr komplexen Verlauf haben und ihre Funktionswerte k\"{o}nnen durch einen Abstand vom Ursprung auf der Ordinate verschoben werden.
 Spricht man von einer Polynomfunktion $n$-ten Grades, so ist die h\"{o}chste vorkommende Potenz der Polynome $n$.
 
-\textbf{Allgemeine Form} \defas $\sum_{i=0}^{n} a_{i} \cdot x^i$
+\textbf{Hauptform} \defas $y = \sum_{i=0}^{n} a_{i} x^i$
 
 Hierbei ist der erste Term $a_{0}x^0$ der Abstand vom Ursprung, da $x^0 = 1$ und somit nur $a_{0}$ als Koeffizient ohne Variable \"{u}brig bleibt.
 
@@ -609,7 +612,11 @@ F\"{u}r eine Polynomfunktion $n$-ten Grades gibt es folgende Zusammenh\"{a}nge:
 	      	0 \leq N \leq n\text{, wenn n gerade}\\
 	      	1 \leq N \leq n\text{, wenn n ungerade}
 	      \end{cases}$
-	\item Anzahl der Extremstellen (E) = $1 \leq E < n$
+	\item Anzahl der Extremstellen (E) = 
+		$\begin{cases}
+			1 \leq E < n\text{, wenn n gerade}\\
+	      	0 \leq E < n\text{, wenn n ungerade}
+		 \end{cases}$
 	\item Anzahl der Wendepunkte (W) = $E - 1$
 \end{itemize}
 
@@ -644,17 +651,15 @@ F\"{u}r eine Polynomfunktion $n$-ten Grades gibt es folgende Zusammenh\"{a}nge:
 
 \subsubsub{Linearfaktoren und der Satz des Vieta}
 
-Jede beliebige Polynomfunktion $n$-ten Grades kann in $n$ Linearfaktoren aufgespalten werden. Linearfaktoren sind jene unabh\"{a}ngigen Variablenwerte, welche man durch L\"{o}sen der Funktion erh\"{a}lt. Pro Grad der Funktion gibt es eine L\"{o}sung. Hat man $n$ Linearfaktoren $x_{1}, x_{2}, ..., x_{n}$ einer Polynomfunktion $n$-ten Grades, erh\"{a}lt man deren Funktionsgleichung auf folgende Weise: $$f(x) = \prod_{i = 1}^{n} (x - x_{i})$$
-
-Ebenso kann man mittels der beiden Linearfaktoren $x_{1}$ und $x_{2}$ einer quadratischen Polynomfunktion $f(x) = x^2 + px + q$ die Koeffizienten $p$ und $q$ direkt berechnen. Dazu verwendet man den \emph{Satz des Vieta}: $$-p = x_{1} + x_{2}$$ $$q = x_{1} \cdot x_{2}$$
+Jede beliebige Polynomfunktion $n$-ten Grades kann in $n$ Linearfaktoren aufgespalten werden. Linearfaktoren sind jene unabh\"{a}ngigen Variablenwerte, welche man durch L\"{o}sen der Funktion erh\"{a}lt. Pro Grad der Funktion gibt es eine L\"{o}sung. Hat man $n$ Linearfaktoren $x_{1}, x_{2}, ..., x_{n}$ einer Polynomfunktion $n$-ten Grades, erh\"{a}lt man deren Funktionsgleichung auf folgende Weise: $$f(x) = \prod_{i = 1}^{n} (x - x_{i})$$ Ebenso kann man mittels der beiden Linearfaktoren $x_{1}$ und $x_{2}$ einer quadratischen Polynomfunktion $f(x) = x^2 + px + q$ die Koeffizienten $p$ und $q$ direkt berechnen. Dazu verwendet man den \emph{Satz des Vieta}: $$-p = x_{1} + x_{2}$$ $$q = x_{1} \cdot x_{2}$$
 
 \subsub{Exponentialfunktion}
 
 Die Funktionswerte einer Exponentialfunktion wachsen oder fallen exponentiell. Daher gilt f\"{u}r eine Exponentialfunktion $f(x) = a \cdot b^x$, dass $f(x + 1) = f(x) \cdot b$. Oftmals ist die Basis $b$ gleich der Euler'schen Zahl $e$, was vor allem bei Wachstums- und Zerfallsmodellen von Bedeutung ist.
 
-\textbf{Allgemeine Form} \defas $a \cdot b^x$
+\textbf{Hauptform} \defas $y = a \cdot b^x$
 
-Hierbei bestimmt $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abstand vom Ursprung, da f\"{u}r $x = 0$ anf\"{a}nglich $b^0 = 1$ gilt, somit ist der Abstand vom Ursprung $a \cdot 1$. Gilt f\"{u}r eine Exponentialfunktion $a = 1$, so hat sie ihren Abstand vom Ursprung bei $y =1$, da $1 \cdot b^0 = 1$.
+Hierbei bestimmt $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abstand vom Ursprung, da f\"{u}r $x = 0$ anf\"{a}nglich $b^0 = 1$ gilt, somit ist der Abstand vom Ursprung $a \cdot 1$. Gilt f\"{u}r eine Exponentialfunktion $a = 1$, so hat sie ihren Abstand vom Ursprung bei $y =1$, da $1 \cdot b^0 = 1$. Die Funktion f\"{a}llt, wenn die Basis $b$ zwischen $0$ und $1$ liegt, da eine Zahl in diesem Intervall, mit sich selbst multipliziert, stets eine kleinere Zahl ist. Ist die Basis gr\"{o}\ss{}er $1$, w\"{a}chst die Funktion.
 
 \pagebreak
 
@@ -718,7 +723,7 @@ Hierbei bestimmt $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abst
 
 				\end{axis}
 			\end{tikzpicture}
-		} {\caption*{Exponentialfunktionen mit Basen $b$ kleiner 1}}
+		} {\caption*{Exponentialfunktionen mit Basen $b \in [0; 1]$}}
 	\end{floatrow}
 \end{figure}
 
@@ -726,7 +731,9 @@ Hierbei bestimmt $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abst
 
 F\"{u}r Modellierungen von Wachstum und Zerfall biologischer oder sonstiger nat\"{u}rlicher Vorg\"{a}nge wird oft die Euler'sche Zahl $e$ als Basis verwendet. Die Funktionsgleichung einer Wachstums- oder Zerfallsfunktion beeinschlie\ss{}t neben der unabh\"{a}ngigen Variable $t$ (= Zeit) noch eine Wachstums- bzw. Zerfallskonstante $\lambda$ als Exponent der Basis $e$. Der Koeffizient $a$ ist gleich der urspr\"{u}nglichen Menge des Wachstums- / Zerfallsprozesses und wird $N_{0}$ bezeichnet. 
 
-\textbf{Wachstums- bzw. Zerfallsfunktionsgleichung} \defas $N(t) = N_{0} \cdot e^{\lambda \cdot t}$
+\textbf{Wachstums- bzw. Zerfallsfunktionsgleichung} \defas $N(t) = N_{0} \cdot e^{\lambda t}$
+
+\vspace{\parskip}
 
 \begin{figure}[h!]
 \centering
@@ -762,14 +769,14 @@ Sinus- und Cosinusfunktionen sind periodsch fallend und wachsende Funktionen, de
 
 Aus oben gennanter Beschreibung l\"{a}sst sich schlie\ss{}en: $\cos(x) = \sin(x + \frac{\pi}{2})$
 
-Der Faktor $a$ bestimmt die maximale Amplitude (= H\"{o}he) der Funktion. $b$ bestimmt die Frequenz sowie indirekt die Periode $p$. Da Sinus- und Cosinusfunktionen im Normalfall, also wenn gilt $b=1$, eine Periode von $2\pi$ haben, gilt allgemein $p = \frac{1}{b \cdot 2\pi}$. Die Konstante $c$ ist eine beliebige Phasenverschiebung auf der Abszisse. $d$ ist ein Abstand vom Ursprung auf der Ordinate.
+Der Faktor $a$ bestimmt die Amplitude (= H\"{o}he) der Funktion. $b$ bestimmt die Frequenz sowie indirekt die Periode $p$. Da Sinus- und Cosinusfunktionen im Normalfall, also wenn gilt $b=1$, eine Periode von $2\pi$ haben, gilt allgemein $p = (b \cdot 2\pi)^{-1}$. Die Konstante $c$ ist eine beliebige Phasenverschiebung auf der Abszisse. $d$ ist ein Abstand vom Ursprung auf der Ordinate.
 
 Einige Bemerkungen:
 
 \begin{itemize}
-	\item Nullstellen der Sinusfunktion liegen bei $\frac{p}{2} - c$ sowie $p - c$, jene der Cosinusfunktion bei $\frac{p}{4} + c$ sowie $\frac{3p}{4} - c$. Generell haben sie immer einen Abstand von $\frac{p}{2}$.
+	\item Nullstellen der Sinusfunktion liegen bei $\frac{p}{2} - c$ sowie $p - c$, jene der Cosinusfunktion bei $\frac{p}{4} - c$ sowie $\frac{3p}{4} - c$. Generell haben sie immer einen Abstand von $\frac{p}{2}$.
 
-	\item Extremstellen der Sinusfunktion liegen bei $\frac{p}{4} + c$ sowie $\frac{3p}{4} + c$, jene der Cosinusfunktion bei $c$ sowie $\frac{p}{2} + c$
+	\item Extremstellen der Sinusfunktion liegen bei $\frac{p}{4} - c$ sowie $\frac{3p}{4} - c$, jene der Cosinusfunktion bei $c$ sowie $\frac{p}{2} - c$
 	
 	\item $[\sin(x)]' = \cos(x)$, $[\cos(x)]' = -\sin(x)$
 

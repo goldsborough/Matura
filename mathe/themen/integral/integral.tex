@@ -80,7 +80,7 @@ Es gibt vier verschiedene M\"{o}glichkeiten, Rechtecke unter einer Kurve aufzusp
 	% x axis
 		\draw [->]
 		      (-0.5, 0) 
-		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   -- (+4.7, 0) node [pos=0.06, below] {0}
 		   			    node [above] {$x$}
 		   				node [pos=0.2, below] {$\Delta x$}
 		   				node [pos=0.4, below] {$\Delta x$}
@@ -93,7 +93,7 @@ Es gibt vier verschiedene M\"{o}glichkeiten, Rechtecke unter einer Kurve aufzusp
 		   -- (0, +4.5) node [right] {$f(x)$};
 
 		% Graph
-		\draw [domain=0:4] plot(\x, {-0.2 * \x^2 + 4});
+		\draw [domain=0:4.4722] plot(\x, {-0.2 * \x^2 + 4});
 
 		% First rectangle
 		\draw [red]
@@ -142,7 +142,7 @@ Es gibt vier verschiedene M\"{o}glichkeiten, Rechtecke unter einer Kurve aufzusp
 	\end{tikzpicture}
 \end{figure}
 
-F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $min_i$ jedes Intervalls als L\"{a}nge genommen: $$A_U = \sum_{i=1}^{N} f(min_i) \cdot \Delta x$$ F\"{a}llt die Funktion, liegt der kleinste Funktionswert jedes Intervalls meist am rechten Ende. Steigt die Funktion, bestimmt bei der Untersumme meist der Funktionswert der linken Intervallsgrenze die L\"{a}nge des Rechtecks. Die Breite $\Delta x$ ist bei allen Produktsummen ein konstanter Faktor, mit ihm kann also auch nachtr\"{a}glich multipliziert werden: $$A_U = \Delta x \cdot \sum_{i=1}^{N} f(min_i)$$
+F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $f(min_i)$ jeden Intervalls $i$ als L\"{a}nge genommen: $$A_U = \sum_{i=1}^{N} f(min_i) \cdot \Delta x$$ F\"{a}llt die Funktion, liegt der kleinste Funktionswert jedes Intervalls meist am rechten Ende. Steigt die Funktion, bestimmt bei der Untersumme meist der Funktionswert der linken Intervallsgrenze die L\"{a}nge des Rechtecks. Die Breite $\Delta x$ ist bei allen Produktsummen ein konstanter Faktor, mit ihm kann also auch nachtr\"{a}glich multipliziert werden: $$A_U = \Delta x \cdot \sum_{i=1}^{N} f(min_i)$$
 
 \pagebreak
 
@@ -211,7 +211,7 @@ F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $min_i$ jedes Inter
 	% x axis
 		\draw [->]
 		      (-0.5, 0) 
-		   -- (+4.5, 0) node [pos=0.06, below] {0}
+		   -- (+4.7, 0) node [pos=0.06, below] {0}
 		   			    node [above] {$x$}
 		   				node [pos=0.2, below] {$\Delta x$}
 		   				node [pos=0.4, below] {$\Delta x$}
@@ -224,7 +224,7 @@ F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $min_i$ jedes Inter
 		   -- (0, +4.5) node [right] {$f(x)$};
 
 		% Graph
-		\draw [domain=0:4] plot(\x, {-0.2 * \x^2 + 4});
+		\draw [domain=0:4.4722] plot(\x, {-0.2 * \x^2 + 4});
 
 		% First rectangle
 		\draw [red]
@@ -273,7 +273,7 @@ F\"{u}r die Untersumme $A_U$ wird der kleinste Funktionswert $min_i$ jedes Inter
 	\end{tikzpicture}
 \end{figure}
 
-Gegens\"{a}tzlich zur Untersumme $A_U$ bestimmt bei der Obersumme $A_O$ nicht der kleinste Funktionswert jeden Intervalls die L\"{a}nge des Rechtecks, sondern der gr\"{o}\ss{}te Funktionswert: $$A = \Delta x \cdot \sum_{i=1}^{N} f(max_i)$$ Man bemerke, dass die Rechtecke der Obersumme jenen der Untersumme stark \"{a}hneln. So ergibt es sich, dass die Obersumme berechnet werden kann, indem man die Rechtecke der Untersumme um ein $\Delta x$ verschiebt, das letzte Untersummenrechteck verwirft und das erste Rechteck mit dem maximalen Intervallswert neu berechnet ($min_N$ ist die Minimalstelle des letzten von $N$ Intervallen):
+Gegens\"{a}tzlich zur Untersumme $A_U$ bestimmt bei der Obersumme $A_O$ nicht der kleinste Funktionswert jeden Intervalls die L\"{a}nge des Rechtecks, sondern der gr\"{o}\ss{}te Funktionswert: $$A = \Delta x \cdot \sum_{i=1}^{N} f(max_i)$$ Man bemerke, dass die Rechtecke der Obersumme jenen der Untersumme stark \"{a}hneln. So ergibt es sich, dass die Obersumme berechnet werden kann, indem man die Rechtecke der Untersumme um ein $\Delta x$ verschiebt, das letzte Untersummenrechteck verwirft und das erste Rechteck mit dem maximalen Intervallswert neu berechnet ($min$ ist die Minimalstelle von $N$ Intervallen und $max$ die Maximalstelle):
 
 \begin{figure}[h!]
 	\centering
@@ -410,7 +410,7 @@ Gegens\"{a}tzlich zur Untersumme $A_U$ bestimmt bei der Obersumme $A_O$ nicht de
 	\end{tikzpicture}
 \end{figure}
 
-$$A_O = A_U - \Delta x \cdot f(min_N) + \Delta x \cdot f(max_1)$$ $$\Downarrow$$ $$A_O = A_U + \Delta x \cdot (f(max_1) - f(min_N))$$
+$$A_O = A_U - \Delta x \cdot f(min) + \Delta x \cdot f(max)$$ $$\Downarrow$$ $$A_O = A_U + \Delta x \cdot \big[f(max) - f(min)\big]$$
 
 Da die Obersumme h\"{o}her ist als die wirkliche Fl\"{a}che unter der Kurve und die Untersumme niedriger, kann der Fl\"{a}cheninhalt der Kurve mit Relationszeichen zwischen Unter- und Obersumme eingeschr\"{a}nkt werden: $$A_U < A < A_O$$
 
@@ -418,11 +418,11 @@ Da die Obersumme h\"{o}her ist als die wirkliche Fl\"{a}che unter der Kurve und 
 
 \subsub{Linkssumme}
 
-Die Linkssumme unterscheidet nicht zwischen minimalen oder maximalen Funktionswerten, sondern setzt die L\"{a}nge jeden Rechtecks stets an das linke Ende jeden Intervalls:
+Die Linkssumme unterscheidet nicht zwischen minimalen oder maximalen Funktionswerten, sondern setzt die L\"{a}nge jeden Rechtecks stets an das linke Ende jeden Teilintervalls. F\"{u}r ein Gesamtintervall $[a ; b]$ mit $N$ Teilintervallen gilt daher:
 
 \begin{figure}[h!]
 	\centering
-	\begin{tikzpicture}[scale=1.5]
+	\begin{tikzpicture}[scale=2]
 
 		% x axis
 		\draw [->]
@@ -455,7 +455,7 @@ Die Linkssumme unterscheidet nicht zwischen minimalen oder maximalen Funktionswe
 	\end{tikzpicture}
 \end{figure}
 
-$$A_L = \Delta x \cdot \sum_{i=0}^{N - 1} f(i \cdot \Delta x)$$
+$$A_L = \Delta x \cdot \sum_{i=0}^{N - 1} f(a +  \Delta x \cdot i)$$
 
 \subsub{Rechtssumme}
 
@@ -463,7 +463,7 @@ Zur Berechnung der Rechtssumme wird die L\"{a}nge jeden Rechtecks immer am Funkt
 
 \begin{figure}[h!]
 	\centering
-	\begin{tikzpicture}[scale=1.5]
+	\begin{tikzpicture}[scale=2]
 
 		% x axis
 		\draw [->]
@@ -495,7 +495,7 @@ Zur Berechnung der Rechtssumme wird die L\"{a}nge jeden Rechtecks immer am Funkt
 	\end{tikzpicture}
 \end{figure}
 
-$$A_R = \Delta x \cdot \sum_{i=1}^{N} f(i \cdot \Delta x)$$
+$$A_R = \Delta x \cdot \sum_{i=1}^{N} f(a + \Delta x \cdot i)$$
 
 \pagebreak
 
@@ -534,7 +534,7 @@ Absolute mit der $x$-Achse eingeschlossene Fl\"{a}che $A$ der Funktion: $$A = |A
 
 \sub{Stammfunktionen}
 
-Ein wichtiger Begriff im Zusammenhang mit der Integralrechnung ist die sogennante \zitat{Stammfunktion} einer Funktion, welche eine genau Berechnung des bestimmten Integral erm\"{o}glicht. Da die Stammfunktion $F(x)$ das Resultat der Integration --- dem Gegenteil der Differenzierung --- einer Funktion $f(x)$ ist, ist die erste Ableitung $F'(x)$ der Stammfunktion wiederum die urspr\"{u}ngliche Funktion $f(x)$. Eine Stammfunktion $F(x)$, welche equivalent zum \emph{unbestimmten} Integral ist, wird als Integral ohne Integrationsgrenzen angeschrieben: $$F(x) = \int f(x)\,dx$$ Da Konstanten bei der Differenzierung einer Funktion wegfallen, besitzt jede Funkion $f(x)$ nicht nur eine, sondern unendlich viele Stammfunktionen, welche sich nur durch eine reelle Integrationskonstante $C$ voneinander unterscheiden. Sind $F(x)$ und $G(x)$ zwei Stammfunktionen einer Funktion $f(x)$, gilt somit: $$F'(x) = G'(x) = f(x)$$ Eine besondere Eigenschaft von Stammfunktionen ist, dass sie die Berechnung des bestimmten Integrals einer Funktion in einem beliebigen Intervall $[a ; b]$ erm\"{o}glichen. Der vorhin vorgestellte Grenzwert aus Produktsummen als Definition des Integrals liefert noch keine eindeutige Rechenmethode zur genauen Bestimmung seines Wertes. Kennt man eine Stammfunktion $F(x)$ einer Funktion $f(x)$, so ist das bestimmte Integral dieser Funktion in einem beliebigen Intervall $[a ; b]$ die Differenz der Funktionswerte der Stammfunktion an diesen Stellen. Die Integration einer Funktion in den Grenzen von $a$ nach $b$ wird hierbei durch einen vertikalen Strich angedeutet. $$\int_a^b f(x) \, dx = F(x) \, \Big|_a^b F(b) - F(a)$$
+Ein wichtiger Begriff im Zusammenhang mit der Integralrechnung ist die sogennante \emph{Stammfunktion} einer Funktion, welche eine genau Berechnung des bestimmten Integral erm\"{o}glicht. Da die Stammfunktion $F(x)$ das Resultat der Integration --- dem Gegenteil der Differenzierung --- einer Funktion $f(x)$ ist, ist die erste Ableitung $F'(x)$ der Stammfunktion wiederum die urspr\"{u}ngliche Funktion $f(x)$. Eine Stammfunktion $F(x)$, welche equivalent zum \emph{unbestimmten} Integral ist, wird als Integral ohne Integrationsgrenzen angeschrieben: $$F(x) = \int f(x)\,dx$$ Da Konstanten bei der Differenzierung einer Funktion wegfallen, besitzt jede Funkion $f(x)$ nicht nur eine, sondern unendlich viele Stammfunktionen, welche sich nur durch eine reelle Integrationskonstante $C$ voneinander unterscheiden. Sind $F(x)$ und $G(x)$ zwei Stammfunktionen einer Funktion $f(x)$, gilt somit: $$F'(x) = G'(x) = f(x)$$ Eine besondere Eigenschaft von Stammfunktionen ist, dass sie die Berechnung des bestimmten Integrals einer Funktion in einem beliebigen Intervall $[a ; b]$ erm\"{o}glichen. Der vorhin vorgestellte Grenzwert aus Produktsummen als Definition des Integrals liefert noch keine eindeutige Rechenmethode zur genauen Bestimmung seines Wertes. Kennt man eine Stammfunktion $F(x)$ einer Funktion $f(x)$, so ist das bestimmte Integral dieser Funktion in einem beliebigen Intervall $[a ; b]$ die Differenz der Funktionswerte der Stammfunktion an diesen Stellen. Die Integration einer Funktion in den Grenzen von $a$ nach $b$ wird hierbei durch einen vertikalen Strich angedeutet: $$\int_a^b f(x) \, dx = F(x) \, \Big|_a^b F(b) - F(a)$$
 
 \sub{Integrationsregeln}
 
@@ -559,7 +559,7 @@ Aus der Definition des Integrals, der Stammfunktion sowie dem Verh\"{a}ltnis zwi
 
 	\titleitem{Kombinationsregel}
 
-	Die Summe bestimmter Integrale einer Funktion in zwei benachbarten Intervallen $[a ; b]$ $[b ; c]$ ist gleich dem bestimmten Integral im gesamten Intervall $[a ; c]$: $$\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x)\, dx$$ Dies kann auch auf beliebig viele benachbarte Intervalle mit den jeweiligen Intervallsgrenzen $a_i$ und $b_i$ des $i$-ten Intervalls erweitert werden. Sei $N$ die Anzahl der benachbarten Teilintervalle: $$\sum_{i=1}^{N} \int_{a_i}^{b_i} f(x) \, dx = \int_{a_1}^{b_N} f(x) \, dx$$
+	Die Summe bestimmter Integrale einer Funktion in zwei benachbarten Intervallen $[a ; b], [b ; c]$ ist gleich dem bestimmten Integral im gesamten Intervall $[a ; c]$: $$\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x)\, dx$$ Dies kann auch auf beliebig viele benachbarte Intervalle mit den jeweiligen Intervallsgrenzen $a_i$ und $b_i$ des $i$-ten Intervalls erweitert werden. Sei $N$ die Anzahl der benachbarten Teilintervalle: $$\sum_{i=1}^{N} \int_{a_i}^{b_i} f(x) \, dx = \int_{a_1}^{b_N} f(x) \, dx$$
 
 	\titleitem{Nullregel}
 
@@ -621,7 +621,7 @@ Die Integration der Wurzelfunktion $\sqrt{x}$ sollte erl\"{a}utert werden. Jede 
 
 \sub{Berechnung von eingeschlossenen Fl\"{a}chen}
 
-Gilt es, die Fl\"{a}che zwischen zwei beliebigen Funktionen berechnen, so muss man die Differenz ihrer Integrale bestimmen. Hierbei sei angemerkt, dass die berechnete, eingeschlossene Fl\"{a}che dann positiv ist, wenn der kleinere Fl\"{a}cheninhalt (der \emph{unteren} Funktion) vom gr\"{o}\ss{}eren Fl\"{a}cheninhalt (der \emph{oberen} Funktion) abgezogen wird.Andernfalls muss der Betrag des negativen Fl\"{a}chenst\"{u}cks verwendet werden --- die absolute Fl\"{a}che bleibt gleich. Ebenso sei angemerkt, dass stets von Schnittpunkt zu Schnittpunkt integriert werden sollte, da sich die Lagebeziehungen der Funktionen ver\"{a}ndern k\"{o}nnen und somit das Vorzeichen der einzelnen Teilintegrale. F\"{u}r die Berechnung der von zwei Funktionen $f(x)$ und $g(x)$ umschlossenen Fl\"{a}che $A$ gilt somit: $$A = \left| \, \int_a^b \big[f(x) - g(x)\big] \, dx \, \right|$$
+Gilt es, die Fl\"{a}che zwischen zwei beliebigen Funktionen berechnen, so muss man die Differenz ihrer Integrale bestimmen. Hierbei sei angemerkt, dass die berechnete, eingeschlossene Fl\"{a}che dann positiv ist, wenn der kleinere Fl\"{a}cheninhalt (der \emph{unteren} Funktion) vom gr\"{o}\ss{}eren Fl\"{a}cheninhalt (der \emph{oberen} Funktion) abgezogen wird. Andernfalls muss der Betrag des negativen Fl\"{a}chenst\"{u}cks verwendet werden --- die absolute Fl\"{a}che bleibt gleich. Ebenso sei angemerkt, dass stets von Schnittpunkt zu Schnittpunkt integriert werden sollte, da sich die Lagebeziehungen der Funktionen ver\"{a}ndern k\"{o}nnen und somit das Vorzeichen der einzelnen Teilintegrale. F\"{u}r die Berechnung der von zwei Funktionen $f(x)$ und $g(x)$ umschlossenen Fl\"{a}che $A$ gilt somit: $$A = \left| \, \int_a^b \big[f(x) - g(x)\big] \, dx \, \right|$$
 
 \textbf{Beispiel}: \emph{Berechne die Fl\"{a}che, die von den Funktionen $f(x) = x^3 - 2x^2 + 2$ und $g(x) = x + 1$ eingeschlossen wird.}
 
@@ -755,7 +755,7 @@ Die folgende Abbildung zeigt eine quadratische Pyramide. Die Querschnittsfl\"{a}
 
 \textbf{Beispiel}: \emph{Berechne das Volumen eines Zirkuszelts, dessen quadratische Querschnittsfl\"{a}che in der H\"{o}he z eine Seitenl\"{a}nge nach $a(z) = 8 \cdot (4 - \sqrt{z})$ besitzt. Abmessungen in m.}
 
-Zuerst muss eine Funktion $A(z)$ f\"{u}r die Querschnittsfl\"{a}che $A$ in der H\"{o}he $z$ gefunden werden. Da die Querschnittsfl\"{a}che quadratisch ist, ist sie das Quadrat ihrer Seitenl\"{a}nge $a$. Die Seitenl\"{a}nge des Zirkuszelts ist in Abh\"{a}ngigkeit der H\"{o}he laut Angabe definiert als $a(z) = 8 \cdot (4 - \sqrt{z})$. Somit gilt f\"{u}r die Querschnittsfl\"{a}che $A(z)$: $$A(z) = a(z)^2 = \left[ 8 \cdot (4 - \sqrt{z}) \right]^2 = 64 \cdot (16 -8\sqrt{z} + z)$$ Diese Querschnittsl\"{a}che kann nun nach $dz$ integriert werden, um so das Volumen des Zirkuszelts zu bestimmen. Daf\"{u}r m\"{u}ssen jedoch zuerst die Integrationsgrenzen gefunden werden. Die untere Grenze befindet sich bei $z = 0$, da das Zirkuszelt am Boden liegt. Die obere Grenze kann als $z = 16$ gefunden werden, da $a(16) = 0$. Das bestimmte Integral liefert nun das Volumen $V$: $$V = \int_{0}^{16} A(z) \, dz = \int_{0}^{16} \left[ 64 \cdot (16 -8\sqrt{z} + z) \right] \, dz = 64 \cdot \left( 16z -\frac{16}{3}\sqrt{z^3} + \frac{1}{2}z^2 \right) \, \bigg|_{0}^{16} \approx 2731$$
+Zuerst muss eine Funktion $A(z)$ f\"{u}r die Querschnittsfl\"{a}che $A$ in der H\"{o}he $z$ gefunden werden. Da die Querschnittsfl\"{a}che quadratisch ist, ist sie das Quadrat ihrer Seitenl\"{a}nge $a$. Die Seitenl\"{a}nge des Zirkuszelts ist in Abh\"{a}ngigkeit der H\"{o}he laut Angabe definiert als $a(z) = 8 \cdot (4 - \sqrt{z})$. Somit gilt f\"{u}r die Querschnittsfl\"{a}che $A(z)$: $$A(z) = a(z)^2 = \left[ 8 \cdot (4 - \sqrt{z}) \right]^2 = 64 \cdot (16 -8\sqrt{z} + z)$$ Diese Querschnittsfl\"{a}che kann nun nach $dz$ integriert werden, um so das Volumen des Zirkuszelts zu bestimmen. Daf\"{u}r m\"{u}ssen jedoch zuerst die Integrationsgrenzen gefunden werden. Die untere Grenze befindet sich bei $z = 0$, da das Zirkuszelt am Boden liegt. Die obere Grenze kann als $z = 16$ gefunden werden, da $a(16) = 0$. Das bestimmte Integral liefert nun das Volumen $V$: $$V = \int_{0}^{16} A(z) \, dz = \int_{0}^{16} \left[ 64 \cdot (16 -8\sqrt{z} + z) \right] \, dz = 64 \cdot \left( 16z -\frac{16}{3}\sqrt{z^3} + \frac{1}{2}z^2 \right) \, \bigg|_{0}^{16} \approx 2731$$
 
 \textbf{Ergebnis}: Das Volumen des Zirkuszelts betr\"{a}gt $2731 \, m^3$.
 
@@ -777,9 +777,9 @@ Da der Funktionsgraph um die $x$-Achse rotieren soll, ist der Radius der einzeln
 
 \textbf{Beispiel}: \emph{Der Graph der Funktion $f(x) = 4 - 2x$ rotiert im Intervall $[0 ; 4]$ um die $y$-Achse. Berechne das Volumen des daraus entstehenden Rotationsk\"{o}rpers.}
 
-Hier muss die Funktion $f(x)$ zuerst nach $x$ umgeformt werden, da der K\"{o}rper um die $y$-Achse rotiert. Das bedeutet, dass der Radius der Zylinder gleich der $x$-Variable ist und sich in Abh\"{a}ngigkeit der H\"{o}he bzw. des $y$-Arguments ver\"{a}ndert. Die nach $x$-umgeformte Funktion lautet: $$y = 4 - 2x \Rightarrow x = 2 - \frac{y}{2}$$ Anschlie\ss{}end kann auch gleich das Quadrat der Funktion berechnet werden, da dieses bei der Berechnung des Volumens ben\"{o}tigt wird: $$x^2 = \left(2 - \frac{y}{2}\right)^2 = -\frac{y^2}{4} - 2y + 4$$ Somit kann das Volumen des um die $y$-Achse rotierenden K\"{o}rpers berechnet werden: $$V_y = \pi \cdot \int_0^4 x^2 \, dy = \pi \cdot \int_0^4 \left( -\frac{y^2}{4} - 2y + 4 \right) \, dy = \pi \cdot \left( -\frac{y^3}{12} - y^2 + 4y \right) \,\, \bigg |_0^4 = \frac{324}{5} \pi $$
+Hier muss die Funktion $f(x)$ zuerst nach $x$ umgeformt werden, da der K\"{o}rper um die $y$-Achse rotiert. Das bedeutet, dass der Radius der Zylinder gleich der $x$-Variable ist und sich in Abh\"{a}ngigkeit der H\"{o}he bzw. des $y$-Arguments ver\"{a}ndert. Die nach $x$-umgeformte Funktion lautet: $$y = 4 - 2x \Rightarrow x = 2 - \frac{y}{2}$$ Anschlie\ss{}end kann auch gleich das Quadrat der Funktion berechnet werden, da dieses bei der Berechnung des Volumens ben\"{o}tigt wird: $$x^2 = \left(2 - \frac{y}{2}\right)^2 = \frac{y^2}{4} - 2y + 4$$ Somit kann das Volumen des um die $y$-Achse rotierenden K\"{o}rpers berechnet werden: $$V_y = \pi \cdot \int_0^4 x^2 \, dy = \pi \cdot \int_0^4 \left( \frac{y^2}{4} - 2y + 4 \right) \, dy = \pi \cdot \left( \frac{y^3}{12} - y^2 + 4y \right) \,\, \bigg |_0^4 = \frac{16}{3} \pi $$
 
-\textbf{Ergebnis}: Der Rotationsk\"{o}rper hat ein Volumen von $\frac{324}{5}\pi$ Volumseinheiten.
+\textbf{Ergebnis}: Der Rotationsk\"{o}rper hat ein Volumen von $\frac{16}{3}\pi$ Volumseinheiten.
 
 \pagebreak
 
