@@ -11,13 +11,13 @@ Die Differentialrechnung besch\"{a}ftigt sich mit der Ver\"{a}nderung von unabh\
 
 \sub{Differenzenquotient}
 
-Der Differenzenquotient $k = \frac{\Delta y}{\Delta x}$ einer Funktion $f(x)$ ist ein \textbf{relatives \"{A}nderungsma\ss{}}, welches f\"{u}r zwei beliebiege unabh\"{a}ngige Variablen $x_{0}$ und $x_{1}$ aus der Definitionsmenge $D_{f}$ und den beiden entsprechenden abh\"{a}ngigen Variablen $f(x_{0})$ bzw. $y_{0}$ und $f(x_{1})$ bzw. $y_{1}$ aus der Wertemenge $W_{f}$, die \"{A}nderung dieser beiden Variablen in Relation zu einander beschreibt. Der daraus resultierende Wert $k$ dr\"{u}ckt aus, um wieviele Einheiten sich $f(x)$ im Intervall $[x_{0} ; x_{1}]$ durchschnittlich ver\"{a}ndert, wenn $x$ um eine Einheit w\"{a}chst oder f\"{a}llt. Der Differenzenquotient ist somit die \textbf{mittlere \"{A}nderungsrate} bzw. die \textbf{durschnittliche Steigung} in diesem Intervall. F\"{u}r den Differenzenquotient einer Funktion $f(x)$ im Intervall $[x_{0} ; x_{1}]$ gilt somit: $$k = \frac{\Delta f(x)}{\Delta x} = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}$$
+Der Differenzenquotient $k = \frac{\Delta y}{\Delta x}$ einer Funktion $f(x)$ ist ein \textbf{absolutes \"{A}nderungsma\ss{}}, welches f\"{u}r zwei beliebiege unabh\"{a}ngige Variablen $x_{0}$ und $x_{1}$ aus der Definitionsmenge $\mathbb{D}_{f}$ und den beiden entsprechenden abh\"{a}ngigen Variablen $f(x_{0})$ bzw. $y_{0}$ und $f(x_{1})$ bzw. $y_{1}$ aus der Wertemenge $\mathbb{W}_{f}$, die \"{A}nderung dieser beiden Variablen in Relation zu einander beschreibt. Der daraus resultierende Wert $k$ dr\"{u}ckt aus, um wieviele Einheiten sich $f(x)$ im Intervall $[x_{0} ; x_{1}]$ durchschnittlich ver\"{a}ndert, wenn $x$ um eine Einheit w\"{a}chst. Der Differenzenquotient ist somit die \textbf{mittlere \"{A}nderungsrate} bzw. die \textbf{durschnittliche Steigung} in diesem Intervall. F\"{u}r den Differenzenquotient einer Funktion $f(x)$ im Intervall $[x_{0} ; x_{1}]$ gilt somit: $$k = \frac{\Delta f(x)}{\Delta x} = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}$$ Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sekantensteigung} ausdr\"{u}cken. Die Sekantensteigung ist die Steigung jener Gerade, die durch die Punkte $P_{0}(x_{0}|y_{0})$ und $P_{1}(x_{1}|y_{1})$ verl\"{a}uft.
 
-Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sekantensteigung} modellieren. Die Sekantensteigung einer Funktion $f(x)$ ist die Hypotenuse des Steigungsdreiecks zwischen den Punkten $P_{0}(x_{0}|y_{0})$ und $P_{1}(x_{1}|y_{1})$.
+\vspace{1cm}
 
 \begin{figure}[h!]
 \centering
-	\begin{tikzpicture} 
+	\begin{tikzpicture}[scale=1.5]
 
 		% x axis
 		\draw [<->] 
@@ -64,9 +64,7 @@ Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sek
 
 \sub{Differentialquotient}
 
-W\"{a}hrend der Differenzenquotient die durschnittliche Steigung in einem bestimmten Intervall $[x_{0};x_{1}]$ beschreibt, dr\"{u}ckt der Differentialquotient die \textbf{momentane Steigung} bzw. die \textbf{momentane \"{A}nderungsrate} einer Funktion an einer bestimmten Stelle $x$ aus. Der Differentialquotient an einer Stelle $x_{0}$ ist theoretisch gesehen ein Differenzenquotient in einem Intervall $[x_{0};x_{1}]$, in dem $x_{1}$ gegen $x_{0}$ und somit $\Delta x$ gegen $0$ strebt: $$\lim_{\Delta x\to0}\frac{\Delta f(x)}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{(x + \Delta x) - x}$$
-
-Geometrisch gesehen ist ein Differentialquotient einer Funktion $f(x)$ an einer Stelle $x_{0}$ die Steigung der Tangente an den Punkt $P(x_{0}|f(x_{0})$. Diese Tangente entsteht durch eine Folge von Ann\"{a}herungen von Sekanten in einem immer kleiner werdenenden Intervall $[x_{0}, x_{1}]$. Somit kann der Differentialquotient bzw. die Tangentensteigung als Grenzwert von Sekantensteigungen gesehen werden.
+W\"{a}hrend der Differenzenquotient die durschnittliche Steigung in einem bestimmten Intervall $[x_{0};x_{1}]$ beschreibt, dr\"{u}ckt der Differentialquotient die \textbf{momentane Steigung} bzw. die \textbf{momentane \"{A}nderungsrate} einer Funktion an einer bestimmten Stelle $x$ bzw. in einem bestimmten Punkt aus. Der Differentialquotient an einer Stelle $x_{0}$ ist theoretisch gesehen ein Differenzenquotient in einem Intervall $[x_{0};x_{1}]$, in dem $x_{1}$ gegen $x_{0}$ und somit $\Delta x$ gegen $0$ strebt: $$\lim_{\Delta x\to0}\frac{\Delta f(x)}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{(x + \Delta x) - x}$$ Geometrisch gesehen ist ein Differentialquotient einer Funktion $f(x)$ an einer Stelle $x_{0}$ die Steigung der Tangente an den Punkt $P(x_{0}|f(x_{0}))$. Diese Tangente entsteht durch eine Folge von Ann\"{a}herungen von Sekanten in einem immer kleiner werdenenden Intervall $[x_{0}; x_{1}]$. Somit kann der Differentialquotient bzw. die Tangentensteigung als Grenzwert von Sekantensteigungen gesehen werden.
 
 \begin{figure}[h!]
 \centering
@@ -116,7 +114,9 @@ Geometrisch gesehen ist ein Differentialquotient einer Funktion $f(x)$ an einer 
 
 \sub{Ableitung}
 
-Die Ableitung einer Funktion $f(x)$ ordnet jedem unabh\"{a}ngigen $x$-Wert auf der Abszisse bzw. aus der Definitionsmenge $D_f$ den Differentialquotienten an dieser Stelle als neuen Funktionswert der Ableitungsfunktion $f'(x)$ zu. 
+Die Ableitung einer Funktion $f(x)$ ordnet jedem unabh\"{a}ngigen $x$-Wert auf der Abszisse bzw. aus der Definitionsmenge $\mathbb{D}_f$ den Differentialquotienten an dieser Stelle als neuen Funktionswert der Ableitungsfunktion $f'(x)$ zu. 
+
+\vspace{1cm}
 
 \begin{figure}[hb!]
 \centering
@@ -149,7 +149,7 @@ Um eine Funktion abzuleiten, gibt es mehrere Verfahren bzw. Regeln: die Potenzre
 
 \subsub{Potenzregel}
 
-Die Potenzregel ist f\"{u}r Terme der Form $ax^b\,|\,b \in \mathbb{Z}$ geeignet. Alle anderen Ableitungsregeln lassen sich auf die Potenzregel zur\"{u}ckf\"{u}hren: $$[ax^b]' = b \cdot ax^{b-1}$$
+Die Potenzregel wird f\"{u}r Terme der Form $ax^b$ angewendet: $$[ax^b]' = b \cdot ax^{b-1}$$
 
 \emph{Beispiel}: $f(x) = 3x^4 - 8x^3 - 5x^2 + 13x - 21$
 
@@ -210,9 +210,7 @@ Die Quotientenregel wird dann verwendet, wenn die Funktion Br\"{u}che enth\"{a}l
 	VI. Ausmultiplizieren: & $\frac{(60x^2 - 15x^4 + 36 - 9x^2) - (10x^4 + 18x^2 - 14x)}{x^4 - 8x^2 + 16}$
 \end{tabular}
 
-\emph{Ergebnis}: $f'(x) = \frac{-5x^4 + 69x^2 + -14x + 36}{x^4 - 8x^2 + 16}$:
-
-R\"{u}ckf\"{u}hrung auf Potenzregel bzw. Produktregel:\hspace{1cm}$\frac{u(x)}{v(x)} = u(x) \cdot [v(x)]^{-1}$
+\emph{Ergebnis}: $f'(x) = \frac{-5x^4 + 69x^2 - 14x + 36}{x^4 - 8x^2 + 16}$
 
 \subsub{Reziprokregel}
 
@@ -231,9 +229,11 @@ Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft,
 
 R\"{u}ckf\"{u}hrung auf die Quotientenregel: \hspace{1cm} $\left[\frac{u(x)}{v(x)}\right]' = \left[\frac{1}{v(x)}\right]' = \frac{[1]' \cdot v - v' \cdot 1}{v^2} = \frac{0 \cdot v - v'}{v^2} = \frac{-v'}{v^2}$
 
+\pagebreak
+
 \subsub{Kettenregel}
 
-Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine weitere Funktion $v(x)$ enth\"{a}lt, wobei beide Funktionen Terme mit der unabh\"{a}ngigen Variable $x$ besitzen. Hierbei muss man die \"{a}u\ss{}ere Ableitung $[u(v)]'$ mit der inneren $v'$ multiplizieren: $$[u(v(x))]' = v' \cdot [u(v)]'$$
+Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine weitere Funktion $v(x)$ enth\"{a}lt, wobei beide Funktionen Terme mit der unabh\"{a}ngigen Variable $x$ besitzen. Hierbei muss man die \"{a}u\ss{}ere Ableitung $[u(v)]'$ mit der inneren $v'$ multiplizieren: $$[u(v)]' = v' \cdot [u(v)]'$$
 \emph{Beispiel}: $f(x) = (3x - 4)^2$
 
 \begin{tabular}{l l}
@@ -243,20 +243,19 @@ Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine we
 	\extrapar \\
 	III. Ableiten des inneren Gliedes: & $v'(x) = 3$
 	\extrapar \\
-	IV. Ableiten des \"{a}u\ss{}eren Gliedes: & $[u(v(x))]' = 2 * (3x - 4) = 6x - 8$
+	IV. Ableiten des \"{a}u\ss{}eren Gliedes: & $[u(v(x))]' = 2 \cdot (3x - 4) = 6x - 8$
 	\extrapar \\
 	V. Anwendung der Kettenregel: & $v' \cdot [u(v)]' = 3 \cdot (6x - 8)$
 \end{tabular}
 
-\emph{Ergebnis}: $f'(x) = 18x - 24x$
+\emph{Ergebnis}: $f'(x) = 18x - 24$
 
+Eine aus der Potenz- und Kettenregel folgende Formel zur Berechnung von Ableitungsfunktionen von Wurzelfunktionen lautet: $$\left[\sqrt{f(x)}\right] = \frac{f'(x)}{2\sqrt{f(x)}}$$
 \sub{Kurvendiskussion}
 
-Die Kurvendisskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie, der Steigung sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an den Wendepunkt, der sogenannten \emph{Wendetangente}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, welche sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion gleich null ist. 
+Die Kurvendisskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an den Wendepunkt, der sogenannten \emph{Wendetangente}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, an welcher sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion der Funktionswert gleich null ist. 
 
-Beispiel:
-
-\emph{Gib f\"{u}r die Funktion $f(x) = x^4 - 3x^2 + 2x$ die Wende- und Extrempunkte sowie die Nullstellen, samt Vielfachheit, an. Beschreibe ebenso die Monotonie der Funktion. Fertige eine Skizze an.}
+\textbf{Beispiel}: \emph{Gib f\"{u}r die Funktion $f(x) = x^4 - 3x^2 + 2x$ die Wende- und Extrempunkte sowie die Nullstellen, samt Vielfachheit, an. Beschreibe ebenso die Monotonie der Funktion. Fertige eine Skizze an.}
 
 \textbf{Schritt I: Ableitungen der Funktion $f(x)$ anschreiben}
 
@@ -371,9 +370,7 @@ $E_{3}(0.37 | 0.35)$ & $\rightarrow$ & $f''(0.37) > 0$ & $\rightarrow$& Tiefpunk
 
 \textbf{Schritt IV: Wendepunkte finden}
 
-An einem Wendepunkt einer beliebigen Funktion \"{a}ndert sich stets das Kr\"{u}mmungsverhalten, also von positiv zu negativ oder umgekehrt. Daher ist an einem Wendepunkt die Kr\"{u}mmung gleich null. Somit gilt es, jene Stelle zu bestimmen, an welcher die zweite Ableitung $f''(x)$, welche die Kr\"{u}mmung der Funktion $f(x)$ beschreibt, gleich $0$ ist: $12x^2 - 6 = 0$
-
-Diese Funktion hat nur einen Term, welcher die unab\"{a}ngige Variable $x$ enth\"{a}lt: $12x^2$. Daher ist es sinnlos, diese Funktion in eine der beiden L\"{o}sungsformeln einzusetzen. Man formt einfach um:
+An einem Wendepunkt einer beliebigen Funktion \"{a}ndert sich stets das Kr\"{u}mmungsverhalten, also von positiv zu negativ oder umgekehrt. Daher ist an einem Wendepunkt die Kr\"{u}mmung gleich null. Somit gilt es, jene Stelle zu bestimmen, an welcher die zweite Ableitung $f''(x)$, welche die Kr\"{u}mmung der Funktion $f(x)$ beschreibt, gleich $0$ ist: $$12x^2 - 6 = 0$$ Diese Funktion hat nur einen Term, welcher die unab\"{a}ngige Variable $x$ enth\"{a}lt: $12x^2$. Daher ist es sinnlos, diese Funktion in eine der beiden L\"{o}sungsformeln einzusetzen. Man formt einfach um:
 
 \begin{eq}
 $12x^2 - 6 = 0 \,|\,+ 6$
@@ -384,19 +381,19 @@ $x^2 = 0.5 \,|\, \sqrt{}$
 
 $x_{1, 2} = \pm \sqrt{0.5}$
 
-$x_{1} = \sqrt{0.5}$
+$x_{1} = \sqrt{0.5} = \frac{\sqrt{2}}{2}$
 
-$x_{2} = - \sqrt{0.5}$
+$x_{2} = - \sqrt{0.5} = -\frac{\sqrt{2}}{2}$
 \end{eq}
 
 Durch Einsetzten der gefundenden Wende\emph{stellen} in die urspr\"{u}ngliche Funktionsgleichung $f(x)$, erh\"{a}lt man die beiden vollst\"{a}ndigen Wende\emph{punkte} der Funktion:
 
 \begin{tabular}{l l l l l}
-$x_{1} = \sqrt{0.5}$ & $\rightarrow$ & $f(\sqrt{0.5}) = 0.16$ & $\rightarrow$ & $W_{1}(\sqrt{0.5} | 0.16)$
-\\
-&&&&
-\\
-$x_{1} = -\sqrt{0.5}$ & $\rightarrow$ & $f(-\sqrt{0.5}) = -2.67$ & $\rightarrow$ & $W_{1}(-\sqrt{0.5} | -2.67)$
+	$x_{1} = \frac{\sqrt{2}}{2}$ & $\rightarrow$ & $f\left(\frac{\sqrt{2}}{2}\right) = 0.16$ & $\rightarrow$ & $W_{1}\left(\frac{\sqrt{2}}{2} \,\bigg|\, 0.16\right)$
+	\\
+	&&&&
+	\\
+	$x_{1} = -\frac{\sqrt{2}}{2}$ & $\rightarrow$ & $f\left(-\frac{\sqrt{2}}{2}\right) = -2.67$ & $\rightarrow$ & $W_{1}\left(-\frac{\sqrt{2}}{2} \,\bigg|\, -2.67 \right)$
 \end{tabular}
 
 \pagebreak
@@ -408,9 +405,9 @@ Die Wendetangenten $t_{W_{1,2}}$ sind jene Geraden, welche die Funktion genau in
 \begin{tabular}{l l}
 	I. Aufstellen der linearen Funktionsgleichung: & $y = kx + d$
 	\\
-	II. Berechnung der Steigung an der Wendestelle: & $f'(\sqrt{0.5}) = -0.83$
+	II. Berechnung der Steigung an der Wendestelle: & $f'(\frac{\sqrt{2}}{2}) = -0.83$
 	\\
-	III. Einsetzen in die Funktionsgleichung: & $0.16 = \sqrt{0.5} \cdot -0.83 + d$
+	III. Einsetzen in die Funktionsgleichung: & $0.16 = \frac{\sqrt{2}}{2} \cdot -0.83 + d$
 	\\
 	IV. L\"{o}sen nach d: & $d = 0.75$
 	\\
@@ -467,11 +464,9 @@ Die Monotonie einer Funktion bezieht sich auf ihr Steigungsverhalten, welches si
 
 \sub{Finden von Polynomfunktionen}
 
-Mit Hilfe der Differentialrechnung ist es m\"{o}glich, eine Polynomfunktion beliebigen Grades mit nur wenigen Angaben zu finden. Pro Grad einer Polynomfunktion enth\"{a}lt sie eine weitere Variable, entweder als Koeffizient oder als konstanter Term bzw. Abstand vom Ursprung. Daher ben\"{o}tigt man zum Finden einer Polynomfunktion $n$-ten Grades mindestens $n$ Angaben zur Funktion oder einer ihrer Ableitungen.
+Mit Hilfe der Differentialrechnung ist es m\"{o}glich, eine Polynomfunktion beliebigen Grades mit nur wenigen Angaben zu finden. Pro Grad einer Polynomfunktion enth\"{a}lt sie eine weitere Variable, entweder als Koeffizient oder als konstanter Term bzw. Abstand vom Ursprung. Daher ben\"{o}tigt man zum Finden einer Polynomfunktion $n$-ten Grades mindestens $n + 1$ Angaben zur Funktion oder einer ihrer Ableitungen.
 
-Beispiel:
-
-\emph{Der Graph einer Polynomfunktion 3. Grades besitzt den Tiefpunkt $T(3|-2)$ und den Wendepunkt $W(2|2)$. Wie lautet der Funktionsterm?}
+\textbf{Beispiel}: \emph{Der Graph einer Polynomfunktion 3. Grades besitzt den Tiefpunkt $T(3|-2)$ und den Wendepunkt $W(2|2)$. Wie lautet der Funktionsterm?}
 
 \textbf{Schritt I: Aufstellen von Funktionsgleichung und Ableitungen}
 
