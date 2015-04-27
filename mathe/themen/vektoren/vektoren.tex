@@ -9,7 +9,7 @@ Ein Vektor ist ein n-Tupel, das eine bestimmte Richtung in der Ebene oder im Rau
 
 \sub{Schreibweise}
 
-Um f\"{u}r einen in der \emph{Punktschreibweise} angegebenen Punkt $A (x\, |\, y)$ einen \emph{Ortsvektor} aufzustellen, beschreibt man den Vektor vom Ursprung $0$ zu diesem Punkt $A$ als Vektor $\vec{0A} = \colvec{x\\y}$.
+Um f\"{u}r einen in der \emph{Punktschreibweise} angegebenen Punkt $A (x\, |\, y)$ einen \emph{Ortsvektor} aufzustellen, beschreibt man den Vektor vom Ursprung $0$ zu diesem Punkt $A$ als Vektor $\vec{0A} = \colvec{x\\y}$
 
 Generell beschreibt ein \emph{Richtungsvektor} $\vec{a} = \colvec{x_{a} \\ y_{a}}$ nur eine Richtung, n\"{a}mlich um $x_{a}$ Einheiten auf der $x$-Achse und $y_{a}$ Einheiten auf der $y$-Achse. Im Raum kommt noch eine dritte Koordinate $z$ bzw. hier $z_{a}$ dazu, der den Einheitenfortschritt auf der $z$-Achse beschreibt.
 
@@ -21,7 +21,7 @@ Multiplikation und Division von einem Vektor $a$ mit einer Zahl $n$ resultieren 
 
 Multiplikation von Vektor und Zahl: $ \vec{a} \cdot n = \colvec{x_{a}\\y_{a}} \cdot n  = \colvec{x_{a} \cdot n \\ y_{a} \cdot n}$
 
-Division von Vektor und Zahl: $ \vec{A} : n = \colvec{x_{a}\\y_{a}} \div n = \colvec{x_{a} \div n \\ y_{a} \div n}$
+Division von Vektor und Zahl: $ \vec{a} \div n = \colvec{x_{a}\\y_{a}} \div n = \colvec{x_{a} \div n \\ y_{a} \div n}$
 
 \subsub{Vektor und Vektor}
 
@@ -39,7 +39,7 @@ Multiplikation von Vektor und Vektor: $\vec{a} \cdot \vec{b} = \colvec{x_{a} \\ 
 
 \sub{Punkte und L\"{a}ngen}
 
-\subsub{Ortsvektoren}
+\subsub{Spitze-minus-Schaft}
 
 Ein Vektor $\vec{AB}$ zwischen zwei Ortsvektoren $A$ und $B$ wird mittels der \emph{Spitze-minus-Schaft} Regel berechnet:
 $$ \vec{AB} = \vec{B} - \vec{A} = \colvec{x_{b}\\y_{b}} - \colvec{x_{a}\\y_{a}} = \colvec{x_{b}-x_{a}\\y_{b}-y_{a}}$$
@@ -66,18 +66,16 @@ Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so berechnet: 
 
 \subsub{Einheitsvektor}
 
-Ein Vektor $\vec{a}$ beschreibt eine Richtung \"{u}ber mehrere Einheiten in einem Koordinatesystem. Wenn man nur die Richtung des Vektors will, diesen aber auf eine Einheit normiert, muss man den \textbf{Einheitsvektor} $\vec{a_{0}}$ berechnen. Diesen kann man dann in die Richtung des Vektors \"{u}ber beliebig viele Einheiten abtragen. Der Einheitsvektor wird berechnet, in dem man den Vektor durch seine L\"{a}nge dividiert:
+Ein Vektor $\vec{a}$ beschreibt eine Richtung \"{u}ber mehrere Einheiten in einem Koordinatesystem. Wenn man nur die Richtung des Vektors will, diesen aber auf eine Einheit normiert, muss man den \textbf{Einheitsvektor} $\vec{a_{0}}$ berechnen. Diesen kann man dann in die Richtung des Vektors \"{u}ber beliebig viele Einheiten abtragen. Der Einheitsvektor wird berechnet, in dem man den Vektor durch seinen Betrag dividiert:
 
 $$\vec{a_{0}} = \frac{\vec{a}}{|\vec{a}|}$$
 
 \subsub{Normalvektor}
 
-Manchmal ist es wichtig, f\"{u}r einen beliebigen Vektor $\vec{a}$ jenen Vektor $\vec{n_{a}}$ zu finden, der genau normal zum Vektor $\vec{a}$ steht. $\vec{a}$ und $\vec{n_{a}}$ schlie\ss{}en somit einen rechten Winkel ($\perp$) ein. In der Ebene berechnet den Normalvektor $\vec{n_{a}}$ in dem man die Koordinaten des urspr\"{u}nglichen Vektors $\vec{a}$ vertauscht und ein Vorzeichen \"{a}ndert:
-$$ \vec{a} = \colvec{x\\y} \Rightarrow \vec{n_{a}} = \colvec{y \\ -x} \lor \colvec{-y \\ x}$$
+Manchmal ist es wichtig, f\"{u}r einen beliebigen Vektor $\vec{a}$ jenen Vektor $\vec{n_{a}}$ zu finden, der genau normal zum Vektor $\vec{a}$ steht. $\vec{a}$ und $\vec{n_{a}}$ schlie\ss{}en somit einen rechten Winkel von 90\degree ein. In der Ebene berechnet den Normalvektor $\vec{n_{a}}$ in dem man die Koordinaten des urspr\"{u}nglichen Vektors $\vec{a}$ vertauscht und ein Vorzeichen \"{a}ndert:
+$$ \vec{a} = \colvec{x\\y} \Rightarrow \vec{n_{a}} = \colvec{y \\ -x} \text{ oder } \colvec{-y \\ x}$$
 
-Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist immer 0}. Somit ist
-
-$$\vec{a} \cdot \vec{n_{a}} = 0$$
+Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist immer 0}. Somit ist $$\vec{a} \cdot \vec{n_{a}} = 0$$
 
 \pagebreak
 
@@ -85,7 +83,7 @@ $$\vec{a} \cdot \vec{n_{a}} = 0$$
 
 \subsub{Parameterform}
 
-Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden. Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen:
+Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ von einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden. Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen:
 
 $$g: \vec{0X} = \vec{0A} + t \cdot \vec{a}$$
 
@@ -134,7 +132,7 @@ Zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ $$h: X = \vec{0B} + s \cdot \
 
 \item \textbf{Schneidend}
   \par
-  Sollten zwei Geraden weder parallel noch ident sein, m\"{u}ssen sie einen Schnittpunkt haben. Diesen berechnet man indem man die Parameterformen $g$ und $h$ gleichsetzt und dann f\"{u}r jede Koordinate eine Gleichung aufstellt und das Gleichssystem nach $s$ und $t$ (siehe Parameterformen von $g$ und $h$) l\"{o}st:
+  Sollten zwei Geraden weder parallel noch ident sein, m\"{u}ssen sie einen Schnittpunkt haben. Diesen berechnet man indem man die Parameterformen $g$ und $h$ gleichsetzt, dann f\"{u}r jede Koordinate eine Gleichung aufstellt und das Gleichssystem nach $s$ und $t$ (siehe Parameterformen von $g$ und $h$) l\"{o}st:
 
   \begin{center}
     $g = h$
@@ -167,7 +165,7 @@ Hierbei ist es wichtig, immer einen \textbf{spitzen} Winkel ($\alpha < 90\degree
 
 \subsub{Fl\"{a}chen}
 
-Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelograme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{\sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2}}{2} = \frac{|\vec{a} \times \vec{b}|}{2}$$
+Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelograme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{1}{2}\sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = \frac{1}{2} \, |\vec{a} \times \vec{b}|$$
 
 \pagebreak
 
@@ -271,7 +269,7 @@ Der Normalabstand $d$ zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$ ist die L\"
 
 \subsub{Normalprojektion}
 
-Die Normalprojektion ist der Abstand $d$ von $A$ zum Normalabstand. Die hierf\"{u}r verwendete Formel wird oft \emph{Hesse'sche Abstandsformel} genannt.
+Die Normalprojektion ist der Abstand $d$ von $A$ zum Normalabstand. Die hierf\"{u}r verwendete Formel wird oft \emph{Hesse'sche Abstandsformel} genannt und lautet: $d = |\vec{b} \cdot \vec{a_0}|$. Hierbei ist $\vec{b} \cdot \vec{a_0}$ ein skalares Produkt, die Betragsstriche heben also das Vorzeichen auf.
 
 \begin{figure}[h!]
   \centering

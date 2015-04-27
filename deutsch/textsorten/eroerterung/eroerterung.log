@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  8 MAR 2015 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  27 APR 2015 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,7 +340,7 @@ Here is how much of TeX's memory you used:
  7462 multiletter control sequences out of 15000+600000
  15575 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,11n,43p,834b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 32i,11n,43p,833b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/li
 bertine/lbtn_naooyc.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/lib
 ertine/lbtn_xogrpz.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/libe
@@ -349,7 +349,7 @@ tine/lbtn_lu7m2n.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/lib
 ertine/LinLibertineT.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
 /libertine/LinLibertineTB.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
 ublic/libertine/LinLibertineTI.pfb>
-Output written on eroerterung.pdf (2 pages, 238069 bytes).
+Output written on eroerterung.pdf (2 pages, 237659 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream
