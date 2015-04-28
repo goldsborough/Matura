@@ -203,7 +203,7 @@ Die Lagebeziehungen zwischen zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ 
 
 \sub{Ebenen}
 
-Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu braucht man lediglich einen Ortsvektor $\vec{0A}$ (2D oder 3D) und zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$. Die Ebene $\varepsilon$ wird dann zwischen den beiden Richtungsvektoren \zitat{aufgespannt}.
+Vektoren k\"{o}nnen auch dazu verwendet werden, Ebenen aufzuspannen. Dazu braucht man lediglich einen Ortsvektor $\vec{0A}$ und zwei Richtungsvektoren $\vec{a}$ und $\vec{b}$. Die Ebene $\varepsilon$ wird dann zwischen den beiden Richtungsvektoren \zitat{aufgespannt}.
 
 \begin{figure}[h!]
   \centering
@@ -225,7 +225,7 @@ $$\varepsilon: X = \vec{0A} + t \cdot \vec{a} + s \cdot \vec{b}$$
 
 \subsub{Kreuzprodukt}
 
-Weil man f\"{u}r eine Ebene im Raum keinen eindeutigen Normalvektor bilden kann, muss man zwischen zwei Vektoren $a$ und $b$ das Kreuzprodukt bilden. Das Kreuzprodukt liefert einen eindeutigen Normalvektor f\"{u}r eine Ebene im Raum.
+Weil man f\"{u}r eine Ebene im Raum keinen eindeutigen Normalvektor bilden kann, muss man zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$ das Kreuzprodukt bilden. Das Kreuzprodukt liefert einen eindeutigen Normalvektor f\"{u}r eine Ebene im Raum, welcher sowohl auf $\vec{a}$ und $\vec{b}$ normal steht.
 
 \begin{center}
   $\varepsilon: X = \vec{0A} + t \cdot \vec{a} + s \cdot \vec{b}$
@@ -248,7 +248,7 @@ Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Eb
 
 \subsub{Normalabstand}
 
-Der Normalabstand $d$ zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$ ist die L\"{a}nge des zu $\vec{a}$ normalen Vektors, der genau zum selben Punkt zeigt wie $\vec{b}$.
+Der Normalabstand $d$ zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$ ist der k\"{u}rzeste Abstand zwischen der Spitze des Vektors $\vec{b}$ und dem Vektor $\vec{a}$. Dieser Abstand wird mit dem Kreuzprodukt $|\vec{b} \times \vec{a_0}|$ ermittelt.
 
 \begin{figure}[h!]
   \centering
@@ -304,7 +304,7 @@ M\"{o}chte man den Winkel zwischen einer Gerade und einer Ebene mittels der Vekt
 
 \subsub{Ebene und Gerade}
 
-Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene in Parameter- oder in Normalvektorform ist. Man sollte jedoch nie vergessen, dass man zur Schnittwinkelberechnung den Richtungsvektor der Gerade und den Normalvektor der Ebene verwendet, und letztendlich den Komplement\"{a}rwinkel berechnen muss ($\alpha' = 90 - \alpha$)
+Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene in Parameter- oder in Normalvektorform ist. Man sollte jedoch nie vergessen, dass man zur Schnittwinkelberechnung den Richtungsvektor der Gerade und den Normalvektor der Ebene verwendet, und letztendlich den Komplement\"{a}rwinkel berechnen muss: $\alpha' = 90 - \alpha$. Ist $\alpha$ urspr\"{u}nglich stumpf, m\"{u}sste man zuerst den spitzen Winkel durch $180 - \alpha$ berechnen und von diesem dann den Komplement\"{a}rwinkel nehmen. Die Berechnung $90 - (180 - \alpha)$ ist jedoch equivalent zu $\alpha - 90$. Ist $\alpha$ also stumpf, gilt f\"{u}r den spitzen Komplement\"{a}rwinkel: $\alpha' = \alpha - 90$
 
 \begin{enumerate}
   \item{\textbf{Parameterform}}
@@ -320,11 +320,13 @@ Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene 
 
   \item{\textbf{Normalvektorform}}
 
-  Ist die Gerade $g$ in Parameterform aber die Ebene $\varepsilon$ in Normalvektorform, muss man die $x, y und z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
+  Ist die Gerade $g$ in Parameterform aber die Ebene $\varepsilon$ in Normalvektorform, muss man die $x$, $y$ und $z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
 
   $$x_g = x_A \cdot t \cdot x_t$$ $$y_g = y_A \cdot t \cdot y_t$$ $$z_g = z_A \cdot t \cdot z_t$$
 
-  $$x_g, y_g, z_g \text{ in } \varepsilon: ax + by + cz = d$$ $$ a(x_A \cdot t \cdot x_t) + b(y_A \cdot t \cdot y_t) + c(z_g = z_A \cdot t \cdot z_t) = d$$
+  $$x_g, y_g, z_g \text{ in } \varepsilon: ax + by + cz = d$$
+
+  $$ a(x_A \cdot t \cdot x_t) + b(y_A \cdot t \cdot y_t) + c(z_g = z_A \cdot t \cdot z_t) = d$$
 
   $$\Rightarrow \text{nach t l\"{o}sen}$$
 
@@ -335,16 +337,19 @@ Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene 
 
 \subsub{Ebene und Ebene}
 
-Die Lagebeziehungen von zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ $$\varepsilon_{1}: a_{1}x + b_{1}y + c_{1}z = d_{1}$$ $$\varepsilon_{2}: a_{2}x + b_{2}y + c_{2}z = d_{2}$$ im Raum sind gleich wie jene f\"{u}r Geraden in der Ebene (Dimensionunterschied jeweils $= 1$): ident, parallel oder schneidend (kein windschief).
+Die Lagebeziehungen von zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ $$\varepsilon_{1}: a_{1}x + b_{1}y + c_{1}z = d_{1}$$ $$\varepsilon_{2}: a_{2}x + b_{2}y + c_{2}z = d_{2}$$ im Raum sind gleich wie jene f\"{u}r Geraden in der Ebene (Dimensionunterschied jeweils $= 1$): ident, parallel oder schneidend (nicht windschief).
 
 \begin{itemize}
 
   \item{\textbf{Parallel}}
 
   Zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ sind dann parallel, wenn ihre Normalvektoren Vielfache von einander sind. Den Normalvektor kann man an den Koeffizienten der Variablen $x, y$ und $z$ ablesen.
-  $$\varepsilon_{1}: 4x - 3y + 5z = 7 \Rightarrow \vec{n}_{1} = \colvec{4 \\ -3 \\ 5}$$
+
+  $$\,\,\,\,\, \varepsilon_{1}: 4x - 3y + 5z = 7 \Rightarrow \vec{n}_{1} = \colvec{4 \\ -3 \\ 5}$$
   $$\varepsilon_{2}: 12x -9y + 15z = 6 \Rightarrow \vec{n}_{2} = \colvec{12 \\ -9 \\ 15}$$
   $$n_{1} \cdot 3 = n_{2}$$
+ $$\Downarrow$$ 
+ $$\varepsilon_1 || \, \varepsilon_2$$
 
   \item{\textbf{Ident}}
 
@@ -353,6 +358,8 @@ Die Lagebeziehungen von zwei Ebenen $\varepsilon_{1}$ und $\varepsilon_{2}$ $$\v
   $$\varepsilon_{1}: 4x - 3y + 5z = 2$$
   $$\varepsilon_{2}: 12x -9y + 15z = 6$$
   $$\varepsilon_{1} \cdot 3 = \varepsilon_{2}$$
+  $$\Downarrow$$ 
+  $$ \varepsilon_1 \equiv \varepsilon_2$$
 
   \item{\textbf{Schneidend}}
 
@@ -399,7 +406,7 @@ Um den Abstand zwischen einem Punkt $P$ und einer Gerade $g$ zu berechnen, gibt 
 
   \item{\textbf{Normalabstand}}
 
-  Die zweite M\"{o}glichkeit ist es, den Normalabstand $d$ von der Gerade zum Punkt $P$ zu berechnen. Dies erfolg mittels der folgenden Formel zur Berechnung des Normalabstandes, wo $A$ der Ortsvektor der Gerade $g$ mit dem Richtungsvektor $\vec{g}$ bzw. dessen Einheitsvektor $\vec{g_{0}}$ ist: $$d = |\vec{AP} \times \vec{g_{0}}|$$
+  Die zweite M\"{o}glichkeit ist es, den Normalabstand $d$ von der Gerade zum Punkt $P$ zu berechnen. Dies erfolgt mittels der folgenden Formel zur Berechnung des Normalabstandes, wo $A$ der Ortsvektor der Gerade $g$ mit dem Richtungsvektor $\vec{g}$ bzw. dessen Einheitsvektor $\vec{g_{0}}$ ist: $$d = |\vec{AP} \times \vec{g_{0}}|$$
 
 \end{enumerate}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  27 APR 2015 22:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.11)  28 APR 2015 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -978,7 +978,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Here is how much of TeX's memory you used:
  16803 strings out of 493117
  312614 string characters out of 6135432
- 355010 words of memory out of 5000000
+ 356010 words of memory out of 5000000
  19857 multiletter control sequences out of 15000+600000
  69212 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1004,7 +1004,7 @@ exlive/2014/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2014/
 texmf-dist/fonts/type1/public/newtx/zxlr.pfb></usr/local/texlive/2014/texmf-dis
 t/fonts/type1/public/newtx/zxlri.pfb>
-Output written on vektoren.pdf (12 pages, 473502 bytes).
+Output written on vektoren.pdf (12 pages, 474184 bytes).
 PDF statistics:
  120 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
