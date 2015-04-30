@@ -13,25 +13,25 @@ Die Trigonometrie behandelt die Dreiecksvermessung von rechtenwinkeligen sowie a
 
 \sub{Schreibweisen}
 
-Allgemein ist f\"{u}r die Trigonometrie wichtig, dass man Punkte in einem Koordinatensystem als Kartesische Koordinaten oder als Polarkoordinaten anschreiben kann. 
+Allgemein ist f\"{u}r die Trigonometrie wichtig, dass man Punkte in einem Koordinatensystem als kartesische Koordinaten oder als Polarkoordinaten anschreiben kann. 
 
-Ein kartesisches Koordinatentupel $P (x | y)$ besteht aus einer Variable $x$, welche einen Abstand auf der Abszisse beschreibt, sowie einer Variable $y$, welche die Position des Punktes auf der Ordinate angibt. Ein Beispiel w\"{a}re der Punkt $P(3 | 4)$.
+Ein kartesisches Koordinatentupel $P (x | y)$ besteht aus einer Variable $x$, welche einen Abstand auf der Abszisse ($x$-Achse) beschreibt, sowie einer Variable $y$, welche die Position des Punktes auf der Ordinate ($y$-Achse) angibt. Ein Beispiel w\"{a}re der Punkt $P(3 | 4)$.
 
-In Polarschreibweise wird ein Punkt $P [r; \phi]$ durch einen Winkel $\phi$, der eine Richtung zwischen $0$ und $360$ Grad angibt, sowie einen Abstand vom Ursprung $r$ (Radius) in die Richtung des Winkels beschrieben. Der vorherige Punkt $P$ w\"{a}re als Polarkoordinatentupel so angegeben: $P [5; 53.13\degree]$
+In Polarschreibweise wird ein Punkt $P [r; \varphi]$ durch einen Winkel $\varphi$, der eine Richtung zwischen $0$ und $360$ Grad angibt, sowie einen Abstand vom Ursprung $r$ (Radius) in die Richtung des Winkels beschrieben. Der vorherige Punkt $P$ w\"{a}re als Polarkoordinatentupel so angegeben: $P [5; 53.13\degree]$
 
 \sub{Sinus und Cosinus im Einheitskreis}
 
 Sowohl die Sinusfunktion $sin(x)$ als auch die Cosinusfunktion $cos(x)$ beschreiben Seitenverh\"{a}ltnisse zwischen den Seiten $a, b, c$ eines rechtwinkeligen Dreiecks. Besonders im Einheitskreis sind diese Verh\"{a}ltnisse von Interesse. Ein Einheitskreis $k$ ist jener Kreis, dessen Mittelpunkt $M (0 | 0)$ im Ursprung liegt und dessen Radius $r$ eine L\"{a}nge von $1$ besitzt. Geometrisch wird ein Einheitskreis durch die Gleichung $x^2 + y^2 = 1$ beschrieben.
 
-Am Einheitskreis kann jeder Punkt $P$ in Polarform mit $P [1;\phi]$ und in Kartesischer Form mit $P [\cos \phi; \sin \phi]$ angegeben werden. Die Steigung $k$ der Hypothenuse jenes rechtwinkligen Dreiecks, welches zwischen der An- und Gegenkathete des Punktes aufgespannt wird und im Falle des Einheitskreises stets eine L\"{a}nge von $r = 1$ hat, wird durch die Tangensfunktion $\tan \phi$ beschrieben. Daraus folgt:
+Am Einheitskreis kann jeder Punkt $P$ in Polarform mit $P [1;\varphi]$ und in Kartesischer Form mit $P [\cos \varphi; \sin \varphi]$ angegeben werden. Die Steigung $k$ der Hypothenuse jenes rechtwinkligen Dreiecks, welches zwischen der An- und Gegenkathete des Punktes aufgespannt wird und im Falle des Einheitskreises stets eine L\"{a}nge von $r = 1$ hat, wird durch die Tangensfunktion $\tan \varphi$ beschrieben. Daraus folgt:
 
-$\sin \phi$ \defas $y$-Koordinate des Punktes $P$
+$\sin \varphi$ \defas $y$-Koordinate des Punktes $P$
 
-$\cos \phi$ \defas $x$-Koordinate des Punktes $P$
+$\cos \varphi$ \defas $x$-Koordinate des Punktes $P$
 
-$\tan \phi$ \defas Steigung $k$ der Hypotenuse im Punkt $P \Rightarrow \tan \phi = \frac{\sin \phi}{\cos \phi} = k = \frac{\Delta y}{\Delta x}$
+$\tan \varphi$ \defas Steigung $k$ der Hypotenuse im Punkt $P \Rightarrow \tan \varphi = \frac{\sin \varphi}{\cos \varphi} = \frac{\Delta y}{\Delta x} = k$
 
-In dem zwischen $x = \cos \phi$ und $y = \sin \phi$ aufgespannten rechtwinkligen Dreieck mit Hypotenuse $r = 1$, kann man die Seitenverh\"{a}ltnisse auch durch den Satz des Pythagoras $a^2 + b^2 = c^2$ beschreiben: $$\sin^2 \phi + \cos^2 \phi = 1$$
+In dem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ aufgespannten rechtwinkligen Dreieck mit Hypotenuse $r = 1$, kann man die Seitenverh\"{a}ltnisse auch durch den Satz des Pythagoras $a^2 + b^2 = c^2$ beschreiben: $$\sin^2 \varphi + \cos^2 \varphi = 1$$
 
 \pagebreak
 
@@ -44,7 +44,7 @@ In dem zwischen $x = \cos \phi$ und $y = \sin \phi$ aufgespannten rechtwinkligen
 		      (-4, 0)
 		   -- (-3, 0) node [above left] {$-1$}
 		   -- ( 3, 0) node [above right] {$1$}
-		   			  node [below, pos=0.7] {$x = \cos \phi$}
+		   			  node [below, pos=0.7] {$x = \cos \varphi$}
 		   -- ( 4, 0) node [above] {$x$};
 
 		% y Achse
@@ -64,38 +64,41 @@ In dem zwischen $x = \cos \phi$ und $y = \sin \phi$ aufgespannten rechtwinkligen
 		\draw (0, 0) circle [radius=3cm]
 		      		 node [below left] {$0$};
 
-		% Dreieick
+		% Dreieck
 		\draw (0, 0)
 		   -- (2.121, 2.121) node [midway, above, rotate = 45]
-		   				          {$k = \tan \phi$}
+		   				          {$\mathbf{k = \tan \varphi}$}
 		   					 node [above right] {$P (x | y)$}
-		   -- (2.121, 0)     node [midway, right] {$y = \sin \phi$};
+		   -- (2.121, 0)     node [midway, right] {$y = \sin \varphi$};
 
 
 		% Winkelbogen
 		\draw (1, 0) arc [start angle = 0, end angle = 45, radius = 1cm];
 
 		% Angle node
-		\draw (0.6, 0.25) node {$\phi$};
+		\draw (0.6, 0.25) node {$\varphi$};
 
 
 	\end{tikzpicture}
-	\caption*{Ein Einheitskreis mit Mittelpunkt $M (0 | 0)$ und $r = 1$, in welchem zwischen $x = \cos \phi$ und $y = \sin \phi$ ein rechtwinkliges Dreieck mit $\phi = 45\degree$ aufgespannt ist.}
+	\caption*{Ein Einheitskreis mit Mittelpunkt $M (0 | 0)$ und $r = 1$, in welchem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ ein rechtwinkliges Dreieck mit $\varphi = 45\degree$ aufgespannt ist.}
 \end{figure}
 
 Die  $y$-Koordinate des Punktes ist in der oberen H\"{a}lte des Einheitskreises, also Quadranten I und II, stets positiv und in der unteren H\"{a}lfte, also Quadranten III und IV, negativ. Man \"{u}berlege sich dazu den Verlauf der Sinusfunktion $\sin(x)$. Sie beginnt mit $x = y = 0$, findet nach $x = \frac{\pi}{2}$ ihr Maximum, wo $y = 1$, f\"{a}llt dann bis zu $(x = \pi | y = 0)$ und wechselt dann ihr Vorzeichen. Gegens\"{a}tzlich dazu wechselt das Vorzeichen der $x$-Kathete nach Quadranten I und III, was auch mit dem Verlauf der Cosinusfunktion $\cos(x)$ \"{u}bereinstimmt. Aus diesen Beobachtungen folgt:
 
+\vspace{1cm}
+
 \begin{table}[h!]
+	\large
 	\begin{tabular}{c | c | c | c}
-		Quadrant & Winkel & $\sin \phi$ & $\cos \phi$
+		Quadrant & Winkel & $\sin \varphi$ & $\cos \varphi$
 		\\ \hline
-		I & $0 < 90$ & + & +
+		I & $0 < \varphi < 90$ & + & +
 		\\ 
-		II & $90 < 180$ & + & -
+		II & $90 < \varphi < 180$ & + & -
 		\\
-		III & $180 < 270$ & - & -
+		III & $180 < \varphi < 270$ & - & -
 		\\
-		IV & $270 < 360$ & - & +
+		IV & $270 < \varphi < 360$ & - & +
 		\\
 	\end{tabular}
 \end{table}
@@ -104,17 +107,17 @@ Die  $y$-Koordinate des Punktes ist in der oberen H\"{a}lte des Einheitskreises,
 
 \sub{Sinus und Cosinus im rechtwinkligen Dreieck}
 
-Wie vorhin angemerkt beschreiben Sinus und Cosinus Verh\"{a}ltnisse zwischen den Seiten $a, b$ und $c$ in einem rechtwinkligen Dreieck. In diesem bezeichnet man die dem Winkel $\phi$ gegen\"{u}berliegende Seite als \emph{Gegenkathete}, die anliegende als \emph{Ankathete} und die l\"{a}ngste Seite als \emph{Hypotenuse}. Gegen- und Ankathete fallen unter den Sammelbegriff \emph{Kathete}. F\"{u}r einen Winkel $0 < \phi \leq 90$ gilt in einem rechtwinkligen Dreieck somit:
+Wie vorhin angemerkt beschreiben Sinus und Cosinus Verh\"{a}ltnisse zwischen den Seiten $a, b$ und $c$ in einem rechtwinkligen Dreieck. In diesem bezeichnet man die dem Winkel $\varphi$ gegen\"{u}berliegende Seite als \emph{Gegenkathete}, die anliegende als \emph{Ankathete} und die l\"{a}ngste Seite als \emph{Hypotenuse}. Gegen- und Ankathete fallen unter den Sammelbegriff \emph{Kathete}. F\"{u}r einen Winkel $0 < \varphi \leq 90$ gilt in einem rechtwinkligen Dreieck somit:
 
 \begin{center}
-$\sin \phi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}}$
+$\sin \varphi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}}$
 \hspace{1cm}
-$\cos \phi = \frac{\text{Ankathete}}{\text{Hypotenuse}}$
+$\cos \varphi = \frac{\text{Ankathete}}{\text{Hypotenuse}}$
 \hspace{1cm}
-$\tan \phi = \frac{\text{Gegenkathete}}{\text{Ankathete}}$
+$\tan \varphi = \frac{\text{Gegenkathete}}{\text{Ankathete}}$
 \end{center}
 
-Nimmt man die Tatsache unter Betracht, dass im Einheitskreis die Hypotenuse $r$ stets die L\"{a}nge $1$ besitzt, wird klar, das $\sin \phi$ gleich der $y$-Koordinate bzw. der L\"{a}nge der Gegenkathete des Steigungsdreiekcs ist, da dann gilt $\sin \phi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}} = \frac{y}{1} = y$. Selbes gilt f\"{u}r $x$ und $\cos \phi$.
+Nimmt man die Tatsache in Betracht, dass im Einheitskreis die Hypotenuse $r$ stets die L\"{a}nge $1$ besitzt, wird klar, das $\sin \varphi$ gleich der $y$-Koordinate ist, da dann gilt $\sin \varphi = \frac{\text{Gegenkathete}}{\text{Hypotenuse}} = \frac{y}{1} = y$. Selbes gilt f\"{u}r $x$ und $\cos \varphi$.
 
 
 \begin{figure}[h!]
@@ -136,10 +139,10 @@ Nimmt man die Tatsache unter Betracht, dass im Einheitskreis die Hypotenuse $r$ 
 		\draw (1.2, 0) arc [radius=1.2cm, start angle = 0, end angle = 26];
 
 		% Phi dot
-		\draw (0.95, 0.25) node {$\phi$};
+		\draw (0.95, 0.25) node {$\varphi$};
 
 	\end{tikzpicture}
-	\caption*{Ein rechtwinkliges Dreieck mit Gegen- und Ankathete sowie Hypotenuse und Winkel $\phi$}
+	\caption*{Ein rechtwinkliges Dreieck mit Gegen- und Ankathete sowie Hypotenuse und Winkel $\varphi$}
 \end{figure}
 
 \sub{Sinussatz}
