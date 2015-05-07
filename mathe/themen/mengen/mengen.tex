@@ -15,9 +15,9 @@ $\mathbb{N} = \{0, 1, 2, 3, 4, 5, ...\}$
 
 $\mathbb{N^*} = \{1, 2, 3, 4, 5, ...\}$
 
-$\mathbb{N_g} = \{2, 4, 6, 8, ...\}$
+$\mathbb{N_\textnormal{g}} = \{2, 4, 6, 8, ...\}$
 
-$\mathbb{N_u} = \{1, 3, 5, 7, ...\}$
+$\mathbb{N_\textnormal{u}} = \{1, 3, 5, 7, ...\}$
 
 Eigenschaften der nat\"{u}rlichen Zahlen:
 
@@ -59,7 +59,7 @@ Eigenschaften der ganzen Zahlen:
 
 \sub{Rationale Zahlen}
 
-Die Menge der rationalen Zahlen $\mathbb{Q}$ erweitert die Menge der ganzen Zahlen $Z$ auf jene \emph{endlichen} oder \emph{unendlichen, periodischen} Zahlen $r$, welche als Bruch $\frac{z}{n}$ aus zwei ganzen Zahlen $z$, dem Z\"{a}hler, und $n$, dem Nenner, darstellbar sind. Daher ist $\mathbb{Q}$ bez\"{u}glich der \textbf{Addition}, \textbf{Subtraktion}, \textbf{Mulitplikation} und nun auch der \textbf{Division} abgeschlossen. 
+Die Menge der rationalen Zahlen $\mathbb{Q}$ erweitert die Menge der ganzen Zahlen $\mathbb{Z}$ auf jene \emph{endlichen} oder \emph{unendlichen, periodischen} Zahlen $r$, welche als Bruch $\frac{z}{n}$ mit $z, n \in \mathbb{Z}$ und $n \neq 0$ darstellbar sind. Die Menge $\mathbb{Q}$ ist bez\"{u}glich der \textbf{Addition}, \textbf{Subtraktion} und \textbf{Mulitplikation} abgeschlossen. Ohne null, also $\mathbb{Q}\backslash\{0\}$, ist sie auch bez\"{u}glich der \textbf{Division} abgeschlossen.
 
 \begin{figure}[h!]
 	\begin{tikzpicture}
@@ -85,14 +85,14 @@ Eigenschaften der rationalen Zahlen:
 \begin{itemize}
 	\item Zwischen zwei rationalen Zahlen l\"{a}sst sich stets eine weitere rationale Zahl einf\"{u}gen
 	\item Daher hat eine rationale Zahl $r$ weder einen definitiven Vorg\"{a}nger noch Nachfolger
-	\item Eine rationale Zahl $r$ l\"{a}sst sich als Bruch $\frac{z}{n}$ darstellen, wo gilt $z, n \in \mathbb{Z}$
+	\item Eine rationale Zahl $r$ l\"{a}sst sich als Bruch $\frac{z}{n}$ darstellen, wo gilt $z, n \in \mathbb{Z}$ und $n \neq 0$
 	\item Auch unendliche Zahlen k\"{o}nnen rational sein, wenn sie sich als Bruch darstellen lassen: $\frac{1}{3} = 0.\dot{3}$
 	\item Es gibt keine gr\"{o}\ss{}te oder kleinste rationale Zahl
 \end{itemize}
 
 \sub{Reelle Zahlen}
 
-Die Menge der reellen Zahlen $\mathbb{R}$ erweitert jene der rationalen Zahlen $\mathbb{Q}$ auf unendliche, nicht-periodische Zahlen, welche sich nicht als Bruch darstellen lassen. Beispiele daf\"{u}r w\"{a}ren $\pi, e$ oder $\sqrt{2}$. Formal gesehen vereinigt $\mathbb{R}$ die Menge der rationalen Zahlen $\mathbb{Q}$ mit der Menge der \emph{irrationalen} Zahlen $\mathbb{I}$. 
+Die Menge der reellen Zahlen $\mathbb{R}$ erweitert jene der rationalen Zahlen $\mathbb{Q}$ auf unendliche, nicht-periodische Zahlen, welche sich nicht als Bruch darstellen lassen. Beispiele daf\"{u}r w\"{a}ren Konstanten wie $\pi, e$ oder $\sqrt{2}$. Formal gesehen vereinigt $\mathbb{R}$ die Menge der rationalen Zahlen $\mathbb{Q}$ mit der Menge der \emph{irrationalen} Zahlen $\mathbb{I}$. 
 
 \begin{figure}[h!]
 	\begin{tikzpicture}
@@ -126,7 +126,7 @@ $$
 \begin{cases}
 	\text{rationale Zahlen } \mathbb{Q}
 	\begin{cases}
-		\text{ endliche Dezimalzahlen: } 1.2, \frac{3}{4}, 45, \sqrt{4} \ldots
+		\text{ endliche Dezimalzahlen: } 1.2, \frac{3}{4}, 45, \sqrt{4}, \ldots
 		\\
 		\text{ unendliche, periodische Dezimalzahlen: } \frac{1}{3}, \frac{7}{9}, \ldots
 	\end{cases}

@@ -114,7 +114,7 @@ W\"{a}hrend der Differenzenquotient die durschnittliche Steigung in einem bestim
 
 \sub{Ableitung}
 
-Die Ableitung einer Funktion $f(x)$ ordnet jedem unabh\"{a}ngigen $x$-Wert auf der Abszisse bzw. aus der Definitionsmenge $\mathbb{D}_f$ den Differentialquotienten an dieser Stelle als neuen Funktionswert der Ableitungsfunktion $f'(x)$ zu. 
+Die Ableitung einer Funktion $f(x)$ ordnet jedem unabh\"{a}ngigen $x$-Wert auf der Abszisse bzw. aus der Definitionsmenge $\mathbb{D}_f$ den Differentialquotienten an dieser Stelle als Funktionswert der Ableitungsfunktion $f'(x)$ zu. 
 
 \vspace{1cm}
 
@@ -154,7 +154,7 @@ Die Potenzregel wird f\"{u}r Terme der Form $ax^b$ angewendet: $$[ax^b]' = b \cd
 \emph{Beispiel}: $f(x) = 3x^4 - 8x^3 - 5x^2 + 13x - 21$
 
 \begin{tabular}{l l}
-	I. Anwendung der Potenzregel beim ersten Term: & $[3x^4]' = 4 \cdot 3x^{4-1}  12x^3$
+	I. Anwendung der Potenzregel beim ersten Term: & $[3x^4]' = 4 \cdot 3x^{4-1}  = 12x^3$
 	\extrapar \\
 	II. Anwendung der Potenzregel beim zweiten Term: & $[-8x^3]' = 4 \cdot (-8x^{3-1}) = 24x^2$
 	\extrapar \\
@@ -169,9 +169,9 @@ Die Potenzregel wird f\"{u}r Terme der Form $ax^b$ angewendet: $$[ax^b]' = b \cd
 
 \subsub{Produktregel}
 
-Die Produktregel wird zur Ableitung eines Produktes zweiter Funktion bzw. Funktionsgliedern $u(x)$ und $v(x)$ angewendet, in welchen beide Male die unabh\"{a}nigige Variable $x$ enthalten ist. Die Produktregel ist eine effiziente Methode die Ausmultiplikation der Funktionen zu vermeiden (wodurch die Ableitungsfunktion jedoch auch berechnet werden k\"{o}nnte): $$ [u(x) \cdot v(x)]' = u' \cdot v + v' \cdot u$$
+Die Produktregel wird zur Ableitung eines Produktes zweiter Funktion bzw. Funktionsgliedern $u(x)$ und $v(x)$ angewendet, in welchen beide Male die unabh\"{a}ngige Variable $x$ enthalten ist. Die Produktregel ist eine effiziente Methode die Ausmultiplikation der Funktionen zu vermeiden (wodurch die Ableitungsfunktion jedoch auch berechnet werden k\"{o}nnte): $$ [u(x) \cdot v(x)]' = u' \cdot v + v' \cdot u$$
 
-\emph{Beispiel}: $f(x) = (x^2 - 5) \cdot (x^3 + 4x + 12)$
+\emph{Beispiel}: $f(x) = (x^2 - 5) \cdot (x^3 + 4x + 1)$
 
 \begin{tabular}{l l}
 	I. Bestimmung der ersten Termgruppe: & $u(x) = x^2 - 5$
@@ -214,7 +214,7 @@ Die Quotientenregel wird dann verwendet, wenn die Funktion Br\"{u}che enth\"{a}l
 
 \subsub{Reziprokregel}
 
-Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft, wenn der Z\"{a}hler $u(x)$ gleich 1 ist, sodass f\"{u}r die Funktion $f(x)$ gilt, dass sie eine \emph{Reziprokfunktion} der Form $\frac{1}{v(x)}$ ist: $$\left[\frac{1}{v(x)}\right]' = \frac{-v}{v^2}$$
+Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft, wenn der Z\"{a}hler $u(x)$ gleich 1 ist, sodass f\"{u}r die Funktion $f(x)$ gilt, dass sie eine \emph{Reziprokfunktion} der Form $\frac{1}{v(x)}$ ist: $$\left[\frac{1}{v(x)}\right]' = -\frac{v}{v^2}$$
 \emph{Beispiel}: $f(x) = \frac{1}{1 - x^2}$
 
 \begin{tabular}{l l}
@@ -222,7 +222,7 @@ Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft,
 	\extrapar \\
 	II. Ableiten von $v(x)$: & $v'(x) = -2x$
 	\extrapar \\
-	III. Anwendung der Reziprokregel: & $\frac{-v'}{v^2} = \frac{2x}{(1-x^2)^2}$
+	III. Anwendung der Reziprokregel: & $-\frac{v'}{v^2} = -\left[\frac{-2x}{(1-x^2)^2}\right] = \frac{2x}{(1-x^2)^2}$
 \end{tabular}
 
 \emph{Ergebnis}: $f'(x) = \frac{2x}{x^4 - 2x^2 + 1}$
@@ -250,10 +250,10 @@ Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine we
 
 \emph{Ergebnis}: $f'(x) = 18x - 24$
 
-Eine aus der Potenz- und Kettenregel folgende Formel zur Berechnung von Ableitungsfunktionen von Wurzelfunktionen lautet: $$\left[\sqrt{f(x)}\right] = \frac{f'(x)}{2\sqrt{f(x)}}$$
+Eine aus der Potenz- und Kettenregel folgende Formel zur Berechnung von Ableitungsfunktionen von Wurzelfunktionen lautet: $$\left[\sqrt{f(x)}\,\,\right] = \frac{f'(x)}{2\sqrt{f(x)}}$$
 \sub{Kurvendiskussion}
 
-Die Kurvendisskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an den Wendepunkt, der sogenannten \emph{Wendetangente}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, an welcher sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion der Funktionswert gleich null ist. 
+Die Kurvendiskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an die Wendepunkte, den sogenannten \emph{Wendetangenten}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, an welcher sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion der Funktionswert gleich null ist. 
 
 \textbf{Beispiel}: \emph{Gib f\"{u}r die Funktion $f(x) = x^4 - 3x^2 + 2x$ die Wende- und Extrempunkte sowie die Nullstellen, samt Vielfachheit, an. Beschreibe ebenso die Monotonie der Funktion. Fertige eine Skizze an.}
 
@@ -361,11 +361,11 @@ $E_{1}(1 | 0)$ & $\rightarrow$ & $f''(1) > 0$ & $\rightarrow$ & Tiefpunkt
 \\
 &&&&
 \\
-$E_{2}(-1.37 | -4.85)$ & $\rightarrow$ & $f''(-1.37) < 0$ & $\rightarrow$& Hochpunkt
+$E_{2}(-1.37 | -4.85)$ & $\rightarrow$ & $f''(-1.37) > 0$ & $\rightarrow$& Tiefpunkt
 \\
 &&&&
 \\
-$E_{3}(0.37 | 0.35)$ & $\rightarrow$ & $f''(0.37) > 0$ & $\rightarrow$& Tiefpunkt
+$E_{3}(0.37 | 0.35)$ & $\rightarrow$ & $f''(0.37) < 0$ & $\rightarrow$& Hochpunkt
 \end{tabular}
 
 \textbf{Schritt IV: Wendepunkte finden}
@@ -453,11 +453,11 @@ Das selbe Verfahren wendet man auch f\"{u}r den zweiten Wendepunkt $W_{2}$ an, u
 Die Monotonie einer Funktion bezieht sich auf ihr Steigungsverhalten, welches sich an den Extrempunkten ver\"{a}ndert. Ebenso erh\"{a}lt man durch die Kr\"{u}mmung der Funktion in einem bestimmten Intervall Informationen \"{u}ber ihre Monotonie. Ist die Kr\"{u}mmung negativ, wird die Steigung zunehmend negativer. Ist die Kr\"{u}mmung positiv, wird auch die Steigung in diesem Intervall zunehmend positiver. Da die Steigung an einer Extremstelle gleich 0 ist, darf diese Stelle nie zu einem Monotonieintervall dazugez\"{a}hlt werden. Das selbe trifft auch auf plus oder minus unendlich ($\infty$) zu. Somit gilt f\"{u}r die oben skizzierte Funktion $f(x)$:
 
 \begin{tabular}{l l l l}
-	Streng monoton wachsend in den Intervallen: & $] -1.37\,; 0.37\,[$ & $\land$ & $]\, 1\,; \infty \, [$
+	Streng monoton wachsend f\"{u}r alle: & $x \in \,] -1.37\,; 0.37\,[$ & $\cup$ & $]\, 1\,; \infty \, [$
 	\\
 	&&&
 	\\
-	Streng monoton fallend in den Intervallen: & $] -\infty\,; -1.37\,[$ & $\land$ & $] \, 0.37\,; 1 \, [$
+	Streng monoton fallend f\"{u}r alle: & $x \in \,] -\infty\,; -1.37\,[$ & $\cup$ & $] \, 0.37\,; 1 \, [$
 \end{tabular}
 
 \pagebreak
@@ -480,9 +480,7 @@ $f''(x) = 6ax + 2b$
 
 \textbf{Schritt II: Interpretation der Angaben}
 
-Die Funktion besitzt \zitat{besitzt den Tiefpunkt $T(3|-2)$}. Daraus l\"{a}sst sich zum Ersten schlie\ss{}en, dass der Funktionswert der Funktion an der Stelle $x = 3$ gleich $-2$ ist. Dies kann man sofort in die Funktionsgleichung $f(x)$ einsetzen: $$f(3) = -2$$ $$27a + 9b + 3c + d = -3$$ Zum Zweiten handelt es sich hierbei um einen Extrempunkt. Daher muss die Steigung an der Stelle $x = 3$ gleich $0$ sein: $$f'(3) = 0$$ $$27a + 6b + c = 0$$ Ebenso findet man auf der Funktion \zitat{den Wendepunkt $W(2|2)$}. Wieder ergibt sich daraus ein Funktionswert: $$f(2) = 3$$ $$8a + 4b + 2c + d = 0$$ An einer Wendestelle ver\"{a}ndert sich die Kr\"{u}mmung der Funktion, daher ist die zweite Ableitung an dieser Stelle gleich 0: $$f''(2) = 0$$ $$12a + 2b = 0$$
-
-Somit haben sich f\"{u}r die Funktion 3. Grades nicht nur die ben\"{o}tigten 3, sondern sogar 4 Informationseinheiten finden lassen.
+Die Funktion besitzt \zitat{besitzt den Tiefpunkt $T(3|-2)$}. Daraus l\"{a}sst sich zum Ersten schlie\ss{}en, dass der Funktionswert der Funktion an der Stelle $x = 3$ gleich $-2$ ist. Dies kann man sofort in die Funktionsgleichung $f(x)$ einsetzen: $$f(3) = -2$$ $$27a + 9b + 3c + d = -2$$ Zum Zweiten handelt es sich hierbei um einen Extrempunkt. Daher muss die Steigung an der Stelle $x = 3$ gleich $0$ sein: $$f'(3) = 0$$ $$27a + 6b + c = 0$$ Ebenso findet man auf der Funktion \zitat{den Wendepunkt $W(2|2)$}. Wieder ergibt sich daraus ein Funktionswert: $$f(2) = 2$$ $$8a + 4b + 2c + d = 2$$ An einer Wendestelle ver\"{a}ndert sich die Kr\"{u}mmung der Funktion, daher ist die zweite Ableitung an dieser Stelle gleich 0: $$f''(2) = 0$$ $$12a + 2b = 0$$
 
 \pagebreak
 
@@ -490,7 +488,7 @@ Somit haben sich f\"{u}r die Funktion 3. Grades nicht nur die ben\"{o}tigten 3, 
 
 Nun gilt es, die gefundenen Gleichungen zu schneiden und somit alle Variablen der Funktion zu finden.
 
-I. $27a + 9b + 3c + d = -3$
+I. $27a + 9b + 3c + d = -2$
 
 II. $27a + 6b + c = 0$
 

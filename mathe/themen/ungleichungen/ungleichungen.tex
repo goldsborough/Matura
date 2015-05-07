@@ -88,13 +88,13 @@ In einem Ungleichungssystem existieren f\"{u}r einen Term mehrere Ungleichungen,
 
 $x < a \land x > b \rightarrow \mathbb{L} = \{x \in \mathbb{R}\,|\,x < a \land x > b\}$
 
-$x \geq a \lor x > b \rightarrow x \in [a;\infty[\, \lor \,]b;\infty[$
+$x \geq a \lor x > b \rightarrow x \in [a;\infty[\, \cup \,]b;\infty[$
 
 \sub{\"{A}quivalenzumformungen}
 
 \"{A}quivalenzumformungen werden bei Ungleichungen prinzipiell gleich wie bei Gleichungen durchgef\"{u}hrt, indem man auf beiden Seiten der (Un-)Gleichung einen Term addiert, subtrahiert, mit ihm multipliziert oder dividiert. Jedoch muss bei einer Ungleichung das Relationszeichen umgekehrt werden, wenn mit einer negativen Zahl multipliziert oder dividiert wird:
 
-$-ax < b \,|\, \div (-a) \Rightarrow x > \frac{-b}{a}$
+$-ax < b \,|\, \div (-a) \Rightarrow x > -\frac{b}{a}$
 
 $\frac{x}{-a} \geq b \,|\, \cdot (-a) \Rightarrow x \leq -ab$
 
@@ -104,7 +104,7 @@ Quadratische Gleichungen bestehen aus zwei Linearfaktoren $x_1$ und $x_2$. Je na
 
 \pagebreak
 
-Beispiel: \emph{L\"{o}se die quadratischen Ungleichung $x^2 + 3x - 4 \leq 0$}
+Beispiel: \emph{L\"{o}se die quadratische Ungleichung $x^2 + 3x - 4 \leq 0$}
 
 \begin{table}[h!]
 	\begin{tabular}{p{0.3cm} p{10cm} l}
@@ -114,15 +114,15 @@ Beispiel: \emph{L\"{o}se die quadratischen Ungleichung $x^2 + 3x - 4 \leq 0$}
 		\\ && \\
 		III. & Quadratische Ungleichung mit Linearfaktoren anschreiben: & $(x - 1)(x + 4) \leq 0$
 		\\ && \\
-		IV. & Erste M\"{o}glichkeit, dass das Produkt kleiner gleich 0 ist, ist das der erste Faktor $x - 1$ positiv und der zweite negativ $x + 4$ ist: & $x - 1 > 0 \,\land\, x + 4 < 0$
+		IV. & Erste M\"{o}glichkeit, dass das Produkt kleiner oder gleich 0 ist, ist das der erste Faktor $x - 1$ positiv oder null und der zweite $x + 4$ negativ oder null ist: & $x - 1 \geq 0 \,\land\, x + 4 \leq 0$
 		\\ && \\
 		V. & L\"{o}sen des ersten Ungleichungssystems ergibt eine leere Menge: & $\mathbb{L}_I = \{ \}$
 		\\ && \\
-		VI. & Zweiter Fall: & $x - 1 < 0$ und $x + 4 > 0$
+		VI. & Zweiter Fall: & $x - 1 \leq 0$ und $x + 4 \geq 0$
 		\\ && \\
-		VII. & L\"{o}sen des zweiten Ungleichungssystems ergibt: & $\mathbb{L}_{II} = \{ x \in \mathbb{R} \,|\, -4 < x < 1\}$
+		VII. & L\"{o}sen des zweiten Ungleichungssystems ergibt: & $\mathbb{L}_{II} = \{ x \in \mathbb{R} \,|\, -4 \leq x \leq 1\}$
 		\\ && \\
-		VIII. & Die L\"{o}sungsmenge $\mathbb{L}$ ist die Vereinigung von $\mathbb{L}_{I}$ und $\mathbb{L}_{II}$: & $\mathbb{L} = \mathbb{L}_I \cap \mathbb{L}_{II} = \,]-4;1 \,[$
+		VIII. & Die L\"{o}sungsmenge $\mathbb{L}$ ist die Vereinigung von $\mathbb{L}_{I}$ und $\mathbb{L}_{II}$: & $\mathbb{L} = \mathbb{L}_I \cup \mathbb{L}_{II} = \,[-4;1 \,]$
 	\end{tabular}
 \end{table}
 
@@ -136,7 +136,7 @@ Beispiel: \emph{L\"{o}se die Bruchungleichung $\frac{3x}{5 - x} > 4$}
 	\begin{tabular}{p{0.3cm} p{8.5cm} l}
 		I. & Bestimmung der Definitionsmenge: & $5 - x = 0 \Rightarrow x = 5 \Rightarrow \mathbb{D} = \mathbb{R} \backslash \{5\}$
 		\\ && \\
-		II. & Erste Fall, wo $5 - x$ positiv ist: & $5 - x > 0$
+		II. & Erster Fall, wo $5 - x$ positiv ist: & $5 - x > 0$
 		\\ && \\
 		III. & L\"{o}sen der Ungleichung, wobei $>$ bleibt: & $\frac{3x}{5 - x} > 4 \,|\, \cdot (5 - x) \Rightarrow x > \frac{20}{7}$
 		\\ && \\
