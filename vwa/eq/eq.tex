@@ -1,6 +1,8 @@
 % For generating equations
 
-\documentclass[convert]{standalone}
+\documentclass
+[varwidth, convert={density=1024, size=1024x768, outext=.png}]
+{standalone}
 
 \usepackage{libertine}
 
@@ -10,6 +12,6 @@
 
 \begin{document}
 
-$\omega = 2 \pi f$
+$$f(t) = (A + A_{lfo} \cdot \sin(\omega_{lfo} t)) \cdot \sin(\omega t)$$
 
 \end{document}

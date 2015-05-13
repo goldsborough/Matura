@@ -17,7 +17,7 @@ Generell beschreibt ein \emph{Richtungsvektor} $\vec{a} = \colvec{x_{a} \\ y_{a}
 
 \subsub{Vektor und Zahl}
 
-Multiplikation und Division von einem Vektor $a$ mit einer Zahl $n$ resultieren in einem neuen Vektor und erfolgen mittels Durchf\"{u}hrung der Operation f\"{u}r jede Koordinate des Vektors. Addition und Subtraktion eines Vektors mit einer Zahl sind nicht m\"{o}glich.
+Multiplikation und Division von einem Vektor $\vec{a}$ mit einer Zahl $n$ resultieren in einem neuen Vektor und erfolgen mittels Durchf\"{u}hrung der Operation f\"{u}r jede Koordinate des Vektors. Addition und Subtraktion eines Vektors mit einer Zahl sind nicht m\"{o}glich.
 
 Multiplikation von Vektor und Zahl: $ \vec{a} \cdot n = \colvec{x_{a}\\y_{a}} \cdot n  = \colvec{x_{a} \cdot n \\ y_{a} \cdot n}$
 
@@ -25,13 +25,13 @@ Division von Vektor und Zahl: $ \vec{a} \div n = \colvec{x_{a}\\y_{a}} \div n = 
 
 \subsub{Vektor und Vektor}
 
-Addition und Subtraktion von zwei Vektoren $a$ und $b$ resultieren ebenso in einem neuen Vektor, wobei jede Koordinate des einen Vektors $a$ von der des anderen Vektors $b$ abgezogen bzw. mit diesem addiert wird.
+Addition und Subtraktion von zwei Vektoren $\vec{a}$ und $\vec{b}$ resultieren ebenso in einem neuen Vektor, wobei jede Koordinate des einen Vektors $\vec{a}$ von der des anderen Vektors $\vec{b}$ abgezogen bzw. mit diesem addiert wird.
 
 Addition von Vektor und Vektor: $\vec{a} + \vec{b} = \colvec{x_{a}\\y_{a}} + \colvec{x_{b}\\y_{b}} = \colvec{x_{a} + x_{b} \\ y_{a} + y_{b}}$
 
 Subtraktion von Vektor und Vektor: $\vec{a} - \vec{b} = \colvec{x_{a}\\y_{a}} - \colvec{x_{b}\\y_{b}} = \colvec{x_{a} - x_{b} \\ y_{a} - y_{b}}$
 
-Die Multiplikation von zwei Vektoren $a$ und $b$ ergibt keinen neuen Vektor, sondern eine Zahl --- ein sogenanntes \emph{Skalares Produkt}. Dabei wird jede Koordinate des einen Vektors mit der des anderen Vektors multipliziert. Das Skalare Produkt ist dann die Summe der einzelnen Koordinatenprodukte.
+Die Multiplikation von zwei Vektoren $\vec{a}$ und $\vec{b}$ ergibt keinen neuen Vektor, sondern eine Zahl --- ein sogenanntes \emph{Skalares Produkt}. Dabei wird jede Koordinate des einen Vektors mit der des anderen Vektors multipliziert. Das Skalare Produkt ist dann die Summe der einzelnen Koordinatenprodukte.
 
 Multiplikation von Vektor und Vektor: $\vec{a} \cdot \vec{b} = \colvec{x_{a} \\ y_{a}} \cdot \colvec{x_{b} \\ y_{b}} = (x_{a} \cdot x_{b}) + (y_{a} \cdot y_{b}) = n \in \mathbb{R}$
 
@@ -62,7 +62,7 @@ Generell beschreibt ein Vektor $\vec{a}$ nur eine Richtung, um $x$ bzw. $y$ Einh
   \end{tikzpicture}
 \end{figure}
 
-Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so berechnet: $ |\vec{a}| = \sqrt{{x_{a}}^2 + {y_{a}}^2}$
+Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so berechnet: $ |\vec{a}| = \left|\colvec{x_a \\ y_a}\right| = \sqrt{{x_{a}}^2 + {y_{a}}^2}$
 
 \subsub{Einheitsvektor}
 
@@ -72,7 +72,7 @@ $$\vec{a_{0}} = \frac{\vec{a}}{|\vec{a}|}$$
 
 \subsub{Normalvektor}
 
-Manchmal ist es wichtig, f\"{u}r einen beliebigen Vektor $\vec{a}$ jenen Vektor $\vec{n_{a}}$ zu finden, der genau normal zum Vektor $\vec{a}$ steht. $\vec{a}$ und $\vec{n_{a}}$ schlie\ss{}en somit einen rechten Winkel von 90\degree ein. In der Ebene berechnet den Normalvektor $\vec{n_{a}}$ in dem man die Koordinaten des urspr\"{u}nglichen Vektors $\vec{a}$ vertauscht und ein Vorzeichen \"{a}ndert:
+Manchmal ist es wichtig, f\"{u}r einen beliebigen Vektor $\vec{a}$ jenen Vektor $\vec{n_{a}}$ zu finden, der genau normal zum Vektor $\vec{a}$ steht. $\vec{a}$ und $\vec{n_{a}}$ schlie\ss{}en somit einen rechten Winkel von 90\degree{} ein. In der Ebene berechnet den Normalvektor $\vec{n_{a}}$ indem man die Koordinaten des urspr\"{u}nglichen Vektors $\vec{a}$ vertauscht und ein Vorzeichen \"{a}ndert:
 $$ \vec{a} = \colvec{x\\y} \Rightarrow \vec{n_{a}} = \colvec{y \\ -x} \text{ oder } \colvec{-y \\ x}$$
 
 Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist immer 0}. Somit ist $$\vec{a} \cdot \vec{n_{a}} = 0$$
