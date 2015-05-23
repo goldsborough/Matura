@@ -8,8 +8,8 @@ for i in $(find . -type f); do
 
 	for j in ${f[@]}; do
 
-	    if [ $(echo ${i##*.} | egrep ${j}) ]; then
-	   	echo Removing $i
+	    if [ $(echo ${i##*.} | egrep $j) ]; then
+	   	echo "Removing $i"
 		rm $i
 		let count++
 	    fi
@@ -17,4 +17,4 @@ for i in $(find . -type f); do
     fi
 done
 
-echo Removed $count file(s)
+echo "Removed $count file(s)"
