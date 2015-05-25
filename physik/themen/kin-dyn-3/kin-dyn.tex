@@ -1,0 +1,652 @@
+% Kinematics and Dynamics
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Kinematics and Dynamics}
+
+Kinematics is the the branch of mechanics concerned with the motion of objects without reference to the forces which cause the motion. On the other hand, Dynamics is the study of the motion of bodies under the action of forces. 
+
+\subsub{Reference frame}
+
+A reference frame is a certain pre-defined perspective on a situation that makes it possible to let anyone viewing the situation from this perspective describe a motion or define a unique position of an object at any time relative to a certain point of reference. When speaking of kinematics and dynamics, a reference frame is a coordinate system with a reference point, that is needed to describe the motion of an object. An inertial reference frame is a freference frame in which Newton's first law of motion --- the law of inertia --- is valid. In such a reference frame, an object that is at rest will stay at rest and an object that is in motion will remain in motion unless acted upon by an unbalanced force. All inertial reference frames are equivalent, given that this same funamdental law is valid in them.
+
+\subsub{Model of the mass point}
+
+The model of the mass point states that if a force is applied to a rigid body, all points of this body will move the same distance in the same direction, such that it is sufficient to describe the motion of the body by a single point.
+
+\begin{plot}
+	% Initial position
+	\draw (0, 0) circle [radius=1cm];
+
+	\foreach \y in {0.5, 0, -0.5}
+	{
+		% First point
+		\draw [fill=black] (0 - \y, \y) circle [radius=0.1cm];
+
+		% Displacement
+		\draw [->] (0.1 - \y, \y) -- (3.9 + \y, \y);
+
+		% Second point
+		\draw [fill=black] (4 + \y, \y) circle [radius=0.1cm];
+	}
+
+	% Final position
+	\draw (4, 0) circle [radius=1cm];
+\end{plot}
+
+\subsub{Path of motion}
+
+The path of motion of an object is defined as all points a mass point visits in a reference frame during its movement. It makes it possible to visualize a certain movement in a reference frame. Such a path can be described either by a continuous line or by discrete points or \emph{samples} of the path of motion.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Individual points of the path of motion
+		\foreach \x in {0, 1, ..., 5}
+		{
+			\draw [fill=black] ({(\x)^2 * 0.2}, 0) circle [radius=1pt];
+		}
+
+		% Label
+		\draw (2, -2) node {An accelerating object};
+
+	\end{tikzpicture}
+	%
+	\hspace{3cm}
+	%
+	\begin{tikzpicture}
+
+		% The earth
+		\draw [fill=cyan] (0, 0) circle [radius=0.5cm];
+
+		% The orbit of the moon
+		\draw (0, 0) circle [radius=1.2cm];
+
+		% The moon
+		\draw [fill=gray] (-1, {sqrt(1.2^2 - 1)}) circle [radius=5pt];
+
+		% Label
+		\draw (0, -2) node {The moon's path of motion orbiting the earth};
+
+	\end{tikzpicture}
+\end{figure}
+
+\subsub{Describing motion}
+
+To describe motion, one must first make the distinction between what is a vector quantity and what is a scalar quantity. The latter, a scalar quantity, is something that is described solely by its magnitude. The former, a vector quantity, is described not only by its magnitude, but also by the direction in which it is acting. Thus, it is said that a scalar quantity is \emph{ignorant of direction}, while a vector quantity is \emph{direction-aware}. For example, \emph{distance} is a scalar quantity that describes the amount of ground covered by an object, e.g. 12 meters. On the other hand, \emph{displacement} is a vector quantity that describes an object's overall change in position and distance moved in a certain direction, e.g. 2 meters, rightwards. Therefore, a racing car driving in a loop may cover a \emph{distance} of several kilometers throughout the race, but, given the car starts and stops at exactly the same position, ends up with a displacement of 0 meters because the car experienced no \emph{overall change in position} between the start and the end of its motion. This distinction covers the most basic property of motion one can describe: its displacement as a vector quantity or its distance when speaking of scalar quantities. The relevant unit is meters $[m]$.
+
+Followingly, one may wish to describe the rate of change of the object's displacement or distance covered. To describe the objects rate of change of distance covered, the term \emph{speed} is used. As it is a scalar quantity, it is ignorant of direction. \emph{Velocity}, on the other hand, is the term used to describe an object's rate of change of displacement. It is direction-aware. Therefore, velocity can change not only when an object's speed changes, but also if the object's direction changes. The following formulae are used to calculate the speed $v$, as the average change in distance covered per time unit, and velocity $\vec{v}$, as the average rate of change of displacement, of an object in a certain time frame. Both are measured in meters per second $[m/s]$. $$v = \frac{\text{Distance covered } \Delta s}{\text{Time taken } \Delta t} \hspace{2cm} \vec{v} = \frac{\text{Displacement (distance covered in a certain direction) } \Delta \vec{s}}{\text{Time taken } \Delta t}$$
+
+The final property of an object's motion that can be of interest is its \emph{acceleration}. Acceleration is a vector quantity that describes an object's rate of change of velocity. It is measured in meters per second squared (meters per secon per second): $m/s/s = m/s^2$. There is no equivalent scalar quantity. Because velocity and acceleration are direction-aware, an object may accelerate not only if its speed changes, but also if its direction changes. Both situations cause acceleration. The average acceleration $\vec{a}$ of an object in a certain time frame is calculated as the change in velocity in this time frame, divided by the time taken: $$\vec{a} = \frac{\text{Change in velocity } \Delta \vec{v}}{\text{Time taken } \Delta t}$$ 
+
+The sign of an acceleration value indicates its direction, but not yet whether an object is actually slowing down or speeding up. We speak of \emph{negative acceleration} if the direction of acceleration is the opposite of whatever is defined as the \emph{positive direction} (e.g. forward, rightward, upwards etc.). For example, if an object is moving rightward, then a negative acceleration indicates that the acceleration is leftward. On the other hand, \emph{positive acceleration} means that the acceleration is in the positive direction. From this information it can be concluded that an object speeds up if it accelerates in the same direction as it is moving (the same direction as its velocity) --- same signs. On the other hand, an object slows down if its acceleration is in the opposite direction of its velocity, i.e. if the sign of $\vec{a}$ is the opposite of the sign of $\vec{v}$. For example, an object that is moving backwards with a velocity of $-2 \, m/s$ and then starts to accelerate with $-1 \, m/s^2$ will speed up in the backward direction. On the other hand, a positive acceleration of $3 \, m/s^2$ will cause the object to slow down. 
+
+\sub{Types of Linear Motion and Motion Graphs}
+
+The two main types of linear motion, uniform motion and uniformly accelerated motion, can be visualized in a \emph{motion graph}. Such a motion graph either has an object's displacement $\vec{s}$, velocity $\vec{v}$ or acceleration $\vec{a}$ on the ordinate ($y$-axis), as the dependent variable, and always has the time $t$ passed since the beginning of the observation as the independent variable on the abscissa ($x$-axis). These three different types of graphs are called \emph{distance-time}, \emph{velocity-time} and \emph{acceleration-time} graphs. In a distance-time graph, the object's velocity can be found by analyzing the slope of the curve. On the other hand, the slope of the curve in a velocity-time graph gives information about the object's acceleration.
+
+\subsub{Uniform Motion}
+
+An object that is travelling along a path with a constant velocity, i.e. with the same speed and in the same direction (along a straight line), is said to be performing \emph{uniform motion}. The velocity $\vec{v}$ of such an object may take on any value, but its acceleration $\vec{a}$ is always zero (no acceleration). In a distance-time graph such a form of linear motion makes itself visible by the fact that the curve of the object's motion has a constant slope (a constant rate of change of displacement). This means that a velocity-time graphs will show a straight line (a constant velocity) and an acceleration-time graph no curve at all ($\vec{a} = 0$). The following three graphs display this information for an object travelling at a constant velocity of $\vec{a} = 2 \, m/s$ for a duration of ten seconds.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {2*x};
+
+			\addlegendentry{distance-time};
+
+		\end{axis}
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m/s$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {2};
+
+			\addlegendentry{velocity-time};
+
+		\end{axis}
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m/s^2$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {0};
+
+			\addlegendentry{acceleration-time};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\subsub{Uniformly Accelerated Motion}
+
+An object in uniformly accelerated motion is an object moving along a straight line with a constant (uniform) acceleration $\vec{a}$, such that its velocity changes by a certain constant value every second. For the object's distance-time graph, this results in a quadratic curve. The velocity-time graph (the first derivative) therefore shows a linear curve. The acceleration-time graph now also displays a straight, constant line at the height of the value of $\vec{a}$. If an object with with an inital velocity $\vec{v_0}$ accelerates with a uniform acceleration of $\vec{a} = 5 m/s^2$, the following three graphs are produced.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {(5 * x^2)/2};
+
+			\addlegendentry{distance-time};
+
+		\end{axis}
+	\end{tikzpicture}
+
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m/s$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {5*x};
+
+			\addlegendentry{velocity-time};
+
+		\end{axis}
+	\end{tikzpicture}
+	
+	\begin{tikzpicture}
+		\begin{axis}
+		[
+			width=15cm,
+			height=7cm,
+			xlabel=$t$,
+			ylabel=$m/s^2$,
+			axis lines=center,
+			domain=0:10
+		]
+
+			\addplot [mark=none] {5};
+
+			\addlegendentry{acceleration-time};
+
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Rotation and Circular Motion}
+
+It can be found that the rotation of a rigid body involves a certain axis of rotation around which all points of the rigid body rotate, except for those points lying exactly on the axis. Taking a more detailed look at a single point of the body in rotation, it becomes clear that there are three main parts of such a circular motion that are of interest. The first is the angle $\phi$ at which a point is moving in its circular motion from one point in time to the next --- the \emph{angle of rotation}. The second is the actual displacement $b$ of the point on its path around the axis of rotation --- the \emph{arc of the circle}. The third is the distance $r$ between the point and the axis of rotation --- the \emph{radius}. The angle of rotation is a quantity measured in radians, the arc and radius of the circle in meters. They are visualized in the following depiction. 
+
+\begin{plot}
+	
+	% Radius
+	\draw (0, 0) -- (2, 0);
+
+	% Radius with mass point 
+	\draw [fill=black] (0, 0) -- (45:2cm) circle [radius=1pt]
+	      node [midway, above] {$r$} node [above] {$m$};
+
+	% Arc of angle
+	\draw (1, 0) arc [radius=1cm, start angle=0, end angle=45];
+
+	% Phi
+	\draw (0.6, 0.3) node {$\phi$};
+
+	% Arc of rotation
+	\draw (2, 0) arc [radius=2cm, start angle=0, end angle=45];
+
+	% Label for arc of rotation
+	\draw (2.1, 1) node {$b$};
+
+\end{plot}
+
+Interestingly, there is a distinct relationship between the values of these quantities. Given a constant radius, a greater angle of rotation results in a greater arc. Conversely, a smaller arc of the circle must mean the angle has shrunk if the radius did not change. Therefore, the arc of the circle and the angle of rotation are directly proportional --- a change to one results in the same change to the other. As a consequence, their ratio must always be equal to some constant: $$\frac{\text{arc of the circle}}{\text{angle of the arc}} = \frac{b}{r} = \text{constant}$$ Upon further analysis, this constant can be found to be the radius. An explanation for this can be found in the fact that for a full rotation, the arc of this rotation is equal to the circumference of the circle, $2 \cdot \pi \cdot r$, while at the same the angle of this rotation is equal to $2 \cdot pi$. Therefore, given the direct proportionality of the arc and angle of rotation, the ratio between these two quantities will always be equal to the radius, no matter by what factor one and therefore both are scaled (consider that $b$ and $\phi$ will always be equal to their values for a full rotation, scaled by some constant factor, which cancels): $$\frac{b}{\phi} = \frac{c \cdot 2 \pi r}{c \cdot 2 \pi} \Rightarrow \frac{\cancel{c \cdot 2 \pi} r}{\cancel{c \cdot 2 \pi}} = r$$ $$\frac{b}{\phi} = r$$
+
+A rigid body consists of many different mass points spaced at different distances relative to the axis of rotation (different radii). Considering that the arc of rotation of a point is directly proportional to this distance, it can be said that a point further away from the axis of rotation must cover a greater path to rotate by the same angle as a point closer to the axis. Yet, the time for one revolution --- the period --- is the same for all points. Therefore, points further away from the axis must be travelling at higher speeds than points closer to it, as they cover more path (more $m$) within the same time.
+
+\begin{plot}
+
+	% Arc of angle
+	\draw (1, 0) arc [radius=1cm, start angle=0, end angle=45];
+
+	% Phi
+	\draw (0.6, 0.3) node {$\phi$};
+
+
+	% Radius 1 with mass point 
+	\draw [fill=black] (0, 0) -- (45:2cm) circle [radius=1pt]
+	      node [midway, above] {$r_1$} node [above left] {$m_1$};
+
+	% Arc of rotation 1
+	\draw (2, 0) arc [radius=2cm, start angle=0, end angle=45];
+
+	% Label for arc of rotation 1
+	\draw (2.1, 1) node {$b_1$};
+
+
+	% Radius 1, extension with mass point 2
+	\draw [fill=black] (45:2cm) -- (45:3cm) circle [radius=1pt]
+	      node [above] {$m_2$};
+
+	% Radius 2
+	\draw (0, 0) -- (3, 0) node [midway, below] {$r_2$};
+
+	% Arc of rotation 2
+	\draw (3, 0) arc [radius=3cm, start angle=0, end angle=45];
+
+	% Label for arc of rotation 1
+	\draw (3.1, 1.5) node {$b_2$};
+
+\end{plot}
+
+ However, the change in their \emph{angular displacement} $\Delta \phi$ (the change in their angle) is the same for both points and generally speaking for all. Thus, their speed $v$, measured in meters per second ($m/s$) and often referred to as their \emph{tangential velocity}, may differ, but their \emph{angular velocity} $\omega$, measured in radians per second ($rad/s$ or $rad \, s^{-1}$), is the same. This angular velocity is calculated as the change in their angular displacement $\Delta \phi$, divided by the time taken $\Delta t$: $$\omega = \frac{\text{Change in angular displacement}}{\text{time taken}} = \frac{\Delta \phi}{\Delta t}$$ We speak of \emph{uniform circular motion} when the angular velocity $\omega$ is constant, i.e. all points of a rigid body in circular motion are displaced by the same angle $\Delta \phi$ within the same time $\Delta t$. Given an angular velocity $\omega$, the period of rotation $T$ can be found by dividing $2 \pi$ by this value. This stems simply from the fact that speed is displacement divided by time, meaning time is displacement divided by speed: $$T = \frac{2 \pi}{\omega}$$ To convert from angular velocity $\omega$ measured in radians per second to tangential velocity $\vec{v}$ measured in meters per second, the following relationship can be used: $$\vec{v} = \omega \cdot r$$ A derivation for this can be found by dividing a full rotation of a circle in meters, $2 \pi r$, by the period $T$, for which the equation was just given. It may be a help to think of tangential velocity having the radius $r$ in it while the angular velocity does not. To convert from tangential velocity to angular velocity, one ``gets rid'' of the $r$ by dividing by it. The other way around, one puts the $r$ back in by multiplying by it. 
+
+\sub{Centripetal and Centrifugal Force}
+
+An object in uniform circular motion, rotating around a certain axis of rotation, experiences a \emph{centripetal} (\emph{center-seeking}) force. That is, there is some physical force pulling the object towards the center of the circle. The proof for this fact lies within Newton's second law of motion --- the law of inertia --- which states that an object at rest stays at rest and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force. At any instant, an object in circular motion has a certain tangential velocity $\vec{v}$ whose speed is uniform and constant and whose direction is always tangent to the circle in this point. Given Newton's law of inertia, were no unbalanced force acting upon the object, it would remain in its state of motion with the same speed and in the same direction, i.e. with the same velocity. The fact alone that the object remains in uniform circular motion, rotating around the center of the circle and not drifting off on a straight line with its tangential velocity, indicates that there must be an unbalanced net force acting upon it, continuously pulling it towards the center of the circle and causing a certain acceleration --- a change in velocity. This acceleration does not change the object's speed (which is at all times uniform), but its direction. The other way around, it can be similarly concluded that to deviate the object from its natural, tangential path of motion, its direction must be changed --- the object must be pulled towards the center. Because its direction is changed, its velocity is changed (given that velocity is a vector quantity composed of a magnitude in speed and a direction). A change in velocity results in an acceleration. An acceleration means there must be a force acting on it.
+
+The term \emph{centripetal} here is simply an adjective which describes the force acting upon the object and the acceleration caused by this force as being in the direction of the center of the circular motion, continuously pulling the object towards it. It is not a new force, it just a term to describe an existing force. Whatever the object, if it moves in a circle, there is some force acting upon it to cause it to deviate from its straight-line path, accelerate inwards and move along a circular path. This is the \emph{centripetal force requirement}. In the case of a car moving in a circular motion, the inward-acting acceleration is provided by the friction of the ground. When spinning around a bucket tied to a rope, the centripetal force requirement is statisfied by the tension in the rope pulling the bucket inward. The moon is kept in its orbit around the earth due to the gravitational force continuously pulling it towards the center of its rotational axis --- the earth. To reemphesize: if no centripetal force is present, there is no unbalanced net force acting on the object to cause a change in the direction of its state of motion --- the object continues on a straight path. Therefore, if one attempts to change the velocity of a car sliding on a lake covered in ice, there will be no friction to statisfy the centripetal force requirement. Correspondingly, the object will not be able to undergo uniform circular motion and will slide onwards with the same speed and in the same direction, as stated by Newton's law of inertia. 
+
+It may also be of interest to understand why exactly the acceleration of an object in uniform circular motion provided by the centripetal force is directed inwards. For this discussion, two things must be kept in mind. First of all, that velocity is a vector quantity which can be visualized geometrically in a coordinate system. Secondly, that the directional component of the object's tangential velocity is changed, while the magnitude of its speed remains constant. Thirdly, that the average acceleration $\vec{a}$ of an object in certain time frame is equal to the difference between its final velocity $\vec{v_1}$ and its initial velocity $\vec{v_0}$, divided by the time taken $\vec{\Delta t}$. Now, consider an object at two distinct points in time in its circular orbit around a certain axis of rotation, shown in the left depiction below. Calculating the average acceleration of the object with the equation just stated leads to the vector sum shown in the depiction on the right. It indicates that the acceleration of the object and thus of the centripetal force acting upon it is at all time inwards. Because the centripetal force acts perpendicularly to the direction of motion of the object, its tangential speed as well as kinetic energy is left unchanged. It does no work on the object, but merely changes the objects direction such that it is continuously tangential so that the object is always pulled towards the center of the object, keeping it in a constant, uniform, circular motion around the object.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=1.5]
+		% Axis of Rotation
+		\draw [fill=black] (0, 0) circle [radius=1pt];
+
+		% Orbit
+		\draw (0, 0) circle [radius=1cm];
+
+		% Position 1
+		\draw [fill=black] (1, 0)
+		      circle [radius=1pt] node [right] {$t_0$};
+
+		% Velocity 1
+		\draw [->, thick] (1, 0) -- (1, 1)
+		      node [pos=0.75, right] {$\vec{v_0}$};
+
+		% Position 1
+		\draw [fill=black] (0, 1)
+		      circle [radius=1pt] node [above] {$t_1$};
+
+		% Velocity 1
+		\draw [->, thick] (0, 1) -- (-1, 1)
+		      node [pos=0.75, above] {$\vec{v_1}$};
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	\begin{tikzpicture}
+
+		% Visualization of equation
+		\draw [->, thick] (0, 1) -- (-0.95, 1) 
+		      node [above, midway] {$\vec{v_1}$};
+
+		\draw [->, thick] (-1, 0.97) -- (0, 0)
+		      node [pos=0.75, left] {$-\vec{v_0}\,\,$};
+
+		% Vector sum (= acceleration = force)
+		\draw [->, thick, red] (0, 1) -- (0, 0.1)
+		      node [midway, right] {$\vec{v_1} - \vec{v_0}$};
+
+		\draw (-0.5, -1) 
+		      node {$\vec{a} = \frac{\vec{v_1} - \vec{v_0}}{\Delta t}$};
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	\begin{tikzpicture}[scale=1.5]
+		% Axis of Rotation
+		\draw [fill=black] (0, 0) circle [radius=1pt];
+
+		% Orbit
+		\draw (0, 0) circle [radius=1cm];
+
+		% Position 1
+		\draw [fill=black] (1, 0)
+		      circle [radius=1pt] node [right] {$t_0$};
+
+		% Velocity 1
+		\draw [->, thick] (1, 0) -- (1, 1)
+		      node [pos=0.75, right] {$\vec{v_0}$};
+
+		% Position 1
+		\draw [fill=black] (0, 1)
+		      circle [radius=1pt] node [above] {$t_1$};
+
+		% Velocity 1
+		\draw [->, thick] (0, 1) -- (-1, 1)
+		      node [pos=0.75, above] {$\vec{v_1}$};
+
+		% Vector sum (= acceleration = force)
+		\draw [->, thick, red] (0, 1) -- (0, 0.05)
+		      node [midway, right] {$\vec{a}$}
+		      node [midway, left] {$\vec{F}$};
+	\end{tikzpicture}
+\end{figure}
+
+Important formulae relevant to the centripetal force are shown below. Equation \ref{eq:a_c} gives an equation to calculate the centripetal acceleration of an object, either utilizing the object's tangential velocity in meters per second or its angular velocity in radians per second. Given Newton's second law of motion, stating that force is equal to the mass of an object times it acceleration, Equation \ref{eq:F_c} for the magnitude of the centripetal force acting on an object can be derived easily using the first equation. The period $T$ in this equation can be derived by dividing $2 \pi$ by the angular velocity $\omega$ or $2 \pi r$ by the tangential velocity $\vec{v}$. Equation \ref{eq:t_to_a} again lists the relationship between an object's tangential and angular velocity.
+
+\begin{equation}
+	a_c = \frac{v^2}{r} = \frac{(\omega \cdot r)^2}{r} = \omega^2 \cdot r
+	\label{eq:a_c}
+\end{equation}
+
+\begin{equation}
+	\vec{F_c} = m \cdot \frac{v^2}{r} = m \cdot \omega^2 \cdot r
+	\label{eq:F_c}
+\end{equation}
+
+\begin{equation}
+	\omega = \frac{v}{r} \Rightarrow v = \omega \cdot r
+	\label{eq:t_to_a}
+\end{equation}
+
+\subsub{Centrifugal Force}
+
+When riding a carrousel, the centripetal force pulls a person using it inward to keep him or her in circular motion and to prevent the person from travelling on in a straight line along the tangent. Yet, even though the centripetal force accelerates the person inwards, many people in such a situation will describe feeling a sensation of being accelerated outwards. This sensation is referred to as the \emph{centrifugal} force. In actuality, it is not a real force, but an imaginary one introduced to account for the effects of inertia. According to Newton's first law, all objects have inertia: a resistance to change their state of motion, whether they be in motion or at rest. Therefore, when the centripetal force accelerates an object towards the center of the axis of rotation, the object tries its best to remain in its state of motion and to resist a change, i.e. to travel on with the same speed and in the same direction (with its tangential velocity) on a straight path tangent to the circle. This inertial property is experienced as an \emph{outward push}, simply because the actual force is acting inward while the object tries to resist this force and to continue its forward motion. It is the same pseudo-force one experiences when sitting in a car at rest that begins to accelerate. Having previously been at rest, one's inertia will cause one to have a tendency to remain in this state of motion, to remain at rest. When the car accelerates, our body tries to stay at rest. Therefore, the car will accelerate out from under our body and we will have the sensation of being \emph{pushed} backwards, in the opposite direction of the acceleration, when all we are doing is trying to stay at rest. Similarly, when braking the same car abrubtly, the acceleration will be in the opposite direction of our current path of motion, which was in the forward direction. Given inertia, our body will have a tendency to stay in its path of motion with the same speed and in the same direction: forward. Therefore, we will experience a sensation of forward acceleration, when all we are experiencing is inertia. In any case, the sensation or imaginary force one experiences is in the opposite direction of the actual force: backward when accelerating forward, forward when accelerating backward (braking) and outward when accelerating inward in circular motion. 
+
+The important bit is: the real force is the centripetal force, pulling an object inward towards the center of rotation; the fake force is the centrifugal force, which is simply the product of inertia attempting to keep the object in its previous state of motion, along a straight line.
+
+\sub{Newton's laws}
+
+Isaac Newton defined three fundamental laws of motion, referred to as \emph{Newton's laws of motion} or simply \emph{Newton's laws}, in his honor.
+
+\subsub{Newton's First Law of Motion}
+
+Newton's first law of motion, often referred to as the \emph{law of inertia}, reads as follows: 
+
+\begin{displayquote}
+	\textbf{I.} An object at rest stays at rest and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force.
+\end{displayquote}
+
+Given this definition, it can be said that an object that is at rest with no velocity will remain in this state of rest unless acted upon by an unbalanced net force. This is predictable behavior: if no force is applied to move a box at rest, it will not acquire velocity out of nowhere. More interestingly, according to this law, an object that is in uniform motion with a constant velocity requires no further input of force to remain in such a state of uniform motion. Therefore, in an ideal system where there is neither friction nor air resistance, given an inital application of force (acceleration), a car would move on in the same direction and with the same uniform velocity it had when the acting force was removed, forever. This property of objects is characterized as their \emph{inertia}. Inertia is an object's resistance to change its state of motion, thus the tendency an object has to to resist changes in its velocity and consequently the tendency to resist acceleration. Going back to the discussion of the centrifugal force, it can therefore be said that it is solely the consequence of Newton's first law --- of the object's tendency to continue its forward path along the tangent of the circular orbit, with the same tangential velocity (speed and direction). Interestingly, an object's inertia depends solely on its mass. The more massive an object, the more inertia it has. Given the same amount of force, an elephant will resist a change to its state of motion much more than a mouse --- it will accelerate less when pushed or pulled. This is more precisely defined by Newton's second law of motion. Lastly, it should be stated that Newton's first law pertains to the situation where all forces acting upon an object, if any, are balanced --- the net force is zero.
+
+\subsub{Newton's Second Law of Motion}
+
+Newton's second law of motion pertains to the situation in which the forces acting upon an object are not balanced, such that there is a net force acting on it. In its entirety, this law reads:
+
+\begin{displayquote}
+	\textbf{II.} If a net force is applied to an object of constant mass, it will accelerate in the direction of the net force. The acceleration is directly proportional to the net force ($a \propto F$) and inversely proportional to the mass (or inertia) of the object ($a \propto m^{-1}$).
+\end{displayquote}
+
+A shorter version may restrict itself to the proportionality of force, mass and acceleration:
+
+\begin{displayquote}
+	\textbf{II.} The acceleration of an object is directly proportional to the force acting upon it and inversely proportional to its mass.
+\end{displayquote}
+
+The most concise variant may consist of three letters: $$a \propto \frac{F}{m} \hspace{2cm} \text{or} \hspace{2cm} F = m \cdot a$$ In any case, it is clear that the greater the force applied to an object, the greater its acceleration. Kicking a ball produces a greater acceleration than blowing on it. However, it should not be forgotten that the acceleration in this case must not \emph{necessarily} mean a change in speed of the object, but can also mean a change in direction, which is, of course, also a change in velocity --- as was shown for the case of the centrifugal force. Moreover, it makes sense that, given a constant force, an object of greater mass, with greater inertia, will accelerate less than an object of less mass and less inertia.
+
+\subsub{Newton's Third Law of Motion}
+
+A rocket propells through the earth's atmosphere by burning fuel and pushing gases outwards. As it pushes the exhaust gases outwards, the gases push back, making it possible for the rocket to continuously reach higher and higher altitudes. Similarly, a bird achieves its ability to fly by flapping its wings to push down air. This force results in an equal force but in opposite direction: the air pushes the bird upwards. This is, in fact, exactly what Isaac Newton defined as his \emph{third law of motion}:
+
+\begin{displayquote}
+	\textbf{III.} For every action there is an equal and opposite reaction.
+\end{displayquote}
+
+When speaking of Newton's third law of motion, one uses the term \emph{force pairs} to describe any force and the equal and opposite force resulting from it. There are other relevant derivations found from this law:
+
+\begin{itemize}
+	\item Forces never arise singly but always in pairs as the result of interactions.
+	\item Because these pairs arise from an interaction they are always of the same type, e.g. both gravitational or both electromagnetic.
+	\item Action-reaction pairs always act on different bodies, never on the same body.
+\end{itemize}
+
+Lastly, it should be mentioned that the force resulting from an action and the force resulting from the consequent reaction may have the same magnitude, but do not necessarily cause the same acceleration. For example, when a gun is fired, the gases resulting from the burning of the gunpowder inside push the bullet out of the gun. Because for every action there is an \emph{equal and opposite} reaction, the gun must be pushed in the opposite direction with the same force. This is known as recoil. However, the two forces cause different acceleration, as the bullet has a much smaller mass (inertia --- resistance to change its state of motion) than the gun and will therefore be accelerated to much larger speeds.
+
+\sub{Forces}
+
+A force is a push or pull upon an object resulting from the object’s interaction with another object. Force is measured in \emph{Newton} ($[N]$), where one Newton is the force required to accelerate an object with a mass of 1 kg by 1 $m/s^2$. This relationship can be derived from Newton's second law of motion: $$F = m \cdot a$$ $$\Downarrow$$ $$ 1 N = 1 kg \cdot 1 m/s^2 \text{ or } 1 N = 1 kg \cdot 1 m^{-2}$$ In general, there are two different types of forces: \emph{contact forces} and \emph{action-at-distance} forces. The former referes to the forces that arise from direct physical interactions between objects, such as an applied or frictional force. The latter pertains to any force which may act even when objects are not in direct physical contact with one another, yet are able to exert a push or pull despite their physical separation. The following paragraphs will investigate both types in further detail.
+
+\subsub{Contact Forces}
+
+\subsubsub{Applied Force}
+
+An applied force $\vec{F_{app}}$ is any force that is applied to an object by another object. An example may be a person applying a force to a box by pushing it.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% Box
+		\draw (0, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+		% Applied force
+		\draw [->, very thick] (-2, 0.5) -- (-0.1, 0.5) 
+		      node [midway, above] {$\vec{F_{app}}$};
+	\end{tikzpicture}
+	\caption{Applied force}
+\end{figure}
+
+\subsubsub{Normal Force}
+
+A normal force $\vec{F_{norm}}$ is a support force exerted upon an object that is in direct physical contact with another stable object. For example, when a book is placed on a table, that table exerts a normal force on that object by supporting its weight and pushing it up to counter-act and balance the gravitational force pulling it towards the ground. Also, when a person leans against a wall, that wall exerts a normal force in the same way as the table, to support the object (the person) from succumbing to its weight.
+
+\begin{figure}[t!]
+	\centering
+	\begin{tikzpicture}
+		% Box
+		\draw (0, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+		% Surface
+		\draw (-2.5, -0.05) -- (4, -0.05) 
+		      node [pos=0, left] {Surface};
+
+		% Gravitational force
+		\draw [->, very thick] (0.5, -0.1) -- (0.5, -1) 
+		      node [midway, right] {$\vec{F_{grav}}$};
+
+		% Normal force
+		\draw [->, very thick] (0.5, 1.1) -- (0.5, 2) 
+		      node [midway, right] {$\vec{F_{norm}}$};
+    \end{tikzpicture}
+    \caption{Normal force}
+\end{figure}
+
+\subsubsub{Tension Force}
+
+A tension force $\vec{F_{tens}}$ is the force that is transmitted through a string, rope, cable or wire when it is pulled tight by forces acting from opposite ends. The tension force is directed along the length of the wire/string and pulls equally on both objects at either end. When spinning a bucket of water attached to a rope in circular motion around oneself, the tension force acts as the centripetal force pulling and accelerating the object inwards to keep it in its circular path.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% Box A
+		\draw (0, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+		% Box B
+		\draw (5, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+		% Rope
+		\draw [very thick, dashed] (1, 0.4) -- (5, 0.4) 
+		      node [midway, below] {Rope};
+
+		% Tension force, pulling left
+		\draw [->, very thick] (1.05, 0.75) -- (2.95, 0.75) 
+		      node [midway, above] {$\vec{F_{tens}}$};
+
+		% Tension force, pulling right
+		\draw [->, very thick] (4.95, 0.75) -- (3.05, 0.75) 
+		      node [midway, above] {$\vec{F_{tens}}$};
+    \end{tikzpicture}
+    \caption{Tension force}
+\end{figure}
+
+\subsubsub{Friction Force}
+
+Friction $\vec{F_{frict}}$ or \emph{frictional} force is the force that acts bewteen surfaces of objects as they slide past each other. It acts in the opposite direction of the relative motion of two objects and thus either prevents or opposes their motion. There are two sources of friction. For one, it is the product of the microscopic roughness that is present in all surfaces, such that tiny irregularities, ridges and valleys, may interlock when placed in contact with each other. The second source of friction are the temporary bonds that may appear between the atoms and molecules of the two surfaces under conditions of high pressure. Any attempt to slide the surfaces past one another will require a certain amount of force and work. There is also a distinction between the forms of friction. There are three: 
+
+\begin{itemize}
+	\bolditem{Static friction} is the form of friction that acts between surfaces at rest when a force is applied to make them slide past one another. For example, when one attempts to move a large and massive box one must overcome the static friction acting between the box and the ground to make it move.
+
+	\bolditem{Dynamic friction} is the continuous frictional force that acts between surfaces once they are sliding past each other, i.e. after static friction has been overcome. This is the friction that the tires of a car must overcome to make it move.
+
+	\bolditem{Fluid friction} is encountered in gases and liquids and opposes the motion of solids moving through them. Air resistance is a form of such friction.
+\end{itemize}
+
+There is a certain proportionality between the frictional force acting between two surfaces and their normal force (how hard they are pressed together; how much force pushing down the normal force must support). The coefficient of this proportionality for a pair of surfaces is given the variable $\mu$ and is appropriately called the \emph{coefficient of friction}. The relationship just described can be used to find either $\mu$, the frictional force $\vec{F_{frict}}$ or the normal force $\vec{F_{norm}}$: $$\vec{F_{frict}} = \mu \cdot \vec{F_{norm}}$$
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% Box
+		\draw (0, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+		% Surface
+		\draw (-3, -0.05) -- (3, -0.05) node [pos=0, left] {Surface};
+
+		% Velocity
+		\draw [->] (0.5, 0.5) -- (2, 0.5) 
+		      node [pos=0.75, above] {$\vec{v}$};
+
+		% Frictional force
+		\draw [->, very thick] (-0.05, 0.5) -- (-2, 0.5)
+ 			  node [midway, above] {$\vec{F_{frict}}$};
+
+    \end{tikzpicture}
+    \caption{Friction force}
+\end{figure}
+
+\subsubsub{Stretching Force}
+
+A stretching force is exerted by a compressed or stretched object (often some form of spring) upon any object that is attached to it. There are several terms that are of importance when speaking of stretching forces:
+
+\begin{itemize}
+	\item The \textbf{equilibrium position} of an object is its natural state, in which all forces acting upon it are balanced, such that the net force begin applied to it is zero.
+
+	\item The \textbf{natural length} of an object is its length when there are no (stretching) forces acting on it. 
+
+	\item The \textbf{stretched length} of an object is its length with one or more unbalanced forces acting on it that change the object's length relative to its natural state.
+
+	\item The \textbf{extension of a spring} is the difference between the natural length and the stretched length of the spring. In the discussion of stretching forces it is described by the variable $e$.
+
+	\bolditem{Hooke's law} is a rule that states that the force $F$ required to maintain an extension $e$ is directly proporitonal to the extension, such that $F \propto e$ and ultimately $F = k \cdot e$ where $k$ is referred to as the object's \textbf{spring constant}. It is a measure of the object's stiffness and is given the unit $N m^{-1}$.
+
+	\item Hooke's law is usually valid up to a certain \textbf{limit of proportionality}. This is the extension $e$ after which any further extension causes a non-linear increase of the tension within the spring and thus of the force $F$ required to maintain it.
+
+	\item The \textbf{elastic limit} of a spring is the extension $e$ at and after which the spring suffers permanent deformation and does not return to zero extension (the natural length) when the load is removed.
+\end{itemize}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% x axis (extension)
+		\draw [->] (0, 0) -- (5, 0) 
+		      node [pos=0, below left] {0}
+		      node [midway, below] {Extension $e$};
+
+		% y axis (tension)
+		\draw [->] (0, 0) -- (0, 5) node [midway, rotate=90, above] {Tension};
+
+		% Linear part
+		\draw (0, 0) -- (3, 3) node [midway, rotate=45, above] {$k$};
+
+		% Limit of proportionality
+		\draw [dashed, blue] (0, 3.2) -- (3.2, 3.2)
+		       node [midway, above] {Limit of}
+		       node [pos=0.45, below] {Proportionality}
+		       -- (3.2, 0);
+
+		% Non-linear part
+		\draw [domain=3:5] plot (\x, {-0.25 * (\x - 5)^2 + 4});
+
+		% Elastic limit
+		\draw [dashed, red] (0, 3.9375) -- (4.5, 3.9375)
+		       node [midway, above] {Elastic limit}
+		       -- (4.5, 0);
+
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	\begin{tikzpicture}
+
+		% Ceiling
+		\draw (0, 5) -- (6, 5);
+
+		% Hooks (not Hookes)
+		\foreach \x in {1, 3, 5}
+		{
+			\draw (\x, 4) -- (\x, 5);
+		}
+
+		% Spring A, in equilibrium (no forces; natural length)
+		\foreach \y in {0, 0.15, ..., 1.5}
+		{
+			\draw (1, 2.5 + \y) circle [radius=0.25cm];
+		}
+
+		% No net force
+		\draw (1, 1.5) node {$F_{net} = 0$};
+
+		% Spring B, stretched
+		\foreach \y in {0, 0.15, ..., 2.5}
+		{
+			\draw (3, 1.5 + \y) circle [radius=0.25cm];
+		}
+
+		% Stretching force
+		\draw [->, very thick] (3, 1.2) -- (3, 0)
+ 			  node [midway, right] {$\vec{F_1}$};
+
+
+ 		% Spring C, compressed
+		\foreach \y in {0, 0.15, ..., 1}
+		{
+			\draw (5, 3 + \y) circle [radius=0.25cm];
+		}
+
+		% Compressing force
+		\draw [->, very thick] (5, 0) -- (5, 2.7)
+ 			  node [midway, right] {$\vec{F_2}$};
+
+
+    \end{tikzpicture}
+    %\caption{Stretching forces}
+\end{figure}
+
+\end{document}
