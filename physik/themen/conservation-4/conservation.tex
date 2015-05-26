@@ -1,0 +1,119 @@
+% Conservation Laws
+
+\input{preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Conservation Laws}
+
+\sub{Work}
+
+A force does work on an object when it causes a displacement in the direction of the force. Work transfers energy from one object to another and thus causes a change of energy within an object, such that it may simply be defined as a change in energy: $W = \Delta E$. More generally however, work is defined as the product of the applied force $F$ and the resulting displacement $s$ (if any) in the direction of the force: $$W = \vec{F} \cdot \vec{s}$$. This definition is, however, only sufficient if the direction of the applied force is always parallel to the direction of the displacement. If it is not, then only the component of the force that acts in the direction of the displacement actually does work, given that to do work, the force must \emph{cause} displacement. Therefore, a more general definition would scale the applied force by the cosine of the angle between the direction of the force vector and that of the displacement vector: $$W = \vec{F} \cdot \vec{s} \cdot \cos(\theta)$$ Given this equation, it becomes clear that a force acting perpendicular to the direction of an object's path of motion, so that $\cos(\theta) = 0$, does not actually do work on the object and therefore does not contribute to the displacement of the object. On the hand, consider the following situation, in which a box is pulled by a rope at an angle of $30 \degree$ to the horizontal (the direction of displacement). The acting force in this case is the tension in the rope pulling the box:
+
+\begin{plot}
+
+	% Box
+	\draw (0, 0) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+	% Surface
+	\draw (-2, -0.05) -- (4, -0.05);
+
+	% Tension force
+	\draw [very thick, ->] (1, 1) -- +(30:2) node [above] {$\vec{F}$};
+
+	% Horizontal
+	\draw [dashed] (1, 1) -- (3, 1);
+
+	% Angle arc
+	\draw (2, 1) arc [radius=1, start angle = 0, end angle = 30];
+
+	% Theta
+	\draw (1.7, 1.2) node {$\theta$};
+
+	% Displacement
+	\draw [->] (1.05, 0.5) -- (3, 0.5) node [midway, below] {$\vec{s}$};
+
+\end{plot}
+
+Here, only a portion of the force is acting in the direction of the displacement vector --- horizontally. Therefore, the acting force must be \emph{scaled}, so that only the horizontal component actually doing work and actually causing a displacement is selected. Now, if the force were to have a magnitude of 10 N and were to displace the box by 1 meter, the work done would be calculated as follows: $$W = \vec{F} \cdot \vec{s} \cdot \cos(\theta) = 10 \cdot 1 \cdot \cos(30) \approx 1.54 \, J$$ What can also be seen here is that the unit in which work is measured is Joules, or $J$ for short. 1 Joule is equivalent to an acting force of 1 Newton causing an object to be displaced by 1 meter. Therefore, $1 J = 1 N \cdot 1 m$. If the force acts parallel to the displacement it causes, its full magnitude will be used, given that $\cos(0) = 1$. If it is perpendicular, then $\cos(90) = 0$ will cause it to be ignored. If it is acting in the opposite direction of the displacement (e.g. friction doing work to hinder a breaking car's forward motion), then the work done will be negative, since $\cos(180) = -1$. 
+
+\pagebreak
+
+\sub{Energy}
+
+Work involves a transfer of energy, either from one form to another (e.g. from gravitational potential energy to kinetic energy) or from one object to another. Therefore, energy, which is also measured in Joules ($[J]$), can be seen as an object or system's ability to do work --- to transfer said energy. There are several forms of energy, given in the following paragraphs.
+
+Beforehand, it should be mentioned that a very important and fundamental property of energy is that, in an isolated system, the total energy remains constant, i.e. $E_{tot} = const.$ and therefore $\Delta E_{tot} = 0$. This is called the \emph{principle of conservation of energy} and it states that:
+
+\begin{displayquote}
+	energy cannot be created or destroyed but it can be transferred from one form to another
+\end{displayquote}
+
+This reiterates the point that a force causing a displacement --- doing work --- does not create or remove energy, but \emph{transfers} it between different forms or objects.
+
+\subsub{Potential Energy}
+
+An object's potential energy is a measure of its potential to perform work as a result of its position. There are two main variants which are shown below. In general, it may be of value to understand that when the force acting on an object is dependent on its displacement, the work this force has the ability to do can be calculated as the integral of the force in respect to its displacement: $$W = F \cdot s \Rightarrow W = \lim{\Delta s \rightarrow 0} \sum_{i=1}^{N} F \cdot s_i = \int_{a}^{b} F(s) ds$$
+
+\begin{itemize}
+	\bolditem{Gravitational Potential Energy} is the energy an object stores due to its position in a gravitational field, i.e. due to its vertical height. It increases with the height of the object, the mass of the object and the gravitational acceleration that causes its weight. It is calculated as the product of the object's mass, its position in the gravitational field and the acceleration of gravity in this field: $$E_{pot} = m \cdot g \cdot h$$ Taking the aforementioned concept of the integral of force with respect to displacement as a definition of the work an object may do into consideration, this formula can be derived as follows, when the height $h$ of the object is seen as its displacement: $$W = \int F(h) dh = \int (m \cdot a) dh = \int (m \cdot g) dh = m \cdot g \cdot h$$ Consider that $m \cdot g$ is a constant in this equation and does not contain the independent variable $h$.
+
+	\bolditem{Elastic Potential Energy}, sometimes referred to as its own form of energy (elastic energy), is energy stored in an object when it is stretched or compressed. It is a form of potential energy because it is once again energy stored by an object as a result of its position. The elastic potential energy an object stores increases with the elongation or compression of the obejct, as well as with its spring constant $k$. It is calculated via the following equation: $$E_{el} = \frac{k \cdot x^2}{2}$$ where $k$ is the object's spring constant as defined by Hooke's law of the proportionality between the extension $x$ (often $e$) of the object and the force needed to maintain this extension. It may again be derived as the area under a curve in a graph of force versus displacement. In this case, the force $F$ depends on the displacement too, therefore the result is a quadratic relationship between the work an object has the ability to do (its energy) and its displacement $x$ from its natural length (= 0 displacement): $$W = \int F(x) dx = (k \cdot x) dx = \frac{k \cdot x^2}{2}$$
+\end{itemize}
+
+\subsub{Kinetic Energy}
+
+While potential energy is the energy an object stores as a result of its position, an object's kinetic energy is due to its motion. This motion may either be translational (motion from one location to another), rotational (energy due to rotational motion) or vibrational (as a result of vibrational motion). It is directly proportional to the object's mass and to the square of its velocity: $$E_{kin} = \frac{m \cdot v^2}{2}$$
+
+\subsub{Internal Energy}
+
+Internal energy is the potential energy of bonds and the kinetic energy of the random molecular motion at the microscopic level of an object. 
+
+\sub{Power and Efficiency}
+
+Often, it is not of interest \emph{how much} work is done by an object, but at \emph{what rate} the work is done. This is referred to as the object's \emph{power} $P$ and is calculated as the energy transferred $\Delta E$ or work done $\Delta W$ per second: $$\text{Power } P = \frac{\text{Energy transferred } \Delta E}{\text{Time taken } \Delta t} = \frac{\text{Work done } \Delta W}{\text{Time taken } \Delta t}$$ The unit of power is Watt $[W]$ and is equivalent to one joule of energy being transferred per second. Moreover, there is one convenient alteration to this formula which should be given, which shows that the power of something is proportional to the velocity with which a certain force is maintained: $$P = \frac{\Delta W}{\Delta t} = \frac{\vec{F} \cdot \vec{s}}{\Delta t} = \vec{F} \cdot \frac{\Delta \vec{s}}{\Delta t} = \vec{F} \cdot \vec{v}$$ Because no machine is ideal, it transfers some of its energy into forms which are not intended for its purpose. For example, a light bulb does not only produce light energy, but also heat, which is not actually needed to illuminate a room. Therefore, any object that has the ability to do work and to transfer energy has a certain \emph{efficiency} rating. It is calculated as follows: $$\text{Efficiency} = \frac{\text{Useful energy output}}{\text{Total energy input}} \cdot 100 \% = \frac{\text{Useful power output}}{\text{Total power input}} \cdot 100 \%$$
+
+\pagebreak
+
+\sub{Linear Momentum and Impulse}
+
+\subsub{Linear Momentum}
+
+Momentum is a measure of the amount of motion an object has. More precisely, there are two forms of momentum corresponding to the two different forms of velocity encountered in physics: linear momentum, which refers to an object's translational motion (motion from one location to another) and its corresponding velocity $\vec{v}$, and rotational momentum, which is the measure of an object's rotational motion and is therefore used in association with its angular velocity $\vec{\omega}$. Only the former will be discussed further. Mathematically, an object's linear momentum $p$ is defined as its mass $m$ multiplied by its velocity: $\vec{v}$: $$\vec{p} = m \cdot \vec{v}$$ Similar to velocity, linear momentum is a vector quantity. It is therefore described not only by its magnitude, but also by a certain direction. This direction is the same as that of the object's velocity vector. The unit of momentum is $kg \, m \, s^{-1}$, as can be derived from its mathematical definition. Practically speaking, the direct proportionality between an object's linear momentum and it's mass and velocity indicates that, given a constant mass, an object will have more linear momentum --- more \emph{motion} --- the greater its velocity. Linear momentum can also be related to inertia --- an object's resistance to change its state of motion. A more massive object is said to have more inertia, i.e. one must expend a greater force to cause the same change in its state of motion (same acceleration). This is due to the fact that it has more \emph{linear momentum}, more motion than a less massive object. Essentially, these definitions make clear that it is harder to stop a large truck than a wheelbarrow when both have the same velocity, simply because the large truck has more momentum --- more motion --- and more inertia --- a greater tendency to resist changes to this motion.
+
+\subsub{Impulse}
+
+An impulse is a change in the linear momentum of an object: $$\text{Impulse } \Delta p = \text{Change in Linear Momentum } p$$ Given a constant mass, an object can therefore be said to experience an impulse --- a change in its linear momentum (motion) --- any time its velocity changes: $$p = m \cdot \vec{v} \Rightarrow \Delta p = m \cdot \Delta \vec{v}$$ More precisely, momentum is transferred to an object by giving it an impulse in the course of a collision with another object, i.e. by exerting a force on it for a certain time. Therefore, any change in linear momentum must be directly proportional to the force acting upon it and the amount of time during which this force is acting: $$\Delta p = \vec{F} \cdot t$$ These various definitions can be summed up by the conclusion that an impulse must cause a change in the linear momentum of an object, thus cause a change in its velocity and thus cause an acceleration. The object either slows down and reduces its linear momentum, speeds up and increases its linear momentum or simply changes direction. When taking a closer look at Newton's second law of motion, which states that the acceleration of an object is directly proportional to the force acting upon it and inversely proportional to its mass, the relationship between and impulse and momentum becomes clear: $$\vec{F} = m \cdot \vec{a} = m \cdot \frac{\Delta \vec{v}}{t}$$ $$\Downarrow$$ $$F \cdot t = m \cdot \Delta \vec{v}$$ Moreover, it can be said that due to the direct proportionality between impulse (the change in linear momentum), force and time, the same impulse or transfer of linear momentum is achieved when a small force acts upon an object for large time as when a large force acts upon an object for a short time: $$\text{LARGE FORCE} \cdot \text{short time} = \text{small force} \cdot \text{LONG TIME}$$ Lastly, this also gives way for a redefinition of Newton's second law of motion not as a proportionality between acceleration, force and mass, but simply as the rate of change of linear momentum. This definition clarifies that a force causes a change in linear momentum --- an acceleration. The magnitude of the force defines at what rate this change occurs (a large force causes a faster change in linear momentum / acceleration): $$\vec{F} = \frac{\Delta p}{\Delta t}$$
+
+\sub{Conservation of Linear Momentum}
+
+Just as the law of energy conservation states that energy cannot be created or destroyed, but only transferred from one form or another or from one object to another, there is also a similar conservation law for linear momentum. It pertains to the linear momentum exchange and impulse relationship between two objects in a collision:
+
+\begin{displayquote}
+	For a collision occurring between two objects in an \emph{isolated system}, the total momentum of the two objects before the collision is equal to the total momentum of the two objects after the collision. That is, the momentum lost by the first object is equal to the momentum gained by second object.
+\end{displayquote}
+
+This is entirely the product of Newton's third law of motion, which states that for every action there is an equal and opposite reaction. Given this definition, consider a collision between two objects. The force applied by the first object, acting on the second object, will be equal in magnitude but opposite in direction compared to the force returned by the second object directed towards the first: $$F_1 = -F_2$$ Moreover, since the interaction between the objects is entirely physical, the two equal and opposite forces will be acting only while the objects are touching, thus for the same time: $$t_1 = t_2$$ Given this information, it must be that the impulses the two objects experience are also equal and opposite: $$F_1 \cdot t_1 = F_2 \cdot t_2$$ Therefore the change in their linear momentum is equal in magnitude and opposite in direction: $$\Delta p_1 = -\Delta p_2$$ $$\Downarrow$$ $$m_1 \cdot \vec{v_1} = -m_2 \cdot \vec{v_2}$$ This leads to the conclusion that when two objects collide, the decrease in linear momentum experienced by the first object must be equal to the increase in linear momentum experience by the second object. Therefore, the total linear momentum of the isolated system stays constant and \emph{conserved}. It should be made clear, however, that the impulse exchange does not necessarily cause the same acceleration, given that the masses of the two objects may differ.
+
+\subsub{Applications in Automobiles}
+
+There are several safety precautions found in a car to prevent injuries that result from the concepts of linear momentum and impulse just described. 
+
+\subsubsub{Headrests}
+
+Headrests in a car are designed to reduce or prevent neck injuries to the driver in the case of an accident. They are particularly effective in rear-impact accidents and generally account for the effects of the inertia and linear momentum of the person sitting in the car. For example, if the car is at rest, the driver's current state of motion will be at rest and he or she will have a natural tendency to remain in this state of motion as a result of his or her inertia. When another object suddenly crashed into the rear end of the car, it is accelerated in the forward direction, out from under the driver. The driver and his or her head will attempt to remain in their state of rest and will therefore have a tendency to not accelerate in the direction of the car, but to stay put. When the accelerating seat consequently slams into the back of the driver, his or her head is thrown backwards. A headrest attempts to soften this impact by stopping the backwards motion (which is actually not motion, but the result of the absence of it --- inertia).
+
+\subsubsub{Seat Belt}
+
+A seat belt is designed to prevent the opposite motion of the driver's head: an unwanted forward motion, which could potentially accelerate the driver out through the windshield and make a great mess. This would, of course, be the result of the driver's linear momentum --- his or her motion --- and inertia --- the resistance to change this (state of) motion --- which would result in the body of the driver having a tendency to continue her forward motion even when the car is brought to an abrubt halt. The seat belt attempts to stop this forward motion by its stiffness on the one hand, but also by its elasticity on the other hand. The reason for the former is that to reduce the damaging force acting on the driver, the time during which the force acts must be kept to a maximum so that the force acting is kept to a minimum. This results from the definition of an impulse, which states that the same change in linear momentum $\Delta p$ of an object (which must happen; the driver must come to a halt) can be achieved either by applying a great force for a short time (bad) or a small force for a longer time (good).
+
+\subsubsub{Crumple Zone}
+
+The crumple zone in the front or rear of an automobile causes a controlled deformation of the car to increase the time of an accident happening, such that the same impulse may occur via a smaller force over a longer time. It also absorbs a little of the energy being transmitted.
+
+\subsubsub{Airbag}
+
+An airbag performs a similar task to a seatbelt in the way that it attempts to stop the inertial forward motion that is natural to a person seated in a car when an accident happens. The airbag opens as a result of an impact in the rear or front of the car and attempts to reduce the injury to the persons in the car, by reducing the force acting on them and spreading that force out over a longer timespan. The result is that the same change in linear momentum occurs by a less lethal force for a longer time rather than a very great force in a short time (i.e. hitting the windshield). 
+
+\end{document}
