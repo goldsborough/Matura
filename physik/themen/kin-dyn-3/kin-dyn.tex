@@ -300,17 +300,17 @@ It may also be of interest to understand why exactly the acceleration of an obje
 		% Orbit
 		\draw (0, 0) circle [radius=1cm];
 
-		% Position 1
-		\draw [fill=black] (1, 0)
+		% Position 0
+		\draw [fill=black] ({sqrt(2)/2}, {sqrt(2)/2})
 		      circle [radius=1pt] node [right] {$t_0$};
 
-		% Velocity 1
-		\draw [->, thick] (1, 0) -- (1, 1)
+		% Velocity 0
+		\draw [->, thick] ({sqrt(2)/2}, {sqrt(2)/2}) -- (0, 1.5)
 		      node [pos=0.75, right] {$\vec{v_0}$};
 
 		% Position 1
 		\draw [fill=black] (0, 1)
-		      circle [radius=1pt] node [above] {$t_1$};
+		      circle [radius=1pt] node [above left] {$t_1$};
 
 		% Velocity 1
 		\draw [->, thick] (0, 1) -- (-1, 1)
@@ -325,7 +325,7 @@ It may also be of interest to understand why exactly the acceleration of an obje
 		\draw [->, thick] (0, 1) -- (-0.95, 1) 
 		      node [above, midway] {$\vec{v_1}$};
 
-		\draw [->, thick] (-1, 0.97) -- (0, 0)
+		\draw [->, thick] (-1, 1) -- (0, 0)
 		      node [pos=0.75, left] {$-\vec{v_0}\,\,$};
 
 		% Vector sum (= acceleration = force)
@@ -345,17 +345,17 @@ It may also be of interest to understand why exactly the acceleration of an obje
 		% Orbit
 		\draw (0, 0) circle [radius=1cm];
 
-		% Position 1
-		\draw [fill=black] (1, 0)
+		% Position 0
+		\draw [fill=black] ({sqrt(2)/2}, {sqrt(2)/2})
 		      circle [radius=1pt] node [right] {$t_0$};
 
-		% Velocity 1
-		\draw [->, thick] (1, 0) -- (1, 1)
+		% Velocity 0
+		\draw [->, thick] ({sqrt(2)/2}, {sqrt(2)/2}) -- (0, 1.5)
 		      node [pos=0.75, right] {$\vec{v_0}$};
 
 		% Position 1
 		\draw [fill=black] (0, 1)
-		      circle [radius=1pt] node [above] {$t_1$};
+		      circle [radius=1pt] node [above left] {$t_1$};
 
 		% Velocity 1
 		\draw [->, thick] (0, 1) -- (-1, 1)

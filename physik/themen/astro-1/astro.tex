@@ -116,11 +116,9 @@ In the 2nd century AD the Alexandrian scientist Ptolemy proposed major changes t
 	\item The centers of the epicycles move circularly around the deferent, but with constant angular velocity around the \emph{equant}
 \end{itemize}
 
-{\small Resource: {\footnotesize \url{http://www.mathpages.com/home/kmath639/kmath639.htm}}}
-
 \subsub{Copernican System}
 
-Ptolemy's desperate attempts to fit the observations of the time into a system of perfect mathematical circular shapes turned into a very complex system. Copernicus, around 1500, thought that by moving from a geocentric system to a \emph{heliocentric} one, from having the earth at the center of the universe to the sun being at the center, the complexities could be dissovled. He therefore proposed that all planets orbit around the sun, while the moon orbits around the earth in a circular orbit. Again, all orbital shperes were based on perfect euclidian circles.
+Ptolemy's desperate attempts to fit the observations of the time into a system of perfect mathematical circular shapes turned into a very complex system. Copernicus, around 1500, thought that by moving from a geocentric system to a \emph{heliocentric} one, from having the earth at the center of the universe to the sun being at the center, the complexities could be dissovled. He therefore proposed that all planets orbit around the sun, while the moon orbits around the earth in a circular orbit. Again, all orbital spheres were based on perfect euclidian circles.
 
 \begin{figure}[h!]
 	\centering
@@ -139,12 +137,12 @@ Ptolemy's desperate attempts to fit the observations of the time into a system o
 			      (\x, {(-1)^(\r*2)*sqrt(\r^2 - (\x)^2)}) circle [radius=3pt];
 		}
 
+		% Moon orbit
+		\draw (-1, {sqrt(3)}) circle [radius=0.35cm];
+
 		% Moon
 		\draw [fill=gray] (-0.825, {sqrt(0.35^2 - 0.175^2) + sqrt(3)})
 		      circle [radius=2pt];
-
-		% Moon orbit
-		\draw (-1, {sqrt(3)}) circle [radius=0.35cm];
 
 		% The legend
 		\draw [fill=yellow] (5, 1)
@@ -185,7 +183,7 @@ Around 1600 the Imperial Mathematician of the Holy Roman Empire, Johannes Kepler
 
 	\titleitem{Law of Harmonies}
 
-	The orbital periods scale with ellipsis size, such that the cube of the planet's mean distance $r$ from the Sun, divided by the square of the orbital period $T$, is the same for all planets: $\frac{r^3}{T^2}$
+	The orbital periods scale with ellipsis size, such that the cube of the planet's mean distance $r$ from the Sun, divided by the square of the orbital period $T$, is the same for all planets: $\frac{r^3}{T^2} = const.$
 \end{enumerate}
 
 \begin{figure}[h!]
@@ -216,10 +214,12 @@ Around 1600 the Imperial Mathematician of the Holy Roman Empire, Johannes Kepler
 		\draw (-2, -0.5) node [below] {Sun};
 
 	    % Planet position 1 (slow)
-	    \draw [fill=blue] (-1.6, 0) -- (3.95, {-ell(3.95)}) circle [radius=3pt];
+	    \draw [fill=blue] (-1.6, 0) -- (3.95, {-ell(3.95)})
+	           circle [radius=3pt];
 
 	    % Planet position 2 (slow)
-	    \draw [fill=blue] (-1.6, 0) -- (3.95, {ell(3.95)}) circle [radius=3pt];
+	    \draw [fill=blue] (-1.6, 0) -- (3.95, {ell(3.95)})
+	           circle [radius=3pt];
 
 	    % Fill area
 	    \foreach \x in {-1.6, -1.4, ..., 3.95}
@@ -228,7 +228,7 @@ Around 1600 the Imperial Mathematician of the Holy Roman Empire, Johannes Kepler
 	    }
 
 	    % Slow label
-	    \draw (4.8, 0) node {(Slower)};
+	    \draw (4.9, 0) node {(Slower)};
 
 	    % Planet position 3 (faster)
 	    \draw [fill=red] (-2.4, 0) -- (-3.5, {ell(-3.5)}) circle [radius=3pt];
@@ -249,7 +249,7 @@ Around 1600 the Imperial Mathematician of the Holy Roman Empire, Johannes Kepler
 	    }
 
 	    % Faster label
-	    \draw (-5, 0) node {(Faster)};
+	    \draw (-4.9, 0) node {(Faster)};
 
 	\end{tikzpicture}
 \end{figure}
@@ -268,13 +268,13 @@ Galileo Galileo was an Italian scientist from the Renaissance period who made im
 
 \subsub{Isaac Newton}
 
-Isaac Newton built on Galileo Galilei as well as Johannes Kepler's work and, for the first time, found a mathematical basis for their hypotheses. He did so using by defining and using his concept of gravity, an attractive force exerted by all masses on all other masses, and his corresponding laws of motion and gravitation. He found that the attractive force between two masses -- gravity -- could be found using the formula known as the \emph{universal law of gravitation}. It states that the gravitational force acting on any two objects is directly proportional to their mass and indirectly proportional to the distance $r$ between the two objects, squared: $$F = G \cdot \frac{m_1 \cdot m_2}{r^2}$$
+Isaac Newton built on Galileo Galilei as well as Johannes Kepler's work and, for the first time, found a mathematical basis for their hypotheses. He did so by defining and using his concept of gravity, an attractive force exerted by all masses on all other masses, and his corresponding laws of motion and gravitation. He found that the attractive force between two masses -- gravity -- could be found using the formula known as the \emph{universal law of gravitation}. It states that the gravitational force acting on any two objects is directly proportional to their mass and inversely proportional to the distance $r$ between the two objects, squared: $$F = G \cdot \frac{m_1 \cdot m_2}{r^2}$$
 
-$m_1, m_2$ \defas The two relevant masses on which and by which the attractive force is exerted
+$m_1, m_2$ \defas The two relevant masses between which the force acts
 
 $r$ \defas The distance between the two masses
 
-$G$ \defas The universal constant of gravitation = $6.67 \cdot 10^{-11} \, Nm^2 kg^{-1}$
+$G$ \defas The universal constant of gravitation = $6.67 \cdot 10^{-11} \, Nm^2 kg^{-2}$
 
 $F$ \defas The attractive force between the two masses $m_1$ and $m_2$
 
@@ -315,7 +315,7 @@ $F$ \defas The attractive force between the two masses $m_1$ and $m_2$
 
 \vspace{\parskip}
 
-The constant of gravitational acceleration, denoted by the letter $g$, is used in many physical equations. It contains the constant as well as all quantities of the universal law of gravitation that are specific to earth, such that $$g = G \cdot \frac{\text{Mass of earth}}{(\text{Radius of earth})^2} \approx 9.80665 \, \frac{m}{s^2}$$ Therefore, Newton's second law of motion, stating that any force is equal to the mass of an object multiplied by its acceleration, can be used as a quicker form of the universal law of gravity when dealing with systems on earth: $$F = G \cdot \frac{m_1 \cdot m_2}{r^2} = m \cdot g$$
+The constant of gravitational acceleration, denoted by the letter $g$, is used in many physical equations. It contains the constant as well as all quantities of the universal law of gravitation that are specific to earth, such that $$g = G \cdot \frac{\text{Mass of earth}}{(\text{Radius of earth})^2} \approx 9.80665 \, m\, s^{-2}$$ Therefore, Newton's second law of motion, stating that any force is equal to the mass of an object multiplied by its acceleration, can be used as a quicker form of the universal law of gravity when dealing with systems on earth: $$F = G \cdot \frac{m_1 \cdot m_2}{r^2} = m \cdot g$$
 
 Newton's other conclusions about the universe include:
 
@@ -341,7 +341,7 @@ Weight, on the other hand, is a force, thus a vector quantity that is measured i
 		\\ \hline
 		Quantity & Scalar & Vector
 		\\ \hline
-		Unit & Kilograms $[kg]$ & Newtons $[N]$
+		Unit & Kilogram $[kg]$ & Newton $[N]$
 		\\ \hline
 		Measured with & Balance & Scale
 		\\ \hline
@@ -352,11 +352,11 @@ Weight, on the other hand, is a force, thus a vector quantity that is measured i
 
 \textbf{Example: } \emph{Calculate the weight of an object with a mass of 80 kilograms on earth as well as on the moon.}
 
-Planet earth has a mass of $5.972 \cdot 10^24 \,kg$ and a radius of $6.371 \cdot 10^6 \,m$. Thus, the weight of the object can be calculated with the following equation: $$G \cdot \frac{m_1 \cdot m_2}{r^2} =  6.67 \cdot 10^{-11} \cdot \frac{80 \cdot 5.972 \cdot 10^24}{(6.371 \cdot 10^6)^2} \approx 785.09 N$$ As was previously mentioned, when dealing with gravity on earth, this information is contained in the gravitational constant of acceleration $g$. Therefore, the above equation can be approximated and simplified with an implementation of Newton's second law of motion: $$F = m \cdot a = m \cdot g = 80 \cdot 9.80665 \approx 784.53 N$$ The gravity on the moon is approximately one sixth of that on earth, thus the weight of the object on the moon will be: $$\frac{1}{6} \cdot m \cdot g \approx 130.85 N$$ This number could have also been calculated using the universal law of gravitation with the moon's mass and radius, of course. 
+Planet earth has a mass of $5.972 \cdot 10^{24} \,kg$ and a radius of $6.371 \cdot 10^6 \,m$. Thus, the weight of the object can be calculated with the following equation: $$G \cdot \frac{m_1 \cdot m_2}{r^2} =  6.67 \cdot 10^{-11} \cdot \frac{80 \cdot 5.972 \cdot 10^{24}}{(6.371 \cdot 10^6)^2} \approx 785.09 N$$ As was previously mentioned, when dealing with gravity on earth, this information is contained in the gravitational constant of acceleration $g$. Therefore, the above equation can be simplified with an implementation of Newton's second law of motion: $$F = m \cdot a = m \cdot g = 80 \cdot 9.80665 \approx 784.53 N$$ The gravity on the moon is approximately one sixth of that on earth, thus the weight of the object on the moon will be: $$\frac{1}{6} \cdot m \cdot g \approx 130.85 N$$ This number could have also been calculated using the universal law of gravitation with the moon's mass and radius. 
 
 \subsub{Free Fall}
 
-Free fall is the situation in which the only force acting upon an object is the gravitational force --- its own \emph{weight}. In such a case, there is no air resistance or any other force to counteract or balance the gravitational force pulling the object towards earth (or any other planet). Under such conditions, all objects will fall with the same rate of acceleration $g$, regardless of their mass. The reason for this is that, according to Newton's second law of motion, the acceleration of an object is indirectly proportional to its mass and directly proportional to the force acting upon it. Therefore, if the mass of an object increases while the force stays constant, the acceleration of this object decreases. However, in this case, the relevant force is gravity. As was shown, the gravitational force is directly proportional to the two masses it acts on --- the earth's and the object's. The greater the mass of the object, the greater the gravitational force. Thus, if the mass of the object increases, its acceleration decreases, but increases again by the same factor because the force acting on it, to which the acceleration is directly proportional, changes by that same factor. The decrease in acceleration caused by the change in mass is canceled out by the increase in acceleration caused by the consequent change in (gravitational) force. Practically speaking, a greater mass means a greater degree of inertia -- the resistance of an object to change its state of motion. Therefore, if two masses were in free fall and acted on by the same constant force, the more massive one, with more inertia, would accelerate less. But this is not the case. It being more massive, it experiences a greater gravitational force and is pulled more towards earth than the lesser mass. Thus, in effect, the ratio between the gravitational force exerted on an object and its mass -- its acceleration -- is always the same value 
+Free fall is the situation in which the only force acting upon an object is the gravitational force --- its own \emph{weight}. In such a case, there is no air resistance or any other force to counteract or balance the gravitational force pulling the object towards earth (or any other planet). Under such conditions, all objects will fall with the same rate of acceleration $g$, regardless of their mass. The reason for this is that, according to Newton's second law of motion, the acceleration of an object is inversely proportional to its mass and directly proportional to the force acting upon it. Therefore, if the mass of an object increases while the force stays constant, the acceleration of this object decreases. However, in this case, the relevant force is gravity. As was shown, the gravitational force is directly proportional to the two masses it acts on --- the earth's and the object's. The greater the mass of the object, the greater the gravitational force. Thus, if the mass of the object increases, its acceleration decreases, but increases again by the same factor because the force acting on it, to which the acceleration is directly proportional, changes by that same factor. The decrease in acceleration caused by the change in mass is canceled out by the increase in acceleration caused by the consequent change in (gravitational) force. Practically speaking, a greater mass means a greater degree of inertia -- the resistance of an object to change its state of motion. Therefore, if two masses were in free fall and acted on by the same constant force, the more massive one, with more inertia, would accelerate less. But this is not the case. It being more massive, it experiences a greater gravitational force and is pulled more towards earth than the lesser mass. Thus, in effect, the ratio between the gravitational force exerted on an object and its mass -- its acceleration -- is always equal to $g$.
 
 \begin{figure}[h!]
 	\centering
@@ -395,6 +395,8 @@ Free fall is the situation in which the only force acting upon an object is the 
 	\end{tikzpicture}
 \end{figure}
 
+$$a = \frac{F}{m} = \frac{F_{grav}}{m} = \frac{m \cdot g}{m} = \frac{\cancel{m} \cdot g}{\cancel{m}} = g \Rightarrow a = g \text{ for all m}$$
+
 With air resistance, the picture is a little different. Air resistance acts as a frictional force countering the force of gravity on an object. It is caused by collisions of a body with air molecules, which slow down its fall (a source of acceleration). As such, it is dependent mainly on the speed of the object and its surface area. An interesting phenomenon associated with air resistance and free fall is that objects reach a terminal (final) velocity after a certain period of time. This is explained by the fact that as an object accelerates, it reaches a higher and higher velocity, thus experiences a greater and greater air resistance. At a certain point, this air resistance provides enough force in the opposite direction of the force pulling the object downwards --- gravity --- to cancel and balance the forces acting on it. At this point, the object no longer accelerates (because no \emph{net} force is acting on it) and moves with uniform velocity from that point on. Interestingly, here the mass of the object does play a significant role concerning when this terminal velocity is reached and thus how high it is. The reason for this is that objects with a greater mass experience a greater gravitational pull --- more weight --- which requires higher air resistance and thus higher speeds to be equaled and balanced out. In comparison to a lighter object, whose weight is quickly cancelled by air resistance, a more massive one will therefore have more time to accelerate with the same rate of acceleration $g$ until it encounters an amount of air resistance that is equal to its weight. More time to accelerate ultimately results in a higher terminal velocity --- the heavier object falls more quickly.
 
 \begin{figure}[h!]
@@ -422,24 +424,280 @@ With air resistance, the picture is a little different. Air resistance acts as a
 	\end{tikzpicture}
 \end{figure}
 
+\pagebreak
+
 Thus, in summary, it can be stated that mass does not influence an object's acceleration in free fall. Therefore, if no air resistance is present, light and heavy objects fall with the same velocity. However, if air resistance is indeed present, a more massive object will reach the ground with a higher velocity than a lighter one, because it has more time to accelerate until the frictional force of air resistance can balance out the gravitational force acting upon it. 
 
-\subsub{Weightlessnes}
+\sub{Satellites and Circular Motion}
 
-\sub{Basic Concepts of Circular Motion and Rotation}
+A satellite is any object that is in circular motion around another object. As defined by the laws of circular motion, the direction of the velocity of a satellite --- the object in circular motion --- is always tangent to the circle at every point along its path and its speed is always constant and uniform. According to Newton's first law --- the law of inertia --- the satellite would maintain its current path of motion with the same speed and in the same direction, i.e. with the same tangential velocity, unless acted upon by an unbalanced force. In the case of circular motion, there is an unbalanced force acting upon the object: the centripetal --- \emph{center-seeking} --- force. When speaking of satellites and astrophysics, this centripetal force is the gravitational force acting between the satellite and the planet and it orbits. This force continuously accelerates the object towards the center of rotation --- the planet --- by changing its direction (pulling it inward) such that the satellites's trajectory constantly falls below its natural tangential path that it has a tendency to maintain as a product of its inertia:
 
-\sub{The Centripetal Force}
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	[
+		declare function = 
+		{
+			y(\x) = sqrt((\r)^2 - (\x)^2);
+		}
+	]
+		\newcount\r
+		\r2\relax
 
-\sub{Cosmic Velocities}
+		% Planet
+		\draw [fill=cyan] (0, 0) circle [radius=1cm];
+
+		% Orbit
+		\draw (0, 0) circle [radius=\r];
+
+
+		% Point 1
+		\draw [fill=black] (-1.5, {y(-1.5)}) circle [radius=2pt];
+
+		% Tangent 1
+		\draw [dashed, ->] (-1.5, {y(-1.5)}) -- (-0.3, 2.5);
+
+		% Acceleration / Force 1
+		\draw [->] (-1.5, {y(-1.5)}) -- (-1, 0.8) 
+		      node [pos=0.25, right] {$F_{net}$};
+
+
+		% Point 2
+		\draw [fill=black] (2, {y(2)}) circle [radius=2pt];
+
+		% Tangent 2
+		\draw [dashed, ->] (2, {y(2)}) -- (2, -1.5);
+
+		% Acceleration / Force 2
+		\draw [->] (2, {y(2)}) -- (1.2, 0) 
+		      node [midway, above] {$F_{net}$};
+
+
+		% Point 3
+		\draw [fill=black] (-1, {-y(-1)}) circle [radius=2pt];
+
+		% Tangent 3
+		\draw [dashed, ->] (-1, {-y(-1)}) -- (-2.5, -0.7);
+
+		% Acceleration / Force 3
+		\draw [->] (-1, {-y(-1)}) -- (-0.6, -1) 
+		      node [midway, right] {$F_{net}$};
+
+	\end{tikzpicture}
+\end{figure}
+
+In the case of circular orbits, the centripetal force does not cause any change in the speed of the satellite. The acceleration the force of gravity causes is entirely related to the \emph{direction} of the satellite's velocity vector. The reason for this is that at any moment, the centripetal force acts perpendicularly to the satellite's velocity vector --- the direction of its displacement. Therefore, it does not actually do any \emph{work} on the object. However, if the orbit of the satellite is not circular, but elliptical, there is indeed a component of the net force acting on it --- the centripetal (gravitational) force --- that is in the direction of its displacement and therefore does work on it and causes a certain change in velocity. The component of the centripetal force causing an acceleration that also includes a change in velocity (not only direction) can be selected by multiplying the net force by the cosine of the angle $\theta$ between the direction of the net force vector and that of the displacement vector.
+
+There are several equations that are useful to determine the various properties and quantities related to a satellite in orbit around a planet. These properties include the distance between the center of rotation and the satellite; the velocity with which the satellite is orbiting; the period of rotation of the satellite and others. To understand the following equations, the basics of the mathematics of circular motion should be revisited. The \emph{angular velocity} $\omega$ of an object in circular motion is defined as the rate of change of its \emph{angular displacement}. For a certain time interval, its average value is calculated as the change in angular displacement in that time span, divided by the time span. This angular velocity can be converted into \emph{tangential velocity} by multiplying it with the radius of the object's orbit. $$\omega = \frac{\Delta \varphi}{\Delta t} \hspace{2cm} v = \omega \cdot r \hspace{2cm} v = \frac{\Delta d}{\Delta s}$$The period of rotation $T$ of an object in circular motion is then defined either as the change in angular displacement for one rotation --- $360 \degree$ or $2 \pi$ radians --- divided by $\omega$, or as the change in displacement (measured in meters) for one rotation --- the circumference of the orbit, i.e. $2 \pi r$ --- divided by the tangential velocity $v$. $$T = \frac{2 \pi}{\omega} = \frac{2 \pi r}{v}$$ Moreover, it should be remembered that the centripetal acceleration $a$ of an object in circular motion is equal to its velocity $v$ squared, divided by the radius $r$ of the orbit. $$a = \frac{v^2}{r} = \frac{(\omega \cdot r)^2}{r} = \omega^2 \cdot r$$ Therefore, given Newton's second law of motion, the centripetal force itself is equal to the acceleration of the satellite multiplied by its mass. $$F_{net} = m \cdot a = m \cdot \frac{v^2}{r} = m \cdot \omega^2 \cdot r$$
 
 \subsub{The First Cosmic Velocity}
 
-The first cosmic velocity is the horizontal velocity needed to bring an object into a circular orbit with radius $r$ around a central body with mass $M$ (at velocities lower than this the object would fall towards the body).
+The first cosmic velocity is the horizontal velocity needed to bring an object into a circular orbit with radius $r$ around a central body (e.g. earth) with mass $M$ (at velocities lower than this the object would fall towards the body). It can be derived from the understanding that when the object reaches this velocity and subsequently begins its circular motion around the central body, the centripetal force keeping the object in this circular orbit, pulling it inward and making it continuously fall short of following its tangential path, is the gravitational force acting betwen the object (the satellite) and the central body. Therefore, the gravitational force $F_{grav}$ that is being exerted on the object in circular motion can be equated to the centripetal force pulling it inward: $$F_{grav} = F_{net}$$ $$G \cdot \frac{m \cdot M}{r^2}= m \cdot \frac{v^2}{r}$$ Solving this equation for the velocity $v$ yields an expression for the velocity of the object in orbit (the first cosmic velocity): $$v = \sqrt{\frac{G \cdot M}{r}}$$ Interestingly, the velocity of the satellite in circular motion is independent of its mass and depends solely on the mass of the central body and the distance between the center of this central body and the satellite.
 
-\sub{Satellites}
+\subsub{The Second Cosmic Velocity}
 
-\sub{Evolution of Stars}
+The second of the cosmic velocities is the minimum velocity needed by an object to escape from the gravitational field ofa central body. It is therefore often referred to as the \emph{escape velocity} of the object. It can be thought of as follows: when an object is launched from earth and the kinetic energy $E_{kin}$ transferred to the object is equal to its gravitational potential energy $E_{pot}$, then it would have a great enough velocity to escape from the gravitational field. In this case, the more general equation for the calculation of the gravitational potential energy of an object must be used, which is valid for all fields and not only the one pertaining to the surface earth. This equation can be seen below. The minus sign stems from the idea that gravitational potential energy is a measure of the work that must be done against the force of gravity to displace the object to a certain position. This work must therefore be equal in magnitude and opposite in direction when compared to the force. The force is assumed to be in the positive direction, the work and the energy stored from this work must therefore be negative: $$E_{pot} = -G \cdot \frac{m \cdot M}{r}$$ Note that the distance $r$ between the objects is not squared. In any case, the object to achieve the escape velocity would have equal and opposite kinetic and potential energies. Their sum would therefore be zero: $$E_{kin} + E_{pot} = 0$$ $$\frac{m \cdot v^2}{2} -G\frac{m \cdot M}{r} = 0$$ This expression can then once again be solved for the velocity $v$: $$v = \sqrt{\frac{2 \cdot G \cdot M}{r}}$$ Just like the first cosmic velocity, the second cosmic velocity is independent of the mass of the object in question.
 
-\subsub{Hertzsprung-Russel Diagrams}
+\subsub{The Orbital Period and Radius}
+
+There is a single expression that can be used to calculate the period or the radius of the orbit of an object in circular motion around a central body. To derive this expression, the definition of the first cosmic velocity $v_1$ --- the minimum horizontal velocity needed by an object to stay in its circular orbit --- and the definition of the orbital period $T$ of an object in circular motion are needed: $$v_1 = \sqrt{\frac{G \cdot M}{r}} \hspace{2cm} T = \frac{\text{Displacement during one rotation } d}{\text{Tangential velocity } v} = \frac{2 \pi \cdot r}{v}$$ In this case, substituting the first cosmic velocity from the left equation for the tangential velocity in the right equation, yields the following relationship: $$\frac{r^3}{T^2} = \frac{G \cdot M}{4 \pi^2}$$ Interestingly, this shows Kepler's third law --- the law of harmonies --- which states that the ratio between the cube of the mean radius of an object in orbit and the square of its orbital period is constant for all objects in orbit. This is now clear, given that the mass of the object in orbit is not at all present in these equations ($M$ is the mass of the central body).
+
+\subsub{Examples}
+
+Some examples questions are listed below. Here are the known constants:
+
+Graviational constant $G = 6.673 \cdot 10^{-11} N m^2 / kg^2$
+
+Mass of earth $M_{earth} = 5.98 \cdot 10^24 kg$
+
+Radius of earth $R_{earth} = 6.37 \cdot 10^6 m$
+
+\textbf{Example 1}: \emph{A satellite wishes to orbit the earth at a height of 100 km above the surface of the earth. Determine the speed, acceleration and orbital period of the satellite.}
+
+Initially, one can calculate the first cosmic velocity of the satellite at that height. The distance $r$ is the distance between the center of the circular motion and the rotating object. It is therefore the sum of the satellite's height and the radius of earth. $$v_1 = \sqrt{\frac{G \cdot M}{r}} = \sqrt{\frac{6.673 \cdot 10^{-11} \cdot 5.98 \cdot 10^24}{6.37 \cdot 10^6 + 100 \cdot 10^3}} \approx 7.85 \cdot 10^3 m/s$$ Given the speed, the acceleration of the satellite can be determined via the equation for the centripetal acceleration of an object in circular motion: $$a = \frac{v^2}{r} = \frac{(7.85 \cdot 10^3)^2}{6.37 \cdot 10^6 + 100 \cdot 10^3} \approx 9.53 m/s^2$$ Finally, the orbital period $T$ of the satellite can be determined simply using the knowledge that velocity is displacement over time and thus the time displacement over velocity. Another way would be to use the equation involving Kepler's law of harmonies, which was shown above: $$T = \frac{d}{v} = \frac{2 \pi \cdot r}{v} = \frac{2 \pi \cdot (6.37 \cdot 10^6 + 100 \cdot 10^3)}{7.85 \cdot 10^3} \approx 5176 s$$ or $$\frac{r^3}{T^2} = \frac{G \cdot M}{4 \pi^2} \Rightarrow T = \sqrt{\frac{r^3 \cdot 4 \pi^2}{G \cdot M}} = \sqrt{\frac{(6.37 \cdot 10^6 + 100 \cdot 10^3)^3 \cdot 4 \pi^2}{6.673 \cdot 10^{-11} + 5.98 \cdot 10^24}} \approx 5176 s$$
+
+\textbf{Example 2:} \emph{The period of the moon is approximately 27.2 days. Determine the radius of the moon's orbit and the orbital speed of the moon.}
+
+In this case, we are only given the orbital period of the satellite object. We therefore cannot yet calculate the (first cosmic) velocity because we lack the distance $r$ between the moon and the earth. We also cannot google it. Therefore, we must use the relationship between the mean distance $r$ between an object in circular motion and the central body around which it is orbiting and the orbital period $T$ of this orbital motion as defined by, first of all, Kepler's third law, but also by the equation previously found that connects these two quantities with the mass of the central body. Beforehand, it should be mentioned that $27.2$ days are equivalent to approximately $2.35 \cdot 10^6$ seconds. $$\frac{r^3}{T^2} = \frac{G \cdot M}{4 \pi^2} \Rightarrow r = \sqrt[3]{\frac{G \cdot M \cdot T^2}{4 \pi^2}} = \sqrt[3]{\frac{6.673 \cdot 10^{-11} \cdot 5.98 \cdot 10^24 \cdot (2.35 \cdot 10^6)^2}{4 \pi^2}} \approx 3.82 \cdot 10^8 m$$ Now that the distance between the moon and the earth is found, we can easily calculate the velocity, either by dividing the total displacement $d$ of the moon during one rotation by the time taken (the period $T$), or by directly using the formula for the first cosmic velocity: $$v = \frac{\Delta d}{\Delta t} = \frac{2 \pi \cdot r}{T} \approx 1.02 \cdot 10^3 m/s \hspace{2cm} \text{or} \hspace{2cm} v = \sqrt{\frac{G \cdot M}{r}} \approx 1.02 \cdot 10^3 m/s$$
+
+\subsub{Geostationary Satellites}
+
+A geosynchronous satellite is a satellite that orbits the earth with an orbital period of 24 hours, thus matching the period of the earth's rotational motion. A special class of geosynchronous satellites is a geostationary satellite. Such a satellite is placed in an equatorial orbit (orbiting above the equator) so that it remains \emph{stationary} above a single point on earth, moving along with that point at an equal angular rate. If the geosynchronous satellite were not placed parallel to the equator, it could still have an orbital period of 24 hours (given that the period is dependent solely on the distance between the satellite and the center of earth), but would depart from the point on earth at one point or another (e.g. it could also move perpendicularly to the equator, orbiting above the poles). The radius and velocity of such a geostationary orbit can be determined easily. First the radius (24 hours is equal to 86400 seconds): $$\frac{r^3}{T^2} = \frac{G \cdot M}{4 \pi^2} \Rightarrow r = \sqrt[3]{\frac{G \cdot M \cdot T^2}{4 \pi^2}} = \sqrt[3]{\frac{6.673 \cdot 10^{-11} \cdot 5.98 \cdot 10^24 \cdot 86400^2}{4 \pi^2}} \approx 4.23 \cdot 10^7 \, m$$ Then the velocity: $$v = \sqrt{\frac{G \cdot M}{r}} = \sqrt{\frac{6.673 \cdot 10^{-11} \cdot 5.98 \cdot 10^24}{4.23 \cdot 10^7}} \approx 3.07 \cdot 10^3 \, m/s$$ Moreover, it may be of interest at what altitude such a geostationary satellite \emph{must} be to maintain such a period. For this, the radius of the earth is subtracted from the orbital radius just found: $$r_{orbit} - r_{earth} \approx 36000 \, km$$
+
+\sub{Weightlessness}
+
+It is often argued that astronauts orbiting around the earth experience weightlessness ``since gravity is not acting at this height''. There are various misconceptions and misunderstandings associated with such beliefs. First of all, the statement that there is no gravity ``at this height'' must be refuted. Gravity is an attractive action-at-distance force acting between two masses. It is directly proportional to the masses of the two objects and inversely proportional to the square of the distance between them. Given the definition of this force, it must be understood that the force of gravity (theoretically) extends to infinity --- it \emph{always} acts and can \emph{never not} act. There are only two possible ways by which the gravitational force between any two objects may not act. The first is that one or both of the two masses stop to exist --- disappear. This is impossible. The second possible way is that the distance $r$ between the two objects become zero. This leads to an equation that is undefined by the law of mathematics. It is also not reasonable, given that this would mean that either of the wo masses would be contained within the other, i.e. it would be the same object. An object cannot attract itself. Gravity always acts, at any distance, and never doesn't act. 
+
+What is true however, is that the weight of the astronauts in orbit changes relative to their weight on the surface of the earth. Their mass doesn't change, of course, but given the definition of the universal law of gravitation, the greater distance between the earth and the astronauts in space compared to on the surface of the earth constitutes a reduced gravitational attraction or pull --- a reduced weight (but they still have weight). Considering that the international space station is located around 350 km above the earth, an 80 kg astronaut would weigh differently in space to the extent shown below. $$F_{grav} = G \, \frac{m_{astr} \cdot m_{earth}}{r^2}$$ $$F_{earth} = 6.673 \cdot 10^{-11} \cdot \frac{80 \cdot 5.98 \cdot 10^24}{(6.37 \cdot 10^6)^2} \approx 784\, N $$ $$F_{space} = 6.673 \cdot 10^{-11} \cdot \frac{80 \cdot 5.98 \cdot 10^24}{(6.37 \cdot 10^6 + 350 \cdot 10^3)} \approx 707\, N$$
+
+\pagebreak
+
+It may nevertheless be wondered what the source of the \emph{sensation} of weightlessness really is. The reason is relatively simple, though it has nothing to do with weight and definitely nothing to do with the absence of it. One of the main things to keep in mind is that all objects orbiting around the earth are experiencing \emph{free fall}, that is, the situation in which the only force acting upon them is the gravitational pull exerted by earth. In free fall, all objects accelerate towards earth with the same acceleration, given that their weight scales with their mass, such that the ratio between these two stays constant and independent of the mass: $$a = \frac{F}{m} = \frac{G \cdot \frac{m \cdot M}{r^2}}{m} = G \cdot \frac{M}{r^2} \hspace{1cm} \text{for all m}$$ Moreover, it should be clear that because all objects are falling, none can apply a \emph{normal} force to support the weight of another object. This alone is reason enough for the sensation of weightlessness. When an astronaut stands on a scale in the ISS, it cannot possibly show any value because a scale measures an object's weight by measuring the normal force that it must exert to support the object's weight. However, the scale is itself falling, so it is not supported itself. The normal force exerted upon the astronaut standing on the scale will therefore be equal to zero. Another way of looking at this principle is to consider a person standing on a scale in an elevator. When the elevator is at rest or moving with uniform velocity, then that must mean there is no unbalanced force causing an acceleration. This, in turn, means that the normal force exerted by the elevator in the upward direction to support the gravitational force that is pulling the person downard must be equal to this force (the weight). If, however, the elevator starts to accelerate in the downward direction, this means there must be a net force acting in the downward direction to cause this acceleration. The weight of the person does not change at this altitude, therefore, it must mean that the normal force has reduced. The person will consequently feel like he or she has less weight, simply because the normal force supporting its weight (giving the person the feeling of weight) has been reduced. The greater the acceleration in the downward direction therefore, the greater the net force in this direction, the smaller therefore the opposing force --- the normal force (the only force that can change in this system). The maximum possible acceleration of the person is therefore achieved when the normal force is zero, such that the net force is equal to the object's weight. This is free fall, where nothing can exert a normal force because nothing is supported, so that the only force is gravity. This is \emph{weightlessness}.
+
+\sub{Stars}
+
+A star is a luminous sphere of plasma (ionized gas) that is held together by its own gravity. The difference between a star and a planet is that a star produces energy through nuclear fusion (mostly from hydrogen to helium) at its core. In general, stars range from about 8\% fo the sun's mass to about 120 times its mass. The former is the minimum reuqired mass to ignite the star at its birth, starting the fusion reactions at its core. Throughout the life of a star its state depends entirely on the balance (equilibrium) between the pressure of the radiation from the internal fusion reactions and gravitational pressure that would otherwise cause the star to contract inwards --- to collapse. There are several major phases in the life and death of a star, which includes its birth in a so-called \emph{nursery}, its path through the Hertzsprung-Rusell diagram in the course of its lifetime and ultimately the end of its life either as a continuously cooling white dwarf or as the grand explosion that is a supernova.
+
+\subsub{The Classification of Stars}
+
+A star is classified on the one hand by its luminosity, the total power radiated by it, also referred to as \emph{absolute magnitude} (a measure of its brightness), and its temperature or \emph{spectral class} on the other hand. There are seven spectral classes --- M, K, G, F, A, B, D --- into which stars are categorized, where each class corresponds to a certain range of temperatures. These properties may be visualized in a Hertzprung-Russell diagram. Such a diagram plots temperature and spectral class versus luminosity (in solar units $L_{\odot}$).
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	
+		% Luminosity axis
+		\draw (0, 0) -- (0, 11.5);
+
+		% Luminosity axis labels
+		\foreach \y in {0, 1, ..., 11}
+		{
+			\newcount\l
+			\l\y\relax
+			\advance \l by -5\relax
+
+			% Shift the ticks down a little
+			\draw (0, \y-0.03333) node {---};
+
+			% Display 10^0 as 1
+			\ifnum\l = 0
+				\draw (-0.6, \y) node {1};
+			\else
+				\draw (-0.6, \y) node {$10^{\the\l}$};
+			\fi
+		}
+
+		% Luminosity arrow
+		\draw [->] (-1.3, 3) -- +(0, 6);
+
+		% Luminosity label
+		\draw (-1.8, 6) node [rotate=90] {Luminosity [$L_{\odot}$]};
+
+		% Temperature axis
+		\draw (0, 0) -- (12.5, 0);
+
+		% Spectral class and temperature labels
+		\foreach \x/\s/\t in {0/O/47000, 2/B/0, 4/A/10000,
+						      6/F/0, 8/G/6000, 10/K/0, 12/M/3000}
+		{
+			% Tick
+			\draw (\x, 0) node {$|$};
+
+			% Draw the spectral class
+			\draw (\x, -0.4) node {\s};
+
+			% Only show the temperature if valid (not 0)
+			\ifnum\t > 0
+				\draw (\x, -0.9) node {\t};
+			\fi
+		}
+
+		% Spectral class and temperature axis arrow
+		\draw [->] (9, -1.5) -- (3, -1.5);
+
+		% Spectral class and temperature label
+		\draw (6, -2) node {Spectral class and temperature [K]};
+
+		% Instability strip
+		\draw [fill=gray, gray]
+		      (2.5, 1) -- (3, 1) -- (8, 9) -- (6, 9) -- (2.5, 1);
+
+		% Instability strip label
+		\draw [<-, thick]
+		      (4, 3.3) -- +(1, 0) node [right] {Instability Strip};
+
+		% Main Sequence strip
+		\draw [line width=0.7cm, yellow]
+		      (0.5, 11) .. controls (2, 4) and (10, 6) .. (12, 0.5);
+
+		% Main sequence label
+		\draw [<-, thick]
+		      (3.5, 6.5) -- +(0, 2) node [above] {Main Sequence};
+
+		% Sun
+		\draw [fill=red, red] (6.8, 5)
+		      circle [radius=3pt] node [right, black] {\, Sun};
+
+		% Supergiants
+		\draw [fill=red, red]
+		      (7, 10) circle [x radius=2.5cm, y radius=0.75cm];
+
+		% Supergiants label
+		\draw [<-, thick]
+		      (8, 10) -- +(2, 0) node [right] {\, Supergiants};
+
+		% Giants
+		\draw [fill=orange, orange] (8.5, 7) 
+		      circle [rotate=10, x radius=2.5cm, y radius=0.75cm];
+
+		% Giants label
+		\draw [<-, thick]
+		      (9.5, 7) -- +(0, -1.5) node [below] {\, Giants};
+
+		% White dwarfs
+		\draw [fill=cyan, cyan] (2.5, 2.5) 
+		      circle [rotate=-45, x radius=2.5cm, y radius=0.75cm];
+
+		% White dwarfs label
+		\draw [<-, thick]
+		      (2, 3) -- +(0, 2) node [above] {\, White Dwarfs};
+
+	\end{tikzpicture}
+\end{figure}
+
+Effectively, the luminosity $L$ of a star depends on three factors: its temperature, its surface area and, indirectly, its mass. The greater the temperature, the greater is the intensity of the star per unit area. This is dictated by the \emph{Stefan-Boltzmann law}, given below, where $I$ is the intensity, the energy radiated per second per unit area (or the power radiated per unit area, given that power is the rate of change of energy), $\sigma$ the \emph{Stefan constant} equal to $5.7 \cdot 10^{-10} \, W\, m^{-2}\, K^{-4}$ and $T$ the temperature of the star in Kelvin. $$I = \sigma \cdot T^4$$ The total power radiated --- or luminosity --- is then equal to the intensity, the power radiated per unit area, multiplied by the area $A$ of the star (the number of unit areas): $$L = A \cdot \sigma \cdot T^4$$ This law suggests that for a star to be luminous, it must either have a high temperature or a great surface area (or both). Therefore, a star that is relatively cool and has a low intensity (power radiated per unit area) can still be luminous if it has a large surface area. Lastly, it should be mentioned why mass --- indirectly --- influences luminosity. The first reason why is that a more massive star will have a greater surface area. The second reason is that greater the mass of a star, the greater is the gravitational pressure inside it. This means that to be in equilibrium, a more massive star must have an increased rate of fusion reactions inside its core to generate a great enough radiation pressure to be stable and not collapse. It will therefore generate more power and burn at a higher temperature (also causing more luminosity), using up more fuel. It has more fuel to begin with because it is more massive, but it uses it up at a greater rate because it requires more fuel to maintain its equilibrium. A more massive star therefore has a shorter lifetime.
+
+Given this information, the individual groups shown on the Hertzsprung-Russell diagram can be discussed:
+
+\begin{itemize}
+
+	\titleitem{Main sequence}
+
+	Most stars --- including our sun --- fall into a narrow band called the \emph{Main Sequence}. In this category, the luminosity of the star rises with temperature.
+
+	\titleitem{Giants and Supergiants}
+
+	Some stars are relatively cool, yet have a high luminosity. Given the Stefan-Boltzmann law, this suggests that the stars must have a great surface area (many unit areas) which compensates for their overall low intensity (power readiated \emph{per} unit area). These stars are either known as \emph{Giants} or, if they have an even greater luminosity with no significant increase in intensity, as \emph{Supergiants}.
+
+	\titleitem{White dwarfs}
+
+	On the other extreme, there are certain stars that have a very high temperature and thus radiate a greater amount of power per unit area, but a low luminosity. This, by the same reasoning, indicates that the other relevant factor of proportionality in the Stefan-Boltzmann law --- the surface area of the stars --- is low. These stars are known as \emph{White dwarfs}.
+
+	\titleitem{Instability strip}
+
+	The luminosity of some stars --- such as \emph{Mira} --- varies periodically. These stars, found in the \emph{instability strip}, pulsate, expanding and contracting repeatedly as they struggle to strike a balnce between the pressure of gravitational collapse and the pressure of radiation from internal fusion reactions. Their luminosty changes with the change in their surface area.
+
+\end{itemize}
+
+
+\subsub{The Birth of stars}
+
+\subsubsub{The Nurseries}
+
+Stars are born inside enormous interstellar gas clouds known as \emph{nurseries}. These gas clouds consist almost entirely of hydrogen and helium left over from the Big Bang, alongside a small percentage of other, heavier elements.
+
+\subsubsub{Gravitational Collapse}
+
+The gravitational force of attraction between the particles of these gas clouds is at times so great, that they collapse. As the gas collapses it spins at an ever increasing rate. Many stars are teared apart by this rapid rotation before they have a chance to ignite the nuclear fusion reactions in its core that are necessary to classify it as a star and to balance its gravitational pressure. Nevertheless, a few of these rotating clouds of gas can give off a portion of their momentum to the surrounding gas and slow down enough to become a \emph{protostar}. A protostar is formed when the cloud of gas continuously shrinks and thereby transforms gravitational potential energy into thermal energy that radiates out from the core. Moreover, heavier elements in the gas cloud may join to dust particles and form to planets over time.
+
+\subsubsub{Ignition}
+
+As the process of star formation and gravitational collapse goes on, the temperature at the core of the protostar increases to about $10^6$ degrees Kelvin, deuterium --- an isotope of hydrogen with one neutron and one proton --- fuses to helium. These nuclear reactions produce sufficient energy to blow away a part of the outer layer of gas surrounding the protostar. However, deuterium soon runs out and the inward collapse of the protostar continues until the thermal energy created is enough to ignite hydrogen fusion reactions, making it a \emph{T Tauri-type star}, an irregular varying star surrounded by gas and dust. Once stabilized (once the radiation pressure produced from the fusion reactions balances the stars gravitational pressure), it can be classified according to a Hertzsprung-Rusell diagram and will remain fusing hydrogen to helium for billions of years.
+
+\subsub{The Death of Stars}
+
+There comes a time in the life of any star where its hydrogen supply depletes. After many billions of years of bright shimmering, mainly helium is left at the core of a star. Given that the radiation pressure from the fusion of hydrogen to helium is now no longer strong enough to balance the star's own gravitational force and keep it in equilibrium, it once more begins to collapse. This ignites hydrogen fusion in a shell surrounding the core, causing the star to swell up. It is now a red giant, a star that has relatively low temperature and intensity (power radiated per area unit) but is massive enough to be very luminous given its large surface area. Nevertheless, its hydrogen supply only continues to deplete, resulting in two possible scenarios. These scenarios differ according to the mass of the star and whether it is greater or less than the \emph{Chanrasekhar limit} of about 1.4 solar masses $[M_s]$.
+
+\subsubsub{Below the Chandrasekhar Limit}
+
+Stars whose mass is below the Chandrasekhar limit of $1.4 M_s$, such as the sun itself, continue to collapse until the pressure, density and temperature at their cores are sufficiently high, about $10^8\, K$, to cause helium nuclei to fuse to heavier elements. At this point the energy generated is so high that the outer shell of the planet blasts way in an explosive reaction. This moment is called the \emph{helium flash}. After this explosion, the star continues to shrink and becomes a white dwarf, a star with high temperature but low overall surface area, and becomes surrounded by ejected gases that are called a \emph{planetary nebula} (a nebula is an interstellar cloud of plasma --- ionized gas). The star then continues to decrease in intensity and luminosity over many more billion years as its fuel continues to deplete even further. However, it cannot shrink or collapse beyond a certain minimum that is mandated by the \emph{Pauli exclusion principle}, which states that due to \emph{electron degeneracy pressure} two electrons (generally fermions) cannot exist on exactly the same energy level (of an atom).
+
+\subsubsub{Above the Chandrasekhar Limit}
+
+Stars that surpass the Chandrasekhar limit with a mass of more than $1.4$ times that of the sun remain on the main sequence for a shorter time because they use up their fuel at a faster rate to balance the greater gravitational pressure that is the result of their greater mass. Once a red giant, such stars do not experience a helium flash when temperatures are sufficient to fuse helium nuclides together, but continue to collapse and become even hotter and denser. At a temperature of about $3 \cdot 10^9$ Kelvin fusion can even cause very heavy elements like neon, silicon or even iron (the heaviest element) to be formed. This causes an enormous amount of \emph{neutrinos} to be released --- packets of energy produced during nuclear reactions. These neutrinos carry away large quantities of energy alongside the usual electromagnetic radiation that results from the fusion reactions. Therefore, the core of the star depletes of energy even faster, continuing the collapse of the star and producing more and more neutrinos carring away more and more energy at an ever increasing rate. At a certain point, this \emph{neutrino flux} is sufficient to blast away the mantle of the star. This explosion is called a supernova. A supernova is the most luminous phenomenon in the galaxy and can increase a star's luminosity by a factor of one billion, making it visible at 30 000 times the usual distance.
+
+As explained, the temperature, pressure and density at the core of a star above the Chandrasekhar limit continuously increases as it collapses towards the very end of its life. As a matter of fact, the pressure at the core is strong enough that electrons and protons are smashed together to form neutrons. Therefore, such a star becomes known as a \emph{neutron star} and consists entirely of neutrons. The density of such a star is enormous, as now all the empty space that is normally found in atoms is removed.
+
+Once the supernova explosion has thereafter taken place, there exists the possiblity that remnants of stars that had a solar mass of more than $2.5\, M_s$ collapse further, to a single poit of infinite density --- a \emph{singularity}, i.e. a black hole. The gravitational force of attraction of such a black hole is so strong, that not even light can escape it ($\rightarrow$ ``black''). The maximum radius inside which a star must be compresed for it become a black hole can be calculated using Newton's laws and the definition of the second cosmic velocity --- the \emph{escape velocity}: $$v_{esc} = \sqrt{\frac{2 \cdot G \cdot M}{r}}$$ The escape velocity of a black hole must be greater than the speed of light $c$: $$v_{esc} > c \Rightarrow \sqrt{\frac{2 \cdot G \cdot M}{r}} > c$$ Therefore, the \emph{maximum} radius of such a black hole must be: $$r = \frac{2 \cdot G \cdot M}{c^2}$$ This is known as the \emph{Schwarzschild radius} of the object. For earth with its mass of $5.98 \cdot 10^{24}\, kg$ this radius would have to be: $$r = \frac{2 \cdot 6.673 \cdot 10^{-11} \cdot 5.98 \cdot 10^{24}}{(3 \cdot 10^8)^2} \approx 8.87 \cdot 10^{-3} \, m$$ For the earth to be classified as a black hole, its mass would have to fit into a sphere about the size of an egg.
 
 \end{document}
