@@ -1,0 +1,345 @@
+% Natural Phenomena
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Natural Phenomena}
+
+\sub{Optical Phenomena}
+
+\subsub{The Law of Reflection}
+
+When a light ray hits a reflective surface (i.e. a mirror), the law of reflection mandates that the angle of the incident ray $\theta_i$ and the angle of the reflected ray $\theta_r$ are equal relative to a normal to the surface at the reflection point. The incident ray is the light ray stemming from the light source while the reflected ray is the light ray that is the product of reflection of the incident ray off of the reflective surface. 
+
+\begin{plot}
+
+	% Surface
+	\draw (-4, 0) -- (4, 0) node [midway, below] {Reflective surface};
+
+	% Normal
+	\draw [dashed] (0, 4) -- (0, 0);
+
+	% Incident ray
+	\draw (135:4) node [above] {Incident Ray} -- (0, 0);
+
+	% Angle of incidence
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=135];
+
+	% Theta_i
+	\draw (-0.5, 1) node {$\theta_i$};
+
+	% Reflected ray
+	\draw [->] (0, 0) -- (45:4) node [above] {Reflected Ray};
+
+	% Angle of reflection
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=45];
+
+	% Theta_r
+	\draw (0.5, 1) node {$\theta_r$};
+
+	% Law of Reflection
+	\draw (0, -1) node {$\theta_i = \theta_r$};
+
+\end{plot}
+
+\subsub{The Law of Refraction}
+
+The law of refraction pertains to the situation in which an incident light ray travelling from one transparent medium with a certain \emph{optical density}, in which its velocity is $c_1$, crosses the boundary to another transparent medium. Depending on the optical density of the second medium compared to the first, the incident light ray with experience a change in its velocity, which is then referred to as $c_2$. This will cause the light ray to be bent, such that there is a noticable difference between the angle of incidence $\theta_i$ and the angle of refraction $\theta_i$ relative to a normal to the boundary between the media at the point of incidence. The law of refraction says that the ratio of the sine of the incident $\sin \theta_i$ to that of the refracted angle $\sin \theta_r$ is equal to the ratio $c_1 : c_2$ of the velocity of the light ray in the two media. This law is often referred to as \emph{Snell's law}. The ratio $c_1 : c_2$ is referred to as the \emph{refractive index} $n_{1, 2}$ and is constant for any two given media and their optical densities: $$\frac{\sin \theta_i}{\sin \theta_r} = \frac{c_1}{c_2} = n_{1, 2}$$ The subscript numbers of the refractive index indicate which is the first medium (1) and which is the second (2). This direction can be swapped so that the refractive index $n_{2, 1}$ stands for the change in velocity from medium 2 to medium 1 (the opposite direction) by taking the reciprocal of any refractive index $n_{1, 2}$: $$n_{2, 1} = n_{1, 2}^{-1} = \frac{1}{n_{1, 2}}$$
+
+\pagebreak
+
+ \begin{plot}
+	% Surface
+	\draw (-4, 0) -- (4, 0);
+
+	% First medium
+	\draw (-4, 1) node {First medium};
+
+	% Second medium
+	\draw (-4, -1) node {Second medium};
+
+	% Refractive index
+	\draw (4.5, 0) node {$n_{1, 2}$};
+
+	% Normal
+	\draw [dashed] (0, 4) -- (0, -4);
+
+	% Incident ray
+	\draw (135:4) node [above] {Incident Ray} -- (0, 0);
+
+	% Angle of incidence
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=135];
+
+	% Theta_i
+	\draw (-0.5, 1) node {$\theta_i$};
+
+	% Reflected ray
+	\draw [->] (0, 0) -- (302:4) node [below] {Reflected Ray};
+
+	% Angle of reflection
+	\draw (0, -1.5) arc [radius=1.5cm, start angle=270, end angle = 302];
+
+	% Theta_r
+	\draw (0.4, -1) node {$\theta_r$};
+
+	% Law of Refraction
+	\draw (0, -5)
+	      node {$\frac{\sin \theta_i}{\sin \theta_r} = \frac{c_1}{c_2}$};
+\end{plot}
+
+ From this law, two general observations can be made:
+
+ \begin{enumerate}
+ 	\item A light ray is bent toward the normal when entering an optically denser medium, such that $n_{1, 2} > 1$ and $c_1 > c_2$. This would be the case if a light ray would move from air into water.
+
+ 	\item A light ray is bent away from the normal when leaving an optically denser mediam, such that $n_{1, 2} < 1$ and $c_1 < c_2$. This occurs, for example, when light leaves glass and enters air.
+ \end{enumerate}
+
+ Often, not the refractive index between two media is given, but the \emph{absolute diffractive index} of a medium, e.g. $n_{glass} \approx 1.5$. This is the ratio of the speed of light in vacuum to the speed of light in that medium: $$n_{medium} = \frac{c}{c_{medium}}$$ The refractive index $n_{1, 2}$ between two media can then be found by dividing the absolute refractive index $n_2$ of the \emph{second} medium by the absolute refractive $n_1$ of the \emph{first} medium. When speaking of absolute diffractive indices, a greater value indicates a greater optical density (a reduced speed of light). $$n_1 = \frac{c}{c_1} \Rightarrow c_1 = \frac{c}{n_1} \hspace{1cm} \text{and} \hspace{1cm} n_2 = \frac{c}{c_2} \Rightarrow c_2 = \frac{c}{n_2}$$ $$\Downarrow$$ $$n_{1, 2} = \frac{c_1}{c_2} = \cfrac{\cfrac{c}{n_1}}{\cfrac{c}{n_2}} = \frac{n_2}{n_2}$$ $$\Downarrow$$ $$\frac{\sin \theta_i}{\sin \theta_r} = \frac{c_1}{c_2} = \frac{n_2}{n_1} = n_{1, 2}$$
+
+\pagebreak
+
+\subsub{Total Internal Reflection}
+
+When travelling from a medium of higher absolute refractive index (optical density) to one of a lower refractive index, the angle of refraction is greater than the angle of incidence --- the light ray is bent away from the normal. However, \emph{refraction} can really only occur if the refracted angle is greater than 90 degrees, else it would not actually enter the second medium. The limiting angle of incidence above which no refracted ray can be formed is called the \emph{critical angle} $\theta_c$. For incident angles greater than $\theta_c$ the rays reflect back into the first medium. This is referred to as \emph{total internal reflection}. A formal definition for the critical angle reads:
+
+\begin{displayquote}
+	The critical angle $\theta_c$ is the angle of incidence for a ray crossing the boundary from a medium of higher optical density into one of lower optical density (or refractive index) at which the law of refraction predicts a refracted angle of $90\degree$. No refracted ray can form, thus the incident ray undergoes \emph{total internal reflection}.
+\end{displayquote}
+
+The critical angle can easily be found for any two given media, where medium 1 is the more optically dense, given that the angle of refraction at an angle of incidence equal to the critical angle is $90\degree$, whose sine is 1: $$\frac{\sin \theta_i}{\sin \theta_r} = n_{1, 2} \hspace{1cm} \text{or} \hspace{1cm} \frac{\sin \theta_i}{\sin \theta_r} = \frac{n_2}{n_1}$$ $$\Downarrow$$ $$\sin \theta_i = n_{1, 2} \hspace{1cm} \text{or} \hspace{1cm} \sin \theta_i = \frac{n_2}{n_1}$$ Thus it can be stated that the sine of the critical angle is equal to the refractive index of any two given media, where medium 1 is the more optically dense. For example, the critical angle for light travelling from glass ($n_g = 1.5$) into air would be: $$\sin \theta_c = \frac{n_2}{n_1} \Rightarrow \theta_c = \sin^{-1} \frac{1}{1.5} \approx 42\degree$$
+
+ \begin{plot}
+	% Surface
+	\draw (-4, 0) -- (4, 0);
+
+	% First medium
+	\draw (-4, 1) node {First medium};
+
+	% Second medium
+	\draw (-4, -1) node {Second medium};
+
+	% Refractive index
+	\draw (4.5, 0) node {$n_{1, 2}$};
+
+	% Normal
+	\draw [dashed] (0, 4) -- (0, -4);
+
+	% Incident ray
+	\draw  (135:4) node [above] {Incident Ray} -- (0, 0);
+
+	% Angle of incidence
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=135];
+
+	% Theta_i
+	\draw (-0.5, 1) node {$\theta_i$};
+
+	% Reflected ray
+	\draw [->, red] (0, 0) -- (3, 0) node [above, black] {Reflected Ray};
+
+	% Angle of reflection
+	\draw (0, -1.5) arc [radius=1.5cm, start angle=270, end angle = 360];
+
+	% Theta_r
+	\draw (0.6, -0.7) node {$\theta_c$};
+\end{plot}
+
+\pagebreak
+
+One real-world application of the principle of total internal reflection are fiber optic cables. In such cables data is transmitted via light at very high speeds. There is an inner glass core with a refractive index $n_1$ and an outer glass cladding with a refractive index $n_2$. The glass core has a higher refractive index than the glass cladding, such that there is always total internal reflection (the angle of incidence is always greater than the critical angle):
+
+\begin{plot}
+	
+	% Glass core + label
+	\draw (0, 0) circle [radius=0.5cm]
+	   -- (3, 0) node [right] {Glass core ($n_1$)};
+
+	% Glass cladding
+	\draw (0, 0) circle [radius=1.8cm];
+
+	% Glass cladding label
+	\draw (0, 1.5) -- (3, 1.5) node [right] {Glass cladding ($n_2$)};
+
+	% Protective coating
+	\draw (0, 0) circle [radius=2cm];
+
+	% Protective coating label
+	\draw (0, -1.9) -- (3, -1.9) [right] node {Protective coating};
+
+	% Caption
+	\draw (2, -3) node {A fiber optics cable};
+
+\end{plot}
+
+\subsub{Dispersion}
+
+Dispersion is the separation or \emph{decomposition} of white light into its color components, the visible light spectrum: red, orange, yellow, green, blue and violet. It is commonly observed when white light is shown through a prism (a triangular body of glass). Such dispersion is possible because the different color components of the visible spectrum have different wavelengths and frequencies. Different frequencies result in a different degree of bending when moving between media of different optical densities. Their velocity changes by different amounts and thus the refractive indices of the individual color components differ from each other as well. The higher the frequency (and the shorter the wavelength) of a color component, the more it is refracted --- the more it bends towards the normal when moving from a medium of higher optical density to one of lower optical density. Thus, violet light is bent the most and red light the least, given that the wavelength of violet light, around 400 nm, is much shorter than that of red light, around 700 nm. The result of dispersion through a prism is a continuous (band) spectrum of light.
+
+\begin{plot}
+
+	% Prism
+	\draw (0, 0) -- (6, 0) node [midway, above] {Prism} -- (3, 5) -- (0, 0);
+
+	% First normal
+	\draw [dashed] (0.5, 3.1) -- (1.5, 2.5) -- (2.5, 1.9);
+
+	% White light
+	\draw (1.5, 2.5) -- +(200:4) 
+	      node [pos=0.7, rotate=20, above] {White light};
+
+	\foreach \c/\x in {red/4.5, orange/4.55, yellow/4.6,
+	                   green/4.65, blue/4.7, violet/4.75}
+	{
+		\draw [\c, line width=1.2pt] (1.5, 2.5) -- (\x, {(-5/3) * \x + 10});
+
+		\draw [\c, line width=2pt] (\x, {(-5/3) * \x + 10})
+		                        -- ({\x+4}, {0.4 * (25 - \x^2)});
+	}
+
+\end{plot}
+
+The angle of incidence $\alpha_1$ on the left side of the prism (entry point) is greater than the angle of refraction $\beta_1$ at that point. The rays are bent towards the normal because they are entering a medium of higher refractive index and optical density (glass) from one of lower optical density (air). On the far (right) side of the prism (exit point), however, the opposite is the case. The incident angle $\alpha_2$ is less than the angle of refraction $\beta_2$. The light rays are now entering a medium of less optical density than the one they came from, thus their velocity increases upon exit and they are bent away from the normal. On the left side, $n_{1, 2}$ is therefore greater one, as $c_1 > c_2$, and on the right side $n_{1, 2}$ it is less than one, as $c_1 < c_2$.
+
+It should be mentioned that dispersion of white light works best with triangular prisms because the angles of the normal to the surface at the point of refraction at either side of the prism causes the light to be bent away from each other twice. If a rectangle were to be used, dispersion could not effectively take place because, after being dispersed upon entering the rectangle (where different frequencies bend differently, away from each other), the individual color components of the white light would bend back towards each other when leaving the rectangle at the opposite side. The reason for this is that the normal would be at the same angle to the surface both times such that the different frequencies would bend towards the normal upon entering and away from the normal upon exit. There would be no net difference between the light before and after going through the rectangular prism.
+
+\subsub{Rainbows}
+
+A perfect example of a natural phenomenon involving the dispersion and decomposition of white light into its color components is a rainbow. A rainbow is formed when light from the sun, which must be behind the observer, hits tiny water or rain droplets dispended in the air. These water droplets, having a different optical density than air, act as prisms. Some of the light hitting a water droplet reflects off of it, but most refracts into the droplet bending towards the normal, given that water has a higher refractive index than air. As was discussed, the different color components of the visible spectrum of light have different frequencies and wavelengths, causing each to refract at different angles. Higher frequencies and shorter wavelengths cause more refraction of the color components. Therefore, violet and blue light bend the most while red and orange bend the least (towards the normal). In the case of the formation of a rainbow, the refracted light rays reach the other end of the rain droplet at an angle that is greater than the critical angle of water, around $48.6 \degree$. Thus, there is total internal reflection, causing the light rays not to refract out of the rain droplet, but to reflect and thus move towards another point within the droplet. At this point, the light rays do exit the droplet and refract and disperse again, with higher frequency light components bending away furthest from the normal. The dispersion of white light is what is seen as a rainbow.
+
+\begin{plot}
+
+	\coordinate (A) at (-2, {sqrt(3^2 - 2^2)});
+
+	% Droplet
+	\draw (0, 0) circle [radius=3cm];
+
+	% Droplet label
+	\draw (0, -3.5) node {Water droplet};
+
+	% White light
+	\draw (A) -- +(-3, 0)
+	      node [above, pos=0.7] {White light};
+
+	% Normal
+	\draw [dashed] (-2, {sqrt(3^2 - 2^2)})+(135:1) -- +(315:1);
+
+	% Colors
+	\foreach \c/\x/\y in {red/2.75/-2.4, orange/2.8/-2, yellow/2.85/-1.4,
+	                   green/2.9/-1, blue/2.95/-0.4, violet/2.98/0}
+	{
+		\draw [\c, line width=1pt] (A) 
+		   -- (\x, {sqrt(3^2 - (\x)^2)}) 
+		   -- (-\x, {-sqrt(3^2 - (\x)^2)});
+
+		\draw [\c, line width=2.5pt] 
+		      (-\x, {-sqrt(3^2 - (\x)^2)})
+		   -- (-5, \y);
+	}
+
+\end{plot}
+
+\subsub{Mirages}
+
+Another optical phenomenon that is found in nature are \emph{mirages}. Mirages are the result of the fact that the temperature of air influences its refractive index. The greater the temperature of the air, the lower is its optical density and thus its refractive index --- the faster the speed of the light rays. On the other hand, colder air has a greater refractive index, thus light is bent towards the normal. In effect, light is bent when it moves through air that varies in temperature. Depending on whether hot air is at the bottom or at the top (of the surface of the earth), either an \emph{inferior} or a \emph{superior} mirage will be created.
+
+\subsubsub{Inferior Mirage}
+
+An inferior mirage is created when warm or hot air is at the bottom and cold air at the top. It should be mentioned that these temperatures increase in their direction, i.e. the air gets warmer and warmer towards the surface and colder and colder away from it. Given that warm air has a lower refractive index and optical density, it will cause light rays to bend away from the normal when the incident ray comes from air of lower temperature. Therefore, when light from the sun reflects off of an object downwards at an observer into gradually increasing temperatures, it will continuously bend upwards until it will have made a full change in direction. After that point, the increasingly cold air in the upward direction will cause the light to bend towards the normal, given the greater optical density, thus continuing the circular motion. A mirage is created when the light consequently reaches the eye of the observer from a position below him. This will cause our eyes and brain to think that the light really came from a position below, following the angle of incidence on the eye in a straight line and into the earth. This is especially common with light coming from the sky (the blue component of white light scattered by air molecules) which will produce the optical illusion of water on the ground in this way.
+
+\begin{plot}
+	
+	% Surface
+	\draw (0, 0) node [left] {Surface} -- (8, 0);
+
+	% Temperature direction
+	\draw [->] (8.5, 3) -- +(0, -2.8)
+	      node [midway, right] {Increasing $\degree C$};
+
+	% Eye of the Observer, part 1
+	\draw (1, 2.5) -- ++(202.5:1) -- +(337.5:1);
+
+	% Eye of the Observer, part 2
+	\draw (0.8, 1.8) arc [radius=0.8, start angle=-22.5, end angle=22.5];
+
+	% Eye of the Observer, part 3
+	\draw (0.75, 2.1) circle [radius=3pt];
+
+	% Eye of the Observer, label
+	\draw (0.5, 1.2) node {Observer};
+
+	% Object
+	\draw (6, 1.5) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+	% Object label
+	\draw (6.5, 1) node {Real object};
+
+	% Light ray from sun
+	\draw (4, 3) node [above] {Light from sun} -- (6, 2);
+
+	% Bent light
+	\draw (6, 2) .. controls (3.5, 0) .. (1, 2);
+
+	% Apparent path of light
+	\draw [dashed] (1, 2) -- +(-38:6.35) 
+	      node [pos=0.8, left] {Apparent path of light \,\,\,};
+
+	% Mirage
+	\draw [dashed] (6, -2.3) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+	% Mirage label
+	\draw (8, -1.8) node {Mirage};
+
+\end{plot}
+
+\subsubsub{Superior Mirage}
+
+In case of a superior mirage, the increasingly cold air is at the bottom and the warmer at the top. When light reflects off of an object downwards towards an observer, it is thus bent towards the normal given the increasing optical density and refractive index of the air. The apparent path of light is in this case above the object, where the object from which the light originally reflected appears as the optical phenomenon that is a \emph{superior mirage}.
+
+\begin{plot}
+	
+	% Surface
+	\draw (0, 0) node [left] {Surface} -- (8, 0);
+
+	% Temperature direction
+	\draw [->] (8.5, 3) -- +(0, -2.8)
+	      node [midway, right] {Decreasing $\degree C$};
+
+	% Eye of the Observer, part 1
+	\draw (1, 1) -- ++(202.5:1) -- +(337.5:1);
+
+	% Eye of the Observer, part 2
+	\draw (0.8, 0.3) arc [radius=0.8, start angle=-22.5, end angle=22.5];
+
+	% Eye of the Observer, part 3
+	\draw (0.75, 0.6) circle [radius=3pt];
+
+	% Eye of the Observer, label
+	\draw (0.5, 1.3) node {Observer};
+
+	% Object
+	\draw (6, 2.3) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+	% Object label
+	\draw (6.5, 1.8) node {Real object};
+
+	% Light ray from sun
+	\draw (2, 4) node [above] {Light from sun} -- (6, 2.8);
+
+	% Bent light
+	\draw (6, 2.8) .. controls (5, 3) and (3, 2.5) .. (1, 0.6);
+
+	% Apparent path of light
+	\draw [dashed] (1, 0.6) -- +(40:6.5) 
+	      node [pos=0.5, left] {Apparent path of light \,\,\,};
+
+	% Mirage
+	\draw [dashed] (6, 4.2) -- +(1, 0) -- +(1, 1) -- +(0, 1) -- +(0, 0);
+
+	% Mirage label
+	\draw (7.8, 4.7) node {Mirage};
+
+\end{plot}
+
+\end{document}

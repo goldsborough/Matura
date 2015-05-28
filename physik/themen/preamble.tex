@@ -28,6 +28,10 @@
 
 \usepackage{xfrac}
 
+\usepackage{url}
+
+\usepackage{cancel}
+
 \everymath{\displaystyle}
 
 % Header / footer settings
@@ -35,7 +39,6 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.2mm}
-\fancyhead[C]{!!! CHANGE THIS !!!}
 \renewcommand{\footrulewidth}{0.2mm}
 \fancyfoot[L]{Peter Goldsborough}
 \fancyfoot[C]{\thepage}
@@ -58,11 +61,13 @@
 \addtolength{\parskip}{\baselineskip}
 
 
-\newcommand{\heading}[1]{\begin{center}\Huge \textbf{#1}\end{center}\par}
+\newcommand{\heading}[1]{\fancyhead[C]{#1} \begin{center}\Huge \textbf{#1}\end{center}\par}
 
 \newcommand{\sub}[1]{\vspace{\parskip}{\LARGE\textbf{#1}}}
 
 \newcommand{\subsub}[1]{{\large \textbf{#1}}}
+
+\newcommand{\subsubsub}[1]{\textbf{#1}}
 
 \newcommand{\colvec}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
@@ -71,3 +76,16 @@
 \newcommand{\bolditem}[1]{\item \textbf{#1}}
 
 \newcommand{\titleitem}[1]{\bolditem{#1} \par}
+
+\newcommand{\defas}{\, \dots \, \, }
+
+\newenvironment{plot}[1][h]
+{
+	\begin{figure}[#1]
+		\centering
+		\begin{tikzpicture}
+}
+{
+		\end{tikzpicture}
+	\end{figure}
+}
