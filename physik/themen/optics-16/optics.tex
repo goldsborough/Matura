@@ -1,12 +1,437 @@
 % Optics
 
-\input{preamble.tex}
+\input{../preamble.tex}
 
 \begin{document}
 \thispagestyle{plain}
 
 \heading{Optics}
 
+\sub{Diffraction}
 
+Diffraction is the phenomenon where waves spread out when passing through a gap or passing an object. It is this phenomenon which, for example, enables you to hear the voice of a persion next to you, as the sound coming from the larynx of the person spreads out when passing through his or her mouth. Moreover, if there were no diffraction, radio, television or other electromagentic waves and signals could not pass around mountains to spread into valleys. There are mainly three cases of the amount of diffraction that occurs when a wave passes a gap or an object that should be investigated. During the discussion of these three cases, $\lambda$ denotes the wavelength of the relevant wave and $a$ the size of the gap through which the or obstacle around which it passes.
+
+\begin{enumerate}
+
+	\item No significant diffraction occurs if the gap $a$ is very much larger than the wavelength, such that the wavefront passing through the gap is more or less parallel.
+
+	\begin{plot}
+
+		% Wall
+		\draw (0, 0.3) -- (0, 1) (0, 3) -- (0, 3.7);
+
+		% Waves label
+		\draw [->] (-2, -0.7) -- +(4, 0) node [midway, above] {Waves};
+
+		% Waves before gap
+		\foreach \x in {-1.5, -1, ..., -0.5}
+		{
+			\draw [blue, thick] (\x, 0.5) -- (\x, 3.5);
+		}
+
+		% Waves in and after gap
+		\foreach \x in {0, 0.5, ..., 1}
+		{
+			\draw [blue, thick] (\x, 1.2) -- (\x, 2.8);
+		}
+
+		% Relationship
+		\draw (3, 2) node {$\frac{\lambda}{a} \ll 1$};
+
+	\end{plot}
+
+	\item Diffraction starts to occur at the edges of the wavefront, the center of which is still mostly parallel, once the wavelength and gap size approach each other more than in case 1:
+
+	\begin{plot}
+
+		% Wall
+		\draw (0, -0.5) -- (0, 1) (0, 3) -- (0, 4.5);
+
+		% Waves label
+		\draw [->] (-2, -1.2) -- +(4, 0) node [midway, above] {Waves};
+
+		% Waves before gap
+		\foreach \x in {-1.5, -1, ..., -0.5}
+		{
+			\draw [blue, thick] (\x, 0.5) -- (\x, 3.5);
+		}
+
+		% Wave in gap
+		\draw [blue, thick] (0, 1.2) -- (0, 2.8);
+
+		% Waves in and after gap
+		\foreach \x in {0.5, 1, ..., 1.5}
+		{
+			% Parallel part
+			\draw [blue, thick] (\x, 1.2) -- (\x, 2.8);
+
+			% Upper diffraction
+			\draw [blue, thick] (\x, 2.8)
+			arc [radius=\x, start angle=0, end angle=90];
+
+			% Lower diffraction
+			\draw [blue, thick] (\x, 1.2)
+			arc [radius=\x, start angle=0, end angle=-90];
+		}
+
+		% Relationship
+		\draw (3, 2) node {$\frac{\lambda}{a} < 1$};
+
+	\end{plot}
+
+	\pagebreak
+
+	\item Completely circular or at least very significant diffraction occurs once the wavelength matches the gap size. There is no longer a parallel wavefront:
+
+	\begin{plot}
+
+		% Wall
+		\draw (0, 0) -- (0, 1.5) (0, 2.5) -- (0, 4);
+
+		% Waves label
+		\draw [->] (-2, -0.7) -- +(4, 0) node [midway, above] {Waves};
+
+		% Waves before gap
+		\foreach \x in {-1.5, -1, ..., -0.5}
+		{
+			\draw [blue, thick] (\x, 0.5) -- (\x, 3.5);
+		}
+
+		% Waves in and after gap
+		\foreach \x in {0.8, 1.4, ..., 2}
+		{
+			\draw [blue, thick] (0, {2 - \x})
+			arc [radius=\x, start angle=-90, end angle=90];
+		}
+
+		% Relationship
+		\draw (4, 2) node {$\frac{\lambda}{a} = 1$};
+
+	\end{plot}
+
+\end{enumerate}
+
+\sub{Double Slit Interference}
+
+Waves diffract when passing through a gap or \emph{slit}. This is true for a single slit and is equally true if the number of slits is increased to two. In this case, however, the resultant circular waves passing through the gaps \emph{superpose} and interact with each other, paving the way for another phenomen: \emph{interference}:
+
+\begin{plot}
+
+	% Wall with two slits
+	\draw (0, 0) -- (0, 1) ++(0, 0.5) -- ++(0, 1) ++(0, 0.5) -- ++(0, 1);
+
+	% Waves label
+	\draw [->] (-2, -0.7) -- +(4, 0) node [midway, above] {Waves};
+
+	% Waves before gap
+	\foreach \x in {-1.5, -1, ..., -0.5}
+	{
+		\draw [blue, thick] (\x, 0.5) -- (\x, 3.5);
+	}
+
+	% Lower waves
+	\foreach \x in {0.2, 0.4, ..., 1.2}
+	{
+		\draw [blue, thick] (0, {1.25 - \x})
+		arc [radius=\x, start angle=-90, end angle=90];
+	}
+
+	% Upper waves
+	\foreach \x in {0.2, 0.4, ..., 1.2}
+	{
+		\draw [blue, thick] (0, {2.75 - \x})
+		arc [radius=\x, start angle=-90, end angle=90];
+	}
+
+\end{plot}
+
+On the one hand, this interference can be \emph{constructive}, where components of the same sign meet such that their intensity is increased, which result in so called \emph{maxima}. For this to happen the path difference $\tau$ between the sources of the two (light) waves must be an integer multiple of the their wavelength $\lambda$: $\tau_{const} = n \cdot \lambda$. On the other hand, where troughs and peaks meet, \emph{destructive interference} takes place, causing \emph{minima} to be formed where the path difference is an integer multiple of one half the wave length: $\tau_{dest} = (n + \frac{1}{2}) \cdot \lambda$. In the case of light, a minimum would signify darkness, while a maximum results in an increase in brightness and intensity. 
+
+It should be noted, however, that the amplitude $A$ at a maximum is double the maximum that would be produced by a single slit and four times the intensity $I$, given that $I = A^2$. This increase in energy at the maxima balances the lack of energy at the minima and ensures that the energy in the interference pattern is the sum of energies emitted by the two slits. Thus, in total, there are no energy losses, which conforms to the law of energy conservation.
+
+Interestingly, if a screen is set at a certain distance $D$ to the double slit surface with a distance $d$ between the two slits, then, given that this distance $D$ is a lot greater than $d$, it can be assumed that any two light rays diffracted at either slit, travelling towards a certain point on the opposing screen (at which they superpose) are travelling parallel to one another, as their angles are equally small and thus relatively equal. This fact can be used to measure the path distance $\tau$ between any two given light rays, which ultimately yields a possiblity to measure the light's wavelength. For this, simple trigonometric expressions can be used to, first of all, determine the angle $\theta$ between any refracted light ray and the horizontal and then, subsequently, the path difference $\tau$ between two light rays. Depending on whether the light rays at the point of measurement on the screen interfere constructively or destructively, the path difference can then be used to calculate the wavelength $\lambda$ given that $\tau = n \cdot \lambda$ for constructive intereference (at a maximum) and $\tau = (n + \frac{1}{2}) \cdot \lambda$ for destructive interference (at a minimum). The integer $n$ in this case refers to the $n$-th \emph{order} or \emph{maximum}.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Wall with two slits
+		\draw (-0.05, 0) -- ++(0, 1) ++(0, 0.2) -- ++(0, 1) ++(0, 0.2) -- ++(0, 1);
+
+		% Distance between slits d
+		\draw [<->] (-0.5, 1.2) -- +(0, 1) node [midway, left] {$d$};
+
+		% First light ray with source point
+		\draw [->] (0, 1.1) -- +(15:4) node [pos=0.65] {$||$};
+
+		% Horizontal for first light ray
+		\draw [dashed] (0, 1.1) -- +(4, 0);
+
+		% Angle arc between horizontal and first light ray
+		\draw (2, 1.1) arc [radius=2cm, start angle = 0, end angle = 15];
+
+		% Angle theta between horizontal and first light ray
+		\draw (1.8, 1.35) node {$\theta$};
+
+		% Second light ray
+		\draw [->] (0, 2.3) -- +(15:4) node [pos=0.65] {$||$};
+
+		% Horizontal for second light ray
+		\draw [dashed] (0, 2.3) -- +(4, 0);
+
+		% Angle arc between horizontal and second light ray
+		\draw (2, 2.3) arc [radius=2cm, start angle = 0, end angle = 15];
+
+		% Angle theta between horizontal and second light ray
+		\draw (1.8, 2.55) node {$\theta$};
+
+		% Normal between light rays
+		\draw (0, 2.3) -- +(285:1.16);
+
+		% Zoom
+		\draw (0, 1.7) circle [radius=1cm];
+
+		% Caption
+		\draw (2, -0.5) node {Double slits at close};
+
+	\end{tikzpicture}
+	%
+	\hspace{0.5cm}
+	%
+	\begin{tikzpicture}
+
+		% Zoom
+		\draw (0, 0) circle [radius=2cm];
+
+		% d
+		\draw (-0.2, -1.3) -- +(0, 3);
+
+		% Distance d
+		\draw [<->] (-0.4, -1.3) -- +(0, 3) node [midway, left] {$d$};
+
+		% Normal
+		\draw (-0.2, 1.7) -- +(285:2.897);
+
+		% tau
+		\draw (-0.2, -1.3) -- +(15:0.776);
+
+		% tau distance
+		\draw [<->] (-0.1, -1.5) -- +(15:0.776) node [midway, below] {$\tau$};
+
+		% Angle arc
+		\draw (-0.2, 0.2) arc [radius=1.5cm, start angle=270, end angle=285];
+
+		% Angle theta
+		\draw (-0.05, 0.5) node {$\theta$};
+
+		% Right angle arc
+		\draw (-0.2, -1.3)++(15:0.776)+(105:0.3)
+		      arc [radius=0.3, start angle=105, end angle=195];
+
+		% Right angle dot
+		\draw [fill=black] (-0.2, -1.3)++(15:0.62)+(0,0.12)
+		      circle [radius=1pt];
+
+		% Caption
+		\draw (0, -2.3) node {$\tau, \theta$ and $d$};
+
+	\end{tikzpicture}
+	%
+	\hspace{0.5cm}
+	%
+	\begin{tikzpicture}
+
+		% Wall with two slits
+		\draw (0, 0) -- ++(0, 1.45) ++(0, 0.1) -- ++(0, 1.45);
+
+		% Screen
+		\draw (4, 0) -- +(0, 3);
+
+		% Normal
+		\draw [dashed](0, 1.5) -- +(4, 0);
+
+		% Right angle arc at screen
+		\draw (4, 1.8) arc [radius=0.3cm, start angle=90, end angle=180];
+
+		% Right angle dot
+		\draw [fill=black] (3.9, 1.62) circle [radius=1pt];
+
+		% Light rays 
+		\draw (0, 1.5) -- +(14:4.123);
+
+		% Theta arc
+		\draw (2, 1.5) arc [radius=2cm, start angle=0, end angle=14];
+
+		% Theta
+		\draw (1.7, 1.72) node {$\theta$};
+
+		% Distance D
+		\draw [<->] (0.1, 0.5) -- +(3.8, 0) node [midway, below] {$D$};
+
+		% Maximum label
+		\draw [->] (2.5, 2.6) -- (3.9, 2.6) node [pos=0, left] {$n$-th order};
+
+		% 0-th order
+		\draw (4.15, 1.3) node {$0$};
+
+		% w_n
+		\draw [<->] (4.15, 1.5) -- +(0, 1) node [right, midway] {$w_n$};
+
+		% n-th order
+		\draw (4.15, 2.7) node {$n$};
+
+		% Caption
+		\draw (2, -0.5) node {Double slits at distance + screen};
+
+	\end{tikzpicture}
+\end{figure}
+
+As can be taken from these depictions, the path difference $\tau$ is the opposite side in a right triangle in which the distance between the slits $d$ is the hypotenuse and $\theta$ the relevant angle. Thus, for the $n$-th order \emph{maximum} the following equation may be used to calculate $\tau$: $$\sin \theta = \frac{\tau}{d} = \frac{n \cdot \lambda}{d} \hspace{1cm} \Rightarrow \hspace{1cm} n \cdot \lambda = \sin \theta \cdot d$$ And for the $n$-th order \emph{minimum}: $$\sin \theta = \frac{\tau}{d} = \frac{(n + \frac{1}{2}) \cdot \lambda}{d}$$ The distance between the double slits $d$ is a known value. The angle $\theta$ is calculated from knowledge that $\theta$ is also the angle at which (approximately all) the light rays travel towards a certain point. Thus, knowing the distance $D$ between the slits and the screen and from measurement of the distance $w_n$ between the $n$-th order maximum and the $0$-th order (middle of the screen), the inverse tangent of the two can be used to calculate $\theta$: $$\tan \theta = \frac{w_n}{D}$$
+
+If more than two slits are used, the same principles of interference apply, though with more light rays leading to a different \emph{interference pattern}. In such a case, the surface with many slits through which the light rays pass is referred to as a \emph{diffraction grating}. In case of such a diffraction grating, the distance $d$ between the slits is known as the \emph{grating constant}. Usually, a diffraction grating is defined as having some number of slits $n$ per meter or millimeter, thus $d$ would then be equal to the inverse of of $n$ in the respective unit. There are two main advantages that diffraction gratings with many slits have over gratings with only two (double-slit gratings). The first is that the maxima are much brighter for many slits than for only two, as for every extra slit one more light ray superposes with the others at the maxima. The second is that maxima are much \emph{sharper}, i.e. they are much more well defined with almost no intensity in between invidvidual maxima of order $n$. The reason for this is that with many slits, only a slight path distance of, say, $\tau = 1.1 \cdot \lambda$, means that at the point at which the light rays coming from the grating meet, one wave will arrive with a path difference of $\tau$, another with $2 \tau$, another with $3 \tau$ and so on. In effect, for any light ray arriving with a path difference of $x \cdot lambda$, where $x$ may be any number and not just an integer, there will be another arriving with $(x + \frac{1}{2}) \cdot \lambda$ such that they cancel. The maxima will therefore not only be brighter because more light rays meet with a path difference of $n \cdot \lambda$ (more constructive intereference), but also sharper because any non-integer deviation from $n \cdot \lambda$ will cause any light ray to be canceled by another with one half more of the wavelength in path difference.
+
+\sub{Polarization}
+
+Light waves are electromagnetic waves and thus \emph{transverse} waves, meaning that they oscillate and vibrate perpendicular to the direction of the light ray's motion. However, this does not mean that there is only one plane for them to oscillate in space, as they can always be rotated around the axis of motion. These different orientations are referred to as \emph{polarization directions}. If the vibration is parallel to a horizontal plane then the wave is said to be \emph{horizontally plane-polarized}, if it is parallel to a vertical plane such wave is referred to as a \emph{vertically plane-polarized wave}. In general, a transverse wave is \emph{polarized} if it vibrates entirely parallel to a plane in space. In contrast, longitudinal waves cannot be polarized because they have a unique vibration direction parallel to the wave direction. It should is also be mentioned that electromagnetic waves, such as visible light, consist of an electric field $\vec{E}$ and a magnetic field component $\vec{B}$, each vibrating perpendicular to the other and to the direction of the wave. Thus, when discussing polarization, it is convention to define the polarization direction of an electromagnetic wave as the direction in which the electric field varies and not the magnetic field. 
+
+However, most conventional sources of light such as any filament lamp or the sun emit \emph{unpolarized} light. This means that rays coming from such sources contain photons of all polarization directions, superposed.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Direction of movement
+		\draw [fill=black] (0, 0) circle [radius=1.2pt];
+
+		\foreach \a in {30, 60, ..., 360}
+		{
+			\draw [->] (0, 0) -- +(\a:1);
+		}
+
+		% Caption
+		\draw (0, -1.5) node {Unpolarized light};
+
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	\begin{tikzpicture}
+
+		% Direction of movement
+		\draw [fill=black] (0, 0) circle [radius=1.2pt];
+
+		% Polarization direction
+		\draw [<->] (0, -1) -- (0, 1);
+
+		% Caption
+		\draw (0, -1.5) node {Polarized light};
+
+	\end{tikzpicture}
+\end{figure}
+
+There are two means by which unpolarized light can be polarized, described in the following paragraphs.
+
+\subsub{Polarization Filters}
+
+Unpolarized light may be transmitted through a \emph{polarizing filter} to transform it into plane-polarized light. Polarizing filters are sheets of long-chain, transparent polymer molecules that absorb any light component that is not parallel to its \emph{transmission axis}, transferring it into thermal energy. As a result, the previously unpolarized light exiting the polarization filter is now completely plane-polarized parallel to the transmission axis. The intensity $I$ and amplitude $A$ of the resultant light wave is dependent on its initial amplitude $A_0$ and intensity $I_0$ as well as the angle $\theta$ between the incident ray and the transmission axis. This yields to the following equation known as \emph{Malus' law}: $$A = A_0 \cdot \cos \theta \hspace{2cm} I = A^2 = (A_0 \cdot \cos \theta)^2 = A_0^2 \cdot \cos^2 \theta \hspace{2cm} I = I_0 \cdot \cos^2 \theta$$ As always, the intensity of a light wave is defined as the square of its amplitude. In this case, the cosine of the angle $\theta$ is used, as an angle of 0 degrees indicates that the incident light ray already was plane polarized parallel to the transmission axis, such that $\cos 0 = 1$. On the other hand, a light ray that is vertically plane-polarized will be absorbed entirely by a horizontal transmission axis, given that $\cos 90 = 0$. It should be noted here that if entirely unpolarized light is passed through a polarizing filter, the resultant intensity of the polarized light will be one half of the incident intensity. The reason for this is that, because unpolarized light contains light of all polarization directions, exactly one half of the light will be partially or completely parallel and the other half partially or completely perpendicular to the transmission axis, the first half passing through and latter half being absorbed and transferred into thermal energy.
+
+Given the definition of Malus' law it can be concluded that if two polarizing filters are placed in one line with unpolarized light, in such a way that the transmission axis of the first polarization filter is perpendicular to that of the second, no light will pass through the second filter. The reason why is that light will pass through the first filter completely plane-polarized parallel to the transmission axis of the first filter with an intensity $I_1$ of one half the incident intensity $I_0$. Then, it will hit the second polarizing filter at an angle $\theta$ of 90 degrees, where all light will consequently be absorbed, yielding an intensity $I_2$ of 0: $$I_1 = \frac{I_0}{2} \thus I_2 = I_1 \cdot \cos^2 \theta = \frac{I_0}{2} \cdot \cos^2 90 = 0$$ On the other hand, if a third filter were to be place between the two just mentioned, the light would have to leave the final filter with an intensity greater zero (unless the second filter is also perpendicular to the first). Leaving the first filter, the light would again be reduced to one half of its initial intensity and be now plane-polarized parallel to the transmission axis of the first filter. Then, upon passing through the second filter, the component of the light that is parallel to the second transmission axis would be selected according to the cosine of the angle $\theta$ between the now polarized light and the second filter. Given that this second filter is also not perpendicular to the third, some of the light exiting the second filter would again be let through. This is true for all angles between the transmission axes of the first and second filter (except $90\degree$) and reaches its maximum at $45\degree$.
+
+\subsub{Reflection from Transparent Surfaces}
+
+The second possibility to plane-polarize unpolarized light is to reflect it off a transparent surface such a water. When a light ray hits such a transparent surface, the reflected ray is partially plane-polarized parallel to the surface and the refracted ray is partially plane-polarized perpendicular to the surface. At a certain angle of incidence, called the \emph{Brewster angle} $\theta_b$, the refracted and reflected components are perpendicular to each other and entirely plane-polarized. The tangent of this angle is equal to the refractive index $n_{1, 2}$ of the incident medium and the transparent medium (the first medium is usually air, such that $n_{1,2}$ is simply equal to the absolute refractive index $n_{med}$ of the medium): $$\tan \theta_b = n_{1, 2}$$
+
+\begin{plot}
+	
+	% Surface
+	\draw (-4, 0) -- (4, 0);
+
+	% Normal
+	\draw [dashed] (0, -3) -- (0, 3);
+
+	% Incident ray
+	\foreach \i in {0,...,3}
+	{
+		\draw (143:\i) -- (143:\i+1);
+
+		\ifnum\i<3
+
+			\draw [<->] (143:\i+1)+(53:0.2) -- +(233:0.2);
+
+			\draw [fill=black] (143:\i+1) circle [radius=1.2pt];
+
+		\else
+			\draw [-<] (143:\i+1) -- (143:\i+1.02);
+		\fi
+	}
+
+	% Incident angle arc
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=143];
+
+	% Incident (Brewster angle)
+	\draw (-0.4, 0.9) node {$\theta_b$};
+
+	% Reflected ray
+	\foreach \i in {0,...,3}
+	{
+		\draw (37:\i) -- (37:\i+1);
+
+		\ifnum\i<3
+			\draw [fill=black] (37:\i+1) circle [radius=1.2pt];
+		\else
+			\draw [->] (37:\i+1) -- (37:\i+1.02);
+		\fi
+	}
+
+
+	% Reflected angle arc
+	\draw (0, 1.5) arc [radius=1.5cm, start angle=90, end angle=37];
+
+	% Reflected (Brewster angle)
+	\draw (0.4, 0.9) node {$\theta_b$};
+
+	% Refracted ray
+	\foreach \i in {0,...,3}
+	{
+		\draw (-53:\i) -- (-53:\i+1);
+
+		\ifnum\i<3
+			\draw [<->] (-53:\i+1)+(37:0.2) -- +(217:0.2);
+		\else
+			\draw [->] (-53:\i+1) -- (-53:\i+1.02);
+		\fi
+	}
+
+	% Refracted angle arc
+	\draw (0, -1.5) arc [radius=1.5cm, start angle=-90, end angle=-53];
+
+	% Refracted angle
+	\draw (0.35, -1.1) node {$\theta_r$};
+
+	% Right angle
+	\draw (-53:1.5) arc [radius=1.5cm, start angle=-53, end angle=37];
+
+	% Right angle dot
+	\draw [fill=black] (1, 0) circle [radius=2pt];
+
+\end{plot}
+
+\pagebreak
+
+This equation can be derived easily. As is known from Snell's law, the ratio between the sines of the angle of incidence, here $\theta_b$, and the angle of refraction $\theta_r$ is equal to the refractive index of the two media: $$\frac{\sin \theta_b}{\sin \theta_r} = n_{1, 2}$$ Moreover, given the definition of the Brewster angle, the angle of the reflected ray (which is equal to the angle of incidence) and the angle of the refracted ray are perpendicular to each other. As the sum of a half-circle is $180\degree$, this means that the remaining $90\degree$ are the sum of $\theta_b$ and $\theta_r$. This can be reformed: $$\theta_b + \theta_r = 90\degree \thus \theta_r = 90\degree - \theta_b$$ Given that $\sin 90 - \theta_b = \cos \theta_b$ and considering that the sine of any angle divided by the cosine of that angle is defined as its tangent, it follows that the tangent of $\theta_b$ is equal to $n_{1, 2}$: $$\frac{\sin \theta_b}{\cos \theta_b} = n_{1, 2} \thus \tan \theta_b = n_{1, 2}$$ It may now be clear why it is common for sunglasses to be vertically plane-polarized. When looking at a transparent surface such as a lake or the ocean, reflected sun light is either completely (when $\theta_i = \theta_b$) or partially plane-polarized parallel to the surface. Thus, the vertical polarization of the sunglasses ensuret that only a minimum of sun light may pass through them.
+
+\subsub{Liquid Crystal Displays}
+
+Another useful application of polarization are Liquid Crystal Displays (LCDs). LCD screens are made up of many back-lit \emph{pixels}, e.g. 1 024 000 in a typical 1280 by 800 display. To display images in color rather than solely black-and-white, each individual pixel consists of three separate \emph{cells}, each with a different \emph{color filter} to display either red, green or blue at one of 256 levels of brightness. Thus, by mixing and varying the brightness of each of the three color cells, an LCD screen may display any of over 16 million colors and shades. The setup of a single cell as well as the process of varying the brightness by means of polarization, liquid crystals and a variable electric field is outlined and explained in the following paragraphs.
+
+The first component of any liquid crystal cell is a \emph{diffuser}. Light is supplied to individual cells from a central source at the back of the display. The diffuser is a thin sheet of a certain transparent material that spreads out the light coming from the central source equally across all pixels, to ensure that the light reaching each individual cell is uniform.
+
+The basic principle of an LCD cell is then to polarize light rays in one plane, either horizontally or vertically, by passing them through a first polarizing filter spaced at a certain distance to another polarizer, whose transmission axis is perpendicular to that of the first. The intensity and thus brightness of a cell is therefore controlled by rotating the light rays between the first and second polarizer by a particular angle, causing a certain portion of the light to pass through and another portion to be absorbed by the long-chain, transparent polymers of the second polarizer.
+
+This rotation is achieved by means of \emph{liquid crystals} --- liquids with crystalline properties. A certain variant of these liquid crystals, called \emph{twisted nematic liquid crystals}, are naturally twisted to a helix shape. These liquid crystals guide light rays through their helix shape to achieve a rotation by a certain angle. If spaced appropriately, this angle is exactly $90\degree$, such that the linearly polarized light exiting the first polarizer of the liquid crystal cell is rotated enough to pass through the second polarizer whose axis of transmission is perpendicular to the first. It should be noted that an incorrect layout or spacing of the liquid crystals may lead to an angle of rotation greater or lower than $90\degree$, which would be equally problematic.
+
+An interesting and essential property of liquid crystals is that if an electric field is applied across them, they untwist. For this, two transparent electrodes of a capacitor, one negative and one positive, are placed at either side of the liquid crystals. The capacitor stores a certain charge, which is supplied periodically by an external system at a frequency referred to as the \emph{refresh rate} of the screen (nowadays usually 60 Hertz). After every interval, a \emph{thin film transistor (TFT)} switches the capacitor into another circuit to let it discharge. Consequently, a new charge is supplied appopriate for the brightness one wishes to set for the cell. The degree of untwisting of the liquid crystals depends on the potential difference between the two electrodes of the capacitor (which, in turn, depends on the charge supplied to it). If no voltage is applied across the two electrodes, the liquid crystals stay twisted in their helix form and rotate the light rays appropriately to be able to exit the second polarizer with full intensity. If a maximum of voltage is applied, the liquid crystals fully untwist, causing no change to the polarization direction of the light and resulting in them being fully absorbed by the perpendicular transmission axis of the second polarizer. Any voltage in between the two extremes results in an appropriate brightness or shade. 
+
+Before the light rays pass through the second polarizer, they pass through a color filter to ensure that only the red, green or blue component exits the cell to be mixed with the other two colors of the pixel.
 
 \end{document}
