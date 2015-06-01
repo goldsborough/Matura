@@ -1,0 +1,298 @@
+% Radiation
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Radiation}
+
+\sub{Electromagnetic Waves}
+
+An electromagnetic wave is a transverse wave consisting of an electric field $\vec{E}$ and a magnetic field component $\vec{B}$, each oscillating perpendicular to the direction of the wave's motion. Electromagnetic waves travel at the speed of light $c$ and require no medium to travel through, as the oscillation of an electromagnetic wave is entirely related to the changing field strength of its electric and magnetic field.
+
+\begin{plot}
+	
+	% Wave direction
+	\draw [<->] (-0.5, 0, 0) -- ({4*pi + 0.5}, 0, 0)
+	      node [right] {Wave direction};
+
+	% x axis (vertical plane)
+	\draw [<->] (0, -2.5, 0) -- (0, 2.5, 0) node [right] {$\vec{E}$-field strength};
+
+	% y axis (horizontal plane)
+	\draw [<->] (0, 0, -3) -- (0, 0, 3) node [below right] {$\vec{B}$-field strength};
+
+	% Electric field in the vertical plane
+	\draw [red, domain=0:{4*pi}, smooth] plot (\x, {2 * sin(\x r)});
+
+	% E vector label
+	\draw [red] ({2.5 * pi}, 2.3, 0) node {$\vec{E}$};
+
+	% Field strengths
+	\foreach \i in {0.785, 1.57, ..., 12.56}
+	{
+		\draw [red, ->] (\i, 0, 0) -- (\i, {1.85 * sin(\i r)}, 0);	
+	}
+
+	% Magnetic field in the horizontal plane
+	\draw [blue, domain=0:{4*pi}, smooth] plot (\x, 0, {3 * sin(\x r)});
+
+	% B vector label
+	\draw [blue] ({2.5 * pi}, 0, 3.8) node {$\vec{B}$};
+
+	% Field strengths
+	\foreach \i in {0.785, 1.57, ..., 12.56}
+	{
+		\draw [blue, ->] (\i, 0, 0) -- (\i, 0, {2.85 * sin(\i r)});	
+	}
+
+\end{plot}
+
+Electromagnetic waves are emitted whenever charged particles are accelerated. This is either achieved by means of an alternating current within a hertz-dipole (antenna) or through discrete emissions of electrons performing quantum jumps between the energy levels of an atom. At this atomic and nuclear level electromagnetic waves are best described as \emph{quanta} or \emph{photons}, discrete packages of energy with particle-like properties. Thus, electromagnetic waves can be said to have wave-like properties, such as an amplitude, a wavelength $\lambda$, a frequency $f$ or the fact that an interference pattern is created when light is diffracted in a double slit experiment, superposes and intereres. But electromagnetic radiation also has particle-like properties in the sense that photons can carry and transfer energy in discrete quantities. This is known as the \emph{wave-particle-duality} of electromagnetic radiation. The wave model works well for low-frequency radiation, while the particle properties become more obvious in higher frequency ranges and thus on the atomic level. The frequency $f$ of the photon emitted is dependent on the energy $E$ of the quantum jump, according to a relationship defined by Max Planck: $$E = h \cdot f$$ where $h$ is the Planck constant and equals $6.6 \cdot 10^{-34} \, J\, s$. Visible light is caused by electrons making quantum jumps in atoms involving photon energies of about 2-3 eV (electron-volts). Nuclear energy changes involve much larger energy quantities and generate photons of much higher frequency and thus shorter wavelength, such as $\gamma$ rays. All electromagnetic radiation beyond the visible range is potentially dangerous to humans because the energy carried by the photons can cause damage to cells.
+
+\pagebreak
+
+\sub{The Electromagnetic Spectrum}
+
+The spectrum of electromagnetic radiation covers frequency ranges between $3 \cdot 10^4$ and $3 \cdot 10^{23}$ Hertz (cycles per second) and correspondingly wavelength ranges between $10^4$ and $10^{-15}$ meters. The relationship between wavelength and frequency is defined as $c = \lambda \cdot f$ where $c$ is the speed of light.
+
+\begin{itemize}
+	\bolditem{Radio Waves: $3\cdot 10^4\, Hz - 3 \cdot 10^9\, Hz$}
+
+	Radio waves are among the waves of the electromagnetic spectrum with the lowest frequency and longest wavelength. They are commonly used for communication and transmission of TV and radio signals. There are several subcategories of radio waves, mainly those where the data is transmitted via Frequency Modulation (around $3 \cdot 10^8$ Hz) and those where Amplitude Modulation is used (around $3 \cdot 10^6$ Hz).
+
+	\titleitem{Microwaves: $3 \cdot 10^{9}\, Hz - 3 \cdot 10^{11}\, Hz$}
+
+	Microwaves operate at higher frequencies than those of radio waves and are typically employed for heating food in microwave ovens. Other important areas of use include communication and data transmission, with protocols such as WiFi, Bluetooth as well as satellite transmission relying on them. Moreover, they can be used for speed radar controls. They are created by a \emph{magnetron}. Microwave radiation is not ionizing. Also, it is only a myth that food heated in a microwave loses nutrients --- it has yet to be proven.
+
+	\titleitem{Infrared Waves: $3 \cdot 10^{11}\, Hz - 3 \cdot 10^{15}\, Hz$}
+
+	All warm bodies radiate infrared rays. Moreover, infrared detectors are often used for rescue missions where individuals may be detected under conditions of smoke and dust by measuring the infrared radiation of the surrounding area. Humans in need, will, of course emit more infrared radiation than walls or non-living things, making it possible to detect and rescue individuals in situations of decreased visibility. This is called \emph{thermal imaging}. Moreover, infrared light is used for remote controls.
+
+	\titleitem{Visible Light}
+
+	The range of visible light on the electromagnetic spectrum is defined as the span between the wavelength of red light, which has the greatest wavelength with $\lambda \approx 700$ nm, and that of violet light, which has the greatest frequency and the shortest wavelength of the spectrum of visible light, with $\lambda \approx 400$ nm.
+
+	\titleitem{Ultraviolet Light: $3 \cdot 10^{15}\, Hz - 3 \cdot 10^{16}\, Hz$}
+
+	Ultraviolet (UV) radiation is a form of radiation that reaches us from the sun and causes skin to wrinkle and sag. The ozone layer in the earth's atmosphere protects us from most of the sun's UV radiation, but some may still penetrate this layer and reach the surface of the earth. Sunscreen can be used to protect against it. 
+
+	\titleitem{X-Rays: $3 \cdot 10^{16}\, Hz - 3 \cdot 10^{19}\, Hz$}
+
+	X-rays were discovered by Wilhelm R\"{o}ntgen in 1895. They are produced when high energy electrons collide with a heavy metal target, usually tungsten, and transfer some or all of their kinetic energy to X-ray photons, though around 99\% percent of the incident energy is lost to thermal energy. They find extensive use in medical areas as well as airports.
+
+	\titleitem{Gamma ($\gamma$) rays: $3 \cdot 10^{19}\, Hz - 3 \cdot 10^{23}$}
+
+	Gamma rays are emitted when excited nuclei make quantum jumpts to lower energy states, usually as a by product of alpha or beta radiation. $\gamma$-ray spectra give information about nuclear energy structure. They are highly penetrating and dangerous to humans as they can cause severe cell damage and may induce mutations.
+
+\end{itemize}
+
+\pagebreak
+
+\sub{Spectra}
+
+A spectrum is a band of colors produced by decomposition of light into its constituent wavelengths. There are multiple forms of spectra: emission, absorbtion, line and band spectra. All of these spectra result from quantum jumps of electrons within the energy levels of atoms. An electron \emph{excites} and performs a quantum jump to a higher energy level (\emph{quantum state}) if it \emph{absorbs} a photon of exactly the right, discrete amount of energy $\Delta E$. In turn, when \emph{de-exciting} and performing a quantum jump from a higher energy level to a lower energy level, the difference in energy between the initial and final state of the electron is \emph{emitted} as a photon. The discrete amount of energy $\Delta E$ determines the frequency and wavelength of the photon emitted, according to the Planck relationship $E = h \cdot f$ and the fact that the velocity $v$ of a wave is equal to its wavelength $\lambda$ multiplied by its frequency $f$, where $v$ is the speed of light $c$ in the case of electromagnetic waves: $$\Delta E = h \cdot f \AND c = \lambda \cdot f \thus \Delta E = \frac{h \cdot c}{\lambda} \OR \lambda = \frac{h \cdot c}{\Delta E}$$ 
+
+\begin{figure}[h!]
+	\centering
+	% Absorbtion
+	\begin{tikzpicture}
+
+		% Higher energy level (final)
+		\draw (-3, 2) -- (3, 2) node [midway, above] {higher quantum state: $E_1$};
+
+		% Photon, tail
+		\draw [red, domain=-2.85:-0.75, smooth] plot (\x, {0.25 * sin(10*\x r});
+
+		% Photon, arrow head
+		\draw [red, ->, thick] (-0.75, -0.24) -- +(0.3, 0);
+
+		% Photon label
+		\draw (-1.75, 0.70) node {Photon};
+		\draw (-1.5, -0.75) node {$E_{ph} = E_1 - E_0$};
+
+		% Lower energy level
+		\draw (-3, -2) -- (3, -2) node [midway, below] {lower quantum state: $E_0$};
+
+		% Electron
+		\draw [fill=blue] (0, -2) circle [radius=3pt];
+
+		% Leap arrow
+		\draw [->] (0, -1.8) -- (0, 1.8);
+
+		% Description
+		\draw (1.5, 0.5) node {Absorption};
+		\draw (1.5, 0) node {+};
+		\draw (1.5, -0.5) node {Excitation};
+
+	\end{tikzpicture}
+	%
+	\hspace{2cm}
+	%
+	% Emission
+	\begin{tikzpicture}
+
+		% Higher energy level (final)
+		\draw (-3, 2) -- (3, 2) node [midway, above] {higher quantum state with $E_1$};
+
+		% Photon, tail
+		\draw [red, domain=0.6:2.65, smooth] plot (\x, {0.25 * sin(10*\x r});
+
+		% Photon, arrow head
+		\draw [red, ->, thick] (2.65, 0.24) -- +(0.3, 0);
+
+		% Photon label
+		\draw (1.75, 0.70) node {Photon};
+		\draw (1.75, -0.75) node {$E_{ph} = E_1 - E_0$};
+
+		% Lower energy level
+		\draw (-3, -2) -- (3, -2)
+		      node [midway, below] {lower quantum state with $E_0$};
+
+		% Electron
+		\draw [fill=blue] (0, 2) circle [radius=3pt];
+
+		% Leap arrow
+		\draw [->] (0, 1.8) -- (0, -1.8);
+
+		% Description
+		\draw (-1.5, 0.5) node {Emission};
+		\draw (-1.5, 0) node {+};
+		\draw (-1.5, -0.5) node {De-Excitation};
+
+	\end{tikzpicture}
+\end{figure}
+
+It should be re-emphasized that an electron only perfoms a quantum leap to a higher energy level when the photon it absorbs contains \emph{exactly} the right amount of energy $\Delta E$. Any discrete value below or above this necessary difference is ignored. Moreover, it is clear that large energy jumps produce short-wavelength and high-frequency photons, while smaller energy jumps produce photons of longer wavelenght and higher frequency. The emission of $\gamma$-ray involves the greatest possible quantum leap from a higher energy state to a lower one, while the absorbtion of such a high-frequency ray must involve an \emph{equally} large jump to a higher energy level. Moreover, it should be noted that the range of energy jumps for a particular type of atom is unique to that element. This gives a distinct spectrum, i.e. a distinct set of photon wavelengths emitted, that can be used to identify it. As such, a helium atom produces a different spectrum than, say, hydrogen. 
+
+\subsub{Emission Spectrum}
+
+An emission spectrum is the result of light photons being emitted by electrons performing quantum leaps from higher energy levels to lower quantum states. As explained, the frequency of the photons emitted is dependent on the difference in energy $\Delta E$ between the emitting electron's initial and final energy state. The frequency of the photon in turn determines its wavelength $\lambda$ and, if $\lambda$ is within the visible spectrum of 700 nanometers (red) to 400 (violet) nanometers, the color of the light emitted. There are two main types of spectra in this case: \emph{line spectra} and \emph{band} or \emph{continuous spectra}. The former type, line spectra, are produced by single excited atoms or molecules and thus by single, discrete quantum jumps. A line spectrum displays only few colors specific to the element of the atom. For example, the line spectrum produced by sodium includes only two yellow spectral lines. Hydrogen on the other hand emits violet, cyan and red light in the visible spectrum and ultraviolet as well as infrared in the non-visible spectrum (the emission spectrum of hydrogen is investigated in detail further below). A band spectrum, on the other hand, is produced by solid bodies consisting of many atoms and molecules. These invididual atoms interact strongly with one another and produce a continuous spectrum of colors.
+
+\subsub{Absorption Spectrum}
+
+An absorption spectrum is produced when a continuous light spectrum that is emitted by a \emph{black body} --- a physical body that is an ideal radiator and which produces a particular continuous emission spectrum that depends on its temperature --- is passed through a certain \emph{probe} which absorbs a specific set of wavelengths. When the light that is passed through the probe is subsequently dispersed in a prism, the band spectrum that is produced will show black lines at the positions of the wavelengths absorbed by the probe. These wavelengths give information about the frequency $f$ and thus about the energy $E_{ph}$ of the photons absorbed by the electrons of the probe performing quantum leaps to higher energy states. As the energy of the absorbed photons must equal the difference in energy between the electrons' intitial and final quantum states, this information can also be deduced from the wavelengths absorbed.
+
+\sub{Spectral Series of Hydrogen}
+
+As was explained, the line spectrum produced by the emissions of electrons performing quantum leaps is particular to each category of atom --- to each element. It depends on the difference in energy between the various possible quantum states of an atom. For Hydrogen, these energy values have been determined precisely in the past and classified into three main groups or \emph{series}, given below. At the ground state, the lowest possible energy level of a Hydrogen atom, electrons have been found to have an energy of $-13.6\, eV$. This energy is \emph{binding energy}. It should be mentioned here that the energy of electrons at any quantum state of an atom is always a \emph{negative} value, as the electrons are in a \emph{bound} state. Thus, when an electron absorbs a light photon and the discrete quantum of energy it carries to perform a quantum leap to a higher energy level, the energy of the electron becomes less negative, as it is now less bound to the nucleus of the atom. When the energy of the photon becomes zero or positive, it is freed from the hydrogen nucleus. This is the process known as \emph{ionization}. Thus, the zero-energy level of any nucleus is referred to as the \emph{ionization-energy}. Moreover, it was found that the energy levels of an atom approach each other more and more with each higher level. Thus, the higher the quantum state of an electron, the less is the difference in energy between the current and next highest state of the electron and therefore the energy required to transition to the next highest state (which it may acquire by absorbing a photon of the right discrete amount of energy).
+
+\begin{itemize}
+	
+	\item The \textbf{Lyman series} pertains to the highest possible transitions and thus quantum leaps that an electron bound to a Hydrogen atom may perform. These transitions are always to the ground state of the atom and, in the case of Hydrogen, result in the emission of \emph{Ultraviolet (UV)} light. 
+
+	\item The \textbf{Balmer series} are the series of transitions to the first energy level or quantum state of the Hydrogen atom. These transitions are never are great as those to the ground state performed by electrons in the Lyman series, thus the energy of the photons emitted in the Balmer series is less than that of the photons of the Lyman series. Consequently, also the frequency of the photons is less and the wavelength accordingly longer. Coincidentally, the wavelengths of the photons in the Balmer series match the wavelengths of three specific colors of the visible spectrum of light: red/orange, blue/green (cyan) and violet. These are the colors seen on an emission spectrum produced by Hydrogen. Such a spectrum is, of course, a line spectrum consisting of discrete lines corresponding to the specific wavelengths of the light emitted.
+
+	\item The \textbf{Paschen series} refer to transitions to the second excited state of the Hydrogen atom. The energy of the photons emitted by these transitions is again less than the energy emitted by the transitions in the previous (Balmer) series ($1^{st}$ excited state). The frequency of the photons is accordingly less, this time falling into the range of infrared light.
+
+	\item The \textbf{Bracket series} involve transitions to the third excited state and the \textbf{Pfund series} to the fourth.
+
+\end{itemize}
+
+\begin{plot}
+	
+	% Binding energy axis
+	\draw [<->] (0, -0.5) -- (0, 12.2);
+
+	% Some energy state values
+	\foreach \y/\e in {0/-13.6, 8/-3.39, 10/-1.5,
+					   11/-0.87, 11.5/-0.54, 12/0}
+	{
+		\draw (0, \y) node [left] {$\e$};
+	}
+
+	% Binding energy axis label
+	\draw (-1.5, 6) node [rotate=90] {Binding energy $[eV]$};
+
+	% Ground state
+	\draw (0, 0) -- (9.5, 0)
+	      node [right] {$n=1$ (Ground state)};
+
+	% First quantum state
+	\draw (0, 8) -- +(9.5, 0) node [right] {$n=2$};
+
+	% Second quantum state
+	\draw (0, 10) -- +(9.5, 0) node [right] {$n=3$};
+
+	% Third quantum state
+	\draw (0, 11) -- +(9.5, 0) node [right] {$n=4$};
+
+	% Other quantum states
+	\foreach \y in {11.5, 11.7, 11.8}
+	{
+		\draw (0, \y) -- +(9.5, 0);
+	}
+
+	% Ionization energy
+	\draw [dashed, red] (0, 12) -- +(9.5, 0)
+	      node [midway, above, black] {Ionization energy};
+
+	% Lyman series
+	\foreach \x/\y in {1/8, 2/10, 3/11}
+	{
+		\draw [->] (\x, \y) -- (\x, 0.1);
+	}
+
+	% Lyman label
+	\draw (2, -0.5) node {Lyman};
+
+	% Balmer series
+	\foreach \x/\y/\c in {4/10/orange, 5/11/cyan, 6/11.5/violet}
+	{
+		\draw [\c, ->] (\x, \y) -- (\x, 8.1);
+	}
+
+	% Balmer label
+	\draw (5, 7.5) node {Balmer};
+
+	% Paschen series
+	\foreach \x/\y in {7/11, 8/11.5, 9/11.7}
+	{
+		\draw [red, ->] (\x, \y) -- (\x, 10.1);
+	}
+
+	% Paschen label
+	\draw (8, 9.5) node {Paschen};
+
+\end{plot}
+
+\textbf{Example:} \emph{Calculate the energy, frequency and wavelength of the first three Balmer series transitions and determine the color of the light emitted.}
+
+For each transition of the Balmer series, the energy difference $\Delta E = | E_1 - E_0 |$ between the initial state $E_0$ and the final state $E_1$ is subscripted by a lexically incrementing greek letter, such that $\Delta E_{\alpha}$ refers to $n = 1$, $\Delta E_{\beta}$ to $n=2$ and $\Delta E_{\gamma}$ to $n=3$. The energy difference of each transition determines the energy of the photon emitted during the quantum leap. This value is initially in electron-volts, but must be converted into Joules. One electron-volt is approximately equivalent to $1.6 \cdot 10^{-19}\, J$. 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l}
+		$\Delta E_{\alpha} = $ & $|-3.39\, eV + 1.5\, eV| = 1.89\, eV \equiv 3.02 \cdot 10^{-19}\, J$
+		\\ & \\
+		$\Delta E_{\beta} = $ & $ |-3.39\, eV + 0.87\, eV| = 2.52\, eV \equiv 4.03 \cdot 10^{-19}\, J$
+		\\ & \\
+		$\Delta E_{\gamma} = $ & $ |-3.39\, eV + 0.54\, eV| = 2.85\, eV \equiv 4.56 \cdot 10^{-19}\, J$
+	\end{tabular}
+\end{table}
+
+\pagebreak
+
+Subsequently, the frequency of each photon emitted can be determined by means of the Planck relation $\Delta E = h \cdot f$ and its wavelength $\lambda$ through the knowledge that the velocity of an electromagnetic wave --- the speed of light $c$ --- is equal to the product of its wavelength and frequency: $c = \lambda \cdot f$. Thus, the wavelength of the photon can be calculated via the following expression: $\lambda = \frac{h \cdot c}{\Delta E}$, where $h$ is Planck's constant and equal to $6.6 \cdot 10^{-34}\, J\, s$ and $c$ the speed of light, equal to approximately $3 \cdot 10^8\, m\, s^{-1}$.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l}
+		$\lambda_\alpha = \frac{h \cdot c}{3.02 \cdot 10^{-19}} \approx 656 \, nm$
+		\\ & \\
+		$\lambda_\beta = \frac{h \cdot c}{4.03 \cdot 10^{-19}} \approx  \, 491\, nm$
+		\\ & \\
+		$\lambda_\gamma = \frac{h \cdot c}{4.56 \cdot 10^{-19}} \approx 434 \, nm$
+	\end{tabular}
+\end{table}
+
+The visible spectrum of light can be found in the range of 700 to 400 nanometers on the electromagnetic spectrum. 700 is the longest wavelength and thus the smallest frequency, corresponding to red light. 400 nanometers is the shortest wavelength and therefore corresponds to a wave with the highest frequency, belonging to violet light (which is why the next highest range on the electromagnetic spectrum, also produced by the greater quantum leaps of the Lyman series, is \emph{ultra}violet light). The first wavelength found, $\lambda_\alpha \approx 656\, nm$, from the transition from the second to the first excited state, must accordingly be the wavelength of red or orange light photons. $\lambda_\beta$ falls between the green and blue ranges of light (more on the blue side). $\lambda_\gamma$, resulting from the greatest quantum leap in the Balmer series, definitely falls into the range of violet light. Thus, if a line spectrum of the photon emissions of Hydrogen (its spectral series) were to be analysed, one would find discrete lines at exactly these wavelengths with exactly these colors. On the other hand, were a continuous spectrum of light from a black body to be passed through a hydrogen probe, the absorption spectrum produced by directing the light through a prism after the probe would show black lines at exactly these wavelengths, at exactly these colors.
+
+\sub{Microwaves and the Magnetron}
+
+\sub{X-Rays}
+
+X-Rays are found in a frequency range of around $3 \cdot 10^{16}\, Hz$ to $3 \cdot 10^{19}\, Hz$ and are therefore positioned between $\gamma$-rays, at the top of the electromagnetic spectrum, and ultraviolet light, whose frequency range is below that of X-rays. Therefore, X-Rays also have a much higher frequency and a much shorter wavelength than visible light, which is found in the range of around 400 to 700 nanometers in wavelength.
+
+\end{document}
