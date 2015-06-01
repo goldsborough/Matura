@@ -51,11 +51,11 @@ An electromagnetic wave is a transverse wave consisting of an electric field $\v
 
 Electromagnetic waves are emitted whenever charged particles are accelerated. This is either achieved by means of an alternating current within a hertz-dipole (antenna) or through discrete emissions of electrons performing quantum jumps between the energy levels of an atom. At this atomic and nuclear level electromagnetic waves are best described as \emph{quanta} or \emph{photons}, discrete packages of energy with particle-like properties. Thus, electromagnetic waves can be said to have wave-like properties, such as an amplitude, a wavelength $\lambda$, a frequency $f$ or the fact that an interference pattern is created when light is diffracted in a double slit experiment, superposes and intereres. But electromagnetic radiation also has particle-like properties in the sense that photons can carry and transfer energy in discrete quantities. This is known as the \emph{wave-particle-duality} of electromagnetic radiation. The wave model works well for low-frequency radiation, while the particle properties become more obvious in higher frequency ranges and thus on the atomic level. The frequency $f$ of the photon emitted is dependent on the energy $E$ of the quantum jump, according to a relationship defined by Max Planck: $$E = h \cdot f$$ where $h$ is the Planck constant and equals $6.6 \cdot 10^{-34} \, J\, s$. Visible light is caused by electrons making quantum jumps in atoms involving photon energies of about 2-3 eV (electron-volts). Nuclear energy changes involve much larger energy quantities and generate photons of much higher frequency and thus shorter wavelength, such as $\gamma$ rays. All electromagnetic radiation beyond the visible range is potentially dangerous to humans because the energy carried by the photons can cause damage to cells.
 
-\pagebreak
-
 \sub{The Electromagnetic Spectrum}
 
 The spectrum of electromagnetic radiation covers frequency ranges between $3 \cdot 10^4$ and $3 \cdot 10^{23}$ Hertz (cycles per second) and correspondingly wavelength ranges between $10^4$ and $10^{-15}$ meters. The relationship between wavelength and frequency is defined as $c = \lambda \cdot f$ where $c$ is the speed of light.
+
+\pagebreak
 
 \begin{itemize}
 	\bolditem{Radio Waves: $3\cdot 10^4\, Hz - 3 \cdot 10^9\, Hz$}
@@ -293,6 +293,105 @@ The visible spectrum of light can be found in the range of 700 to 400 nanometers
 
 \sub{X-Rays}
 
-X-Rays are found in a frequency range of around $3 \cdot 10^{16}\, Hz$ to $3 \cdot 10^{19}\, Hz$ and are therefore positioned between $\gamma$-rays, at the top of the electromagnetic spectrum, and ultraviolet light, whose frequency range is below that of X-rays. Therefore, X-Rays also have a much higher frequency and a much shorter wavelength than visible light, which is found in the range of around 400 to 700 nanometers in wavelength.
+X-Rays are a form of ionizing electromagnetic radiation found in a frequency range of around $3 \cdot 10^{16}\, Hz$ to $3 \cdot 10^{19}\, Hz$. While higher-energy and frequency rays of the upper end of this range are referred to as \emph{hard X-rays}, the lower energy and frequency waves of the lower half of this range are commonly called \emph{soft X-rays} and may even be absorbed by air or water. Given this information, it can be said that the frequency range of X-rays is positioned between $\gamma$-rays, at the top of the electromagnetic spectrum, and ultraviolet light, whose frequency range is below that of X-rays. Therefore, X-Rays also have a much higher frequency and a much shorter wavelength than visible light, which is found in the range of around 400 to 700 nanometers in wavelength.
+
+X-rays find extensive use in medical areas, especially for the production of \emph{radiograms} (X-ray photographs), as they penetrate bones and other dense tissues and bodily structures to a much greater extent than visible or ultraviolet light. There is a certain risk linked to X-rays, as they may ionize atoms and break up molecular bonds, making them potentially harmful to to living tissue. Yet, they ionize less and have less perils associated with them than $\gamma$-rays, which have much more energy. This makes use of X-rays a viable trade-off between medical utility and possible harm caused to patients. Other uses of X-rays include the the treatment of cancer cells (as a product of their ability to ionize cells) as well as the detection of illegal items carried by people at airports.
+
+\subsub{Creation of X-rays}
+
+X-rays are created in so-called \emph{X-ray tubes}, consisting of a vacuum tube, an anode, a cathode and a window through which the X-rays may pass. Due to a high potential difference (voltage) between the cathode and the anode, high-energy electrons are accelerated towards the anode, which is usually a heavy metal such as tungsten due to its high melting point and heat-resistance. This heat resistance is necessary, as only 1\% of the energy created by an X-ray tube and the electron beam it creates is actually transferred to X-rays, while the rest goes to waste as thermal energy. One way to further reduce the heat impact on the anode is to continuously rotate it, such that the thermal energy is spread out over the anode and does not concentrate solely on one point. Also, there may be tank of cooling water placed behind the anode.
+
+\begin{plot}
+	
+	% Tube, circular part, top
+	\draw (2, 0.5) arc [radius=2cm, start angle=0, end angle=180];
+
+	% Tube, circular part, bottom
+	\draw (2, -0.5) arc [radius=2cm, start angle=0, end angle=-90];
+	\draw (-2, -0.5) arc [radius=2cm, start angle=180, end angle=230];
+
+	% Tube, longitudinal part, right
+	\draw (2, 0.5)
+	 -- ++(5, 0) arc [radius=0.5cm, start angle=90, end angle=-90]
+	 -- +(-5, 0);
+
+	% Tube, longitudinal part, left
+	\draw (-2, 0.5)
+	 -- ++(-5, 0) arc [radius=0.5cm, start angle=90, end angle=270]
+	 -- +(5, 0);
+
+	 % Anode
+	 \draw [line width=0.1cm]
+	       (-7.5, 0)
+	    -- (-1.5, 0)
+	  -- ++(0, 0.5)
+	  -- ++(0.5, 0)
+	  -- ++(-30:0.7)
+	  -- ++(0, -0.2)
+	  -- ++(-150:0.7)
+	  -- ++(-0.5, 0)
+	  -- ++(0, 0.5);
+
+	  % Anode label
+	  \draw [->] (-5, 1) node [above] {Rotating Tungsten Anode} -- (-5, 0.3);
+
+	  % Cathode
+	  \draw [line width=0.1cm]
+	       (7.5, 0)
+	    -- (1.5, 0)
+	    -- ++(0, -0.3)
+	    -- ++(-0.5, 0)
+	    -- ++(0, -0.5) ++(0, 0.2)
+	    -- ++(-0.3, 0)
+	    -- ++(0, 0.6)
+	    -- ++(0.3, 0)
+	    -- ++(0, 0.2) ++(0, -0.2)
+	    -- ++(0, -0.3);
+
+		% Cathdoe label
+		\draw [->] (5, 1) node [above] {Cathode} -- (5, 0.3);
+
+		% Cathode beam
+		\foreach \y/\x/\a in {-0.1/-0.5/280,
+		    			      -0.2/-0.6/275,
+		    			      -0.3/-0.7/265,
+		    			      -0.4/-0.8/260}
+		{
+			\draw [very thick, dashed, blue]
+			      (0.7, \y)
+			   -- (\x, \y)
+			  -- +(\a:2.2 + \y);
+		}
+
+		% Electron label
+		\draw (0.2, -1.5) node {$\,\,e^-$};
+
+		% Window label
+	    \draw (-1, -2.75) node {Window};
+
+	    % Vacuum label
+	    \draw (0, 1) node {Vacuum};
+
+\end{plot}
+
+The X-rays leaving the X-ray tube are produced in one of two ways:
+
+\begin{enumerate}
+
+	\titleitem{Ionization}
+
+	The first possibility by which an X-ray photon may be produced is ionization of atoms within the metallic lattice of the tungsten anode. In such a case, a high energy and velocity electron that is accelerated towards the anode from the negatively charged cathode knocks away an electron from one of the atom's lower orbitals and thereby ionizes the atom it hit. Subsequently, an electron from a higher quantum state will fall to the lower energy level from which electron was just knocked away (to ensure that the lower orbitals are filled before the higher ones are). As it does so, it emits a photon of high energy and frequency as the quantum leap involved a very big transition in binding energy. This photon is an X-ray photon and leaves the X-ray tube through its window (which is at an appropriate angle to the anode for this to happen).
+
+	\titleitem{De-acceleration}
+
+	The second possible situation in which an X-ray photon is emitted from the metal anode is when one of the high energy and velocity electrons coming from the cathode speeds by an atom within the anode and is attracted by its positive nucleus to some extent. This causes the electron to slow down and de-accelerate (also by changing direction), thus lose velocity and momentum. This de-acceleration causes the electron to have an excess of energy, which it then emits as an X-ray photon. X-rays produced by this process are referred to as \emph{breaking radiation}.
+
+\end{enumerate}
+
+\pagebreak
+
+\subsub{Radiograms}
+
+The most important area of application of X-rays is radiograms for medical use. A radiogram is basically an X-ray photograph of an object, often a certain body part of a medical patient, that is produced when X-rays exiting an X-ray tube radiate towards the object (body part) of interest. Depending on the density of the tissue the rays encounter, some will be absorbed entirely in certain areas while other will pass through the body part with little absorbtion. More specifically, bones will absorb X-rays to a greater extent than, say, muscle tissue. When a photographic film is placed behind the body part, the image produced will be very bright where more X-rays were able to pass through the body and darker where X-rays were absorbed. As a result, bones and tissue can be kept apart from each very precisely, due to the sharp contrast. The final radiogram that doctors examine and that patients receive is, however, the negative of the actual photograph. Thus, while bones would manifest themselves as darker spots on the original radiogram (less light let through), they are actually the lighest spots on the negative image. This negative radiogram is then used to look for fractures or even tumors.
 
 \end{document}
