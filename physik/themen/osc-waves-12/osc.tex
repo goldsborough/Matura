@@ -1,0 +1,424 @@
+% Oscillations and Waves
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Oscillations and Waves}
+
+\sub{Vibration and Basic Principles of Periodic Motion}
+
+An object that is in \emph{periodic} or \emph{vibrational} motion --- such as a mass on a spring or attached to a pendulum --- will undergo back and forth vibrations about a fixed, equilibrium position in a regular and repeating fashion. An object undergoing such periodic motion is said to be \emph{oscillating}. Any object that undergoes vibrational motion has a certain \emph{resting} or \emph{equilibrium position}, the position it assumes when it is not vibrating, when it is experiencing a balance of forces, such that no unbalanced force acts upon it to change its state of rest to one of motion (as explained by Newton's first law of motion --- the law of \emph{inertia}). Only when an unbalanced net force is applied to the object will it experience displacement from its rest position and a disturbance to its equilibrium (of forces), causing vibration. For example, a spring that is neither stretched nor compressed is always in its equilibrium position. Similarly, a rope that is not currently in any form of motion is \emph{at rest}. However, when waving the front of the rope in the upward direction and back down again a single time, there is a disturbance in the front portion of the rope. This disturbance will propagate through the rope as a \emph{pulse}. A \emph{pulse} is thus the propagation of a single disturbance through a medium from one location to another within that medium. However, if such a pulse is sent through the rope continuously and periodically, the occuring motion is described as a \emph{wave}. A wave can thus be seen as a continuous series of alternating upward and downward pulses.
+
+\sub{Harmonic Oscillation}
+
+In case of \emph{harmonic oscillation}, the object undergoing the periodic vibrational motion --- the \emph{oscillator} --- continuously experiences a restoring force $F$ that is directly proportional to any disturbance $x$ from its equilibrium position, such that $F \propto x$ or $F = -k \cdot x$ where $k$ is a positive constant such as the spring constant of any elastic body following Hooke's law. This restoring force ensures that after any temporary displacement the object is restored to its equilibrium position unless acted upon by a new unbalanced net force. If $F$ is the only force acting on the oscillating system such a system is called a \emph{simple harmonic oscillator} and undergoes simple harmonic motion, following a sinusoidal pattern. In case of waves, the harmonicity is in accordance with the fact that waves do not actually transport matter, but only a signal (a disturbance). Therefore, in case of a harmonic wave, any periodic temporary disturbance or displacement of a particle from the equilibrium position within a mechanical wave or any increase in the magnetic or electric field strength of an electromagnetic wave at a certain point will be restored in an equally periodic manner back to the equilibrium position, i.e. zero displacement for mechanical waves and zero field strength for electromagnetic waves.
+
+As an example, when a spring is attached to a stand and is stretched, it will periodically elongate and compress. Under ideal conditions where there is no damping, it would do so indefinitiely. There would always be a restoring force $F$ to restore the spring from its disturbed, meaning stretched or compressed, state back to its equilibrium position. This force acts in the direction of the equilibrium. If the extension --- the difference between its length in its equilibrium position and its length when disturbed, i.e. stretched or compressed --- were to be measured over time and plotted in a graph, this extension-versus-time graph would, given that this is an example of a simple harmonic oscillator, follow the pattern of a sinusoidal curve.
+
+Another example is that of a violin string. When the string is at rest, in its \emph{equilibrium position}, then it is experiencing a balance of forces, i.e. the tension force within the string pulls equally in both directions such that the individual force components $\vec{F_1}$ and $\vec{F_2}$ cancel each other out --- the \emph{net} force is zero. However, when the string is bent (plucked), then force components that were previously parallel, equal in magnitude but opposite in direction, are now no longer parallel. As a result, $\vec{F_1} + \vec{F_2}$ is no longer zero, meaning there is now an unbalanced net force. This net force points towards the equilibrium position. Thus, it is the \emph{restoring force} of the harmonic oscillator. When the string is subsequently released, it will move towards the equilibrium but move past it because of its linear momentum and inertia. In case of a simple harmonic oscillator where the restoring force is the only acting force, the string would oscillate periodically between a maximum on either side of the equilibrium position -- forever. Were there another force acting, such as a friction force from air resistance, \emph{damping} would take place and progressively diminish the amplitude of the oscillation.
+
+In general, sinusoidal oscillations are characterized by a constant amplitude $A$, period $T$ and frequency $f$ as well as a varying instantaneous elongation or displacement $d$ as well as a certain phase $\varphi$. More specific to waves, harmonic waves following a sinusoidal pattern also have a certain wavelength $\lambda$ and velocity $v$.
+
+\begin{plot}
+	
+	% First axis
+	\draw [<->] (-0.5, 0) -- (13, 0) node [above left] {Time $[s]$};
+
+	% Second axis
+	\draw [<->] (0, -3) -- (0, 3);
+
+	% Wave
+	\draw [domain=0:{4*pi}, smooth] plot (\x, { 2 * sin(deg(\x)) });
+
+	% Equilibrium position
+	\draw (-1.5, 0) node {Equilibrium};
+
+	% Wavelength
+	\draw [<->]
+	      ({pi / 2}, 2.5) -- +({2 * pi}, 0)
+	      node [above, midway] {Wavelength $\lambda$};
+
+	% Period
+	\draw [<->]
+	      ({3 * pi / 2}, -2.5) -- +({2 * pi}, 0)
+	      node [above, midway] {Period $T$};
+
+	% Amplitude
+	\draw [<->] ({pi / 2}, 0.1) -- +(0, 1.8) node [midway] {Amplitude};
+
+	% Elongation
+	\draw [<->] (4, -0.1) -- +(0, -1.3) node [pos=0.3, right] {Elongation};
+
+\end{plot}
+
+\textbf{Equilibrium Position} \defas The rest state of the object undergoing periodic motion, characterized by no displacement on a periodic motion graph.
+
+\textbf{Period} $T$ \defas The time taken for one cycle of periodic motion: $T = \frac{1}{f}\, s$
+
+\textbf{Frequency} $f$ \defas The number of cycles (oscillations) per second: $f = \frac{1}{T} = \frac{c}{\lambda}\, Hz$
+
+\textbf{Phase} $\varphi$ \defas A measure of the relative position of an object undergoing periodic motion within its cycle. Related to a certain angle of a phasor (rotating vector) in a unit circle.
+
+\textbf{Elongation} $d$ \defas The instantaneous displacement of the object undergoing periodic motion from the equilibrium position at any point in time, with any phase value.
+
+\textbf{Amplitude} $A$ \defas The maximum elongation. While the elongation varies with time and phase, this value is constant.
+
+\textbf{Wavelength} $\lambda$ \defas The distance covered by a wave in one period: $\lambda = \frac{c}{f}\, m$
+
+\textbf{Velocity} $v$ \defas The velocity of the wave: $v = \lambda \cdot f = \frac{\lambda}{T}\, m\, s^{-1}$
+
+\sub{Interference of Waves}
+
+When waves superpose, they interfere. This intereference may either be constructive, resulting in maxima where peaks meet peaks, or destructive, producing minima where peaks meet troughs. This is the \emph{principle of superposition}, which reads:
+
+\begin{displayquote}
+	The resultant disturbance at a point where similar waves from two or more sources superpose (cross) is equal to the \emph{vector sum} of the individual disturbances.
+\end{displayquote}
+
+To get a stable interference pattern between two or more waves, they should share certain properties. Namely, they should have the same frequency $f$ and wavelength $\lambda$ as well as comparable and ideally equal amplitudes. Moreover, they should be of similar type, e.g. two sound or two electromagnetic waves. Lastly, there must be a constant phase relation between the wave sources, i.e. the sources must \emph{coherent}. 
+
+\subsub{Constructive Interference}
+
+Maximum constructive interference between two waves takes place if they have the same wavelength $\lambda$, the same plane of oscillation (polarization direction) and a path difference that is an integer multiple of the shared wavelength: $n \cdot \lambda$. At any point, the disturbance of the wave resulting from the interference of the two source waves is equal to the vector sum of the individual disturbances.
+
+\begin{plot}
+	
+	% Disturbance axis
+	\draw [<->] (0, -2) -- (0, 2);
+
+	% Time axis
+	\draw [->] (0, 0) -- ({4.1 * pi}, 0);
+
+	% First wave
+	\draw [smooth, blue, domain=0:{4 * pi}] plot (\x, {0.5 * sin(deg(\x))});
+
+	% First disturbance arrow
+	\draw [->, blue] ({pi / 2}, 0) -- +(0, 0.45) node [midway, right] {$d_1$};
+
+	% Second wave
+	\draw [smooth, red, domain=0:{4 * pi}] plot (\x, {sin(deg(\x))});
+
+	% Second disturbance arrow
+	\draw [->,red] ({3*pi/2}, 0) -- +(0, -0.95) node [pos=0.74, right] {$d_2$};
+
+	% Resultant wave
+	\draw [smooth, domain=0:{4 * pi}] plot (\x, {1.5 * sin(deg(\x))});
+
+	% Resultant disturbance arrow
+	\draw [->] ({5*pi / 2}, 0) -- +(0, 1.45) node [midway, right] {$d_3$};
+
+	% Legend
+	\draw (11, 1.5) node {$d_3 = d_1 + d_2$};
+
+\end{plot}
+
+\subsub{Destructive Interference}
+
+Maximum destructive interference between two waves of the same type, with the same frequency $f$ and wavelength $\lambda$ takes place if the path difference between the two waves is an integer multiple of the shared wavelength, plus one half the wavelength: $(n + \frac{1}{2}) \cdot \lambda$ or $(2 \cdot n + 1) \cdot \frac{\lambda}{2}$
+
+\begin{plot}
+	
+	% Disturbance axis
+	\draw [<->] (0, -2) -- (0, 2);
+
+	% Time axis
+	\draw [->] (0, 0) -- ({4.1 * pi}, 0);
+
+	% First wave
+	\draw [smooth, blue, domain=0:{4 * pi}] plot (\x, {1.5 * sin(deg(\x+pi))});
+
+	% First disturbance arrow
+	\draw [->, blue] ({pi/2}, 0) -- +(0, -1.45) node [pos=0.4, right] {$d_1$};
+
+	% Second wave
+	\draw [smooth, red, domain=0:{4 * pi}] plot (\x, {0.5 * sin(deg(\x))});
+
+	% Second disturbance arrow
+	\draw [->,red] ({3*pi/2}, 0) -- +(0, -0.45) node [pos=0.5, right] {$d_2$};
+
+	% Resultant wave
+	\draw [smooth, domain=0:{4 * pi}] plot (\x, {-1 * sin(deg(\x))});
+
+	% Resultant disturbance arrow
+	\draw [->] ({5*pi / 2}, 0) -- +(0, -0.95) node [pos=0.3, right] {$d_3$};
+
+	% Legend
+	\draw (1.5, 1.5) node {$d_3 = d_1 + d_2$};
+
+\end{plot}
+
+\pagebreak
+
+\sub{Forced Oscillations and Damping}
+
+All objects and systems have a certain, characteristic frequency at which they vibrate when set into vibrational motion. This \emph{natural frequency} of the system is the frequency at which it oscillates when not subjected to a continuous or repeated external force --- in the absence of damping. It suffices to provide an initial impulse as may be supplied by resonance from the oscillatory motion of another system. In case of musical instruments, this is the frequency at which the string of a guitar oscillates when plucked or the frequency of the pure tone produced by a flute it is brought into vibrational motion as the result of someone blowing through it. The natural frequency of an object is dependent on two things: the speed with which the vibration or wave travels through the medium and the wavelength of the wave produced. This relationship stems from the fact that the velocity $v$ of a wave is equal to the product of its wavelength and frequency: $v = \lambda \cdot f$. The speed in turn is dependent on the properties of the medium through which the vibration travels. More specifically, the speed is determined by the\emph{stiffness} (\emph{elasticity} or \emph{tightness}) of the object as well as its density. The wavelength of a string instrument can be altered by shortening the string at a certain point (by pressing it against the shaft of the guitar). In total, the natural frequency of a muscial instrument determines its \emph{timbre} --- a property pertaining to the quality or texture of its sound. 
+
+What was just stated is the case for a \emph{free oscillator}, where there is no damping. When damping is present in the system, there must be an external agent --- the \emph{driver} --- to continuously apply a force to keep the oscillation going at whatever frequency the driver is vibrating with. The response of the oscillator --- the system or object being driven --- is greatest if it is driven at its natural frequency. This is the princple of resonance: the situation in which synchronous vibration of a neighbouring object at the natural frequency of another object forces (drives) that other object into vibrational motion at its natural frequency. In such a case, the the amplitude of the oscillator increases quickly, as any ongoing oscillation interferes constructively with new vibrations coming from the driver, continuously adding energy to the system. If damping is insufficient, this can lead to what is known as a \emph{resonance catastrophe}. An example of such a catastrophe would be the case in which a glass is brought into vibration at its natural frequency and eventually shatters. Also, air particles vibrating at the natural frequency of a bridge may cause it to resonate and eventually break apart. 
+
+However, in the usual case the energy supplied by the driver (in form of vibration) is equal to the rate at which the system loses energy --- the rate of damping. Formally stated, damping is a reduction in the amplitude of an oscillation as a result of energy being drained from the system to overcome frictional or other resistive, non-conservative forces.
+
+\begin{plot}
+	
+	% Amplitude of the forced oscillator axis
+	\draw [->] (0, -0.2) -- (0, 6.3)
+	      node [rotate=90, midway, above] {Amplitude of forced oscillator};
+
+	% Frequency ratio axis
+	\draw [->] (-0.2, 0) -- (8.5, 0)
+	      node [pos=0.9, below] {Frequency of driver};
+
+	% Natural frequency f_0
+	\draw [dashed, blue] (4, -0.5) node [below] {$f_0$} -- +(0, 6);
+
+	% No damping
+	\draw [red] (0, 1) .. controls (2.5, 2.5) .. (3.5, 6);
+
+	% No damping label
+	\draw [<-] (3.6, 5.8) -- +(2, 0)
+	      node [right] {No damping (catastrophe at $f_0$)};
+
+	% Weak damping
+	\draw (0, 1) .. controls (2, 1) and (3.5, 4) .. (4, 4);
+	\draw (8, 0.5) .. controls (6, 1) and (4.5, 4) .. (4, 4);
+
+	% Weak damping label
+	\draw [<-] (4.5, 4) -- +(2, 0) node [right] {Weak damping};
+
+	% Intermediate damping
+	\draw (0, 1) .. controls (2, 1) and (3.5, 2.5) .. (4, 2.5);
+	\draw (8, 0.5) .. controls (6, 1) and (4.5, 2.5) .. (4, 2.5);
+
+	% Intermediate damping label
+	\draw [<-] (4.5, 2.5) -- +(3, 0) node [right] {Intermediate damping};
+
+	% Strong damping
+	\draw (0, 1) .. controls (2, 1) and (3.5, 1.5) .. (4, 1.5);
+	\draw (8, 0.5) .. controls (6, 1) and (4.5, 1.5) .. (4, 1.5);
+
+	% Strong damping label
+	\draw [<-] (4.5, 1.5) -- +(3, 0) node [right] {Strong damping};
+
+\end{plot}
+
+\pagebreak
+
+\sub{Types of Waves}
+
+There are two categories of waves when speaking of their state of motion, two categories pertaining to their properties and two further categories when speaking of the direction of their oscillation or vibration relative to the direction of the wave's motion. The first distinction is made between \emph{standing waves} and \emph{travelling waves}. The second distinction is made between \emph{transverse waves} and \emph{longitudinal waves}. The third distinction is made between \emph{mechanical waves} and \emph{electromagnetic waves}.
+
+\subsub{Transverse and Longitudinal Waves}
+
+A transverse wave is a wave where the direction or plane of the oscillation or vibration is perpendicular to the direction of the wave's motion. All electromagnetic waves, such as light, are transverse waves, and also many mechanical waves. In case of mechanical waves, their property of being transverse means that the particles of the medium through which the wave travels oscillate vertically, to a position of maximum positive displacement to one of maximum negative displacement, while the wave moves in a horiontal direction.
+
+In the case of longitudinal waves, on the other hand, the direction of oscillation is always parallel to the direction of the wave's motion. As such, the wave travels as a result of the oscillators vibrating periodically forward and backward relative to the direction in which the wave is moving. This produces areas of \emph{compression} and greater pressure where particles of the medium come closer together and areas of \emph{rarefaction} --- reduced presssure --- where they are further away from each other. The wave thus propagates as a series of such interlinked compressions and rarefactions by \emph{shifting} and fluctuating the pressure up and down relative to normal pressure, in the direction of the wave's motion. The most prominent example of a longitudinal wave is a sound wave.
+
+\begin{plot}
+
+	% Wave direction
+	\draw [->] (0, 0) -- (10.5, 0) node [right] {Wave direction};
+
+	% Particles
+	\foreach \i in {-1.5, -1.3, ..., 1.5}
+	{
+		\draw [fill=black] ({2.5 + \i^2}, 0) circle [radius=1.2pt];
+		\draw [fill=black] ({7.5 + \i^2}, 0) circle [radius=1.2pt];
+	}
+
+	% Compression
+	\draw (2.5, -0.5) node {Compression};
+
+	% Rarefaction
+	\draw (5, 0.5) node {Rarefaction};
+
+\end{plot}
+
+\subsub{Mechanical and Electromagnetic Waves}
+
+Mechanical waves can be either transverse or longitudinal and are the product of a certain disturbance being propagated through a necessary medium via periodic vibrations of particles. Examples of mechanical wavs are sound waves, water waves or \emph{Mexican} waves in a sports stadium. The most important and essential properties of mechanical waves include:
+
+\begin{itemize}
+
+	\titleitem{Require a medium}
+
+	Mechanical waves \emph{require} a certain \textbf{medium} to travel through, as mechanical waves are solely the product of interlinked interactions between particles of the medium --- which may be a substance, material or object --- and displacements of these particles from their equilibrium positions. As a result, mechanical waves cannot ever travel through a vaccum. This is the reason why, for example, sound cannot be heard in space. Moreover, to refer to the analogy of a Mexican wave in a sports stadium, it is clear that the wave could not propagate without its medium --- the spectators.
+
+	\titleitem{Neighbouring particles are out of phase}
+
+	As mechanical waves are transmitted as a product of periodic oscillations of particles between a certain maximum positive and negative displacement from the equilibrium, adjacent or \emph{neighbouring} particles must be out of phase with one another (else there would be no effective transmission of the disturbance). In the case of the Mexican wave, a person only stands up once one's neighbour has done so and is already in a later stage of his periodic motion. Two persons --- as two particles in a medium --- are therefore always out of phase.
+
+	\titleitem{The wave source is some form of oscillator}
+
+	The source of a mechanical wave is usually a certain oscillation-like disturbance or vibration. A Mexican wave can only be started if a group of people --- the source --- starts the oscillation and thus begins the propagation of the disturbance.
+
+	\titleitem{Oscillators do not move from their mean position}
+
+	No matter if the mechanical wave is a longitudinal wave such as a sound (pressure) wave or a transverse wave such as a water or Mexican wave, the particles of the medium through which the wave is transmitted are always restored to their equilibrium position. Thus, their \emph{mean} position never actually changes and absolutely never travels with the wave. The particles are only \emph{disturbed} from the equilibrium (mean) position, either parallel to the direction of the wave in form of compression or rarefaction for longitudinal waves, or perpendicular to the wave's motion for transverse waves. As such, a particle of the medium through which a Mexican wave is transmitted, i.e. a person, never actually leaves his or her seat, but only oscillates relative to it.
+
+	\titleitem{Energy is transmitted with the wave, not matter}
+
+	The propagation of a mechanical wave is never the result of the transmission of particles, but always the result of the transmission of \emph{energy} --- of the \emph{disturbance}. Particles do not actually continuously move with the wave, but at best only to a certain extent in the case of compression and rarefaction. Waves transport energy, not matter. For a Mexican wave, it is not the people who move or are transmitted, but the disturbance, the energy.
+
+\end{itemize}
+
+Electromagnetic waves are a form of transverse wave consisting of an electric field component $\vec{E}$ and a magnetic field component $\vec{E}$, where each field oscillates perpendicular to the other and to the direction of the wave's motion. As opposed to mechanical waves, it is not the displacement, elongation or disturbance of particles of the wave's medium from their equilibrium position that is in periodic, vibrational motion. Rather, the field strength of either field alternates periodically and in a reptitive fashion. The electromagnetic spectrum spans a wide range of frequencies at which electromagnetic rays may be found, typically at frequencies between $3 \cdot 10^4$ and $3 \cdot 10^{23}$ Hertz. At the lower end of this spectrum are radio waves, followed by microwaves, infrared rays and subsequently the visible spectrum of light --- with wavelengths of between 400 nanometers (violet) and 700 nanometers (red). At the upper end, above visible spectrum of light, follows ultraviolet light, then X-rays and finally $\gamma$-rays, whose frequency is the highest and wavelength the shortest.
+
+\begin{plot}
+	
+	% Wave direction
+	\draw [<->] (-0.5, 0, 0) -- ({4*pi + 0.5}, 0, 0)
+	      node [right] {Wave direction};
+
+	% x axis (vertical plane)
+	\draw [<->] (0, -2.5, 0) -- (0, 2.5, 0) node [right] {$\vec{E}$-field strength};
+
+	% y axis (horizontal plane)
+	\draw [<->] (0, 0, -3) -- (0, 0, 3) node [below right] {$\vec{B}$-field strength};
+
+	% Electric field in the vertical plane
+	\draw [red, domain=0:{4*pi}, smooth] plot (\x, {2 * sin(\x r)});
+
+	% E vector label
+	\draw [red] ({2.5 * pi}, 2.3, 0) node {$\vec{E}$};
+
+	% Field strengths
+	\foreach \i in {0.785, 1.57, ..., 12.56}
+	{
+		\draw [red, ->] (\i, 0, 0) -- (\i, {1.85 * sin(\i r)}, 0);	
+	}
+
+	% Magnetic field in the horizontal plane
+	\draw [blue, domain=0:{4*pi}, smooth] plot (\x, 0, {3 * sin(\x r)});
+
+	% B vector label
+	\draw [blue] ({2.5 * pi}, 0, 3.8) node {$\vec{B}$};
+
+	% Field strengths
+	\foreach \i in {0.785, 1.57, ..., 12.56}
+	{
+		\draw [blue, ->] (\i, 0, 0) -- (\i, 0, {2.85 * sin(\i r)});	
+	}
+
+\end{plot}
+
+\pagebreak
+
+\subsub{Standing and Travelling Waves}
+
+Standing waves are a form of interference pattern that occurs when two or more waves of the same frequency and amplitude are moving in opposite directions through the same medium, such as a string in case of a musical instrument. These waves superpose, which results in fixed positions of \emph{nodes} and \emph{antinodes}. Antinodes are maxima at regions of constructive interference where the waves always combine \emph{in phase}. These are points along the medium that undergo vibrations between a large positive and large negative displacement, the maximum possible disturbance during each vibrational cycle of the standing wave. In contrast, nodes are minima at regions of destructive interference where the waves always combine $\pi$ radians or $180\degree$ out of phase. These points, sometimes referred to as \emph{points of no displacement}, give the impression of standing still. However, in reality, these are just points where all waves travelling through the medium interfere with each at the same time in such a way, that any displacement from one wave is canceled by a displacement equal in magnitude but opposite in sign from another wave. The alternating pattern of nodes and antinodes seemingly standing still is what gives standing waves their characteristic look and name.
+
+But standing waves are not formed in any situation. For example, if waves are continuously transmitted through a fixed length medium such as a string, then each wave will travel down the string, reach its end, invert and reflect, i.e. change from negative to positive displacement or vice-versa. However, this will not necessarily create a standing wave pattern, as these waves may not have the required phase relationship, but an arbitrary one, causing them to cancel as the number of waves with a differing phase increases. However, if the frequency of the waves is just right, a standing wave pattern will be created. This ``right'' frequency is the \emph{natural frequency} $f_0$ of the medium, also referred to as the \emph{fundamental pitch}, \emph{fundamental mode} or \emph{first harmonic}. At this frequency, there will be two fixed-end nodes at either end of the string and one antinode in the middle. Moreover, the wavelength of the resultant wave will be twice as long as the string. The next frequency at which a standing wave is formed is the \emph{first overtone} or \emph{second harmonic}, where the frequency is twice as high as that of the fundamental pitch. In this case, the wavelength will be equal to the string length, resulting in two antinodes and three nodes. In general, a standing wave is produced at any integer multiple of the fundamental frequency $f_0$, where each additional overtone (harmonic) will cause the addition of one further node and consequently one further antinode, such that the frequency of the $n$-th harmonic is defined as $f_n = n \cdot f_0$ (where the fundamental is the first harmonic). Another way to say this is that the frequency of the $n$-th overtone is defined as $f_n = (n + 1) \cdot f_0$, where the first overtone has twice the frequency relative to the fundamental mode or pitch.
+
+\begin{plot}
+	
+	% String
+	\draw [fill=black]
+	      (0, 0) node [above left] {node} circle [radius=1.2pt]
+	   -- (8, 0) node [above right] {node} circle [radius=1.2pt]
+	   node [midway, above] {Length $L$};
+
+	% Wave
+	\draw [domain=0:8, smooth]
+	      plot (\x, {sin(deg(0.0625 * 2 * pi * \x))});
+
+	% Antinode
+	\draw (4, 1.4) node {Antinode};
+
+	% Negative wave
+	\draw [domain=0:8, smooth, dashed]
+	      plot (\x, {-sin(deg(0.0625 * 2 * pi * \x))});
+
+	% Label
+	\draw (12, 1.4) node {Fundamental mode};
+
+	% Description 1
+	\draw (12, 0.5) node {$\lambda = 2 \cdot L$ };
+
+	% Description 2
+	\draw (12, -0.5) node {$f_0 = \frac{c}{\lambda} = \frac{c}{2 \cdot L}$};
+
+\end{plot}
+
+\vspace{\parskip}
+\vspace{\parskip}
+
+\begin{plot}
+	
+	% String
+	\draw [fill=black]
+	      (0, 0) node [above left] {node} circle [radius=1.2pt]
+	   -- (8, 0) node [above right] {node} circle [radius=1.2pt];
+
+	% More nodes
+	\draw [fill=black] (4, 0) circle [radius=1.2pt];
+	\draw (4, 0.6) node {node};
+
+	% Wave
+	\draw [domain=0:8, smooth]
+	      plot (\x, {sin(deg(0.125 * 2 * pi * \x))});
+
+	% Negative wave
+	\draw [domain=0:8, smooth, dashed]
+	      plot (\x, {-sin(deg(0.125 * 2 * pi * \x))});
+
+	% Label
+	\draw (12, 1.4) node {First Overtone};
+
+	% Description 1
+	\draw (12, 0.5) node {$\lambda = L$ };
+
+	% Description 2
+	\draw (12, -0.5) node {$f_0 = \frac{c}{\lambda} = \frac{c}{ \cdot L}$};
+
+\end{plot}
+
+\pagebreak
+
+\begin{plot}
+	
+	% String
+	\draw [fill=black]
+	      (0, 0) node [above left] {node} circle [radius=1.2pt]
+	   -- (8, 0) node [above right] {node} circle [radius=1.2pt];
+
+	% More nodes
+	\draw [fill=black] ({8/3}, 0) circle [radius=1.2pt];
+	\draw ({8/3}, 0.6) node {node};
+	\draw [fill=black] ({16/3}, 0) circle [radius=1.2pt];
+	\draw ({16/3}, 0.6) node {node};
+
+	% Wave
+	\draw [domain=0:8, smooth]
+	      plot (\x, {sin(deg(0.1875 * 2 * pi * \x))});
+
+	% Negative wave
+	\draw [domain=0:8, smooth, dashed]
+	      plot (\x, {-sin(deg(0.1875 * 2 * pi * \x))});
+
+	% Label
+	\draw (12, 1.4) node {Second Overtone};
+
+	% Description 1
+	\draw (12, 0.5) node {$\lambda = \frac{3}{2} \cdot L$ };
+
+	% Description 2
+	\draw (12, -0.5) node {$f_0 = \frac{c}{\lambda} = \frac{2 \cdot c}{3 \cdot L}$};
+
+\end{plot}
+
+\sub{Types of Sound}
+
+A few words should be lost over the different forms of sound and music in relation to their wave patterns. Mainly, the difference between a \emph{pure tone}, a \emph{sound} and \emph{noise}. 
+
+\begin{itemize}
+	\item A \textbf{pure tone} is a single harmonic pressure oscillation, that has only one frequency component, i.e. a simple waveform.
+
+	\bolditem{Sound} is the product of the superposition and interference between a certain fundamental pitch (frequency) and its overtones, harmonics or partials, i.e. integer multiples of the fundamental. Such a waveform is referred to as a \emph{complex} waveform.
+
+	\bolditem{Noise} is an entirely random signal where each particle of the vibrating object or system oscillates independently from other particles. As such, the frequency and amplitude of each body in vibrational, periodic motion may be entirely different compared to other bodies of the system. 
+\end{itemize}
+
+Another interesting phenomenon related to the interference of sound waves are so-called \emph{beats}. Beats are periodic fluctuations in the amplitude of a wave produced when two sound waves of very similar frequencies interfere with one another. The difference between the frequency of the first and the second wave should be very minimal, such 10\% more or less.
+
+\end{document}
