@@ -1,0 +1,449 @@
+% Electricity
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Electricity}
+
+\sub{Electrostatic Forces}
+
+An electrostatic force $F_e$ is the attractive or repulsive force acting between two electrically charged particles. Such an electrically charged particle may either have a positive or a negative charge. Like charges --- positive and positive or negative and negative --- repel while opposite charges --- positive and negative or vice versa --- attract. The unit of electrical charge of a charged particle is Coulomb $[C]$, where one Coulomb is equal to $6.241 \cdot 10^{18}$ times the elementary charge, i.e. $1\, C$ is equivalent to the charge of $6.241 \cdot 10^{18}$ protons while $-1\, C$ is the charge of $6.241 \cdot 10^{18}$ electrons.
+
+The law describing the interaction between these particles was first described by the French physicist Charles Coulomb. His corresponding law --- \emph{Coulomb's Law} --- reads as follows:
+
+\begin{displayquote}
+	The magnitude of the electrostatic force of interaction between two point charges is directly proportional to the scalar multiplication of the magnitudes of charges and inversely proportional to the square of the distance between them. The force is along the straight line joining them. If the two charges have the same sign, the electrostatic force between them is repulsive; if they have different sign, the force between them is attractive.
+\end{displayquote}
+
+The equation to calculate the electrostatic force can be derived from the above definition. It is astonishingly similar to the universal law of gravitation: $$F_e = k_e \cdot \frac{q_1 \cdot q_2}{r^2}$$
+
+$q_1, \, q_2$ \defas The two point charges between which the attractive or repulsive electrostatic force acts.
+
+$r$ \defas The distance between the two point charges.
+
+$k_e$ \defas Coulomb's constant $ = \frac{1}{4 \pi \cdot \varepsilon_0} = 8.99 \cdot 10^{9} \, N\, m^2 \, C^{-2}$ where $\varepsilon_0$ is the permitvity of free space.
+
+$F_e$ \defas The electrostatic force between the two charges $q_1$ and $q_2$.
+
+As is stated in Coulomb's law, if $q_1$ and $q_2$ have like signs, they repell, thus $F_e$ will have a positive sign (the distance between them can be thought to increase). If their signs differ, the sign of the resultant force will be negative (the distance between them will decrease).
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		% Repulsive, Straight line with piont charges
+		\draw [fill=black] (0, 0) 
+		      -- (3, 0) circle [radius=2pt] node [below] {$q_1$}
+		      -- (6, 0) circle [radius=2pt]
+		                node [midway, below] {$r$}
+		                node [below] {$q_2$}
+		      -- (9, 0);
+
+		% Repulsive, force vector 1
+		\draw [thick, ->] (3, 0.5) -- (1, 0.5)
+		      node [midway, above] {$\vec{F_e}$};
+
+		% Repulsive, force vector 2
+		\draw [thick, ->] (6, 0.5) -- (8, 0.5)
+		      node [midway, above] {$\vec{F_e}$};
+
+		%  Description
+		\draw (11, 0) node {Repulsion}; 
+	\end{tikzpicture}
+
+	\vspace{0.5cm}
+	
+	\begin{tikzpicture}
+		% Attractive, Straight line with piont charges
+		\draw [fill=black] (0, 0) 
+		      -- (3, 0) circle [radius=2pt] node [below] {$q_1$}
+		      -- (6, 0) circle [radius=2pt]
+		                node [midway, below] {$r$}
+		                node [below] {$q_2$}
+		      -- (9, 0);
+
+		% Attractive, force vector 1
+		\draw [thick, ->] (3, 0.5) -- (4.4, 0.5)
+		      node [midway, above] {$\vec{F_e}$};
+
+		% Attractive, force vector 2
+		\draw [thick, ->] (6, 0.5) -- (4.6, 0.5)
+		      node [midway, above] {$\vec{F_e}$};
+
+		%  Description
+		\draw (11, 0) node {Attraction}; 
+	\end{tikzpicture}
+\end{figure}
+
+\pagebreak
+
+\sub{Electric Fields}
+
+An electric field is any region in space around an electric charge --- the \emph{source} charge --- in which another charge experiences an electrostatic force either of attraction or of repulsion. Such an electric field is characterized by its \emph{strength} and by its \emph{direction}. The strength $\vec{E}$ of an electric field, a vector quantity measured in $N\, C^{-1}$, is mathematically defined as the force $\vec{F}$ acting on a test charge $q$ within the electric field, divided by the magnitude of the charge: $$\text{Electric field strength } \vec{E} = \frac{\text{Force acting on the charge } \vec{F}}{\text{Magnitude of the charge } q} \,N\, C^{-1}$$ Thus, electric field strength can simply be defined as \emph{the electric force per unit charge}. As the force acting on the charge is the electrostatic force as defined by Coulomb's law, substituting this for $\vec{F}$ yields an expression that shows that, ultimately, the field strength is dependent solely on the source charge $Q$ and the square of the distance $r$ between the source and the test charge $q$: $$\vec{E} = \frac{\vec{F}}{q} = \cfrac{k_e \cdot \cfrac{Q \cdot q}{r^2}}{q} = k_e \cdot \frac{Q \cdot q}{r^2 \cdot q} = k_e \cdot \frac{Q}{r^2}$$ Visually, an electric field may be displayed as a point charge with \emph{electric field lines} pointing away or towards the charge. The field lines convey the vector nature of the electric field, i.e. their property of having a magnitude and a direction. The direction of the field is taken to be the direction of the force it would exert on a positive test charge. The electric field lines therefore point radially outward from a positive charge and radially in toward a negative point charge. Moreover, the density of the field lines at any point within the electric field is a measure of its strength. As such, the electric field is stronger in regions nearer to the source charge, where field lines are closer together, and weaker further away, where field lines are further apart.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Source charge
+		\draw [red] (0, 0) circle [radius=0.3] node {$+$}; 
+
+		% Field lines
+		\foreach \a in {0, 22.5, ..., 337.5}
+		{
+			\draw [->] (\a:0.3) -- (\a:1);
+			\draw [->] (\a:1) -- (\a:1.5);
+		}
+	\end{tikzpicture}
+	%
+	\hspace{1cm}
+	%
+	\begin{tikzpicture}
+
+		% Source charge
+		\draw [blue] (0, 0) circle [radius=0.3] node {$-$}; 
+
+		% Field lines
+		\foreach \a in {0, 22.5, ..., 337.5}
+		{
+			\draw [>->] (\a:1.5) -- (\a:0.9);
+			\draw (\a:0.9) -- (\a:0.3);
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+As a consequence of the convention to define the direction of the electric field lines of a point charge as the direction of the force exerted upon a \emph{positive} charge within this field, it can be said that a positive particle will always follow the direction of the field lines, while a negative particle will always travel in the opposite direction. This can be clearly seen from the above visualizations, as a positive test charge would experience a force of respulsion when entering the electric field of a positive charge, while it would attracted to a negative source charge. The following diagram on the left depicts the interaction of electric field lines of two likes charges, and of two opposite charges on the right.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% First point charge
+		\draw [red] (-1, 0) circle [radius=0.3cm] node {+};
+
+		% Second point charge
+		\draw [red] (1, 0) circle [radius=0.3cm] node {+};
+
+		\foreach \a/\b/\c/\d/\e in {22.5/0.7/0.3/0.9/1.5,
+								    45/0.4/0.3/0.5/1.5,
+								    67.5/0.2/0.3/0.1/1.5,
+								    90/0/0.3/-0.2/1.5,
+								    112.5/-0.1/0.4/-0.7/1.3,
+								    135/-0.3/0.4/-1.1/0.9,
+								    157.5/-0.2/0.1/-1.3/0.3}
+		{
+			% First charge, top
+			\draw [->]
+			      (-1,0)+(\a:0.3) ..
+			      controls +(\b, \c) ..
+			     +(\d, \e);
+
+			% First charge, bottom
+			\draw [->]
+			      (-1,0)+(-\a:0.3) ..
+			      controls +(\b, -\c) ..
+			     +(\d, -\e);
+
+			% Second charge, top
+			\draw [->]
+			      (1,0)+({180-\a}:0.3) ..
+			      controls +(-\b, \c) ..
+			     +(-\d, \e);
+
+			% Second charge, bottom
+			\draw [->]
+			      (1,0)+({180+\a}:0.3) ..
+			      controls +(-\b, -\c) ..
+			     +(-\d, -\e);
+		}
+
+		% Description
+		\draw (0, -2) node {Electric field lines for like charges};
+
+	\end{tikzpicture}
+	%
+	%
+	\begin{tikzpicture}
+
+		% First point charge
+		\draw [red] (-1, 0) circle [radius=0.3cm] node {+};
+
+		% Second point charge
+		\draw [red] (1, 0) circle [radius=0.3cm] node {$-$};
+
+		\foreach \a/\b/\c/\d/\e in {22.5/0.3/0.1/1/0.2,
+								    22.5/0.3/0.3/1/0.4,
+								    67.5/0.3/0.4/1/0.75,
+									90/0.3/0.7/1/1.1,
+								    112.5/0/0.4/0.2/1.4,
+								    135/-0.2/0.4/-0.5/1.3,
+								    157.5/-0.2/0.1/-1/1}
+		{
+			% First charge, top
+			\draw [->]
+			      (-1,0)+(\a:0.3) ..
+			      controls +(\b, \c) ..
+			     +(\d, \e);
+
+			% First charge, bottom
+			\draw [->]
+			      (-1,0)+(-\a:0.3) ..
+			      controls +(\b, -\c) ..
+			     +(\d, -\e);
+
+			\newcount\angle
+			\angle\a\relax
+
+			% Second charge, top
+			\draw \ifnum\angle>90 [-<] \fi
+				  (1,0)+({180-\a}:0.3) ..
+			      controls +(-\b, \c) ..
+			     +(-\d, \e);
+
+			% Second charge, bottom
+			\draw \ifnum\angle>90 [-<] \fi
+				  (1,0)+({180+\a}:0.3) ..
+			      controls +(-\b, -\c) ..
+			     +(-\d, -\e);
+		}
+
+		% Description
+		\draw (0, -2) node {Electric field lines for opposite charges};
+
+	\end{tikzpicture}
+\end{figure}
+
+\sub{Electric Current}
+
+An electric current flows when charged particles (charges) move. These charges may either be electrons in the case of conductive metals, or ions in case of electrolytes (chemical solutions). Formally, electric current $I$ as a physical quantity is defined as the rate at which charge flows through a certain point in a circuit. Thus, the current flowing through a point can be calculated as the magnitude of the total charge passing through the point, divided by the time taken.
+
+\begin{plot}
+	
+	% Circuit
+	\draw [thick]
+	      (-0.1, 0.3) node [above left] {$+$} -- ++(0, -0.6) (-0.1, 0)
+	 -- ++(-2, 0) -- ++(0, 2)
+	 -- ++(1.6, 0)++(0.4, 0)
+	    circle [radius=0.4cm] node {X}
+	    ++(0.4, 0) -- ++(1.6, 0)
+	 -- ++(0, -0.6)++(0, -0.4)
+	    circle [radius=0.4cm] node {A}
+	    ++(0, -0.4) -- ++(0, -0.6)
+	 -- (0.1, 0)++(0, 0.2) node [above right] {$-$} -- ++(0, -0.4);
+
+
+	 % Light bulb label
+	 \draw (-0.1, 2.7) node {Light Bulb};
+
+	 % Ammeter label
+	 \draw (3.2, 1) node {Ammeter};
+
+	 % Battery label
+	 \draw (0, -0.6) node {Battery};
+
+	 % Equation
+	 \draw (-5, 1) node {$I = \frac{\Delta q}{\Delta t}\, A$};
+
+\end{plot}
+
+The unit of electric current is Ampere $[A]$, where one Ampere is equivalent to one Coulomb of charge passing through a point in a time of one second. Therefore, $1\, A = 1\, C\, s^{-1}$. When measuring current in an electric circuit, the device used is called an \emph{ammeter}. It must be connected in series to the point of which one wishes to measure the current, such as a ligh bulb. Lastly, it should be state that there is a difference between \emph{current}, the rate at which charges pass through a point, and the speed of the charges --- the \emph{drift speed}. When there is a high current flowing through a certain point in a circuit, this does not mean that the charges moving are fast. For example, electrons may only move one meter per hour. What it means is that \emph{many} charges are passing through a point in a certain amount of time, such that the total charge is high. The flow of charges is only perceived as being very fast because the \emph{signal}, i.e. the \emph{information}, travels quickly through the electric field. As such, electrons move slowly, while the information travels with the speed of light.
+
+\sub{Electric Voltage}
+
+While electric current is a measure of the rate of charge flow through a point, electric voltage --- also referred to as \emph{potential difference} --- is a measure of the \emph{charge difference} between two poles of a power supply. Generally speaking, an \emph{electric potential} $\varphi$ is defined as the potential energy $E_{pot}$ of a certain amount of charge in an electric field, divided by the size $q$ of the total charge (potential energy per unit charge): $$\varphi = \frac{E_{pot}}{q}$$ A voltage $U$ in terms of an electric \emph{potential difference} is subsequently nothing else than a measure of the \emph{difference} $\Delta \varphi$ in the electric potential of a certain amount of charge between two points $A$ and $B$ in an electric field. $$U = \Delta \varphi = \varphi_A - \varphi_B$$ If point $B$ were to be closer to the positive pole than point $A$, point $B$ would have more potential energy than point $A$, as the potential energy of a charge, just as the electrostatic force acting between two point charges, is inversely proportional to the distance between them. As the physical quantity of \emph{work} is defined as a certain transfer or \emph{change} of energy, voltage may also be seen as the work done by the electric field per unit charge: $$U = \Delta \varphi = \frac{E_{pot_A} - E_{pot_B}}{q} = \frac{\Delta E}{q} = \frac{W}{q}$$
+
+\pagebreak
+
+Voltage is measured in Volts, where one Volt $[V]$ could also be defined as one Joule $[J]$ of work being done by an electric field on a unit charge of one Coulomb $[C]$: $$1\, V = J\, C^{-1} = kg \cdot m^2\, s^{-2} \cdot C^{-1}$$ In a circuit, the device used to measure the potential difference between two points is referred to as a \emph{voltmeter}. It must be connected \emph{in parallel} to the circuit.
+
+\begin{plot}
+	
+	% Circuit
+	\draw [thick]
+	      (-0.1, 0.3) node [above left] {$+$} -- ++(0, -0.6) (-0.1, 0)
+	 -- ++(-2, 0) -- ++(0, 2)
+	 -- ++(1.6, 0)++(0.4, 0)
+	    circle [radius=0.4cm] node {X}
+	    ++(0.4, 0) -- ++(1.6, 0)
+	 -- ++(0, -2)
+	 -- (0.1, 0)++(0, 0.2) node [above right] {$-$} -- ++(0, -0.4);
+
+
+	% Voltmeter across light bulb
+	\draw [thick]
+	       (-0.8, 2)
+	  -- ++(0, 1)
+	  -- ++(0.3, 0)++(0.4, 0)
+	       circle [radius=0.4cm] node {V}
+	     ++(0.4, 0) -- ++(0.3, 0)
+	  -- ++(0, -1);
+
+	% Voltmeter label
+	\draw (0, 3.8) node {Voltmeter};
+
+\end{plot}
+
+\sub{Resistance}
+
+The voltate between two poles or any points of an electric field or circuit causes current to flow through it. The amount of current, i.e. the rate at which charges flow, depends on the \emph{resistance} between the two points. At the microscopic level, resistance is caused by collisions of electrons with lattice ions of the conductive material through which they are flowing. The more collisions electrons undergo, the more difficult it is for them to pass through the material. Electrons bounce off the lattice ions, thus momentarily altering the direction of their motion, slowing down and subsequently accelerating once more as the result of the potential difference within the electric field. Moreover, as electrons collide with lattice ions and are forced to slow down, they transfer energy to the lattice ions, causing them to vibrate ever more intensely and transfer energy themselves, now into thermal energy. As a result, the conductor heats up.
+
+Factors influencing the electric resistance of a certain conducting material include:
+
+\begin{itemize}
+
+	\item The nature or properties of the material, contained in a certain material constant referred to as the conductor's \emph{resistivity} $\rho$
+
+	\item The length $l$ of the conductor
+
+	\item The cross-sectional area $A$ of the conductor
+
+	\item The temperature at which the conductor is operating. It plays an insignficant role in the majority of cases, and becomes relevant only in extreme situations.
+\end{itemize}
+
+Given the above factors, it can be said that the electric resistance $R$ of a conducting material is directly proportional to the resistivity constant $\rho$ of the material as well as the length of the conductor. However, it is inversely proportional to its cross-sectional area. This yields the following expression: $$R = \rho \cdot \frac{l}{A}$$
+
+\pagebreak
+
+Another possible definition of resistance is that of it being equal the ratio between the potential difference (voltage) $U$ across two points of a conductor, divided by the current $I$ flowing through the conductor between these two points. This relationship was first determined by the German physicist Georg Ohm, in honor of whom it is called \emph{Ohm's law}: $$R = \frac{U}{I}$$ The unit of resistance is \emph{Ohm} $[\Omega]$, where one Ohm is equivalent to $1\, V\, A^{-1}$ and is defined as the ratio between a potential difference of one Volt across two points of a conductor between which a current of one Ampere is flowing, i.e. as the ratio between \emph{the voltage across it} and the \emph{the current flowing through it}.
+
+\subsub{Resistors in Circuits}
+
+There are two types of electric circuits: \emph{series} and \emph{parallel}. In a series circuit, resistors are placed one after the other in series with the rest of the circuit, with not a single junction throughout the circuit. In a parallel circuit, there may be one or more junctions. Depending on which category a given circuit falls into, the current flowing through it and the voltage accross it display a different behavior. Moreover, there will be a different relationship between the total resistance in the circuit and the individual resistors.
+
+\subsubsub{Resistors in Series}
+
+In case of a series circuit, the current flowing through any given point of the circuit is uniform for all points and equal to the total current flowing through the circuit. However, the total voltage across the circuit is shared among individual components (conductors), such that the total potential difference across the power source is equal to the sum of potential differences across each resistive load. Similarly, the total resistance encountered by electrons in the circuit is equal to the sum of each individual resistor value.
+
+\newcommand{\asdf}{\draw (0, 0) node {hello};}
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+
+		% Circuit
+		\draw (9, 0) to[battery] (0, 0)
+		      (3.5, 0)
+		 -- ++(0, -1) to[voltmeter, l_=$U_{tot}$] ++(2, 0) -- ++(0, 1)
+		      (0, 0)
+		   -- (0, 1) node [left] {$I_{tot}$}
+		   -- (0, 2) to[resistor, l_=$R_1$] (3, 2)
+		    ++(-2.5, 0)
+         -- ++(0, 1) to [voltmeter, l^=$U_1$] ++(2, 0) -- ++(0, -1)
+		      (3, 2) to [resistor, l_=$R_2$] (6, 2)
+		    ++(-2.5, 0)
+         -- ++(0, 1) to [voltmeter, l^=$U_2$] ++(2, 0) -- ++(0, -1)
+		      (6, 2) to [resistor, l_=$R_3$] (9, 2)
+		    ++(-2.5, 0)
+         -- ++(0, 1) to [voltmeter, l^=$U_3$] ++(2, 0) -- ++(0, -1)
+	 	      (9, 2)
+	 	   -- (9, 0);
+
+	\end{circuitikz}
+
+	\vspace{0.3cm}
+
+	\begin{tabular}{l l}
+		$I_{tot} = $ & $ I_1 = I_2 = I_3$
+		\\ & \\
+		$U_{tot} = $ & $U_1 + U_2 + U_3 \Rightarrow \sum_{i=1}^{N} U_i$
+		\\ & \\
+		$R_{tot} = $ & $R_1 + R_2 + R_3 \Rightarrow \sum_{i=1}^{N} R_i$
+	\end{tabular}
+\end{figure}
+
+\subsubsub{Resistors in Parallel}
+
+In a parallel circuit, there are two or more possible branches that charges can take. When resistors are placed in a parallel circuit, the relationship between the voltage across and the current through each conductor is reversed compared to a series circuit. Now, the voltage across each resistor is uniform and equal to the total potential difference across the entire circuit. However, the current is no longer uniform, but is now shared between all resistive conductors, such that the total current that is drawn from the power source (battery) is the sum of the current flowing through each individual resistor.
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+
+		% Circuit
+		\draw (2, 0)
+		      to [ammeter, l_=$I_{tot}$] (0, 0) -- ++(0, 4)
+		      to [ammeter, l=$I_2$]     ++(3, 0)
+		      to [resistor=$R_2$]    ++(3, 0)
+		      ++(-5.5, 0) -- ++(0, 1.5)
+		      to [ammeter, l^=$I_1$]     ++(2.5, 0)
+		      to [resistor=$R_1$]    ++(2.5, 0)
+		      -- ++(0, -1.5)++(-5, 0) -- ++(0, -1.5)
+		      to [ammeter, l_=$I_3$]     ++(2.5, 0)
+		      to [resistor=$R_3$]    ++(2.5, 0)
+		      -- ++(0, 1.5)++(0.5, 0) -- ++(0, -4)
+		      to [battery] (2, 0);
+
+	\end{circuitikz}
+
+	\vspace{0.3cm}
+
+	\begin{tabular}{l l}
+		$I_{tot} = $ & $ I_1 + I_2 + I_3 \Rightarrow \sum_{i=1}^{N} I_i$
+		\\ & \\
+		$U_{tot} = $ & $U_1 = U_2 = U_3$
+	\end{tabular}
+\end{figure}
+
+The relationship between the total resistance in the circuit and the resistance of each individual conductor is unfortunately not as simple as is the case for a series circuit. However, it can be derived easily from the knowledge that $R = \frac{U}{I}$ and thus $I = \frac{U}{R}$, as well as from the definition of the voltage being uniform across all conductors in a parallel circuit, given above. Substituting the latter expression for every current value in the above formula for calculating the current in a parallel circuit yields: $$I_{tot} = I_1 + I_2 + I_3 \thus \frac{U_{tot}}{R_{tot}} = \frac{U_{tot}}{R_1} + \frac{U_{tot}}{R_2} + \frac{U_{tot}}{R_3}$$ Dividing both sides of the equation leads to the cancellation of $U_{tot}$: $$\frac{\cancel{U_{tot}}}{R_{tot}} = \frac{\cancel{U_{tot}}}{R_1} + \frac{\cancel{U_{tot}}}{R_2} + \frac{\cancel{U_{tot}}}{R_3} = \frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$$ The total resistance in a parallel circuit can now be defined as: $$\frac{1}{R_{tot}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} \thus \frac{1}{R_{tot}} = \sum_{i=1}^{N} \frac{1}{R_i}$$
+
+\pagebreak
+
+\sub{Kirchoff's Laws}
+
+\subsub{Kirchoff's First Law}
+
+The first law is concerned with charge conservation in a parallel circuit. It reads:
+\begin{displayquote}
+	The total current arriving at a junction must equal the total current leaving the junction.
+\end{displayquote}
+
+This law confirms the previously mentioned fact that in a parallel circuit, the total current flowing through the circuit is equal to the sum of the current flowing through each individual component in each parallel branch. The basis for this law is the fact that charge, just like energy or linear momentum, is a physical quantity that cannot be created or destroyed. Such a quantity is called a \emph{conserved quantity}. Basically, it can be stated that when current divides at a junction, such that charge flows through and is thus shared across several branches of a parallel circuit, then, given that the total charge cannot be lost but must be maintained, the entire current must leave the junction without any losses.
+
+\begin{circuit}
+
+	\draw (0, 0) to [battery] ++(0, 2)
+	 -- ++(1, 0) node [midway, above] {$I_{tot}$}
+	 -- ++(0, 0.5) to [resistor, l=$R_1$, i^>=$I_1$] ++(2, 0)
+	 -- ++(0, -0.5) ++(-2, 0)
+	 -- ++(0, -0.5) to [resistor, l_=$R_2$, i_>=$I_2$] ++(2, 0)
+	 -- ++(0, 0.5) -- ++(1, 0) node [midway, above] {$I_{tot}$}
+	 -- ++(0, -2) -- (0, 0);
+
+	 % Junctions
+	 \draw [fill=black] (1, 2) circle [radius=2pt];
+	 \draw [fill=black] (3, 2) circle [radius=2pt];
+
+\end{circuit}
+
+\subsub{Kirchoff's Second Law}
+
+The second law defined by Gustav Kirchoff deals with energy conservation laws and states that:
+\begin{displayquote}
+	The sum of potential differences round any closed loop in a circuit must be zero: $$-U_{tot} = \sum_{i=1}^{N} U_i$$
+\end{displayquote}
+
+In essence, this law states that the total energy fed into the circuit by the power supply (battery) must equal the total energy used by the system, so that none can have been lost. Given that a voltage is defined as a difference in electric potential between two points of an electric field, it is clear that if charged particles go from a maximum of electric potential energy at the positive terminal of the battery to none at all at the negative terminal, then the potential energy must have been transformed into other forms of energy. These may include light, sound or thermal energy. Therefore, the potential difference must be equal in magnitude and opposite in sign (in the sense that one is input and one is output of energy) compared to the sum of potential differences across any closed loop in a circuit.
+
+\begin{circuit}
+	
+	\draw (0, 0) to [battery] ++(0, 2)
+	    ++(0, -0.5)
+	 -- ++(-1, 0) to [voltmeter, l_=$-U_{tot}$] ++(0, -1)
+	 -- ++(1, 0)
+	    ++(0, 1.5) to [resistor, l_=$R_1$] ++(3, 0)++(-2.5, 0)
+	 -- ++(0, 0.8) to [voltmeter] ++(2, 0)
+	 -- ++(0, -0.8)
+	    ++(0.5, 0) to [resistor, l_=$R_2$] ++(3, 0)++(-2.5, 0)
+	 -- ++(0, 0.8) to [voltmeter] ++(2, 0)
+	 -- ++(0, -0.8)++(0.5, 0)
+	 -- ++(0, -2) -- (0, 0);
+
+\end{circuit}
+
+\sub{Electrical Power and Work}
+
+When we speak of our electricity consumption in our home, we are really speaking of how much energy is being transformed from one form to another. In case of electricity, electrical energy is converted into light --- in case of filament or other lamps ---, sound --- as our loudspeakers vibrate --- or motion --- such as a fan oscillating to spread its cooling winds through a certain space. To measure the rate at which we are consuming energy, i.e. the amount of electrical energy being transferred or converted per second, the physical quantity of \emph{power} is used. Power may either be defined --- generally --- as the rate at which energy is converted, calculated as the total amount of energy transferred in a certain time, divided by the time taken; or it can be defined in terms more specific to electricity: as the potential difference (voltage) across two points of a circuit, multiplied by the current flowing through it: $$P = \frac{\text{Total energy transferred } \Delta E}{\text{Time taken } \Delta t} \OR P = \text{Voltage } U \cdot \text{Current } I$$ The latter definition can be derived from three seperate equations. The first is the definition of power as the rate of work or the rate at which energy is being transferred. The second is that of current being the rate at which charge flows through a given point of a circuit. The third is that of voltage being a difference in electric potential and thus of potential energy per unit charge. $$P = \frac{\Delta E}{\Delta t} \hspace{1cm} I = \frac{Q}{\Delta t} \hspace{1cm} U = \Delta \varphi = \frac{\Delta E}{Q}$$ When solving the third equation, that of voltage, for the delta in energy and substituting the charge for current multiplied by the time taken, which can be derived from equation two, the following expression is formed: $$P = \frac{\Delta E}{\Delta t} = \frac{U \cdot Q}{\Delta t} = \frac{U \cdot I \cdot \Delta t}{\Delta t} = U \cdot I$$ The Unit of Power is Watts $[W]$, where one Watt is equal to one Joule of energy being transferred by a system per second. Essentially, power is a measure of how fast electrons are travelling in a certain time. Therefore, when paying for your electricity bill, you are paying for the work (energy transfer) done by electrons in the various circuits of your household. Work, the conversion of energy from one form to another, can subsequently be defined in terms of Power: $$W = P \cdot t = U \cdot I \cdot t$$ A common unit of work and energy, used especially in the realm of electricity, is the \emph{kilowatt hour} $[kWh]$. One kilowatt hour is equivalent to $3 600 000\, J$ of work or energy transferred, as one kilowatt means one thousand joules of work being done per second. The time value of one hour turns the quantity of power (in Watts) back into a quantity of energy and work (in Joules): $$1\, kWh = \frac{1000\, J}{1\, s} \cdot 1\, h = \frac{1000\, J}{1\, s} \cdot 3600\, s = 1000\, J \cdot 3600 = 3 600 000\, J$$
+
+\end{document}

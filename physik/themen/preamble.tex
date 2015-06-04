@@ -32,6 +32,8 @@
 
 \usepackage{cancel}
 
+\usepackage[siunitx, european]{circuitikz}
+
 \everymath{\displaystyle}
 
 % Header / footer settings
@@ -96,4 +98,15 @@
 {
 		\end{tikzpicture}
 	\end{figure}
+}
+
+\newenvironment{circuit}[1][h]
+{
+	\begin{figure}[#1!]
+		\centering
+		\begin{circuitikz}
+}
+{
+	\end{circuitikz}
+\end{figure}
 }
