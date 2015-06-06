@@ -538,7 +538,7 @@ A practical direct current (DC) electric motor uses a different principle than t
 
 \sub{Electromagnetic Induction}
 
-Electromagnetic induction is the process by which a conductor placed in an alternating magnetic field or a conductor moving through a stationary magnetic field causes a voltage (potential difference) to be produced across the conductor. This process of electromagnetic induction, in turn, causes an electrical current --- it is said to \emph{induce} the current. In either case, the underlying, fundamental root of the generation of an induced electrical voltage is a certain change in \emph{magnetic flux}. The magnetic flux $\Phi_m$ is a measure of the amount of magnetic field passing through a given surface, i.e. that of the conductor, in case of electromagnetic induction. More precisely, it is mathematically defined as the magnetic field vector $\vec{B}$ multiplied by the perpendicular area $\vec{A}$ of the electric field that it penetrates. The vector $\vec{A}$ is the normal vector of the electric field plane, meaning that the length of $\vec{A}$, $|\vec{A}|$, yields the area of the electric field. Moreover, it should be mentioned that the product of any two vectors $\vec{a}$ and $\vec{b}$ can be replaced by the multiplication of their respective lengths, $|\vec{a}|$ and $|\vec{b}|$, as well as, additionally, the cosine of the angle $\alpha$ between the two vectors. This is a result of the definition of the formula for the cosine of the angle $\alpha$ between any two given vectors. All of these pieces of information put together yield the following definition for the magnetic flux $\Phi_m$ in dependence of the magnetic field $\vec{B}$ and the area vector $\vec{A}$: $$\Phi_m = \vec{B} \cdot \vec{A} \AND \cos \alpha = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|} \thus \Phi_m = |\vec{B}| \cdot |\vec{A}| \cdot \cos \alpha$$ The SI-unit of magnetic flux is Weber $[Wb]$, where one Weber is equivalent to one volt-second. The electrical voltage $U_{ind}$ induced from a given change in magnetic flux may subsequently be calculated as the difference in magnetic flux $\Delta \Phi_m$ divided by the difference in time or time taken $\Delta t$: $$U_{ind} = \frac{\Delta \Phi_m}{\Delta t}$$ This definition, referred to as \emph{Faraday's law of induction}, therefore makes clear that the voltage induced by an alternating magnetic field is equal to the rate of change of magnetic flux. However, there is one fault in the definition just given: the induced voltage is the \emph{negative} of the change of magnetic flux over time. The reason for this is given by \emph{Lenz' law}, which reads:
+Electromagnetic induction is the process by which a conductor placed in an alternating magnetic field or a conductor moving through a stationary magnetic field causes a voltage (potential difference) to be produced across the conductor. This process of electromagnetic induction, in turn, causes an electrical current --- it is said to \emph{induce} the current. In either case, the underlying, fundamental root of the generation of an induced electrical voltage is a certain change in \emph{magnetic flux}. Magnetic flux $\Phi_m$ is a measure of the amount of magnetic field passing through a given surface, i.e. that of the conductor, in case of electromagnetic induction. More precisely, it is mathematically defined as the magnetic field vector $\vec{B}$ multiplied by the perpendicular area $\vec{A}$ of the electric field that it penetrates. The vector $\vec{A}$ is the normal vector of the electric field plane, meaning that the length of $\vec{A}$, $|\vec{A}|$, yields the area of the electric field. Moreover, it should be mentioned that the product of any two vectors $\vec{a}$ and $\vec{b}$ can be replaced by the multiplication of their respective lengths, $|\vec{a}|$ and $|\vec{b}|$, as well as, additionally, the cosine of the angle $\alpha$ between the two vectors. This is a result of the definition of the formula for the cosine of the angle $\alpha$ between any two given vectors. All of these pieces of information put together yield the following definition for the magnetic flux $\Phi_m$ in dependence of the magnetic field $\vec{B}$ and the area vector $\vec{A}$: $$\Phi_m = \vec{B} \cdot \vec{A} \AND \cos \alpha = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|} \thus \Phi_m = |\vec{B}| \cdot |\vec{A}| \cdot \cos \alpha$$ The SI-unit of magnetic flux is Weber $[Wb]$, where one Weber is equivalent to one volt-second. The electrical voltage $U_{ind}$ induced from a given change in magnetic flux may subsequently be calculated as the difference in magnetic flux $\Delta \Phi_m$ divided by the difference in time or time taken $\Delta t$: $$U_{ind} = \frac{\Delta \Phi_m}{\Delta t}$$ This definition, referred to as \emph{Faraday's law of induction}, therefore makes clear that the voltage induced by an alternating magnetic field is equal to the rate of change of magnetic flux. However, there is one fault in the definition just given: the induced voltage is the \emph{negative} of the change of magnetic flux over time. The reason for this is given by \emph{Lenz' law}, which reads:
 
 \begin{displayquote}
 
@@ -548,9 +548,184 @@ Electromagnetic induction is the process by which a conductor placed in an alter
 
 Essentially, this law, based on the law of energy conservation, states that the polarity of the induced voltage will be such that it produces a current whose \emph{magnetic field} opposes the change which produced it. The induced magnetic field inside any loop of wire always acts to keep the magnetic flux in the loop \emph{constant}. This means that if the voltage was induced as the result of the magnetic flux increasing, i.e. of $\vec{B}$ becoming greater, then the magnetic field of the induced current acts in opposition to it. If $\vec{B}$ is decreasing, the induced current's field acts in the direction that stops this decrease in order to (attempt to) keep the magnetic field constant. Thus, the correct definition of Faraday's law of induction is really (note the minus sign): $$U_{ind} = - \frac{\Delta \Phi_m}{\Delta t}$$
 
-\subsub{The AC Generator}
+\pagebreak
 
-Alternating current (AC) is a form of current that periodically changes its sign, thus its direction, from positive to negative and vice-versa, following a sinusoidal pattern. Conversely, direct current (DC) is unidirectional. Alternating current is the predominant form of current used in households. It is generated in power plants, where some source of energy, e.g. hydraulic power or wind power or nuclear fission power, transfers kinetic energy to turbines, which in turn operate the AC generator, which in turn generates electrical energy to power household or other appliances.
+\subsub{The AC-Generator}
 
+Alternating current (AC) is a form of current that periodically changes its sign, thus its direction, from positive to negative and vice-versa, following a sinusoidal pattern. Conversely, direct current (DC) is unidirectional. Alternating current is the predominant form of current used in households. It is generated in power plants, where some source of energy, e.g. hydraulic power or wind power or nuclear fission power, transfers kinetic energy to turbines, which in turn operate the AC generator, which in turn generates electrical energy to power household or other appliances. The simplest setup of an AC-generator involves a stationary, permanent magnet with its north and south pole spaced apart, such that a magnetic field $\vec{B}$ is present. Between the poles one loop of wire is placed, which must be brought into rotational motion by some form of mechanical energy. Both ends of the loop of wire are connected to \emph{slip rings}, such that each end only touches one slip ring and the always the same slip ring for the whole duration of its rotation. Conductive carbon brushes connected to the slip rings make it possible to direct any induced current passing through the loop of wire to other locations, for other purposes. 
+
+\begin{plot}
+	
+	% Loop of wire
+	\begin{scope}[canvas is zx plane at y=0.5]
+
+		\draw [thick]
+			  (9, 0)
+		 -- ++(-3, 0)
+		 -- ++(0, -2)
+		 -- ++(-5, 0)
+	     -- ++(0, 4)
+	     -- ++(5, 0)
+         -- ++(0, -1.5)
+         -- ++(3, 0);
+
+	\end{scope}
+
+	% North pole of magnet
+	\draw (-4, 0, 7)
+	 -- ++(-1, 0, 0) -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(0, 0, -8) -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(1, 0, 0)  -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(0, 0, 8)  -- ++(0, 1, 0)
+     -- ++(-1, 0, 0) -- ++(0, 0, -8) -- ++(1, 0, 0) -- ++(0, 0, 8);
+
+    % North pole label
+    \draw (-6, 1.5, 2) node {\Large $N$};
+
+
+    % South pole of magnet
+	\draw (5, 0, 7)
+	 -- ++(-1, 0, 0) -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(0, 0, -8) -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(1, 0, 0)  -- ++(0, 1, 0) ++(0, -1, 0)
+	 -- ++(0, 0, 8)  -- ++(0, 1, 0)
+     -- ++(-1, 0, 0) -- ++(0, 0, -8) -- ++(1, 0, 0) -- ++(0, 0, 8);
+
+    % South blue label
+    \draw (7.5, 1.5, 7) node {\Large $S$};
+
+    % Magnetic field lines
+    \foreach \z in {-1, 1, ..., 7}
+    {
+    	\draw [red, ->] (-4, 0.5, \z) -- ++(8, 0, 0);
+    }
+
+    % Magnetic field label
+    \draw [red] (0, 0.5, -2) node {$\vec{B}$};
+
+    % Area vector
+    \draw [blue, ->] (0, 0.5, 3.5) -- ++(0, 3, 0) node [above] {$\vec{A}$};
+
+    % Alpha
+    \draw (0, 0.5, 3.5) -- ++(0.5, 0, 0)
+          node [pos=0.4, above] {$\alpha$} arc (0:90:0.5);
+
+\end{plot}
+
+Once the loop of wire begins to rotate, it fulfills the requirement for the generation of electromagnetically induced voltage: it is a moving conductor in a stationary magnetic field. As the loop of wire rotates, more or less of the area of the conductor, i.e. the loop of wire, is exposed to the magnetic field $\vec{B}$. This, in turn, means that there is a change in the magnetic flux $\Phi_m$. As per Faraday's law of induction, the induced voltage will be equal to the negative of the rate of change of this magnetic flux. To calculate the magentic flux at any given moment, the magnetic field vector $\vec{B}$ must be multiplied with the normal vector of the plane of the loop of wire $\vec{A}$, or the length of $\vec{B}$ must be multiplied with the length of $\vec{A}$ and the cosine of the angle $\alpha$ between them. This angle, $\alpha$, is continuously and periodically changing due to the rotational motion of the wire. Given the definition of the angular velocity $\omega$ of an object in uniform angular motion, which states that $\omega$ is equal to the rate of change of angular displacement, it can be said that at any given instant $t$, $\alpha$ will be equal to $\omega \cdot t$. Therefore, as a function of time, the magnetic flux $\Phi_m$ is defined as: $$\Phi_m(t) = |\vec{B}| \cdot |\vec{A}| \cdot \cos(\omega \cdot t) \mathtext{1}{or simply} \Phi_m(t) = B \cdot A \cdot \cos(\omega \cdot t)$$ What can be determined from this is that when the angle between the magnetic field and the normal of the loop of wire is zero, such that the loop of wire is perfectly perpendicular to the magnetic field lines, the magnetic flux is highest, as $\cos 0 = 1$. If, however, the loop of wire is parallel to the magnetic field such that its normal vector $\vec{A}$ is perpendicular to $\vec{B}$, then there can be no magnetic flux, as $\cos 90\degree = 0$. Moreover, an important property of this setup is that the sign of the cosine of $\alpha$ alternates between every half turn. As such, the rate of change of magnetic flux is continuously negative when $\alpha$ is between $0 \degree$ and $180\degree$, while it is positive when $\alpha \in ]180;\, 360[\degree$. As a result, the induced voltage $U_{ind}$ and ultimately the induced current \emph{alternate}, giving alternating current (AC) its name. This can, of course, be expressed mathematically. For this it must be known that the induced voltage $U_{ind}$ is equal either to the negative of the \emph{average} rate of change of magnetic flux with time, as all the equations presented so far indicated, but is also equal to the negative of the \emph{instantaneous} or \emph{momentary} rate of change of magnetic flux over time: $$U_{ind} = - \frac{\Delta \Phi_M}{\Delta t} \OR U_{ind} = -\frac{d \Phi_M}{dt}$$ Substituting the expression for the magnetic flux of an AC-generator over time, given further above, for $\Phi_m$ in the right equation yields: $$U_{ind} = -\frac{d(B \cdot A \cdot \cos(\omega \cdot t))}{dt} = -B \cdot A \cdot \omega \cdot -\sin(\omega \cdot t) = B \cdot A \cdot \omega \cdot \sin(\omega \cdot t)$$ Because the maximum value of a sine wave is one, the maximum induced voltage $U_{max}$ must equal: $$U_{max} = B \cdot A \cdot \omega$$ When inserting this expression into the formula for the induced voltage, the following function of time can be found: $$U_{ind}(t) = U_{max} \cdot \sin(\omega \cdot t)$$ Moreover, this means that the induced voltage equals the maximum voltage when $\omega \cdot t$ and thus $\alpha$ equals $90\degree$, i.e. the maximum voltage is achieved when there is no magnetic flux.
+
+\begin{plot}
+	
+	% Angle axis
+	\draw [->] (0, 0) -- ({4 * pi + 0.5}, 0) node [above] {$\alpha$};
+
+	% Angle axis ticks
+	\foreach \i in {1, ..., 4}
+	{
+		\newcount\angle
+		\angle\i\relax
+		\multiply \angle by 90\relax
+
+		% Label
+		\draw ({\i * pi}, -0.8) node {$\the\angle\degree$};
+
+		% Tick
+		\draw ({\i * pi}, 0) node {$|$};
+	}
+
+	% Voltage axis
+	\draw [<->] (0, -3.5) -- (0, 3.5)
+	      node [pos={1/14}] {$-$} node [pos={1/14}, left] {$-U_{max}$\,\,}
+	      node [midway, left] {$0$}
+	      node [pos={13/14}] {$-$} node [pos={13/14}, left] {$U_{max}$\,\,}
+	      node [right] {$U_{ind}$};
+
+	% Voltage graph
+	\draw [domain=0:{4 * pi}, smooth] plot (\x, {3 * sin(0.5 * deg(\x))} );
+
+\end{plot}
+
+It is by this method that power stations generate alternating current for our households and for other uses. The frequency of the alternating current produced by these power stations is typically 50 Hertz, meaning the current switches direction around 100 times a second. The efficiency of such power stations is around 95 \%. Three methods by which power stations or generally anyone may increase the voltage induced are listed below.
+
+\begin{itemize}
+	
+	\item Increase the angular velocity $\omega$. This causes a greater rate of change of magnetic flux and thus a greater induced voltage.
+
+	\item Increase the magnetic field strength $B$. Given the definition of the induced voltage $U_{ind}$ being equal to $B \cdot A \cdot \omega \cdot \sin(\omega \cdot t)$, it can be seen that there is a relationship of direct proportionality between the magnetic field strength $B$ and the induced voltage.
+
+	\item Increase the number of turns or loops of the wire or coil used to generate the alternating current.
+
+\end{itemize}
+
+\pagebreak
+
+One more interesting property of the AC generator is that it can be very easily transformed into a generator of direct current. To do so, one would simply replace the slip rings by a commutator, as used for DC electric motors. The commutator would switch the connections of the loop of wire just when the induced voltage and current change direction. As a result, the sinusoidal pattern of the AC current would be changed to a sine wave pattern that is always positive. The voltage and current strength still varies, as it does for alternating current, but it only flows in one direction. To make the current flow smoother, one can increase the number of coils used. The reason for this is that as another coil or turn of wire is added to the generator at, say, an angle of 90\degree to the first coil, the voltage induced in this coil will be phase shifted by exactly so many degrees, 90 in this case. As the current is always positive (always flows in the same direction), this can only lead to constructive interference. Eventually, after adding many coils at many phase differences, the gaps in the voltage and current of the first loop of wire will be made smoother to a great extent.
+
+\begin{plot}
+	
+	% Angle axis
+	\draw [->] (0, 0) -- ({4 * pi + 0.5}, 0) node [above] {$\alpha$};
+
+	% Angle axis ticks
+	\foreach \i in {1, ..., 4}
+	{
+		\newcount\angle
+		\angle\i\relax
+		\multiply \angle by 90\relax
+
+		% Label
+		\draw ({\i * pi}, -0.8) node {$\the\angle\degree$};
+
+		% Tick
+		\draw ({\i * pi}, 0) node {$|$};
+	}
+
+	% Voltage axis
+	\draw [<->] (0, -3.5) -- (0, 3.5)
+	      node [pos={1/14}] {$-$} node [pos={1/14}, left] {$-U_{max}$\,\,}
+	      node [midway, left] {$0$}
+	      node [pos={13/14}] {$-$} node [pos={13/14}, left] {$U_{max}$\,\,}
+	      node [right] {$U_{ind}$};
+
+	% Voltage graph, A
+	\draw [domain=0:{2 * pi}, smooth, cyan]
+	      plot (\x, {3 * sin(0.5 * deg(\x))});
+
+	\draw [domain={2 * pi}:{4 * pi}, smooth, cyan]
+	      plot (\x, {-3 * sin(0.5 * deg(\x))});
+
+	% Voltage graph, B
+	\draw [domain=0:{pi}, smooth, teal]
+	      plot (\x, {3 * sin(0.5 * deg(\x) + 90)});
+
+	\draw [domain={pi}:{3 * pi}, smooth, teal]
+	      plot (\x, {-3 * sin(0.5 * deg(\x) + 90)});
+
+	\draw [domain={3 * pi}:{4 * pi}, smooth, teal]
+	      plot (\x, {3 * sin(0.5 * deg(\x) + 90)});
+
+	% Voltage graph, C
+	\draw [domain=0:{3/2 * pi}, smooth, magenta]
+	      plot (\x, {3 * sin(0.5 * deg(\x) + 45)});
+
+	\draw [domain={3/2 * pi}:{7/2 * pi}, smooth, magenta]
+	      plot (\x, {-3 * sin(0.5 * deg(\x) + 45)});
+
+	\draw [domain={7/2 * pi}:{4 * pi}, smooth, magenta]
+	      plot (\x, {3 * sin(0.5 * deg(\x) + 45)});
+
+\end{plot}
+
+\sub{Magnetic Data Storage}
+
+One popular and very important application of electromagnetism and the principle of induction is magnetic data storage. Magnetic data storage is used in devices such as hard drives or floppy disks to store data, and always consists of a certain tape-like surface with a layer of hard magnetic material, e.g. cobals, nickel or iron oxide, on top. Within this magnetic layer, there are tiny magnets, each with a certain magnetic orientation.
+
+\subsub{Storing Data}
+
+In order to store data on such a magnetic tape, it is pulled past a \emph{tape head} (also referred to as a \emph{recording head}). This tape head consists of a conductive coil of wire wrapped around a circular, soft magnetic ring, with a gap in the region where it is closest to the magnetic tape. When current flows through the coil, it generates a magnetic field around and within it, which magnetizes the ring. As the magnetic field within the ring reaches the gap close to the tape, the magnetic field penetrates into the hard magnetic material and reorients the tiny magnets within it. This new orientation can be in one of two directions and depends on the way in which the current flows through the coil. This process is repeated for every region of the magnetic tape as it moves past the recording head, resulting in the data being represented by a certain pattern of magnetization. The depth to which the tape is magnetized depends on the strength of the magnetic field and thus on the current flowing through the coil.
+
+\subsub{Reading Data}
+
+To read data from the hard magnetic material of the tape, it is now moved past a \emph{reading head}. The configuration and setup of the reading head is identical to that of the recording head. However, this time, the current is not supplied to the coil that is wrapped around the soft ring externally, but is actually induced according to the magnetization pattern with which the data was stored on the tape. As the tape moves past the reading head, the soft ring is magnetized in a way that depends on the orientation of the magnets within the magnetic layer of the tape. This orientation differs for different magnets, such that the soft ring ultimately experiences an alternating magnetic flux. This change in magnetic flux causes a voltage and consequently a current to be induced across and through the coil that is wrapped around the ring. By this method, the information stored on the magnetic tape can be reproduced according to the pattern of the induced current. 
 
 \end{document}
