@@ -252,9 +252,7 @@ The unit of electric current is Ampere $[A]$, where one Ampere is equivalent to 
 
 \sub{Electric Voltage}
 
-While electric current is a measure of the rate of charge flow through a point, electric voltage --- also referred to as \emph{potential difference} --- is a measure of the \emph{charge difference} between two poles of a power supply. Generally speaking, an \emph{electric potential} $\varphi$ is defined as the potential energy $E_{pot}$ of a certain amount of charge in an electric field, divided by the size $q$ of the total charge (potential energy per unit charge): $$\varphi = \frac{E_{pot}}{q}$$ A voltage $U$ in terms of an electric \emph{potential difference} is subsequently nothing else than a measure of the \emph{difference} $\Delta \varphi$ in the electric potential of a certain amount of charge between two points $A$ and $B$ in an electric field. $$U = \Delta \varphi = \varphi_A - \varphi_B$$ If point $B$ were to be closer to the positive pole than point $A$, point $B$ would have more potential energy than point $A$, as the potential energy of a charge, just as the electrostatic force acting between two point charges, is inversely proportional to the distance between them. As the physical quantity of \emph{work} is defined as a certain transfer or \emph{change} of energy, voltage may also be seen as the work done by the electric field per unit charge: $$U = \Delta \varphi = \frac{E_{pot_A} - E_{pot_B}}{q} = \frac{\Delta E}{q} = \frac{W}{q}$$
-
-\pagebreak
+While electric current is a measure of the rate of charge flow through a point, electric voltage --- also referred to as \emph{potential difference} --- is a measure of the \emph{charge difference} between two poles of a power supply. Generally speaking, an \emph{electric potential} $\varphi$ is defined as the potential energy $E_{pot}$ of a certain amount of charge in an electric field, divided by the size $q$ of the total charge (potential energy per unit charge): $$\varphi = \frac{E_{pot}}{q}$$ In case of an electric circuit, positive charges have a higher electric potential at the positive terminal and a lower electric potential at the negative terminal. A voltage $U$ in terms of an electric \emph{potential difference} is subsequently nothing else than a measure of the \emph{difference} $\Delta \varphi$ in the electric potential of a certain amount of charge between two points $A$ and $B$ in an electric field. $$U = \Delta \varphi = \varphi_A - \varphi_B$$ If point $B$ were to be closer to the positive pole than point $A$, point $B$ would have more potential energy than point $A$, as the potential energy of a charge, just as the electrostatic force acting between two point charges, is inversely proportional to the distance between them. As the physical quantity of \emph{work} is defined as a certain transfer or \emph{change} of energy, voltage may also be seen as the work done by the electric field per unit charge: $$U = \Delta \varphi = \frac{E_{pot_A} - E_{pot_B}}{q} = \frac{\Delta E}{q} = \frac{W}{q}$$
 
 Voltage is measured in Volts, where one Volt $[V]$ could also be defined as one Joule $[J]$ of work being done by an electric field on a unit charge of one Coulomb $[C]$: $$1\, V = J\, C^{-1} = kg \cdot m^2\, s^{-2} \cdot C^{-1}$$ In a circuit, the device used to measure the potential difference between two points is referred to as a \emph{voltmeter}. It must be connected \emph{in parallel} to the circuit.
 
@@ -299,7 +297,6 @@ Factors influencing the electric resistance of a certain conducting material inc
 
 	\item The cross-sectional area $A$ of the conductor
 
-	\item The temperature at which the conductor is operating. It plays an insignficant role in the majority of cases, and becomes relevant only in extreme situations.
 \end{itemize}
 
 Given the above factors, it can be said that the electric resistance $R$ of a conducting material is directly proportional to the resistivity constant $\rho$ of the material as well as the length of the conductor. However, it is inversely proportional to its cross-sectional area. This yields the following expression: $$R = \rho \cdot \frac{l}{A}$$
@@ -315,8 +312,6 @@ There are two types of electric circuits: \emph{series} and \emph{parallel}. In 
 \subsubsub{Resistors in Series}
 
 In case of a series circuit, the current flowing through any given point of the circuit is uniform for all points and equal to the total current flowing through the circuit. However, the total voltage across the circuit is shared among individual components (conductors), such that the total potential difference across the power source is equal to the sum of potential differences across each resistive load. Similarly, the total resistance encountered by electrons in the circuit is equal to the sum of each individual resistor value.
-
-\newcommand{\asdf}{\draw (0, 0) node {hello};}
 
 \begin{figure}[h!]
 	\centering
@@ -352,6 +347,8 @@ In case of a series circuit, the current flowing through any given point of the 
 		$R_{tot} = $ & $R_1 + R_2 + R_3 \Rightarrow \sum_{i=1}^{N} R_i$
 	\end{tabular}
 \end{figure}
+
+\pagebreak
 
 \subsubsub{Resistors in Parallel}
 

@@ -27,7 +27,7 @@ $y = f(x)$
 
 oder
 
-$f: x \rightarrow y$ ($f$ bildet Werte die Menge der $x$ auf die Menge der $y$ ab).
+$f: x \rightarrow y$ ($f$ bildet die Werte der Menge der $x$ auf die Menge der $y$ ab).
 
 \sub{Darstellungsweisen}
 
@@ -384,7 +384,7 @@ Generell kann eine Funktion in einer von zwei Formen angeschrieben sein, entwede
 
 Eine lineare Funktion $f(x)$ ist eine linear wachsende oder fallende Funktion, mit einer festgelegten, konstanten Steigung $k$, sodass gilt: $f(x + 1) = f(x) + k$. Ebenso kann eine lineare Funktion einen Abstand vom Ursprung $d$ haben, um welchen alle Werte auf der Ordinate verschoben sind.
 
-\textbf{Hauptform} \defas $y = kx + d$
+\textbf{Normalform} \defas $y = k \cdot x + d$
 
 \textbf{Allgemeine Form} \defas $ax + by + c = 0$
 
@@ -428,7 +428,7 @@ Eine Lineare Funktion hat ihre Spurpunkte in $(0|d)$ sowie $\left(-\frac{d}{k} \
 
 Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Potenzfunktion kann einen Abstand $b$ vom Ursprung haben, um welchen alle Funktionswerte auf der Ordinate verschoben sind. Je nachdem ob die Potenz $z$ gerade oder ungerade, positiv oder negativ ist, hat der Graph einer Potenfunktion verschiedene Formen, welche entweder punkt- oder achsensymmetrisch sind. Gilt $z \in \mathbb{Q} \backslash \mathbb{Z}$, handelt es sich um eine \emph{Wurzelfunktion}, da jede rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann.
 
-\textbf{Hauptform} \defas $y = ax^z + b$
+\textbf{Normalform} \defas $y = a \cdot x^z + b$
 
 \extrapar
 
@@ -564,7 +564,7 @@ Eine Potenzfunktion $f(x)$ w\"{a}chst oder f\"{a}llt nicht-linear. Auch eine Pot
 
 Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rationale Potenz $z$ einer Zahl $x$ als Bruch $x^{\frac{m}{n}}$ und somit als Wurzel $\sqrt[n]{x^m}$ dargestellt werden kann. Wurzelfunktionen sind daher ebenso nicht-linear wachsend oder fallend. Ist die Grundmenge die Menge der rellen Zahlen $\mathbb{R}$, so ist die Wurzelfunktion nur f\"{u}r positive Werte der Definitionsmenge ($x$-Werte) definiert, also $\mathbb{R^+}$, sowie null.
 
-\textbf{Hauptform} \defas $y = ax^{\frac{m}{n}} + b = a\sqrt[n]{x^m} + b$
+\textbf{Normalform} \defas $y = ax^{\frac{m}{n}} + b = a\sqrt[n]{x^m} + b$
 
 \begin{figure}[h!]
 \centering
@@ -600,9 +600,11 @@ Eine Wurzelfunktion ist eine besondere Form der Potenzfunktion, da eine rational
 Eine Polynomfunktion ist eine Potenzfunktion bestehend aus mehreren Termen, in denen jeweils die unabh\"{a}ngige Variable $x$ mit verschiedenen Potenzen vorkommt. Sie kann einen sehr komplexen Verlauf haben und ihre Funktionswerte k\"{o}nnen durch einen Abstand vom Ursprung auf der Ordinate verschoben werden.
 Spricht man von einer Polynomfunktion $n$-ten Grades, so ist die h\"{o}chste vorkommende Potenz der Polynome $n$.
 
-\textbf{Hauptform} \defas $y = \sum_{i=0}^{n} a_{i} x^i$
+\textbf{Hauptform} \defas $y = \sum_{i=0}^{n} a_{i} \cdot x^i$
 
-Hierbei ist der erste Term $a_{0}x^0$ der Abstand vom Ursprung, da $x^0 = 1$ und somit nur $a_{0}$ als Koeffizient ohne Variable \"{u}brig bleibt.
+\textbf{Normalform einer Quadratischen Funktion} \defas $y = x^2 + p \cdot x + q$
+
+Hierbei ist der erste Term $a_{0} \cdot x^0$ der Abstand vom Ursprung, da $x^0 = 1$ und somit nur $a_{0}$ als Konstante \"{u}brig bleibt.
 
 F\"{u}r eine Polynomfunktion $n$-ten Grades gibt es folgende Zusammenh\"{a}nge:
 
@@ -723,7 +725,7 @@ Hierbei bestimmt $b$ die Steigung der Funktion. Der Koeffizient $a$ ist der Abst
 
 				\end{axis}
 			\end{tikzpicture}
-		} {\caption*{Exponentialfunktionen mit Basen $b \in [0; 1]$}}
+		} {\caption*{Exponentialfunktionen mit Basen $b \in ]0; 1[$}}
 	\end{floatrow}
 \end{figure}
 
