@@ -1,0 +1,107 @@
+% Physics and Engineering
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Physics and Engineering}
+
+\sub{Transformers}
+
+A transformer is a device for changing an alternating voltage from one value to another. It plays a significant role in the distribution and use of electric power for industry and in everyday life. Transformers \emph{step-up} (increase) the voltage produced by an AC generator to very high values to ensure efficient transmission across large distances.  Subsequently, substations near to households \emph{step-down} (decrease) the voltage to 230 Volts or other standard values which depend on the particular country. In homes, small transformers in phone or laptop chargers or other electrical devices step-down the voltage further to values that are safe and appropriate for them, often 9 Volts. The underlying principles of such a transformer are those of electromagnetism and electromagnetic induction. 
+
+\subsub{Setup and Working Principle}
+
+The basic construction and configuration of a transformer involves two conductive coils of wire wrapped around a closed loop of a soft iron core. One of the two coils is referred to as the \emph{primary coil}, situated on the \emph{primary side} of the transformer. The second coil, on the other end of the soft iron core --- the \emph{secondary side}, is called the \emph{secondary coil}. Each coil is characterized by a certain number of windings or turns $N_1$ and $N_2$. When the primary coil is connected to a supply of alternating current with a potential difference $U_1$ across it, an alternating magnetic field is generated around and within the coil. Consequently, the soft iron core is magnetized such that an alternating magnetic flux is present within it. As this changing magnetic flux travels through the closed loop of the soft iron core and reaches the secondary side, it statisfies the requirement for the induction of a potential difference $U_2$ within the secondary coil. This requirement, as per Faradays' law of induction, is that there either be moving conductor in a permanent magnetic field, or, as is the case here, a stationary conductor in an alternating magnetic field. 
+
+\begin{circuit}
+
+	% Primary coil
+	\draw (-2, 1.5) -- ++(2, 0)
+	      to [cute inductor, l_=$N_1$] ++(0, -1.5) -- ++(-2, 0)
+	      to [sinusoidal voltage source, l^=$U_1$] ++(0, 1.5);
+
+	% Soft iron core, outer layer
+	\draw [very thick]
+	      (-1, -1) -- ++(0, 3.5)
+	 -- ++(5, 0) node [midway, above] {Soft Iron Core}
+	 -- ++(0, -3.5)
+	 -- ++(-5, 0);
+
+	% Soft iron core, inner layer
+	\draw [very thick]
+	      (0.5, 0) -- ++(0, 1.5)
+	 -- ++(2, 0) -- ++(0, -1.5)
+	 -- ++(-2, 0);
+
+
+	% Secondary coil
+	\draw (5, 0) -- ++(-2, 0)
+	      to [cute inductor, l_=$N_2$] ++(0, 1.5) -- ++(2, 0)
+	      to [voltmeter, l^=$U_2$] ++(0, -1.5);
+
+\end{circuit}
+
+The purpose of the soft iron core is to increase the effect of the magnetic field generated as well as to concentrate and guide and the magnetic flux from the primary to the secondary side. Moreover, it reduces magnetic field leakage to a minimum in order to ensure maximum transformer efficiency. However, it should also be mentioned that the conversion and stepping-down or stepping-up of one voltage to another produces not only a magnetic field, but additionally generates thermal energy (heat), which reduces the efficiency of the conversion process. To counteract this, the soft iron core is in fact a sandwich of soft iron plates and insulating material. In such a structure, referred to as \emph{laminated iron}, one layer of soft iron follows one layer of insulation, followed by another layer of soft iron and so on. This ensures maximum possible insulation and efficiency.
+
+\pagebreak
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+	% Layers
+	\foreach \i in {0, 1}
+	{
+		\draw [fill=gray]
+		      (0, \i)
+		 -- ++(5, 0) -- ++(0, 0.5) -- ++(-5, 0) -- ++(0, -0.5);
+
+		\draw [fill=red]
+		      (0, \i + 0.5)
+		 -- ++(5, 0) -- ++(0, 0.5) -- ++(-5, 0) -- ++(0, -0.5);
+	}
+
+	% Labels
+	\draw [<-] (5.5, 0.25) -- ++(2, 0) node [right] {Soft Iron Core};
+	\draw [<-] (5.5, 1.75) -- ++(2, 0) node [right] {Insulation};
+
+	\end{tikzpicture}
+	\caption*{The sandwiched layers of the laminated iron core}
+\end{figure}
+
+\subsub{Transformer Equations}
+
+In case of a \emph{step-down} transformer, the voltage $U_1$ across the primary coil is greater than the induced voltage $U_2$ across the secondary coil. This can only be the case if the same relationship is true for the turns of the two coils. By contrast, the primary voltage $U_1$ is less than the secondary potential difference $U_2$ when the number of turns of the secondary coil $N_2$ is greater than the number of turns on the primary coil $N_1$. This form of transformer is then referred to as a \emph{step-down} transformer. 
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l}
+		
+		Step-Up Transformer: & $U_2 > U_1$ & $N_2 > N_1$
+		\\ && \\
+		Step-Down Transformer: & $U_2 < U_1$ & $N_2 < N_1$
+
+	\end{tabular}
+\end{table}
+
+In general, the induced voltage $U_2$ across the secondary coil can be calculated by slightly altering Faraday's law of induction. This law states that the induced potential difference across a conductor in an alternating magnetic field is equal to the negative of the rate of change of magnetic flux. For transformers, there is an extra factor added to this rate of change: the number of turns $N_2$ of the secondary coil. This yields the following expression for the secondary voltage $U_2$: $$U_2 = -N_2 \cdot \frac{d \Phi_m}{d t}$$ However, the alternating magnetic flux does not only effect the secondary coil, but also causes \emph{self-induction} in the primary coil, as the magnetic flux is also changing on the primary side. Therefore, the above definition for the induced voltage $U_2$ on the secondary side can also be used to determine the self-induced voltage $U_{ind}$ across the primary coil. This induced voltage is then equal to the negative of the voltage $U_1$ across the primary coil: $$U_{ind} = -N_1 \cdot \frac{d \Phi_m}{d t} = -U_1 \thus \frac{d \Phi_m}{d t} = \frac{U_1}{N_1}$$ The right side of this equation can then be substituted for the rate of change of magnetic flux in the expression given above for the secondary voltage $U_2$: $$U_2 = -N_2 \cdot \frac{d \Phi_m}{dt} = -N_2 \cdot \frac{U_1}{N_1}$$ This finally yields the following relationship, referred to as the \emph{first transformer law}, where the minus sign indicates a $180\degree$ or $\pi$ radians phase shift between the two voltages $U_1$ and $U_2$: $$\frac{U_1}{N_1} = -\frac{U_2}{N_1}$$ Were now a load to be connected on the secondary side (e.g. a lamp), the induced voltage $U_2$ would cause an alternating current $I_2$ to start flowing through the secondary coil. As a result, there would also be an alternating magnetic field generated on the secondary side. This magnetic field would in turn also magnetize the soft iron core, leading to a very complex phase relationship between the magnetic flux created by the primary coil and the magnetic flux created by the scoendary coil. In case of an ideal transformer with 100\% percent efficiency and no loss energy of electrical energy to thermal energy, the total power of the primary coil $P_1$ equals the power of the secondary coil $P_2$. Given that the electrical power of a circuit is equal to the voltage across it multiplied by the current flowing through it, one can determine the following relationship --- known as the \emph{second transformer law} --- between the voltage and current of the two sides of a transformer: $$P_1 = P_2 \thus U_1 \cdot I_1 = U_2 \cdot I_2 \thus \frac{U_1}{U_2} = \frac{I_2}{I_1}$$
+
+\sub{Power Transmission across the Country}
+
+Unfortunately, no conductor is ideal. There is always some portion of electrical power generated by power stations that is lost during transmission of the power across the country. Especially over great distances the loss in power can be very significant, such that the efficiency is too low for practical use. Thus, great care must be taken to ensure maximum efficiency. One way of doing so is to increase the voltage during transmission. To see why, it must first be discussed how the power $P_{lost}$ can be calculated. In general, electrical power is defined as the voltage across a conductor multiplied by the current flowing through it. Moreover, voltage may be defined not only as a potential difference, but also as the product of current and resistance. This leads to the following equation for the power lost during transmission across the country: $$P_{lost} = U \cdot I = R \cdot I \cdot I = R \cdot I^2$$ The efficiency of transmission may then be calculated as the ratio between the power lost $P_{lost}$ and the power $P$ generated by a given power station (this value could be multiplied by 100 percent to get a direct percentage value for the ratio between the power lost and the power generated): $$\frac{P_{lost}}{P}$$ When expanding both variables, it can be found that the efficiency is equal to the power generated, multiplied by the resistance and divided by the square of the voltage. This shows that it is not necessary to explicitly know the power lost. It can be calculated already from the value of the power generated. $$\frac{P_{lost}}{P} = \frac{R \cdot I^2}{U \cdot I} = \frac{R \cdot I}{U} = \frac{R \cdot I \cdot U}{U \cdot U} = \frac{P \cdot R}{U^2}$$ What this shows is that the power-lost-to-power-generated ratio is inversely proportional to the voltage generated. A greater voltage will thus cause less loss in power. Proof for 20 kilo-volts, 100 kilo-volts and 380 kilo-volts at 1 giga-watts of power transmitted through a conductor with 50 $\Omega$ of resistance are given below.
+
+20 kV: $\frac{P \cdot R}{U^2} = \frac{1 \cdot 10^9 \cdot 50}{(20 \cdot 10^3)^2} \cdot 100\% = 12500 \%$ 
+
+Conclusion: The power lost is 12500 \% of the power generated (none will reach the end user).
+
+100 kV: $\frac{P \cdot R}{U^2} = \frac{1 \cdot 10^9 \cdot 50}{(100 \cdot 10^3)^2} \cdot 100\% = 500 \%$
+
+Conclusion: Still none.
+
+380 kv: $\frac{P \cdot R}{U^2} = \frac{1 \cdot 10^9 \cdot 50}{(380 \cdot 10^3)^2} \cdot 100\% = 35 \%$ 
+
+Conclusion: Only 35 \% of the power generated is lost, such that it will reach the end user with an efficiency rating of 65 \%.
+
+\end{document}
