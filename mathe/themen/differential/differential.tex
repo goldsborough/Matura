@@ -7,11 +7,12 @@
 
 \heading{Differentialrechnung}
 
-Die Differentialrechnung besch\"{a}ftigt sich mit der Ver\"{a}nderung von unabh\"{a}ngigen und abh\"{a}ngigen Variablen einer Funktion in Abh\"{a}ngigkeit von einander. Wichtige Termini sind hierbei der Differenzenquotient, der die mittlere \"{A}nderungsrate bzw. durchschnittliche Steigung einer Funktion ausdr\"{u}ckt; der Differentialquotient, der die momentane \"{A}nderungsrate bzw. momentane Steigung beschreibt; sowie die Kurvendiskussion, bei welcher sich mit Hilfe von Differenzen- und Differentialquotient die Eigenschaften einer Funktion beschreiben lassen.
+Die Differentialrechnung besch\"{a}ftigt sich mit der Ver\"{a}nderung von unabh\"{a}ngigen und abh\"{a}ngigen Variablen einer Funktion in Abh\"{a}ngigkeit von einander. Wichtige Termini sind hierbei der Differenzenquotient, der die mittlere \"{A}nderungsrate bzw. durchschnittliche Steigung einer Funktion ausdr\"{u}ckt; der Differentialquotient, der die momentane \"{A}nderungsrate bzw. 
+momentane Steigung beschreibt; sowie die Kurvendiskussion, bei welcher sich mit Hilfe von Differenzen- und Differentialquotient die Eigenschaften einer Funktion beschreiben lassen.
 
 \sub{Differenzenquotient}
 
-Der Differenzenquotient $k = \frac{\Delta y}{\Delta x}$ einer Funktion $f(x)$ ist ein \textbf{absolutes \"{A}nderungsma\ss{}}, welches f\"{u}r zwei beliebiege unabh\"{a}ngige Variablen $x_{0}$ und $x_{1}$ aus der Definitionsmenge $\mathbb{D}_{f}$ und den beiden entsprechenden abh\"{a}ngigen Variablen $f(x_{0})$ bzw. $y_{0}$ und $f(x_{1})$ bzw. $y_{1}$ aus der Wertemenge $\mathbb{W}_{f}$, die \"{A}nderung dieser beiden Variablen in Relation zu einander beschreibt. Der daraus resultierende Wert $k$ dr\"{u}ckt aus, um wieviele Einheiten sich $f(x)$ im Intervall $[x_{0} ; x_{1}]$ durchschnittlich ver\"{a}ndert, wenn $x$ um eine Einheit w\"{a}chst. Der Differenzenquotient ist somit die \textbf{mittlere \"{A}nderungsrate} bzw. die \textbf{durschnittliche Steigung} in diesem Intervall. F\"{u}r den Differenzenquotient einer Funktion $f(x)$ im Intervall $[x_{0} ; x_{1}]$ gilt somit: $$k = \frac{\Delta f(x)}{\Delta x} = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}$$ Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sekantensteigung} ausdr\"{u}cken. Die Sekantensteigung ist die Steigung jener Gerade, die durch die Punkte $P_{0}(x_{0}|y_{0})$ und $P_{1}(x_{1}|y_{1})$ verl\"{a}uft.
+Der Differenzenquotient $k = \frac{\Delta y}{\Delta x}$ einer Funktion $f(x)$ ist ein \textbf{absolutes \"{A}nderungsma\ss{}}, welches f\"{u}r zwei beliebige unabh\"{a}ngige Variablen $x_{0}$ und $x_{1}$ aus der Definitionsmenge $\mathbb{D}_{f}$ und den beiden entsprechenden abh\"{a}ngigen Variablen $f(x_{0})$ bzw. $y_{0}$ und $f(x_{1})$ bzw. $y_{1}$ aus der Wertemenge $\mathbb{W}_{f}$, die \"{A}nderung dieser beiden Variablen in Relation zu einander beschreibt. Der daraus resultierende Wert $k$ dr\"{u}ckt aus, um wieviele Einheiten sich $f(x)$ im Intervall $[x_{0} ; x_{1}]$ durchschnittlich ver\"{a}ndert, wenn $x$ um eine Einheit w\"{a}chst. Der Differenzenquotient ist somit die \textbf{mittlere \"{A}nderungsrate} bzw. die \textbf{durschnittliche Steigung} in diesem Intervall. F\"{u}r den Differenzenquotient einer Funktion $f(x)$ im Intervall $[x_{0} ; x_{1}]$ gilt somit: $$k = \frac{\Delta f(x)}{\Delta x} = \frac{f(x_{1}) - f(x_{0})}{x_{1} - x_{0}}$$ Geometrisch gesehen l\"{a}sst sich der Differenzenquotient durch die \textbf{Sekantensteigung} ausdr\"{u}cken. Die Sekantensteigung ist die Steigung jener Gerade, die durch die Punkte $P_{0}(x_{0}|y_{0})$ und $P_{1}(x_{1}|y_{1})$ verl\"{a}uft.
 
 \vspace{1cm}
 
@@ -214,7 +215,7 @@ Die Quotientenregel wird dann verwendet, wenn die Funktion Br\"{u}che enth\"{a}l
 
 \subsub{Reziprokregel}
 
-Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft, wenn der Z\"{a}hler $u(x)$ gleich 1 ist, sodass f\"{u}r die Funktion $f(x)$ gilt, dass sie eine \emph{Reziprokfunktion} der Form $\frac{1}{v(x)}$ ist: $$\left[\frac{1}{v(x)}\right]' = -\frac{v}{v^2}$$
+Die Reziprokregel ist eine spezielle Form der Quotientenregel, die nur zutrifft, wenn der Z\"{a}hler $u(x)$ gleich 1 ist, sodass f\"{u}r die Funktion $f(x)$ gilt, dass sie eine \emph{Reziprokfunktion} der Form $\frac{1}{v(x)}$ ist: $$\left[\frac{1}{v(x)}\right]' = -\frac{v'}{v^2}$$
 \emph{Beispiel}: $f(x) = \frac{1}{1 - x^2}$
 
 \begin{tabular}{l l}
@@ -253,7 +254,7 @@ Die Kettenregel sollte dann angewendet werden, wenn eine Funktion $u(x)$ eine we
 Eine aus der Potenz- und Kettenregel folgende Formel zur Berechnung von Ableitungsfunktionen von Wurzelfunktionen lautet: $$\left[\sqrt{f(x)}\,\,\right] = \frac{f'(x)}{2\sqrt{f(x)}}$$
 \sub{Kurvendiskussion}
 
-Die Kurvendiskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an die Wendepunkte, den sogenannten \emph{Wendetangenten}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, an welcher sowohl in der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion der Funktionswert gleich null ist. 
+Die Kurvendiskussion besch\"{a}ftigt sich mit der Analyse der Null-, Extrem- sowie Wendepunkte, dem Verlauf, der Monotonie sowie der Kr\"{u}mmung einer Funktion. Ebenso ist oft nach der Tangente an die Wendepunkte, den sogenannten \emph{Wendetangenten}, gefragt. Bez\"{u}glich der Analyse der Nullstellen einer Funktion ist anzumerken, dass die \emph{Vielfachheit} der Nullstelle eine Rolle spielt. Eine \emph{$n$-fache Nullstelle} ist eine Stelle, an welcher sowohl bei der Funktion $f(x)$ als auch in $n-1$ weiteren Ableitungen dieser Funktion der Funktionswert gleich null ist. 
 
 \textbf{Beispiel}: \emph{Gib f\"{u}r die Funktion $f(x) = x^4 - 3x^2 + 2x$ die Wende- und Extrempunkte sowie die Nullstellen, samt Vielfachheit, an. Beschreibe ebenso die Monotonie der Funktion. Fertige eine Skizze an.}
 
@@ -450,7 +451,7 @@ Das selbe Verfahren wendet man auch f\"{u}r den zweiten Wendepunkt $W_{2}$ an, u
 
 \textbf{Schritt VII. Monotonie beschreiben}
 
-Die Monotonie einer Funktion bezieht sich auf ihr Steigungsverhalten, welches sich an den Extrempunkten ver\"{a}ndert. Ebenso erh\"{a}lt man durch die Kr\"{u}mmung der Funktion in einem bestimmten Intervall Informationen \"{u}ber ihre Monotonie. Ist die Kr\"{u}mmung negativ, wird die Steigung zunehmend negativer. Ist die Kr\"{u}mmung positiv, wird auch die Steigung in diesem Intervall zunehmend positiver. Da die Steigung an einer Extremstelle gleich 0 ist, darf diese Stelle nie zu einem Monotonieintervall dazugez\"{a}hlt werden. Das selbe trifft auch auf plus oder minus unendlich ($\infty$) zu. Somit gilt f\"{u}r die oben skizzierte Funktion $f(x)$:
+Die Monotonie einer Funktion bezieht sich auf ihr Steigungsverhalten, welches sich an den Extrempunkten ver\"{a}ndert. Ebenso erh\"{a}lt man durch die Kr\"{u}mmung der Funktion in einem bestimmten Intervall Informationen \"{u}ber ihre Monotonie. Ist die Kr\"{u}mmung negativ, wird die Steigung zunehmend negativer. Ist die Kr\"{u}mmung positiv, wird auch die Steigung in diesem Intervall zunehmend positiver. Da die Steigung an einer Extremstelle gleich 0 ist, darf diese Stelle nie zu einem Monotonieintervall dazugez\"{a}hlt werden. Dasselbe trifft auch auf plus oder minus unendlich ($\infty$) zu. Somit gilt f\"{u}r die oben skizzierte Funktion $f(x)$:
 
 \begin{tabular}{l l l l}
 	Streng monoton wachsend f\"{u}r alle: & $x \in \,] -1.37\,; 0.37\,[$ & $\cup$ & $]\, 1\,; \infty \, [$
