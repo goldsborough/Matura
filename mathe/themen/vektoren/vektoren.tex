@@ -62,7 +62,7 @@ Generell beschreibt ein Vektor $\vec{a}$ nur eine Richtung, um $x$ bzw. $y$ Einh
   \end{tikzpicture}
 \end{figure}
 
-Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so berechnet: $ |\vec{a}| = \left|\colvec{x_a \\ y_a}\right| = \sqrt{{x_{a}}^2 + {y_{a}}^2}$
+Der Betrag $|\vec{a}|$ des Vektors $\vec{a}$ wird dementsprechend so  berechnet: $ |\vec{a}| = \left|\colvec{x \\ y}\right| = \sqrt{x^2 + y^2}$
 
 \subsub{Einheitsvektor}
 
@@ -83,18 +83,18 @@ Das Skalare Produkt von zwei Vektoren die normal zu einander stehen \textbf{ist 
 
 \subsub{Parameterform}
 
-Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ von einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden. Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen:
+Eine Gerade kann durch einen Orts- und Richtungsvektor beschrieben werden, indem man einen Richtungsvektor $\vec{a}$ von einem Ortsvektor $\vec{0A}$ aus $t$ mal abtr\"{a}gt. Jeder Punkt auf der Geraden kann somit als der Ortsvektor plus oder minus einem bestimmten $t$ mal den Richtungsvektor berechnet werden.Eine Gerade kann man mit diesen Informationen in der \textbf{Parameterform} aufstellen. Die Parameterform der Geradengleichung ist nicht eindeutig, da der Ortsvektor $\vec{0A}$ jeder beliebiger Punkt auf der Gerade sein k\"{o}nnte und der Richtungsvektor $\vec{a}$ stets mit einem beliebigen Faktor multipliziert werden kann.
 
 $$g: \vec{0X} = \vec{0A} + t \cdot \vec{a}$$
 
 \subsub{Normalvektorform}
 
-Um von der Parameterform zur \textbf{Allgmeinen Form} ($ax + by = c$) bzw. zur \textbf{Normalform} ($y = kx + d$) zu kommen, muss man die Parameterform zuerst in die \textbf{Normalvektorform} umformen. Dazu ben\"{o}tigt man den Normalvektor $\vec{n_{a}}$ vom Richtungsvektor $\vec{a}$. Diesen setzt man so in die Normalvektorform ein, wo $X$ bzw. $\colvec{x\\y}$ die Parameter der Gerade sind (nicht Vektorenkoordinaten):
+Um von der Parameterform zur \textbf{Allgemeinen Form} ($ax + by = c$) bzw. zur \textbf{Normalform} ($y = kx + d$) zu kommen, muss man die Parameterform zuerst in die \textbf{Normalvektorform} umformen. Dazu ben\"{o}tigt man den Normalvektor $\vec{n_{a}}$ des Richtungsvektors $\vec{a}$. Diesen setzt man so in die Normalvektorform ein, wo $X$ bzw. $\colvec{x\\y}$ die Parameter der Gerade sind (nicht Vektorenkoordinaten):
 
 \begin{center}
-  $X \cdot \vec{n_{a}} = \vec{0A} \cdot \vec{n_{a}}$
+  $X \cdot \vec{n_{a}} = \vec{n_{a}} \cdot \vec{0A}$
   \extrapar
-  $\colvec{x\\y} \cdot \colvec{x_{n_{a}}\\y_{n_{a}}} = \colvec{x_{A} \\ y_{A}} \cdot \colvec{x_{n_{a}}\\y_{n_{a}}}$
+  $\colvec{x\\y} \cdot \colvec{x_{n_{a}}\\y_{n_{a}}} = \colvec{x_{n_{a}}\\y_{n_{a}}} \cdot \colvec{x_{A} \\ y_{A}}$
 \end{center}
 
 \subsub{Lagebeziehungen in der Ebene}
@@ -110,7 +110,7 @@ Zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ $$h: X = \vec{0B} + s \cdot \
 
   \item \textbf{Ident}
   \par
-  Zwei Geraden sind ident, wenn man den Ortsvektor der einen Geraden (oder irgendeinen anderen Punkt auf dieser Geraden) gleich der anderen Geraden setzen kann, und beim L\"{o}sen der Gleichungen aller Koordinaten immer das selbe Ergebnis bekommt:
+  Zwei Geraden sind ident, wenn ihre Richtungsvektoren Vielfache von einander sind und man den Ortsvektor der einen Geraden (oder irgendeinen anderen Punkt auf dieser Geraden) gleich der anderen Geraden setzen kann, und man beim L\"{o}sen der Gleichungen aller Koordinaten einen eindeutigen Parameterwert erh\"{a}lt:
 
   \begin{center}
     $\vec{0A} = \vec{0B} + s \cdot \vec{b}$
@@ -132,7 +132,7 @@ Zwei Geraden $$g: X = \vec{0A} + t \cdot \vec{a}$$ $$h: X = \vec{0B} + s \cdot \
 
 \item \textbf{Schneidend}
   \par
-  Sollten zwei Geraden weder parallel noch ident sein, m\"{u}ssen sie einen Schnittpunkt haben. Diesen berechnet man indem man die Parameterformen $g$ und $h$ gleichsetzt, dann f\"{u}r jede Koordinate eine Gleichung aufstellt und das Gleichssystem nach $s$ und $t$ (siehe Parameterformen von $g$ und $h$) l\"{o}st:
+  Sollten zwei Geraden weder parallel noch ident sein, m\"{u}ssen sie einen Schnittpunkt haben. Diesen berechnet man indem man die Parameterformen $g$ und $h$ gleichsetzt, dann f\"{u}r jede Koordinate eine Gleichung aufstellt und das Gleichungssystem nach $s$ und $t$ (siehe Parameterformen von $g$ und $h$) l\"{o}st:
 
   \begin{center}
     $g = h$
@@ -161,11 +161,11 @@ $$ \cos \alpha = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}$$
 
 Man kann auch zuerst bestimmen, ob $\vec{a}$ und $\vec{b}$ normal zu einander stehen ($= 90\degree$), indem man ihr Skalares Produkt ($\vec{a} \cdot \vec{b}$) berechnet (ist es 0, ist $a \perp b$).
 
-Hierbei ist es wichtig, immer einen \textbf{spitzen} Winkel ($\alpha < 90\degree$) und nie einen \textbf{stumpfen} Winkel ($90 \leq \alpha < 180$) anzugeben. Sollte $\alpha$ also stumpf sein, muss man sein spitzes Gegenst\"{u}ck berechnen: $\alpha{}' = 180 - \alpha$.
+Hierbei ist es wichtig, immer einen \textbf{spitzen} Winkel ($\alpha < 90\degree$) und nie einen \textbf{stumpfen} Winkel ($90 \leq \alpha < 180$) anzugeben. Sollte $\alpha$ also stumpf sein, muss man den \emph{Suplement\"{a}rwinkel} berechnen: $\alpha{}' = 180 - \alpha$.
 
 \subsub{Fl\"{a}chen}
 
-Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelograme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{1}{2}\sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = \frac{1}{2} \, |\vec{a} \times \vec{b}|$$
+Es ist ebenso m\"{o}glich, die Fl\"{a}che zwischen zwei Vektoren $a$ und $b$ zu berechnen. Dazu verwendet man in der Ebene die \textbf{Vektorielle Fl\"{a}chenformel} und im Raum das Kreuzprodukt der beiden Vektoren. Daher gilt f\"{u}r Parallelogramme (auch Rechtecke): $$ A = \sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = |\vec{a} \times \vec{b}| $$ Hierbei ist $|\vec{a}|^2 = \vec{a}^{\,\,2}$. F\"{u}r Dreiecke kann man diese Formel ebenso anwenden, man halbiert hierbei jedoch die Fl\"{a}che: $$A = \frac{1}{2}\sqrt{{|\vec{a}|}^2 \cdot {|\vec{b}|}^2 - {(\vec{a} \cdot \vec{b})}^2} = \frac{1}{2} \, |\vec{a} \times \vec{b}|$$
 
 \pagebreak
 
@@ -244,7 +244,7 @@ Weil man f\"{u}r eine Ebene im Raum keinen eindeutigen Normalvektor bilden kann,
 
 \subsub{Normalvektorform}
 
-Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Ebene in der Normalvektorform darstellen: $$\varepsilon: X \cdot \vec{n_{\varepsilon}} = \vec{0A} \cdot \vec{n_{\varepsilon}}$$ $$\colvec{x \\ y \\ z} \cdot \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}} = \colvec{x_{A} \\ y_{A} \\ z_{A}} \cdot \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}}$$
+Mittels dem durch das Kreuzprodukt gefundenen Normalvektor kann man auch eine Ebene in der Normalvektorform darstellen: $$\varepsilon: X \cdot \vec{n_{\varepsilon}} = \vec{n_{\varepsilon}} \cdot \vec{0A}$$ $$\colvec{x \\ y \\ z} \cdot \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}} = \colvec{x_{n_{\varepsilon}} \\ y_{n_{\varepsilon}} \\ z_{n_{\varepsilon}}} \cdot \colvec{x_{A} \\ y_{A} \\ z_{A}}$$
 
 \subsub{Normalabstand}
 
@@ -304,12 +304,12 @@ M\"{o}chte man den Winkel zwischen einer Gerade und einer Ebene mittels der Vekt
 
 \subsub{Ebene und Gerade}
 
-Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene in Parameter- oder in Normalvektorform ist. Man sollte jedoch nie vergessen, dass man zur Schnittwinkelberechnung den Richtungsvektor der Gerade und den Normalvektor der Ebene verwendet, und letztendlich den Komplement\"{a}rwinkel berechnen muss: $\alpha' = 90 - \alpha$. Ist $\alpha$ urspr\"{u}nglich stumpf, m\"{u}sste man zuerst den spitzen Winkel durch $180 - \alpha$ berechnen und von diesem dann den Komplement\"{a}rwinkel nehmen. Die Berechnung $90 - (180 - \alpha)$ ist jedoch equivalent zu $\alpha - 90$. Ist $\alpha$ also stumpf, gilt f\"{u}r den spitzen Komplement\"{a}rwinkel: $\alpha' = \alpha - 90$
+Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene in Parameter- oder in Normalvektorform ist. Man sollte jedoch nie vergessen, dass man zur Schnittwinkelberechnung den Richtungsvektor der Gerade und den Normalvektor der Ebene verwendet, und letztendlich den Komplement\"{a}rwinkel berechnen muss: $\alpha' = 90\degree - \alpha$. Ist $\alpha$ urspr\"{u}nglich stumpf, m\"{u}sste man zuerst den spitzen Winkel durch $180 - \alpha$ berechnen und von diesem dann den Komplement\"{a}rwinkel nehmen. Die Berechnung $90\degree - (180\degree - \alpha)$ ist jedoch equivalent zu $\alpha - 90\degree$. Ist $\alpha$ also stumpf, gilt f\"{u}r den spitzen Komplement\"{a}rwinkel: $\alpha' = \alpha - 90\degree$
 
 \begin{enumerate}
   \item{\textbf{Parameterform}}
 
-  Sind die Gerade $g$ und Ebene $\varepsilon$ in Parameterform gegeben, kann man sie gleichsetzen und das daraus entstehende Gleichungssystem l\"{o}sen.
+  Sind die Gerade $g$ und die Ebene $\varepsilon$ in Parameterform gegeben, kann man sie gleichsetzen und das daraus entstehende Gleichungssystem l\"{o}sen.
   $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + u \cdot \colvec{x_u \\ y_u \\ z_u}$$ 
 
   $$\varepsilon: \vec{0X} = \colvec{x_E \\ y_E \\ z_E} + s \cdot \colvec{x_s \\ y_s \\ z_s} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$ 
@@ -320,7 +320,7 @@ Wie man eine Ebene mit einer Gerade schneidet, h\"{a}ngt davon ab, ob die Ebene 
 
   \item{\textbf{Normalvektorform}}
 
-  Ist die Gerade $g$ in Parameterform aber die Ebene $\varepsilon$ in Normalvektorform, muss man die $x$, $y$ und $z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
+  Ist die Gerade $g$ in Parameterform aber die Ebene $\varepsilon$ in Normalvektorform gegeben, muss man die $x$, $y$ und $z$ Parameter der Gerade in die Normalvektorform einsetzen. $$g: \vec{0X} = \colvec{x_A \\ y_A \\ z_A} + t \cdot \colvec{x_t \\ y_t \\ z_t}$$
 
   $$x_g = x_A \cdot t \cdot x_t$$ $$y_g = y_A \cdot t \cdot y_t$$ $$z_g = z_A \cdot t \cdot z_t$$
 

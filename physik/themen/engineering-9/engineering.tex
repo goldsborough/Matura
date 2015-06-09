@@ -391,7 +391,7 @@ It was just shown how an LC-circuit can be used to generate a charge and energy 
 
 \subsub{Decreasing $L$}
 
-To decrease the self-inductance $L$, one needs to reduce the number of turns of the coil. The minimum number of turns is, of course, one turn. Thus, the inductor is essentially turned into a single loop of wire. Consequently, the field lines of the magnetic field produced are structured in concentric circles around the wire, such that the magnetic field strength $B$ decrases with an increasing distance $r$ from the wire, as per the defintion of the field strength $B$ of the magnetic field generated around a single wire: $$B = \frac{\mu_0}{2 \pi} \cdot \frac{I}{r}$$ Furthermore, it can be observed that the magnetic field is initially very small closer to the positive plate, reaches its maximum in the middle of the wire and finally decrases again as it nears the negative plate (the same could be said for electrons moving in the opposite direction).
+To decrease the self-inductance $L$, one needs to reduce the number of turns of the coil. The minimum number of turns is, of course, one turn. Thus, the inductor is essentially turned into a single loop of wire. Consequently, the field lines of the magnetic field produced are structured in concentric circles around the wire, such that the magnetic field strength $B$ decrases with an increasing distance $r$ from the wire, as per the defintion of the field strength $B$ of the magnetic field generated around a single wire: $$B = \frac{\mu_0}{2 \pi} \cdot \frac{I}{r}$$ Furthermore, it can be observed that the magnetic field is initially very small closer to the positive plate, reaches its maximum in the middle of the wire and finally decrases again as it nears the negative plate (the same could be said for electrons moving in the opposite direction). This fluctuation in magnetic field strength is due to the current being small near the plates and greatest at the midpoint.
 
 \begin{plot}
 
@@ -452,44 +452,411 @@ The capacitance $C$ is determined by the distance between the two plates of the 
 
 \pagebreak
 
-\begin{plot}
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
 	
-	% Inductor
-	\draw [<-]
-	      (0, 0, 0) node [below] {$-$}
-	   -- (0, 6, 0) node [above] {$+$}
-	      node [above, right] {$I$};
+		% Inductor
+		\draw [<-]
+		      (0, 0, 0) node [below] {$-$}
+		   -- (0, 6, 0) node [above] {$+$};
 
-	% Electric Field
-	\foreach \i in {0.7, 1.2, 1.7}
-	{
-		\draw [blue] (0, 0) .. controls (\i, 3) .. (0, 6);
+		% Electric Field
+		\foreach \i in {0.7, 1.2, 1.7}
+		{
+			\draw [blue] (0, 0) .. controls (\i, 3) .. (0, 6);
 
-		\draw [blue] (0, 0) .. controls (-\i, 3) .. (0, 6);
-	}
-
-	% Magnetic Field
-	\foreach \y in {1, ..., 5}
-	{
-		\begin{scope}[canvas is zx plane at y=\y]
-
-		\newcount\n
-		\n\y\relax
-
-		\ifnum\n>3
-			\advance \n by -6\relax
-			\multiply \n by -1\relax
-		\fi
-
-		\foreach \r in {1, ..., \n}
-		{	
-			\draw [<-, red] ({\r * 0.4}, 0) arc (0:350:{\r * 0.4});
+			\draw [blue] (0, 0) .. controls (-\i, 3) .. (0, 6);
 		}
 
+		% Electric field label
+		\draw [blue] (1.7, 3) node {$\vec{E}$};
 
-		\end{scope}
+		% Magnetic Field
+		\foreach \y in {1, ..., 5}
+		{
+			\begin{scope}[canvas is zx plane at y=\y]
+
+			\newcount\n
+			\n\y\relax
+
+			\ifnum\n>3
+				\advance \n by -6\relax
+				\multiply \n by -1\relax
+			\fi
+
+			\foreach \r in {1, ..., \n}
+			{	
+				\draw [<-, red] ({\r * 0.4}, 0) arc (0:350:{\r * 0.4});
+			}
+
+
+			\end{scope}
+		}
+
+		% Magnetic field label
+		\draw [red] (-1.7, 3) node {$\vec{B}$};
+
+	\end{tikzpicture}
+\end{figure}
+
+There are two separate scenarios of the Hertz Dipole's cycle that will be observed in further detail now. The first is the case in which all negatively charged particles are concentrated at one plate --- then the negative pole --- before any current starts to flow. At this stage, the antenna has the maximum positive potential difference at the positive end, where fewer electrons are, while it has its maximum negative potential difference at the negative plate. The potential difference decreases from both ends towards the midpoint, where the voltage is then zero. As the charge flow and concentration reverses during the Hertz Dipole's cycle of oscillation, the polarity of the voltage reverses as well. Thus, the potential difference distribution across the antenna can be seen as a standing wave with two nodes at the $+$ and $-$ plates, that is 90\degree{} out of phase, or with two antinodes at the poles and one node at the midpoint. At this stage of no current flowing and maximum potential difference (as all charges are at one plate), comparisons can be made with a violin string that is stretched to a maximum, such that it is experiencing the greatest amount of tension and is storing the greatest amount of energy as elastic potential energy, similar to how the current has the maximum potential to flow at this point.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Inductor
+		\draw [<-]
+		      (0, 0, 0) node [below] {$-$}
+		   -- (0, 6, 0) node [above] {$+$};
+
+		% Electric Field
+		\foreach \i in {0.7, 1.2, 1.7}
+		{
+			\draw [blue] (0, 0) .. controls (\i, 3) .. (0, 6);
+
+			\draw [blue] (0, 0) .. controls (-\i, 3) .. (0, 6);
+		}
+
+		% Electric field label
+		\draw [blue] (-2, 3) node {$\vec{E}$};
+
+	\end{tikzpicture}
+	%
+	\hspace{1cm}
+	%
+	\begin{tikzpicture}
+
+		\draw (0, -3) node [below] {$-$}
+		   -- (0, 3) node [above] {$+$};
+
+		\draw (-2, 0) -- (2, 0);
+
+		% Function
+		\draw [domain={-pi}:{pi}, smooth, rotate=90]
+		      plot (\x, {1.8 * sin(0.5 * deg(\x))});
+
+	\end{tikzpicture}
+	%
+	\hspace{1cm}
+	%
+	\begin{tikzpicture}
+
+		% Vertical
+		\draw [fill=black]
+		      (0, -3) circle [radius=1.2pt]
+		   -- (0, 3) circle [radius=1.2pt];
+
+		% String
+		\draw (0, -3) arc (-90:90:3);
+
+		% Label
+		\draw (1.5, 0) node [align=center] {Maximum\\ Tension};
+	\end{tikzpicture}
+\end{figure}
+
+The next stage of the open LC-circuit's oscillatory cycle is the situation in which current is flowing through it. The distribution of current again looks like a standing wave with two current nodes ($+$ and $-$) at the ends of the antenna, such that it is $90\degree$ out of phase with the voltage standing wave. The current as well as the magnetic field generated is greatest at the center of the dipole, while it decreases in strength nearer towards either plate. To again use the analogy of a violin string, one could compare this situation with the velocity distribution of a violin string after it is let go from the previous position of maximum tension given before. The string has the greatest velocity in the center. 
+
+As the electrons flow towards the opposite plate, the polarity is eventually reversed. Then, the voltage and current standing wave as well as the violin standing waves will be opposite in direction. In general, the similarity between the distribution of current strength of a Hertz Dipole and the shape of a standing wave with two nodes ($+$ and $-$) earns the antenna another name: \emph{lambda half dipole}.
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+
+		% Inductor
+		\draw [<-]
+		      (0, 0, 0) node [below] {$-$}
+		   -- (0, 6, 0) node [above] {$+$}
+		      node [above, right] {$I$};
+
+		% Magnetic Field
+		\foreach \y in {1, ..., 5}
+		{
+			\begin{scope}[canvas is zx plane at y=\y]
+
+			\newcount\n
+			\n\y\relax
+
+			\ifnum\n>3
+				\advance \n by -6\relax
+				\multiply \n by -1\relax
+			\fi
+
+			\foreach \r in {1, ..., \n}
+			{	
+				\draw [<-, red] ({\r * 0.4}, 0) arc (0:350:{\r * 0.4});
+			}
+
+
+			\end{scope}
+		}
+
+		% Magnetic field label
+		\draw [red] (-2, 3) node {$\vec{B}$};
+
+	\end{tikzpicture}
+	%
+	\hspace{1cm}
+	%
+	\begin{tikzpicture}
+
+		% Position axis
+		\draw (0, -3) node [left] {$-$}
+		   -- (0, 3) node [left] {$+$};
+
+		% Strength axis
+		\draw (-2.7, 0) -- (1, 0);
+
+		% Current distribution
+		\draw (0, 2.5) arc (90:270:2.5);
+
+	\end{tikzpicture}
+	%
+	\hspace{1cm}
+	%
+	\begin{tikzpicture}
+
+		% Vertical
+		\draw [fill=black]
+		      (0, -3) circle [radius=1.2pt]
+		   -- (0, 3) circle [radius=1.2pt];
+
+		% Tension
+		\foreach \y/\i in {1/0.5, 2/0.8, 3/1.2}
+		{
+			\draw [->, thick] (-0.1, 3 - \y) -- ++(-\i, 0);
+
+			\ifnum\y<3
+				\draw [->, thick] (-0.1, -3 + \y) -- ++(-\i, 0);
+			\fi
+		};
+
+		% Label
+		\draw (0.5, 0) node [rotate=-90] {String};
+
+	\end{tikzpicture}
+\end{figure}
+
+\sub{Transmission of Electromagnetic Waves}
+
+LC circuits, in their closed and open forms, are at the basis of all broadcasting and transmission of electromagnetic waves. For any form of transmission, there must be a receiving antenna and a transmitting antenna. To begin the creation and transmission of a radio signal, one closed LC circuit is placed in the proximity of Hertz Dipole antenna. The alternating magnetic field of the closed circuit's inductor resulting from its the charge and energy oscillation causes high-frequency alternating current to be induced in the transmitting aerial. This is due to the fact that the aerial is essentially an inductor coil with only one winding, bent to a straight line. It is the alternating magnetic flux from the inductor of the closed LC circuit that causes the induction of a current in the aerial. This current, in turn, results in a changing magnetic and electric field around the aerial. If the length of the antenna is comparable to the wavelength $\lambda$ of the electromagnetic wave, the major part of the antenna's electric and magnetic field energy is sent off as an electromagnetic wave. It should also be mentioned that the wavelength $\lambda$ in this case depends on the frequency of the charge oscillation within the Hertz dipole, as it is the frequency of this oscillation that determines the frequency $f$ of the electromagnetic wave. The relationship between the wavelength and the frequency then stems from the fact that the velocity $c$ of the wave (speed of light) is equal to the product of $\lambda$ and $f$: $c = \lambda \cdot f$.
+
+The \emph{receiving arial} intercepts the electromagnetic waves transmitted from the transmitting antenna. It can receive the signal as the alternating magnetic field strength of the electromagnetic wave will induce high frequency alternating current in the receiver and thus cause high frequency charge oscillation to occur between the conductor plates of the antenna, resulting in a time-varying electric and magnetic field strength around the aerial. The information is then interpreted, decoded and processed further (e.g. amplification) by a second LC circuit. Lastly, it remains to say that the frequency at which the receiver intercepts electromagnetic waves is determined by varying the capacitance of the capacitor. Thus, when \emph{tuning} your radio, you are changing its capacitance and thereby adjusting the radio receiver to receive the desired radio signal frequency that a particular radio station uses.
+
+\pagebreak
+
+\begin{circuit}
+	
+	% First LC circuit
+	\draw (0, 0)
+	      to [cute inductor] ++(0, -2)
+	 -- ++(2, 0)
+	      to [capacitor] ++(0, 2)
+	 -- ++(-2, 0);
+
+	 % Part Two
+	\draw [dashed] (2, 0) -- ++(1, 0)++(-1, -2) -- ++(1, 0);
+
+	% Part Two
+	\draw (4, -1) node [align=center] {Generation\\ of\\ Signal};
+
+	% Magnetic field lines
+	\foreach \a/\b/\c/\d/\e in {0.1/-0.3/0.5/0.3/-1.6,
+								0/-0.5/0.3/0.1/-1.4,
+							    0/-0.1/0.7/0.4/-1.6}
+	{
+		% First side
+		\draw [red, ->] (\a, -0.7)
+	      .. controls (\d, \b) and (\c, -0.5) .. (\c, -1);
+
+	    \draw [red] (\c, -1.05) .. controls (\c, -1.5) and (\d, \e) .. (\a, -1.3); 
+
+	    % Second side
+		\draw [red, ->] (-\a, -0.7)
+	      .. controls (-\d, \b) and (-\c, -0.5) .. (-\c, -1);
+
+	    \draw [red] (-\c, -1.05) .. controls (-\c, -1.5) and (-\d, \e) .. (-\a, -1.3); 
 	}
 
-\end{plot}
+	% Transmitter
+	\draw (-1, 0.5) -- ++(0, -3)
+	      node [below, align=center] {Transmitting Aerial\\(acts as inductor)};
+
+	% Wave
+	\draw [domain=-4.45:-1.5, smooth, samples=100]
+	      plot (\x, {0.25 * sin(deg(10 * \x)) - 1});
+
+	% Wave label
+	\draw (-3, -0.3) node {Radio Signal};
+
+	% Receiver
+	\draw (-5, 0.5) -- ++(0, -3)
+	      node [below, align=center] {Receiving Aerial\\(acts as inductor)};
+
+	% Closed LC circuit
+	\draw (-5.5, 0)
+	      to [cute inductor] ++(0, -2)
+	 -- ++(-2, 0)
+	      to [capacitor] ++(0, 2)
+	 -- ++(2, 0);
+
+	% Part Two
+	\draw [dashed] (-7.5, 0) -- ++(-1, 0)++(1, -2) -- ++(-1, 0);
+
+	% Part Two
+	\draw (-10, -1) node [align=center] {Decoding\\and\\Amplification};
+
+\end{circuit}
+
+\sub{Transmission of Information}
+
+It was just explained how electromagnetic waves could be transmitted by means of an antenna, also known as a Hertz Dipole or simply an open LC-circuit. However, it was not mentioned how \emph{information} or \emph{intelligence} could be transmitted. The two main methods of altering a signal to incorporate some form of information are Amplitude Modulation (AM) and Frequency Modulation (FM). 
+
+Both methods of modulation modulate a high-frequency \emph{carrier wave} to transport a certain \emph{low-frequency} signal, such as that of human speech, in a particular way from a transmitting antenna to a receiving antenna. Also, beforehand, it should be defined what the \emph{bandwidth} of any modulated signal is. For this it must be known that frequency modulation and amplitude modulation cause \emph{sidebands}, additional spectral components, to be added to the signal as a by-product of their modulation. Sidebands are also referred to as \emph{harmonics} or \emph{overtones} when their frequencies are in harmonic ratios to the \emph{fundamental frequency}, i.e. when their frequencies are integer multiples of the frequency of the carrier wave. The bandwidth of a signal is subsequently a measure of the range or the amount of property a wave and all of its additional spectral components occupy or \emph{consume} on the frequency spectrum. More precisely, it is defined as the difference between the highest and lowest frequency present in the signal.
+
+\subsub{Amplitude Modulation}
+
+Amplitude Modulation (AM) is a method of transmitting information via radio waves that was first succesfully implemented at the end of the 19th century.For amplitude modulation, the \emph{amplitude} of a carrier wave with a pre-defined, fixed frequency is modulated (changed) according to the signal to be transmitted. The degree of modulation of the carrier wave over time is exactly \emph{equal} to the deviation in the amplitude of the signal. Therefore, were the signal wave to reach its peak at a certain point in time, one would find that the difference between the carrier wave's unmodulated amplitude and its actual amplitude at that instant would be exactly equal to the value of the signal wave. Similarly, the deviation in the amplitude of the carrier wave is negative, i.e. towards the zero line, when the signal falls to a value below zero. An important property of amplitude modulation is that while the amplitude of the carrier is altered continuously, its frequency and phase remain \emph{unchanged}. Lastly, it should be mentioned that to finally decode an amplitude-modulated signal at the receiving end of a transmission process, an analog filter or \emph{de-modulating circuit} filters out the high-frequency components of the carrier wave, leaving only the lower-frequency signal to be interpreted.
+
+A basic definition of amplitude modulation as a function of time for a carrier wave with amplitude $A_c$ and angular frequency $\omega_c$ as well as a periodic modulator signal with amplitude $A_m$ and angular frequency $\omega_m$ is given below. $\omega$ is equal to $2 \pi f$, where $f$ is the frequency of any signal or wave. 
+
+$$f(t) = (A_c + A_m \cdot \sin(\omega_m \cdot t)) \cdot \sin(\omega_c \cdot t)$$
+
+The frequency range of amplitude-modulated radio waves is roughly 540 to 1700 kHz ($5.4 \cdot 10^5 - 1.7 \cdot 10^6$ Hz). AM waves are found in a lower frequency range than FM waves, thus they also have a longer wavelength. A longer wavelength is a favorable property for long-range transmission, as the degree to which a wave is \emph{diffracted} and can thus follow the curvature of the earth increases with the length of the wavelength (and thus decreases with an increasing frequency). In comparision, frequency modulated radio waves have a more limited area or range of coverage. The bandwidth requirement of an AM signal is generally defined as two times the highest modulating frequency. In AM radio broadcasting, the modulating signal has a bandwidth of 15 kHz, thus the bandwidth of an amplitude-modulated radio signal is 30 kHz. The bandwidth consumption of an FM signal is comparably much higher (around 80 kHz), thus there can be more AM stations than FM stations within a certain frequency range. 
+
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+
+		% Time axis
+		\draw [->] (0, 0) -- (4.2, 0)
+		      node [above] {$t$};
+
+		% Amplitude axis
+		\draw [<->] (0, -1.2) -- (0, 1.2)
+		      node [above] {$A$}
+		      node [midway, rotate=90, above] {Signal};
+
+		% Spacing
+		\draw (0, -2)(0, 2);
+
+		% Signal
+		\draw [domain=0:4, smooth]
+		       plot (\x, { 0.8 * sin( deg(pi/2 * \x) ) });
+
+	\end{tikzpicture}
+	%
+	%
+	\begin{tikzpicture}
+
+		% Time axis
+		\draw [->] (0, 0) -- (4.2, 0)
+		      node [above] {$t$};
+
+		% Amplitude axis
+		\draw [<->] (0, -1.2) -- (0, 1.2)
+		      node [above] {$A$}
+		      node [midway, rotate=90, above] {Carrier};
+
+		% Spacing
+		\draw (0, -2)(0, 2);
+
+		% Signal
+		\draw [domain=0:4, smooth, samples=100]
+		       plot (\x, { sin( deg(2 * pi * 4 * \x) ) });
+
+	\end{tikzpicture}
+	%
+	%
+	\begin{tikzpicture}
+
+		% Time axis
+		\draw [->] (0, 0) -- (4.2, 0)
+		      node [above] {$t$};
+
+		% Amplitude axis
+		\draw [<->] (0, -2) -- (0, 2)
+		      node [right] {$A$}
+		      node [midway, rotate=90, above] {Modulated};
+
+		% Signal
+		\draw [domain=0:4, smooth, samples=100]
+		       plot (\x, {(1 + 0.8 * sin(deg(pi/2*\x))) * sin(deg(8*pi*\x))});
+
+		% Unmodulated positive amplitude
+		\draw [red, dashed] (0, 1) -- ++(4, 0);
+
+		% Unmodulated negative amplitude
+		\draw [red, dashed] (0, -1) -- ++(4, 0);
+
+	\end{tikzpicture}
+\end{figure}
+
+The greatest disadvantage of amplitude modulation is that AM signals are highly susceptible to \emph{noise} and \emph{static}. The reason for this is that AM signals store information in the amplitude of the carrier wave, which can be affected by electromagnetic interference and disturbances. For example, a lightning strike may result in unwanted changes to the amplitude and can distort the signal. This does not happen with frequency modulation, which is why FM has become the more popular of the two forms of modulation for radio and generally audio signals. An interesting fact to mention here is that television signals are actually transmitted by both amplitude modulation and frequency modulation. The audio component of the signal is transmitted via a frequency modulated carrier, while the video component is carried by an amplitude modulated wave. This is why, often, during a thunderstorm, the video signal of your television may be distorted while the audio signal remains perfectly intact.
+
+Some last aspects of amplitude modulation that may be of interest are cost and power consumption. Amplitude modulation was invented already at the end of the 19th century, thus the circuitry required is much less complicated. This also reduced the cost of implementation. Thus, many cheap radios will use AM receivers as they are the more economic option compared to FM.
+
+In summary:
+
+\begin{itemize}
+
+	\bolditem{Advantages of Amplitude Modulation:}
+
+	\begin{itemize}
+
+		\item \textbf{Greater range of coverage} due to a greater wavelength and greater diffraction around the surface of the earth.
+
+		\item \textbf{Cheap and simple} to implement.
+
+		\item \textbf{Lower bandwidth} means more available channels of communication compared to FM.
+
+	\end{itemize}
+
+	\bolditem{Disadvantages of Amplitude Modulation:}
+
+	\begin{itemize}
+
+		\item \textbf{Highly susceptible to noise}, resulting in a greater degree of distortion from electromagnetic interfernce and static, causing an overall much lower quality of the signal transmitted.
+
+	\end{itemize}
+
+\end{itemize}
+
+\subsub{Frequency Modulation}
+
+Frequency modulation is the most popular and most commonly encountered form of signal modulation in radio transmission and broadcasting. While amplitude modulation varies the \emph{amplitude} of a high-frequency carrier wave according to the low-frequency signal information to be transmitted, frequency modulation changes the \emph{frequency} of the carrier wave in accordance with the signal. When the signal is above zero, the frequency of the carrier is increased in direct proportion to the signal. When the signal takes on a negative value, the frequency of the carrier wave is reduced by exactly the value of the signal. As such, were a carrier wave with a frequency $f_c$ to be frequency-modulated by a periodic signal with an amplitude $A_m$, then the frequency of the carrier would deviate between a maximum of $f_c + A_m$ Hertz and a minimum of $f_c - A_m$ Hertz. In this case, while the frequency of the carrier wave is constantly changing, its amplitude and phase remain constant.
+
+The definition of a frequency-modulated signal $f(t)$ as a function of time is given below, where $A_c$ refers to the amplitude of the carrier --- which stays constant --- while $A_m$ denotes the amplitude of the modulator wave, i.e. the signal --- assuming it is perfectly periodic. In that case, the amplitude of the signal $A_m$ also determines the maximum frequency deviation of the carrier wave $\Delta f_c$, measured in Hertz. In the below equation, $\omega_c$ is the angular frequency of the carrier wave and $\omega_m$ that of the signal. $$f(t) = A_c \cdot \sin((\omega_c + A_m \cdot \sin(\omega_m \cdot t))\cdot t)$$ Frequency modulation is performed on carrier waves in a frequency range of 88 to 108 MHz ($8.8 \cdot 10^7 - 1.08 \cdot 10^8$ Hz). As such, their operating frequency is much higher than that of amplitude-modulated signals. This also means that they are less suitable for long-range transmission and have a generally lower area of coverage compared to AM signals, as their higher frequency indicates a shorter wavelength and thus a lesser degree of diffraction and ability to follow the curvature of the earth. The bandwidth $B$ of an FM signal is formally defined as two times the sum of the highest modulating frequency $f_m$ and the maximum frequency deviation $\Delta f_c$ of the carrier wave: $$B = 2 \cdot (f_m + \Delta f_c)$$ The typical bandwidth of an FM signal is 80 kHz. This confirms the previous statement given that one could fit more 30 kHz AM channels into the same range of frequencies than one could fit 80 khz FM stations. Moreover, one benefit derived from a higher bandwidth is a greater signal quality, as more sidebands can be transmitted alongside the carrier frequency. 
+
+As frequency modulation stores the information of the signal in the frequency (deviation) of the carrier wave, the intelligence transmitted is unaffected by changes to the carrier's amplitude. Static, noise or electromagnetic interference from sources like lighting are thus no longer an issue. As a result, signal quality is drastically higher for frequency modulated signals compared to their amplitude-modulated counterparts, also due to the fact that FM signals have a greater bandwidth at their disposal. However, FM circuitry requires more power, is more expensive and a lot more complex than AM transmitters and receivers. This may play a role under certain circumstances.
+
+In summary:
+
+\begin{itemize}
+
+	\bolditem{Advantages of Frequency Modulation:}
+
+	\begin{itemize}
+
+		\item \textbf{Resistance against noise}, static and other forms of electromagnetic interference such as lighting. Increases signal quality.
+
+		\item \textbf{Greater bandwidth} also increases signal quality.
+
+	\end{itemize}
+
+	\bolditem{Disadvantages of Frequency Modulation:}
+
+	\begin{itemize}
+
+		\item \textbf{Lower range of coverage} as the frequency range of carrier waves is higher for frequency modulation than it is for amplitude modulation. Higher frequency means shorter wavelength, which in turn means less diffraction on the surface of the earth or around mountains.
+
+		\item \textbf{Expensive and complex}.
+
+		\item \textbf{Greater bandwidth} not only means better signal quality, but also fewer channels available, which may be a detriment.
+
+	\end{itemize}
+
+\end{itemize}
 
 \end{document}
