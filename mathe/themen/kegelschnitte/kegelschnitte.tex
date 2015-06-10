@@ -9,7 +9,7 @@ Kegelschnitte sind geometrische Figuren, die entstehen, wenn man Kegel mit Ebene
 
 \sub{Kreis}
 
-Im Koordinatensystem ist ein Kreis durch einen Mittelpunkt $M$ und einen Radius $r$ exakt definiert: $$k:\,\,[\,M(x_{M}|y_{M}),\, r\,]$$
+Ein Kreis entsteht, wenn ein Kegel mit einer Ebene geschnitten wird, die parallel zur Basis liegt. Im Koordinatensystem ist ein Kreis durch einen Mittelpunkt $M$ und einen Radius $r$ exakt definiert: $$k:\,\,[\,M(x_{M}|y_{M}),\, r\,]$$
 
 Jeder Punkt $X$ auf dem Kreis $k$ hat vom Mittelpunkt $M$ den Abstand $r$, sodass gilt: $\overbar{MX} = r$
 
@@ -51,11 +51,7 @@ Durch Entnahme der korrekten Variablen aus der Grafik und Einsetzen in den Pytha
 	$k:\, (x - x_{M})^2 + (y - y_{M})^2 = r^2$
 \end{center}
 
-Liegt der Mittelpunkt eines Kreises mit Radius $r = 1$ im Koordinatenursprung $(0, 0)$, erh\"{a}lt man die sehr kompakte und einpr\"{a}gsame Kreisgleichung des \emph{Einheitskreises}:
-
-$$k_{E}:\,x^2 + y^2 = 1$$
-
-Multipliziert man die Kreisgleichung aus, erh\"{a}lt man die \textbf{allgemeine Kreisgleichung}:
+Liegt der Mittelpunkt eines Kreises mit Radius $r = 1$ im Koordinatenursprung $(0, 0)$, erh\"{a}lt man die sehr kompakte und einpr\"{a}gsame Kreisgleichung des \emph{Einheitskreises}: $$k_{E}:\,x^2 + y^2 = 1$$ Multipliziert man die Kreisgleichung aus, erh\"{a}lt man die \textbf{allgemeine Kreisgleichung}:
 
 \begin{center}
 	$k:\, (x - x_{M})^2 + (y - y_{M})^2 = r^2$\\
@@ -128,9 +124,11 @@ Zwei Kreise $k_{1}$ und $k_{2}$ schneidet man nach \"{u}blicher Methode in einem
 
 	$k_{1}$ und $k_{2}$ ber\"{u}hren einander in genau einem einzigen Punkt.
 
+\pagebreak
+
 	\titleitem{Keine gemeinsamen Punkte}
 
-	$k_{1}$ und $k_{2}$ liegen entweder nebeneinander oder ineinander, schneiden oder ber\"{u}hren sich jedoch nicht. 
+	$k_{1}$ und $k_{2}$ liegen entweder nebeneinander oder ineinander, schneiden oder ber\"{u}hren sich jedoch nicht. Liegen sie ineinander, spricht man von \emph{konzentrischen} Kreisen. Sie haben den selben Mittelpunkt, aber verschieden Radii.
 
 \end{enumerate}
 
@@ -200,7 +198,7 @@ Den Winkel $\alpha$ berechnet man dann mittels der Vektoriellen Winkelformel: $$
 
 \sub{Ellipse}
 
-Eine Ellipse kann als eine ovale Kurve oder als ein Kreis mit zwei verschiedenen Radii $a$ und $b$ f\"{u}r die x- bzw. y-Achse, anstatt nur einem Radius $r$, gesehen werden. Sie ist definiert durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer Zahl $a > 0$. Eine vollst\"{a}ndig beschriftete Ellipse $ell$ mit einem Punkt $X$ sieht so aus:
+Eine Ellipse entsteht wenn ein Kegel von einer Ebene geschnitten wird, die schr\"{a}g zur Basis steht. Sie ist definiert durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer Zahl $a > 0$ oder einem beliebigen Punkt $P$ auf der Ellipse. Eine vollst\"{a}ndig beschriftete Ellipse $ell$ mit einem Punkt $X$ sieht so aus:
 
 \begin{figure}[h!]
 \centering
@@ -297,7 +295,7 @@ Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
 	\item $e^2 = a^2 - b^2$
 \end{enumerate}
 
-Hat eine Ellipse, wie jene oben, ihre Brennpunkte symmetrisch zum Koordinatenursprung auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), sowie die gro\ss{}e Halbachse auf der $x$-Achse liegend ($A (a | 0),\, B (-a | 0)$), so spricht man von einer Ellipse in \textbf{\emph{1. Hauptlage}}. Liegen die Brennpunkte auf der y-Achse, befindet sich die Ellipse in der \emph{2. Hauptlage}. 
+Hat eine Ellipse, wie jene oben, ihre Brennpunkte symmetrisch zum Koordinatenursprung auf der $x$-Achse mit $F_{1} (-e | 0)$ und $F_{2} (e | 0)$, sowie die gro\ss{}e Halbachse auf der $x$-Achse liegend mit den Hauptscheiteln $A (a | 0) $ und $B (-a | 0)$, so spricht man von einer Ellipse in \textbf{\emph{1. Hauptlage}}. Liegen die Brennpunkte auf der y-Achse, befindet sich die Ellipse in der \emph{2. Hauptlage}. 
 
 \pagebreak
 
@@ -316,7 +314,7 @@ Eine Ellipse $ell$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann geometris
 
 Um eine Tangente $t$ an eine Ellipse $ell$ in einem Punkt $P$ zu legen, muss man die Ellipse implizit differenzieren und in das Resultat dessen den Punkt $P$ einsetzen, um die Steigung $k$ der Ellipse in diesem Punkt zu erhalten. Die $x$ und $y$ Koordinaten des Punktes $P$ sowie die Steigung $k$ der Ellipse in diesem Punkt setzt man dann in die Normalform der linearen Gleichung $y = kx + d$ einsetzen, um somit die volle Gleichung der Geraden bzw. der Tangente $t$ zu bestimmen. Beispiel:
 
-\emph{Gegeben sind die Ellipse $ell: x^2 + 3y^2 = 28$ und der Punkt $P(4 | 2)$ der auf der Ellipse liegt. Bestimmte die Gleichung der Tangente $t$ an die Ellipse im Punkt P.}
+\emph{Gegeben sind die Ellipse $ell: x^2 + 3y^2 = 28$ und der Punkt $P(4 | 2)$ der auf der Ellipse liegt. Bestimme die Gleichung der Tangente $t$ an die Ellipse im Punkt P.}
 
 { \renewcommand{\arraystretch}{2}
 
@@ -327,13 +325,13 @@ Um eine Tangente $t$ an eine Ellipse $ell$ in einem Punkt $P$ zu legen, muss man
 	\\
 	III. Umformung nach $y'$: & $y' = \frac{-2x}{6y} = \frac{-x}{3y}$
 	\\
-	IV. Einsetzung von $P$: & $y' = \frac{-4}{3 \cdot{} 2} = \frac{-2}{3}$
+	IV. Einsetzen von $P$: & $y' = \frac{-4}{3 \cdot{} 2} = \frac{-2}{3}$
 	\\
 	V. $y'$ ist die Steigung $k$ der Tangentengleichung $t$: & $y = kx + d$
 	\\
-	VI. Einsetzung von $k$ ($ = y'$) sowie $P$ in $t$: & $2 = 4 * \frac{-2}{3} + d$
+	VI. Einsetzung von $k$ ($ = y'$) sowie $P$ in $t$: & $2 = 4 \cdot \frac{-2}{3} + d$
 	\\
-	VII. L\"{o}sen nach $d$: & $d = 2 - \frac{-8}{3} = \frac{14}{3}$
+	VII. L\"{o}sen nach $d$: & $d = 2 + \frac{8}{3} = \frac{14}{3}$
 	\\
 	VIII. Fertige Tangentengleichung $t$: & $y = \frac{-2}{3}x + \frac{14}{3}$
 \end{tabular}
@@ -344,7 +342,7 @@ Um eine Tangente $t$ an eine Ellipse $ell$ in einem Punkt $P$ zu legen, muss man
 
 \sub{Hyperbel}
 
-Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer L\"{a}nge $a$ exakt definiert ist. Sind die Brennpunkte symmetrisch zum Koordinatenursprung und liegen auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), spricht man von einer Hyperbel in \textbf{1. Hauptlage}. Liegen die Brennpunkte auf der $y$-Achse, befindet sich die Hyperbel in \emph{2. Hauptlage}. Geometrisch bzw. grafisch sieht eine Hyperbel in 1. Hauptlage so aus:
+Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durch zwei Brennpunkte $F_{1}$ und $F_{2}$ sowie einer L\"{a}nge $a$ exakt definiert ist. Sind die Brennpunkte symmetrisch zum Koordinatenursprung und liegen auf der $x$-Achse ($F_{1} (-e | 0),\, F_{2} (e | 0)$), spricht man von einer Hyperbel in \textbf{1. Hauptlage}. Liegen die Brennpunkte auf der $y$-Achse, befindet sich die Hyperbel in \emph{2. Hauptlage}. Geometrischs sieht eine Hyperbel in 1. Hauptlage folgenderma\ss{}en aus:
 
 \begin{figure}[h!]
 \centering
@@ -360,7 +358,7 @@ Eine Hyperbel besteht aus zwei B\"{o}gen bzw. \zitat{\"{A}sten}, deren Form durc
 
 	    % hyperbola label
 		\draw [red]
-			  (1.0, 2.5) node [] {$hyp$};
+			  (1.0, 2.5) node {$hyp$};
 
 		% x axis
 		\draw [fill=black] 
@@ -453,7 +451,7 @@ Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
 	\item $e^2 = a^2 + b^2$
 \end{enumerate}
 
-Eine Hyperbel $hyp$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann geometrisch durch folgende Gleichung beschrieben werden, welche sich von der Ellipsengleichung nur im Vorzeichen unterscheidet:
+Eine Hyperbel $hyp$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann durch folgende Gleichung beschrieben werden, welche sich von der Ellipsengleichung nur im Vorzeichen unterscheidet:
 
 \begin{table}[h!]
 	\begin{center}
@@ -465,7 +463,7 @@ Eine Hyperbel $hyp$ in 1. Hauptlage mit den Halbachsen $a$ und $b$ kann geometri
 
 Die Asymptoten $as_{1, 2}$ einer Hyperbel sind jene Geraden, welche den beiden \"{A}sten unendlich nahe kommen ohne sie je wirklich zu ber\"{u}hren. Sie sind definiert als:
 
-$$as_{1, 2}: y = \pm \frac{b}{a}\cdot{}x$$
+$$as_{1, 2}: y = \pm \frac{b}{a} x$$
 
 \begin{figure}[h!]
 \centering
@@ -541,7 +539,7 @@ $$as_{1, 2}: y = \pm \frac{b}{a}\cdot{}x$$
 
 \sub{Parabel}
 
-Eine Parabel ist eine Hyperbel mit nur einem Bogen bzw. mit nur einem Ast. Die Kurve einer Parabel ist exakt definiert durch einen Brennpunkt $F$ sowie eine Leitlinie $l$. Liegt der Brennpunkt $F$ auf der positiven $x$-Achse, der Scheitel der Parabel im Koordinatenursprung und ist die Leitlinie $l$ parallel zur $y$-Achse, handelt es sich um eine Parabel in \textbf{1. Hauptlage}. In diesem Fall ist die Parabel schon durch den Parameter $p$ exakt definiert.
+Eine Parabel ist eine Hyperbel mit nur einem Bogen bzw. mit nur einem Ast. Die Kurve einer Parabel ist exakt definiert durch einen Brennpunkt $F$ sowie eine Leitlinie $l$. Liegt der Brennpunkt $F$ auf der positiven $x$-Achse, der Scheitel der Parabel im Koordinatenursprung und ist die Leitlinie $l$ parallel zur $y$-Achse, handelt es sich um eine Parabel in \textbf{1. Hauptlage}. In diesem Fall ist die Parabel schon durch den Parameter $p$ exakt definiert. Dieser Parameter $p$ bestimmt den Abstand zwischen dem Brennpunkt $F$ und der Leitlinie $l$ und ist daher doppelt so gro\ss{} wie die lineare Exzentrizit\"{a}t $e$.
 
 \begin{figure}[h!]
 \centering
@@ -610,7 +608,7 @@ Es gibt folgende Zusammenh\"{a}nge zwischen diesen Variablen:
 
 \begin{enumerate}
 	\item $\overbar{XF} = \overbar{XI}$
-	\item $p = \overbar{FI}$
+	\item $p = \overbar{FI} = 2 \cdot e$
 	\item $F\,(\frac{p}{2} | 0)$
 	\item $l(y) = -\frac{p}{2}$
 \end{enumerate}
