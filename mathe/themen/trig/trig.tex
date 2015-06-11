@@ -9,7 +9,7 @@
 
 \sub{Definition}
 
-Die Trigonometrie behandelt die Dreiecksvermessung von rechtenwinkeligen sowie anderen Dreiecken im Einheitskreis sowie allgmein. Wichtige Funktionen sind hierbei Sinus, Cosinus sowie Tangens, mit welchen man den Sinus- und Cosinussatz bilden kann. Ebenso spielt der Satz des Pythagoras eine bedeutende Rolle.
+Die Trigonometrie behandelt die Dreiecksvermessung von rechtwinkeligen sowie anderen Dreiecken im Einheitskreis sowie allgemein. Wichtige Funktionen sind hierbei Sinus, Cosinus sowie Tangens, mit welchen man den Sinus- und Cosinussatz bilden kann. Ebenso spielt der Satz des Pythagoras eine bedeutende Rolle.
 
 \sub{Schreibweisen}
 
@@ -54,7 +54,7 @@ In dem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ aufgespannten rechtwin
 		   -- (0,  3) node [above right] {$1$}
 		   -- (0,  4) node [right] {$y$};
 
-		% Quadrant nodes
+		% Quadrant
 		\draw ( 3,  3.5) node {I}
 		      (-3,  3.5) node {II}
 		      (-3, -3.5) node {III}
@@ -65,11 +65,13 @@ In dem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ aufgespannten rechtwin
 		      		 node [below left] {$0$};
 
 		% Dreieck
-		\draw (0, 0)
-		   -- (2.121, 2.121) node [midway, above, rotate = 45]
-		   				          {$\mathbf{k = \tan \varphi}$}
-		   					 node [above right] {$P (x | y)$}
-		   -- (2.121, 0)     node [midway, right] {$y = \sin \varphi$};
+		\draw [fill=black]
+		      (0, 0)
+		   -- (2.121, 2.121)
+		      node [midway, above, rotate = 45] {$\mathbf{k = \tan \varphi}$}
+			  circle [radius=1.2pt] node [above right] {$P (x | y)$}
+		   -- (2.121, 0)    
+		      node [midway, right] {$y = \sin \varphi$};
 
 
 		% Winkelbogen
@@ -83,7 +85,7 @@ In dem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ aufgespannten rechtwin
 	\caption*{Ein Einheitskreis mit Mittelpunkt $M (0 | 0)$ und $r = 1$, in welchem zwischen $x = \cos \varphi$ und $y = \sin \varphi$ ein rechtwinkliges Dreieck mit $\varphi = 45\degree$ aufgespannt ist.}
 \end{figure}
 
-Die  $y$-Koordinate des Punktes ist in der oberen H\"{a}lte des Einheitskreises, also Quadranten I und II, stets positiv und in der unteren H\"{a}lfte, also Quadranten III und IV, negativ. Man \"{u}berlege sich dazu den Verlauf der Sinusfunktion $\sin(x)$. Sie beginnt mit $x = y = 0$, findet nach $x = \frac{\pi}{2}$ ihr Maximum, wo $y = 1$, f\"{a}llt dann bis zu $(x = \pi | y = 0)$ und wechselt dann ihr Vorzeichen. Gegens\"{a}tzlich dazu wechselt das Vorzeichen der $x$-Kathete nach Quadranten I und III, was auch mit dem Verlauf der Cosinusfunktion $\cos(x)$ \"{u}bereinstimmt. Aus diesen Beobachtungen folgt:
+Die  $y$-Koordinate des Punktes ist in der oberen H\"{a}lte des Einheitskreises, also Quadranten I und II, stets positiv und in der unteren H\"{a}lfte, also Quadranten III und IV, negativ. Man \"{u}berlege sich dazu den Verlauf der Sinusfunktion $\sin(x)$. Sie beginnt mit $x = y = 0$, findet nach $x = 90\degree$ ihr Maximum, wo $y = 1$, f\"{a}llt dann bis zu $(x = 180\degree | y = 0)$ und wechselt dann ihr Vorzeichen. Gegens\"{a}tzlich dazu wechselt das Vorzeichen der $x$-Kathete nach Quadranten I und III, was auch mit dem Verlauf der Cosinusfunktion $\cos(x)$ \"{u}bereinstimmt. Aus diesen Beobachtungen folgt:
 
 \vspace{1cm}
 
@@ -149,7 +151,6 @@ Nimmt man die Tatsache in Betracht, dass im Einheitskreis die Hypotenuse $r$ ste
 
 Der Sinussatz ist eine Reihe von Verh\"{a}ltnissen zwischen den Seiten und Winkeln eines Dreiecks, welche einem helfen k\"{o}nnen, ein allgemeines Dreieck aufzul\"{o}sen: $$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma}$$
 
-
 Man bemerke, dass die Proportionalit\"{a}t zwischen Winkelspanne und L\"{a}nge der gegen\"{u}berliegenden Seite daher folgt, dass die L\"{a}nge jeder Seite im Winkelbogen aufgespannt werden muss. Ein gr\"{o}\ss{}erer Winkel bedeutet ein breiterer Winkelbogen, in welchem die Seite aufgespannt wird. Dieses Verh\"{a}ltnis besteht zwischen jedem Winkel und seiner gegen\"{u}berliegenden Seite. Er wird am besten dann angewendet, wenn man von einem allgemeinen Dreieck kennt:
 \begin{itemize}
 	\item eine Seite und zwei Winkel
@@ -191,6 +192,54 @@ Man bemerke, dass die Proportionalit\"{a}t zwischen Winkelspanne und L\"{a}nge d
 
 \pagebreak
 
+\subsub{Herleitung des Sinussatzes}
+
+Die Herleitung des Sinussatzes ist vergleichsweise einfach. Man nehme ein allgemeines Dreieick und teile es durch die H\"{o}he $h_c$ in zwei rechtwinklige Dreiecke:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+
+		% c
+		\draw [fill=black]
+		      (0, 0) circle [radius=1.2pt] node [left] {A}
+		   -- (4, 0) circle [radius=1.2pt] node [right] {B}
+		      node [midway, below] {c};
+
+		% a
+		\draw [fill=black]
+		     (4, 0)
+		  -- (3, 2) circle [radius=1.2pt] node [above] {C}
+		      node [midway, right] {a};
+
+		% b
+		\draw (3, 2) -- (0, 0) node [midway, above  left] {b};
+
+		% gamma arc
+		\draw (2.5, 5/3) arc [radius=0.5cm, start angle=220, end angle=310];
+
+		% gamma node
+		\draw (2.88, 1.7) node {$\gamma$};
+
+		% alpha arc
+		\draw (1, 0) arc [radius=1cm, start angle = 0, end angle = 33];
+
+		% alpha node
+		\draw (0.7, 0.25) node {$\alpha$};
+
+		% beta arc
+		\draw (3.3, 0) arc [radius=0.7cm, start angle = 180, end angle = 117];
+
+		% beta node
+		\draw (3.6, 0.25) node {$\beta$};
+
+		% h_c
+		\draw (3, 2) -- ++(0, -2) node [midway, left] {$h_c$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Nun lassen sich folgende Verh\"{a}ltnisse zwischen den Seiten $a$ und $b$, den Winkeln $\alpha$ und $\beta$ sowie der H\"{o}he $h_c$ finden: $$\sin \alpha = \frac{h_c}{b} \hspace{2cm} \sin \beta = \frac{h_c}{a}$$ Aus diesen l\"{a}sst sich folglich die H\"{o}he $h_c$ aus einer der beiden Gleichungen ausdr\"{u}cken um somit $h_c$ durch den entstehenden Ausdruck in der zweiten Gleichung zu substitutieren: $$\sin \alpha \cdot b = h_c \hspace{1cm} \Rightarrow \hspace{1cm} \sin \beta = \frac{\sin \alpha \cdot b}{a}$$ Diese Gleichung kann nun weiter umgeformt werden indem man beide Seiten durch die Seite $b$ teilt, sodass letztlich gilt: $$\frac{\sin \beta}{b} = \frac{\sin \alpha}{a}$$ F\"{u}r den Winkel $\gamma$ und die Seite $b$ m\"{u}sste man das Dreieick durch eine andere H\"{o}he teilen und das selbe Verfahren anwenden.
+
 \sub{Cosinussatz}
 
 Der Cosinussatz beschreibt eine Reihe von Verh\"{a}ltnissen, bei welchen eine Seite bzw. ihr gegen\"{u}berliegender Winkel von den beiden anderen Seiten eines allgemeinen Dreiecks abh\"{a}ngen: $$a^2 = b^2 + c^2 - 2bc \cdot \cos \alpha$$ $$b^2 = a^2 + c^2 - 2ac \cdot \cos \beta$$ $$c^2 = a^2 + b^2 - 2ab \cdot \cos \gamma$$
@@ -205,7 +254,7 @@ Den Cosinussatz verwendet man am besten dann, wenn man kennt:
 	\begin{tikzpicture}
 
 		% c
-		\draw [red] (0, 0) -- (4, 0) node [midway, below] {c};
+		\draw [red] (0, 0) -- (4, 0) node [midway, above] {c};
 
 		% a
 		\draw (4, 0) -- (3, 2) node [midway, right] {a};
@@ -234,9 +283,62 @@ Den Cosinussatz verwendet man am besten dann, wenn man kennt:
 	\end{tikzpicture}
 \end{figure}
 
+\pagebreak
+
+\subsub{Herleitung des Cosinussatzes}
+
+Die Herleitung des Cosinussatzes ist etwas schwieriger als jene des Sinussatzes. Wieder teilt man ein allgemeines Dreieick durch die H\"{o}he $h_c$ in zwei rechtwinkelige Dreiecke:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+
+		% c
+		\draw [fill=black]
+		      (0, 0) circle [radius=1.2pt] node [left] {A}
+		   -- (3, 0) node [midway, below] {$c_1$}
+		   -- (4, 0) circle [radius=1.2pt] node [right] {B}
+		      node [midway, below] {$c_2$};
+
+		% a
+		\draw [fill=black]
+		     (4, 0)
+		  -- (3, 2) circle [radius=1.2pt] node [above] {C}
+		      node [midway, right] {a};
+
+		% b
+		\draw (3, 2) -- (0, 0) node [midway, above  left] {b};
+
+		% gamma arc
+		\draw (2.5, 5/3) arc [radius=0.5cm, start angle=220, end angle=310];
+
+		% gamma node
+		\draw (2.88, 1.7) node {$\gamma$};
+
+		% alpha arc
+		\draw (1, 0) arc [radius=1cm, start angle = 0, end angle = 33];
+
+		% alpha node
+		\draw (0.7, 0.25) node {$\alpha$};
+
+		% beta arc
+		\draw (3.3, 0) arc [radius=0.7cm, start angle = 180, end angle = 117];
+
+		% beta node
+		\draw (3.6, 0.25) node {$\beta$};
+
+		% h_c
+		\draw (3, 2) -- ++(0, -2) node [midway, left] {$h_c$};
+
+	\end{tikzpicture}
+\end{figure}
+
+Nun bemerke man, dass die Seite $b$ die Hypotenuse des linken rechtwinkeligen Dreiecks mit den Katheten $c_1$ und $h_c$ ist, w\"{a}hrend die Seite $a$ die Hypotenuse im rechten rechtwinkeligen Dreieck ist, in welchem $c_2$ und $h_c$ die Katheten darstellen. Daher l\"{a}sst sich in beiden Dreiecken das Quadrat der Hypotenuse als die Summe der Quadrate der Kathetenl\"{a}ngen beschreiben: $$b^2 = c_1^2 + h_c^2 \hspace{2cm} a^2 = c_2^2 + h_c^2$$ Aus einer dieser beiden Gleichungen l\"{a}sst sich das H\"{o}henquadrat ausdr\"{u}cken, welches folglich f\"{u}r $h_c^2$ in der zweiten Gleichung eingesetzt werden kann: $$h_c^2 = a^2 - c_2^2 \hspace{1cm} \Rightarrow \hspace{1cm} b^2 = a^2 - c_2^2 + c_1^2$$ Die Summe aus den Teill\"{a}ngen $c_1$ und $c_2$ ist nat\"{u}rlich die L\"{a}nge $c$. Daher muss $c_2$ gleich der Differenz aus $c$ und $c_1$ sein. Somit verschwindet eine Teill\"{a}nge aus der Gleichung: $$b^2 = a^2 - (c - c_1)^2 + c_1^2$$ Der Term in der Klammer ist eine binomische Formel, welche aufgel\"{o}st werden muss. Hierbei ist es wegen dem vorangestellten Minuszeichen wichtig, den ausgerechneten Term in der Klammer zu lassen: $$b^2 = a^2 - (c^2 - 2cc_1 + c_1^2) + c_1^2 \hspace{1cm} \Rightarrow \hspace{1cm} b^2 = a^2 - c^2 + 2cc_1 - c_1^2 + c_1^2$$ Die L\"{a}nge $c_1$ f\"{a}llt nun teilweise weg: $$b^2 = a^2 - c^2 + 2cc_1 - \cancel{c_1^2} + \cancel{c_1^2} \hspace{1cm} \Rightarrow \hspace{1cm} b^2 = a^2 - c^2 + 2cc_1$$ Die verbliebene L\"{a}nge $c_1$ kann nun durch den Cosinus des Winkels $\alpha$ sowie der Seite $b$ substituiert werden: $$\cos \alpha = \frac{c_1}{b} \hspace{1cm} \Rightarrow \hspace{1cm} b^2 = a^2 - c^2 + 2bc \cdot \cos \alpha$$ Danach m\"{u}ssen noch $a^2$ und $b^2$ getauscht werden, indem man von beiden Seiten der Gleichung $a^2$ sowie $b^2$ subtrahiert: $$-a^2 = -b^2 - c^2 + 2bc \cdot \cos \alpha$$ Letztlich wird noch mit $-1$ multipliziert und der Cosinussatz ist vollst\"{a}ndig hergeleitet: $$a^2 = b^2 + c^2 - 2bc \cdot \cos \alpha$$
+
+\pagebreak
+
 \sub{Anmerkungen}
 
-Die Summe der Winkel bei einer Gerade ist 180 (Halbkreis):
+Die Summe der Winkel bei einer Gerade ist $180\degree$ (Halbkreis):
 
 \begin{figure}[h!]
 	\begin{tikzpicture}
@@ -265,7 +367,7 @@ Die Summe der Winkel bei einer Gerade ist 180 (Halbkreis):
 		\draw (2.5, 0.3) node {$\delta$};
 
 		% legend
-		\draw (2, -0.5) node {$\alpha + \beta + \gamma + \delta = 180$};
+		\draw (2, -0.5) node {$\alpha + \beta + \gamma + \delta = 180\degree$};
 
 	\end{tikzpicture}
 \end{figure}

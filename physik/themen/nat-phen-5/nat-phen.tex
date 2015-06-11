@@ -346,4 +346,286 @@ In case of a superior mirage, the increasingly cold air is at the bottom and the
 
 \end{plot}
 
+\sub{Lightning}
+
+Lightning is a perfect example of the effects of electric fields in nature. The pre-conditions for and the mechanism of lightning strikes can be divided into four separate stages or phases, investigated and explained below. Beforehand, however, the scenario and environment in which lightning occurs should be examined. The birthplace of lightning are clouds in the sky. Clouds are regions of condensed water vapour in the atmosphere, where evaporating water from the surface of the earth accumulates. Clouds are found at high altitudes, where the temperature is well below zero. As a result, there may be condensed water clusters and water vapour in the cloud, but also frozen ice particles. Given the right conditions, lightning will form via the steps discussed in the following paragraphs.
+
+\subsub{Phase 1: Static Charge Buildup}
+
+At the very beginning of any lightning strike, there must first be a \emph{static charge buildup} in the cloud. The adjective \emph{static} here refers to a gathering of electric charge in a non-conducting material or object, i.e. with no flow of current. Thus, before a lightning strike occurs, there is a charge separation --- also referred to as \emph{polarization} --- in the cloud, whereby the upper portion of the cloud becomes positively charged while the lower region takes on a negative charge. One reason for this is that evaporating water molecules collide with atoms already present in the cloud, thereby knocking away and freeing electrons from the outer energy shells of atoms, thereby causing a charge separation. In any case, as a result of the polarization of the cloud, a strong electric field is established between the positive and the negative end (from $+$ to $-$).
+
+\begin{plot}
+
+	\node [cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=1em] {};
+
+	% Charges and field
+	\foreach \i in {-0.5, 0, 0.5}
+	{
+		\draw [red] (\i, 0.35) node {$+$};
+
+		\draw [->] (\i, 0.15) -- (\i, -0.2);
+
+		\draw [blue] (\i, -0.35) node {$-$};
+	}
+
+\end{plot}
+
+\subsub{Phase 2: Ionization of the Surroundings}
+
+After charge separation and polarization of the cloud, the strong electric field established between the now positively charged top and the negatively charged bottom of the cloud begins to ionize the surrounding air and gas molecules. As a result, the air around the cloud becomes positively charged. We can now refer to the surrounding air as \emph{plasma} --- ionized air or gas --- which has an important property: it is conductive, i.e. charge and current may flow through it. This is especially important in the regions below the cloud, nearest to the surface of the earth.
+
+\begin{plot}
+
+	\node [cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=1em] {};
+
+	% Charges and field
+	\foreach \i in {-0.5, 0, 0.5}
+	{
+		\draw [red] (\i, 0.35) node {$+$};
+
+		\draw [->] (\i, 0.15) -- (\i, -0.2);
+
+		\draw [blue] (\i, -0.35) node {$-$};
+	}
+
+	% Plasma
+	\foreach \x in {-1, -0.5, ..., 1}
+	{
+		\foreach \y in {-1, -1.5}
+		{
+			\draw [red] (\x, \y) node {$+$};
+		}
+	}
+
+	% Plasma label
+	\draw [<-] (1.5, -1.25) -- ++(0.5, 0) node [right] {Plasma};
+
+\end{plot}
+
+\subsub{Phase 3: Formation of Step-Leader and Streamer}
+
+With the presence of plasma below the cloud, there is now a conductive path for the negatively charged particles to travel through. Thus, excess electrons from the lower region of the cloud begin to travel through the now conductive air in a zig-zag pattern as what is known as the \emph{step-leader}. As the electrons come closer to the surface of the earth on their path through the conductive plasma, they repell the electrons present in the ground. Consequently, the surface of the earth becomes \emph{positively charged}. Positive charges then begin to migrate upwards through buildings, trees or people and move in the direction of the approaching step-leader. This flow of positive charges is referred to as the \emph{streamer}.
+
+\begin{plot}
+
+	\node [cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=1em] {};
+
+	% Charges and field
+	\foreach \i in {-0.5, 0, 0.5}
+	{
+		\draw [red] (\i, 0.35) node {$+$};
+
+		\draw [->] (\i, 0.15) -- (\i, -0.2);
+
+		\draw [blue] (\i, -0.35) node {$-$};
+	}
+
+	% Plasma
+	\foreach \x in {-1, -0.5, 0.5, 1}
+	{
+		\foreach \y in {-1, -1.5}
+		{
+			\draw [red] (\x, \y) node {$+$};
+		}
+	}
+
+	% Plasma label
+	\draw [<-] (1.5, -1.25) -- ++(0.5, 0) node [right] {Plasma};
+
+	% Step leader
+	\draw [blue] (0, -0.7) \foreach \i in {1, 2}
+	{
+		-- ++(250:0.5)
+
+		\ifnum\i<2
+			 -- ++(0.2, 0)
+		\fi
+	};
+
+	% Step leader label
+	\draw [<-] (-0.4, -1.25) -- ++(-0.8, 0) node [left] {Step Leader};
+
+	% Ground
+	\draw (-2, -3) -- (2, -3);
+
+	% Ground charges
+	\foreach \x in {-2, -1.5, ..., 2}
+	{
+		\draw [red] (\x, -3.3) node {$+$};
+	}
+
+	% Streamer
+	\draw [red] (-0.7, -3) \foreach \i in {1, 2}
+	{
+		-- ++(70:0.5)
+
+		\ifnum\i<2
+			 -- ++(0.2, 0)
+		\fi
+	};
+
+	% Streamer label
+	\draw [<-] (-1, -2.5) -- ++(-0.7, 0) node [left] {Streamer};
+
+\end{plot}
+
+\subsub{Phase 4: Lightning}
+
+When the flow of negative charges in the step leader meets the flow of positive charges in the streamer, a complete conductive path is established between the region of high electron concentration in the cloud and the positively charged surface of the ground. There is now a difference in electric potential between the cloud and the ground, such that electric current can and will flow through the conductive path from the negative region of the cloud to the positive surface of the earth. Current always involves an increase in thermal energy, i.e. generation of heat. Thus, as current flows through the conductive path, it causes the air around it to expand. This is what we hear as thunder.
+
+\begin{plot}
+
+	\node [cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=1em] {};
+
+	% Charges and field
+	\foreach \i in {-0.5, 0, 0.5}
+	{
+		\draw [red] (\i, 0.35) node {$+$};
+
+		\draw [->] (\i, 0.15) -- (\i, -0.2);
+
+		\draw [blue] (\i, -0.35) node {$-$};
+	}
+
+	% Plasma
+	\foreach \x in {-1, -0.5, 0.5, 1}
+	{
+		\foreach \y in {-1, -1.5}
+		{
+			\draw [red] (\x, \y) node {$+$};
+		}
+	}
+
+	% Plasma label
+	\draw [<-] (1.5, -1.25) -- ++(0.5, 0) node [right] {Plasma};
+
+	% Bolt color
+	\definecolor{bolt}{RGB}{248,202,0}
+
+	% Lightning
+	\draw [bolt, thick] (0, -0.7) \foreach \i in {1, 2, 3, 4, 5}
+	{
+		-- ++(250:0.5)
+
+		\ifnum\i<5
+			 -- ++(0.2, 0)
+		\fi
+	};
+
+	% Lightning label
+	\draw [<-] (-0.4, -2.2) -- ++(-0.8, 0) node [left] {Lightning};
+
+	% Ground
+	\draw (-2, -3) -- (2, -3);
+
+	% Ground charges
+	\foreach \x in {-2, -1.5, ..., 2}
+	{
+		\draw [red] (\x, -3.3) node {$+$};
+	}
+
+\end{plot}
+
+\pagebreak
+
+\subsub{Protection from Lightning}
+
+To protect houses and people from the highly dangerous effects of a lightning strike (fire or death), lightning rods are used. The concept behind them is fairly simple. Instead of letting the high current of a lightning bolt flow directly through a house, it is diverted by a lightning rod. Such a lightning rod is simply a wire at the highest point of the house (on the roof), which leads any lightning striking it to ground (earth).
+
+\sub{Earth Magnetic Field}
+
+The earth's magnetic field is very similar to that of a powerful bar magnet.The source of this magnetic field is not entirely understood, but one of the most prominent theories regarding the generation of the earth's magnetic field is called the \emph{dynamo theory}. This theory states that the magnetic field in and around the earth is caused by heat convection currents in the core of the earth. These heat convection currents have electrical current flowing through them, which in turn generates the earth's magnetic field according to the laws of electromagnetism. A very important fact to mention with respect to the earth's magnetic field is that the magnetic poles $N_m, S_m$ do not lie at the same locations $N_g, S_g$ as the earth's geographical poles. Rather, the center of the earth's magnetic field is tilted at an angle of approximately $11\degree$ from the earth's rotational (spin) axis.
+
+\begin{plot}
+
+	% Earth
+	\draw (0, 0) circle [radius=1.5cm];
+
+	% Axis of rotation
+	\draw [magenta]
+	      (270:2) node [black, below] {$S_g$} 
+	   -- (90:2) node [black, above] {$N_g$};
+
+	% Magnetic axis
+	\draw [blue]
+	      (281:2) node [black, below right] {$S_m$} 
+	   -- (101:2) node [black, above left] {$N_m$};
+
+	% Points
+	\foreach \a in {0, 11}
+	{
+		\draw [fill=black] ({90 + \a}:1.5) circle [radius=1.2pt];
+
+		\draw [fill=black] ({270 + \a}:1.5) circle [radius=1.2pt];
+	}
+
+	% Poles box at core
+	\begin{scope}[rotate=11]
+
+		% North pole box
+		\draw [fill=red, red]
+		      (-0.3, 0.5)
+		 -- ++(0.6, 0) -- ++(0, -0.5) -- ++(-0.6, 0) -- ++(0, 0.5);
+
+		% North pole label
+		\draw (0, 0.25) node {N};
+
+		% South pole box
+		\draw [fill=cyan, cyan]
+		      (-0.3, -0.5)
+		 -- ++(0.6, 0) -- ++(0, 0.5) -- ++(-0.6, 0) -- ++(0, -0.5);
+
+		% South pole label
+		\draw (0, -0.25) node {S};
+
+	\end{scope}
+
+\end{plot}
+
+Another interesting property of the earth's magnetic field is that there exists a certain characteristic area in space around it, in which charged particles interact with the earth's magnetic field. This region around the earth is referred to as the \emph{magnetosphere}. Especially solar wind, a stream of charged particles, i.e. plasma (ionized air or gas), from the corona (outer atmospheric layer) of the sun will interact with the earth's magnetic field in the magnetosphere.
+
+\subsub{The Van Allen Radiation Belts}
+
+The Van Allen radiation belts are two layers around the earth in which energetic charged particles (radiation) are trapped and held in place by the earth's magnetic field. These belts are found at an altitude of 1000 to 60000 kilometers above the earth's surface and are thus located in the inner region of the earth's magnetosphere. The charged particles found in these belts --- electrons and protons --- originate mostly from solar wind, while cosmic rays may transport other nuclei, such as alpha particles. The outer of the two Van Allen belts contains mostly negative particles, while highly energetic protons dominate in the inner belt. The force that traps particles in these regions of space is the Lorentz force --- the force exerted on moving charges in a magnetic field. Van Allen belt radiation can be very harmful to satellites, spacecrafts and other electronics due to their high-energy and ionizing property.
+
+\sub{Polar Lights}
+
+Polar lights, also referred to as \emph{Auroras}, are color phenomena in the sky most commonly experienced near the earth's magnetic poles. The source of these polar lights is the interaction between ionizing radiation from the sun, known as \emph{solar wind}, and certain molecules in the earth's atmosphere. This solar wind is a stream of plasma (ionized air or gas) released from the upper atmosphere of the sun --- the \emph{corona} --- and is responsible for exciting atoms in the earth's atmosphere. These atoms, in turn, emit energy in form of light photons and thereby create polar lights. For a complete discussion of the topic, it must first be examined what solar wind is, wherein its origin lies and how it influences the creation of polar lights.
+
+\subsub{Solar Wind}
+
+When Hydrogen atoms collide with high velocity and immense energy in the core of the sun, at a temperature of more than 15 million degrees Celsius, nuclear reactions take place under conditions of high pressure to form Helium. These reactions produce energy which radiates away from the sun's core towards its outermost layer --- the \emph{convection zone} --- where it is subsequently stored in (heat) \emph{convection cells}. These convection cells generate electrical currents, which in turn produce magnetic fields that may interact with the ionized gas in the sun's upper atmosphere, also known as its \emph{corona}. Usually, the gravitational force exerted by the sun
+prevents this plasma from leaving the corona. However, occasional bursts of energy from the sun’s core may create strong enough magnetic fields in and around the convection cells to overpower the sun’s gravity and transport the plasma out of the corona and into space. These bursts of plasma leaving the sun are what is then referred to as \emph{solar wind}. 
+
+When solar wind propagates through space towards the earth, it does not impact our planet directly or without any resistance. Rather, it interacts with the earth’s magnetosphere. The magnetosphere is the area of space where charged particles are controlled by the earth’s magnetic field. As the plasma reaches the magnetosphere's bow shock and interacts with the earth's magnetic field, a fraction of it is deflected towards the two poles and pulled into the earth’s atmosphere.
+
+\subsub{Auroral Mechanism}
+
+When solar wind enters the earth’s atmosphere (80km above sea level and higher) its charged particles collide with the oxygen and nitrogen atoms in the air. These collision excite the atoms and thereafter lead to the emission of a quantum of energy in the form of light (photons) when electrons inside the excited atoms transition to a lower energy state from their excited states. The colors of the light waves emitted depend on the atoms involved and the altitude of the collisions.
+
+\begin{itemize}
+	\item Oxygen emits \dots
+
+		\begin{itemize}
+
+			\bolditem{Red light} at altitudes of circa 240km above sea level and higher. This wavelength of light is very rare, as it takes up to two minutes for an oxygen atom to emit red light. During this relatively long period of time the chance of another atmospheric atom or a charged particle from the solar wind colliding and thus transferring new energy to the atom in the process of emission is very high. If an emission is indeed achived, however, this most often occurs at higher altitudes, as the atmospheric density and abundance of oxygen is lower with increasing distance from sea level. However, a reduced abundance of oxygen at high altitudes also means that there are fewer atoms available to emit light in the first place.
+
+			\bolditem{Green light} at heights of \emph{up to} 240 km above sea level. It takes an oxygen atom approximately three quarters of a second to emit to emit green light. Therefore, the chance of a green light photon to be emitted is a lot higher than for red light. This the reason why green light is the most common color observed in polar lights.
+
+		\end{itemize}
+
+	\item Nitrogen emits \dots
+
+		\begin{itemize}
+
+			\bolditem{Blue light} at altitude levels of 100km and less. This color is emitted when an ionized nitrogen atoms regains an electron. Emission of light at this frequency and wavelength is very common during high levels of solar activity.
+
+			\bolditem{Dark red light} at 100km sea level and higher. 
+
+		\end{itemize}
+
+	\item Other colors such as yellow or pink are usually mixtures of any of the above colors.
+
+\end{itemize}
+
 \end{document}
