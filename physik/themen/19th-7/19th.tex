@@ -219,7 +219,8 @@ While Philipp Lenard made important observation concerning the photoelectric eff
 		% Kinetic energy of photoelectrons axis
 		\draw [<->] (0, -2) -- ++(0, 6)
 		      node [midway, rotate=90, above]
-		      {Kinetic Energy of Photoelectrons};
+		      {Kinetic Energy of Photoelectrons}
+		      node [right] {$E(f) = h \cdot f$};
 
 		% Photon-frequency axis
 		\draw [->] (0, 0) -- ++(7, 0)
@@ -234,9 +235,6 @@ While Philipp Lenard made important observation concerning the photoelectric eff
 
 		% Slope (h)
 		\draw (3.5, 2) node [rotate=40] {Slope is Planck's constant $h$};
-
-		% Description
-		\draw (6, 1.5) node {$E(f) = h \cdot f$};
 
 	\end{tikzpicture}
 	\caption*{A generalized graph plotting photoelectron-energy in dependence of photon-frequency for a given metal of threshold frequency $f_0$}
@@ -263,7 +261,7 @@ A French physicist called Louis de Broglie thereafter proposed that if light has
 
 	\item Particle-like properties are fixed by a linear momentum $p = m \cdot v$
 
-	\item These can be linked for a photon according to Einstein's mass-energy relation $E = m \cdot c^2$ and his (or Planck's) energy-frequency relation $E = h \cdot f$ as well as the definition of photon momentum $p$ as being equal to the product of its mass $m$ times the speed of light $c$: $p = m \cdot c$ in the following way: $$E = h \cdot f = m \cdot c^2 \AND p = m \cdot c \AND c = \lambda \cdot f$$ $$\Downarrow$$ $$p = m \cdot c = \frac{h \cdot f \cdot c}{c^2} = \frac{h \cdot f}{c} = \frac{h \cdot f}{\lambda \cdot f} = \frac{h}{\lambda}$$ $$\Downarrow$$ $$p = \frac{h}{\lambda} \AND \lambda = \frac{h}{p}$$
+	\item These can be linked for a photon according to Einstein's mass-energy relation $E = m \cdot c^2$ and his (or Planck's) energy-frequency relation $E = h \cdot f$ as well as the definition of photon momentum $p$ as being equal to the product of its mass $m$ times the speed of light $c$ in the following way: $$E = h \cdot f = m \cdot c^2 \AND p = m \cdot c \AND c = \lambda \cdot f$$ $$\Downarrow$$ $$p = m \cdot c = \frac{h \cdot f \cdot c}{c^2} = \frac{h \cdot f}{c} = \frac{h \cdot f}{\lambda \cdot f} = \frac{h}{\lambda}$$ $$\Downarrow$$ $$p = \frac{h}{\lambda} \AND \lambda = \frac{h}{p}$$
 
 \end{enumerate}
 
@@ -611,10 +609,26 @@ This called for further examination. The call was answered and it was thought th
 
 \subsub{The Wave Function}
 
-The anwer is in the title of this subsection. To explain the underlying concepts of the wave-particle duality of matter, a certain \emph{wave function} $\Psi$ is used. To re-cap, the wave-particle duality refers to the observation that neitehr the wave model nor the the particle model can be used to consistently explain the behaviour of light or matter under all circumstances. Quantum mechanics, a set of abstract mathematical models, does its best to provide a certain explanation and the wave function $\psi$ is an integral part of it. A wave function describes the quantum state of a system of one or more particle and is currently the most complete description of matter or radiation. $\Psi$ is essentially a probability distribution in the sense that the probability of finding a certain particle at a certain place at a certain time is linked or proportional to the \emph{intensity} --- the square of the amplitude --- of the wave function. Given the general nature of a probability distribution, the propability of finding a particle at \emph{any} point in space (the universe) must be equal to $1$, i.e. the particle certainly does exist somewhere. One of the most interesting properties of the wave function, associated with the double slit experiment, is that it \emph{collapses} when a particle in the system governed by the wave function is observed. This explains why electrons only cause an interference pattern when no observer is present, while they go back to producing two bands similar to tennis balls or marbles when observing their motion and behaviour.
+The anwer is in the title of this subsection. To explain the underlying concepts of the wave-particle duality of matter, a certain \emph{wave function} $\Psi$ is used. To re-cap, the wave-particle duality refers to the observation that neither the wave model nor the the particle model can be used to consistently explain the behaviour of light or matter under all circumstances. Quantum mechanics, a set of abstract mathematical models, does its best to provide a certain explanation and the wave function $\Psi$ is an integral part of it. A wave function describes the quantum state of a system of one or more particle and is currently the most complete description of matter or radiation. $\Psi$ is essentially a probability distribution or probability density function in the sense that the probability of finding a certain particle at a certain place, at a certain time is linked or proportional to the \emph{intensity} --- the square of the amplitude --- of the wave function. More precisely, the probability of finding a particle in a certain volume of space $dV$ can be found by multiplying the intensity of the wave function by the volume: $$P = |\Psi|^2 dV$$ Given the general nature of a probability distribution, the probability of finding a particle at \emph{any} point in space (the universe) must be equal to $1$, i.e. the particle certainly does exist somewhere. One of the most interesting properties of the wave function, associated with the double slit experiment, is that it \emph{collapses} when a particle in the system governed by the wave function is observed. This explains why electrons only cause an interference pattern when no observer is present, while they go back to producing two bands similar to tennis balls or marbles when observing their motion and behaviour.
 
 \pagebreak
 
-\sub{The Heisenberg Uncertainty Principle}
+\subsub{The Heisenberg Uncertainty Principle}
+
+One of the most intriguing properties of the wave function is that it collapses and changes continuously. When we try to measure the properties of a matter wave, i.e. its wavelength $\lambda$ or its momentum $p = m \cdot v$, we are forced to interact with it and are thus forced to affect it, to change it. This arises from the wave properties inherent in the quantum mechanical description of nature. Werner Heisenberg, a German scientist, built on this observation in the early 20th century and formulated what is known as the \emph{Heisenberg uncertainty principle}. More precisely, there are two main variants of the uncertainty principle: one of energy and time and one of linear momentum and position. The fundamental law governing both is the following:
+
+\begin{displayquote}
+	
+	There is a fundamental limit of possible accuracy of measurements.	
+
+\end{displayquote}
+
+\subsubsub{The Uncertainty Principle of Position and Linear Momentum}
+
+The first of the two uncertainty princples concerns itself with the position and linear momentum of a particle, stating that it is not possible to determine both with the same degree of exact precision at the same instant of time. Moreover, Werner Heisenberg proved that the deviation or \emph{uncertainty} in position $\Delta x$ of the particle multiplied by the uncertainty in its linear momentum $\Delta p$ at the same moment could not be less than $\hslash$ divided by two, where $\hslash$ is the reduced Planck's constant and equal to $h$ divided by $2 \pi$: $$\Delta x \cdot \Delta p \geq \frac{\hslash}{2}$$ What this means in practice is that if you were to eject an electron towards a single slit to measure its properties, there would arise two possible scenarios in which the uncertainty principle of position and linear momentum poses problems. In the first case, one may want to determine the position of the electron within the slit precisely. To do so, one would decrease the width of the slit as much as possible. Now, it could be measured with a high level of precision where the electron passes through the slit, as there is simply less room for deviation. Thus, $\Delta x$ would be small. However, at the same time, a decreased gap size results in a higher degree of diffraction, such that the uncertainty of the velocity or linear momentum $\Delta p$ of the particle would be high. The more you want to measure or observe where the particle passes through the slit, the less you know in which direction it will travel. On the other hand, one may want to determine the linear momentum of the particle as precisely as possible. Now, one would increase the gap size to ensure that the particle is diffracted as little as possible. Consequently, $\Delta p$ will be small --- the particle will move on in a predictable direction. At the same time, however, it would have become increasingly difficult to determine the particle's exact position in the slit, as there is more room for uncertainty. In effect, $\Delta x \cdot \Delta p$ will always exceed $\frac{h}{4 \pi}$.
+
+\subsubsub{The Uncertainty Principle of Energy and Time}
+
+The second ucnertainty principle proposed by Heisenberg was that of energy and time. Once more, he argued that the uncertainty $\Delta E$ in energy of a particle multiplied by the uncertainty $\Delta t$ in the time of measurement could not be less than the reduced Planck's constant $\hslash$ divided by two: $$\Delta E \cdot \Delta t \geq \frac{\hslash}{2}$$ The basic principle of this concept and equation is that to measure the energy of a particle at any given point in time precisely, one would need a considerable amount (or span) of time to perform that measurement. Therefore, $\Delta E$ would be small, as the measurement would not deviate much from the actual value, given the large measurement period. However, it would be impossible to say precisely at what \emph{precise} instant of time the particle took on that \emph{precise} energy value, given that the time window was large with much room for deviation. Thus $\Delta t$ would be large, as the measured time deviates from the actual time (at which the particle took on that specific energy value) by a considerable amount. On the other hand, if the time interval of the measurement performed is small, the deviation in time $\Delta t$ of any measurement will automatically be smaller, as there is simply less room (i.e. time) for error or uncertainty. However, it will be more difficult to perform an exact measurement if there is less time to do so. Thus, $\Delta E$ is large. In either case, the product of both uncertainties $\Delta E$ and $\Delta t$ will always exceed $\frac{\hslash}{2}$. This indeterminancy is significant on the atom level, but can be neglected on the macroscopic scale.
 
 \end{document}

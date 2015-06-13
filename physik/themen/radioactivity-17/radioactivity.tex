@@ -1,0 +1,264 @@
+% Radioactivity
+
+\input{../preamble.tex}
+
+\begin{document}
+\thispagestyle{plain}
+
+\heading{Radioactivity}
+
+\sub{Properties of Alpha, Beta and Gamma Radiation}
+
+\subsub{Ionization}
+
+First, it should be discussed what ionizing radiation and ionization is in general. Ioniziation is the process by which an atom or a molecule acquires a negative or positive charge by gaining or losing electrons. Positive ionization occurs when a charged particle such as an $\alpha$ or $\beta$ particle, or a photon, such as a $\gamma$-ray, collides with an electron bound to an atom. The threshold energy required to to break away from the atom is referred to as the \emph{ionization-potential}. Positive ionizaton yields two charged particles (ions): the now positively charged atom and the free electron.
+
+\subsub{Alpha $\alpha$}
+
+Alpha radiation is a form of particle radiation, occuring when an unstable radioactive nucleus is too heavy, such that the strong nuclear force can no longer hold nucleons together. Alpha particles are composed of two neutrons and two protons, whose total mass is 7000 times that of $\beta$ particles. Because of its two protons, it has a charge of $+2$. Moreover, it should be mentioned that alpha particles have exactly the same atomic structure as a Helium atom. Therefore, alpha particles are either denoted by $\alpha^{2+}$ or $He^{2+}$. Alpha particles are deflected in an electric field because of their charge, which attracts them to the field's negative side. Due to the Lorentz force, the force acting on moving charges in a magnetic field, they are also deflected in a magnetic field. Moreover, alpha particles cause ionization --- the most of all forms of radiation --- upon collision with bound electrons. Because $\alpha$ particles are very heavy, they are rather slow, thus alpha radiation have a low penetration depth and generally do not penetrate the skin. However, it can penetrate thin tissue such as open wounds or eyes. Alpha particles have low penetration depth, but ionize the most. Therefore, the biggest risk stems from internal damage, as ingesting alpha particles can ionize cells, cause mutations and cancer. Furthermore, because of their low speed and penetration depth, they can be stopped even by air, most certainly by paper.
+
+\subsub{Beta $\beta$}
+
+Beta radiation is also a form of particle radiation. There are in fact two forms of beta radiation, $\beta^-$ and $\beta^+$. Beta minus ($\beta^-$) particles are high-energy, fast electrons and carry a charge of $-1$. They differ from orbital electrons in the sense that they originate from inside the nucleus and not from the energy levels outside. Beta minus particles are formed when the ratio of neutrons to protons in an atom is too high, causing a neutron to transform into an electron $e^-$, a proton $p^+$ and an electron anti-neutrino $\bar{\nu_{e}}$. The electron is then emitted as the $\beta^-$ particle, while the proton is kept. Thus, the neutron count is reduced by one and the proton count increased by one. The second variant of beta decay is called $\beta^+$ or \emph{positron} emission ($e^+$). It occurs for the opposite reason of $\beta^-$ decay, namely to reduce the proton count and increase the neutron count by one. In this case, a proton $p^+$ transforms into a neutron $n$, a positron --- denoted by $e^+$ or $\beta^+$ --- and an electron neutrino $\nu_{e}$. Both $\beta^-$ and $\beta^+$ emission change the proton or \emph{atomic number} of the nucleus undergoing decay. Thus, beta decay alwasy constitutes a change in element, either to an element higher up in the periodic table in case of beta minus decay, or to an element of lower atomic number in case of $\beta^+$ decay. Because a beta particle is charged either way ($\beta^-$ and $\beta^+$), it is deflected in an electric field (attracted by the side of the opposite charge) and also in a magnetic field due to the Lorentz force. Also, a $\beta$ particle can cause ionization upon colliding with an atom. Beta particles move at about half the speed of light and travel faster and longer than $\alpha$-particles, besides having a higher penetration depth. They can penetrate the skin, but are stopped by aluminium foil.
+
+\subsub{Gamma $\gamma$}
+
+Gamma radiation is a form of electromagnetic wave radiation. $\gamma$-rays have very high energy --- in the region of keV or MeV --- and frequency --- about $3 \cdot 10^{19} - 3 \cdot 10^{23}\, Hz$ --- and travel at the speed of light, as all electromagnetic waves. It often accompanies alpha or beta decay, often because said decay caused a change in element, leaving the nucleus in a metastable state of high energy and low stability. The unstable radioacive nuclide will then release its excess in energy as $\gamma$ radiation. Thus, the nucleus goes from an unstable, excited state to a state of higher stability and lower energy. $\gamma$ radiation is thus a quantum leap of the \emph{nucleus}. The emphasis here lies on the word \emph{nucleus}, as $\gamma$ photons are emitted from the nucleus, while X-rays or UV-radiation result from quantum leaps of electrons in the outer shells of an atom. As a gamma ray is a wave, it has neither mass nor does it carry any charge. While gamma ray ionization is the least strong ionization of all radiation forms, it can still cause ionization upon being absorbed and thus transferring energy to electrons, potentially equal to the atom's ionization energy. Moreover, because gamma rays travel with very high speed, energy and penetration depth and are only dampened --- not stopped entirely --- by lead, they can easily penetrate skin, cell membranes and ultimately organelles, causing mutations to DNA, causing cancer, harming or even killing cells. By contrast, alpha radiation is stopped already by skin tissue. A $\gamma$-ray is deflected neither in an electric nor in a magnetic field, due to the fact that it carries no charge.
+
+\sub{Detecting Radioactivity}
+
+Geiger-Muller counters work by directing particle ($\alpha$ and $\beta$) or electromagnetic wave ($\gamma$) radiation through a mica-window (very thin, to let through $\alpha$ particles with low penetration depth) into a tube filled with Argon or any other unreactive noble gas. The radioactive particles collide with Argon atoms, which are ionized and eject electrons as a consequence. An avalanche effect causes ionization of the gas when ejected electrons collide with other atoms, ionizing more and more atoms. An electric field with opposite charges is formed --- turning the gas into plasma. This is the \emph{ionizing effect}. The case of the tube is charged negatively and a positively charged anode is placed inside the tube. When no radiation ionizes the gas, no current flows between the case and the anode. However, when the gas is ionized, it can conduct current between the case and the anode, as positively charged ions will be attracted towards the cathode while free electrons travel towards the anode. The current produced is measured by the G-M Counter and is converted into a value and as well as acoustic signal, perceived as clicks. More radiation will cause more radiation and more audible clicks. The \emph{activity} of radioactive nuclei is measured in Becquerel [Bq], where one Bq is equivalent to the decay of one nucleus per second.
+
+\begin{plot}
+
+  % G-M Tube
+  \draw [very thick]
+        (0, 0)
+   -- ++(6, 0)
+      ++(0, 2)
+   -- ++(-6, 0) node [above, midway] {Cathode}
+   -- ++(0, -2); 
+
+  % Mica window
+  \draw [dashed]
+        (6, 0)
+   -- ++(0, 2) node [midway, right] {Mica Window};
+
+  % Anode
+  \draw [line width=0.2cm, red]
+        (0, 1)
+   -- ++(4, 0)
+        node [black, midway, below] {Anode};
+
+  % Argon atoms
+  \foreach \x/\y/\m in {1/0.4/, 3/0.7/, 2/1.7/Argon, 4/1.6/, 5/0.2/, 5.5/1.5/}
+  {
+    \draw [fill=cyan] (\x, \y) circle [radius=1.5pt] node [left] {\m};
+  }
+
+  % Descripton
+  \draw (3, -0.5) node {A Geiger-Muller Tube};
+
+\end{plot}
+
+\sub{Radioactive Decay}
+
+Radioactive decay is the process by which an unstable radioactive nuclide undergoes either $\alpha, \beta$ or $\gamma$ decay, thus transforming into a different element when emitting $\alpha$ or $\beta$ radiation, or thus going from a metastable to a more stable state when emitting $\gamma$ radiation. Instability here either refers to the situation in which the the nucleus is too heavy, or the situation in which the neutron to proton ratio is imbalanced. Radioactive decay always occurs inside of an atom's nucleus and never in any of its surrounding energy levels. Moreover, the decay of a radionuclide is a completely random event and can be influenced neither by physical nor by chemical processes. When a nucleus undergoes decay, its goal is to reach higher stability. By decaying, an unstable radioactive nuclide can cause its potential energy to decrease, as it is less likely that a nucleus that has already undergone decay will do so again. Generally, only nuclei which can reach a lower energy state by sending out radiation are radioactive. Also, it should be said that for all forms of radioactive decay, the charge and number of nucleons is conserved.
+
+\subsub{Half-life}
+
+The half-life of a sample of radioactive nuclei is the time after which half the nuclei of the sample will have undergone radioactive decay. Figure \ref{fig:decay} shows the decay curve for 1 million Carbon-14 nuclei, which have a half-life of 5700 years, for the first 28 500 years.
+
+\begin{figure}[h!]
+\centering
+  \begin{tikzpicture}
+    \begin{axis}
+    [
+      xlabel = $t$,
+      ylabel = $N(t)$,
+      grid = both,
+      samples = 1000,
+      domain = 0:32000,
+      axis lines = middle,
+      scaled y ticks = false,
+      scaled x ticks = false,
+      y tick label style={/pgf/number format/fixed},
+      x tick label style={/pgf/number format/fixed},
+      xtick = {0, 5700, 11400, 17100, 22800, 28500}
+    ]
+
+      \addplot [mark=*, black]
+      coordinates 
+      {
+        (0, 1000000)
+        (5700, 500000)
+        (11400, 250000)
+        (17100, 125000)
+        (22800, 62500)
+        (28500, 31250)
+      };
+
+    \end{axis}
+  \end{tikzpicture}
+\caption{The decay curve of Carbon-14, where $t$ is time in years}
+\label{fig:decay}
+\end{figure}
+
+Given an initial sample of radioactive nuclei $N_0$, the exponential radioactive decay of the sample is governed by a function of time of the general form given below, on the left, where $\lambda$ is the decay constant. The half-life $\tau$ of a certain radioactive sample can then be calculated via the equation on the right. $$N(t) = N_0 \cdot e^{-\lambda t} \hspace{2cm} \tau = \frac{\ln 2}{\lambda}$$
+
+\subsub{Alpha $\alpha$}
+
+Alpha decay takes place when the nucleus of an atom is too heavy, making it necessary to emit some of its nucleons as an $\alpha^{2+}$ particle, which consists of two protons and two neutrons. Given that the number of protons determines the atomic number of an element, it is clear that alpha decay causes the radioactive nuclide to decay to a different element. Equation \ref{eq:alpha1} shows the decay equation for the alpha decay of Radium-226 to Radon-222 and Equation \ref{eq:alpha2} that for Radon-222 decaying to Polonium-218.
+
+\begin{equation}
+  \ce{^{226}_{88}Ra} \rightarrow \ce{^{222}_{86}Rn} + \ce{^{4}_{2}\alpha}
+  \label{eq:alpha1}
+\end{equation}
+
+\begin{equation}
+  \ce{^{222}_{86}Rn} \rightarrow \ce{^{218}_{84}{Po}} + \ce{^{4}_{2}\alpha}
+  \label{eq:alpha2}
+\end{equation}
+
+It should be investigated why Alpha radiation is possible in the first place. Under the laws of classical physics, nucleons (protons and neutrons) are trapped inside the nucleus of an atom and have no means to overcome the strong nuclear force --- the attractive force that overcomes the electrostatic repulsion between protons inside the nucleus. However, Quantum Mechanics introduces a set of new paradigms by which to judge phenomena such as alpha radiaton. According to Heisenberg's uncertainty principle of time and energy, it would be possible that for a very short, unobservable period of time, the $\alpha$ particles inside the nucleus could borrow enough energy to overcome the strong nuclear force and radiate out of the nucleus, subsequently releasing the borrowed energy. The source of the borrowed energy is the left-over energy from the mass defect $\Delta m$ of the last decay the nucleus underwent, which was converted into energy according to $E = mc^2$. The below equation shows Heisenberg's uncertainty principle of time and energy, where $\Delta E$ is the uncertainty in observed energy of the particle, $\Delta t$ the uncertainty in time of the observation and $h$ Planck's constant. $$\Delta E \cdot \Delta t \geq \frac{h}{4\pi}$$ The basic message of Heisenberg's uncertainty principle and the equation shown above is that to measure the energy of a particle at any given moment precisely, one would need a considerable amount of time to perform that measurement. Therefore, $\Delta E$ would be small, as the measurement would not deviate much from the real value given the large measurement period. However, it would be impossible to say precisely at what instant of time the particle took on that specific energy value, given that the time window was large. Thus $\Delta t$ would also be large, as the measured time deviates from the real time (at which the particle took on that specific energy value) by a considerable amount. On the other hand, and more important for the topic of alpha radiation and tunneling, if the time interval of the measurement performed is small, the deviation in time $\Delta t$ of any measurement will automatically be smaller, as there is simply less room (i.e. time) for error. However, it will be more difficult to perform an exact measurement if there is less time to do so. Thus, $\Delta E$ is large. Given this explanation, it can be said that hypothetically, an alpha particle could borrow energy in a time interval $\Delta t$ so unmeasureably small that the deviation in energy $\Delta E$ could be massive, possibly giving the particle enough energy to overcome the strong nuclear force and \emph{tunnel} through the Coulomb Barrier, depicted below.
+
+\begin{plot}
+
+  % Nuclear potential axis
+  \draw [->] (0, -2) -- (0, 5) node [above] {Nuclear Potential $V(r)$};
+
+  % Radius axis
+  \draw [->] (0, 0) -- (8, 0) node [below] {Radius $r$};
+
+  % Nuclear potential curve
+  \draw [blue]
+        (0, -1.5)
+   -- ++(2, 0)
+   -- ++(0, 5) .. controls +(1.5, -2) and +(0, 0) ..
+      ++(5.5, -3.3);
+ 
+  % Bound state
+  \draw [<->]
+        (-0.2, -1.5)
+   -- ++(0, 1.5) node [midway, above, rotate=90] {Bound};
+
+  % Bound state
+  \draw [<->]
+        (-0.2, 0.1)
+   -- ++(0, 3.5) node [midway, above, rotate=90] {Quasi-Bound};
+
+  % Nuclear radius
+  \draw [<->]
+        (0.1, -1.8)
+   -- ++(1.9, 0) node [pos=0.6, below] {Nuclear Radius};
+
+  % Tunnelling
+  \draw [->]
+        (2.2, 0.9)
+   -- ++(3, 0) node [midway, below] {Tunnelling};
+
+  % Alpha particle, protons
+  \draw [red, fill=red] (3, 1.55) circle [radius=3pt];
+  \draw [red, fill=red] (3, 1.25) circle [radius=3pt];
+
+  % Alpha particles, neutrons
+  \draw [cyan, fill=cyan] (3.15, 1.4) circle [radius=3pt];
+  \draw [cyan, fill=cyan] (2.85, 1.4) circle [radius=3pt];
+
+  % Attraction
+  \draw [<->]
+        (0.1, 4)
+   -- ++(1.8, 0) node [above, midway] {Attraction};
+
+  % Repulsion
+  \draw [<->]
+        (2, 4)
+   -- ++(5, 0) node [above, midway] {Repulsion};
+
+\end{plot}
+
+\pagebreak
+
+The Coulomb Barrier is the barrier in nuclear potential --- essentially a measure of electric potential energy --- a positively charged particle must overcome to reach the positive nucleus. On the y-axis of the graph, nuclear potential is shown, while the x-axis displays the distance $r$ from the core of the nucleus. As the particle approaches the nucleus and experiences a greater and greater electrostatic force (\emph{Coulomb force}) of repulsion acting between it and the protons in the nucleus, its potential energy increases (potential to be repelled or emitted). The nuclear potential of the particle in this region is approximately equal to $r^-1$, where $r$ is the distance from the center. Were the particle then to overcome the Coulomb barrier (which it classically cannot), it would lose all its nuclear potential due to the strong nuclear force and fall into the \emph{potential well}. On the other hand, (alpha) particles already inside the nucleus and the potential well are also bound (attracted) by the strong nuclear force. They may have no positive nuclear potential (below the x-axis), in which case they are always bound. If they do have some potential energy, they are \emph{quasi-bound}. That is, they have a certain quantity of nuclear potential (potential energy), but it is not sufficient to overcome the Coulomb barrier, i.e. to overcome the strong nuclear force pulling it back. Were there no strong nuclear force, such a particle, with positive potential energy, would be free. The aforementioned tunneling phenomenon can now be visualized as the event whereby the alpha particle borrows enough energy at an unmeasurable small point in time to overcome the Coulomb Barrier even though its nuclear potential does not yet suffice to overcome the barrier without that borrowed energy. Also, it should be said that the width and height of the Coulomb barrier determines the decay rate and half-life of a sample of nuclei, as a lower or narrower barrier will cause more radiation to occur, while a thicker or higher barrier results in less radiation.
+
+\subsub{Beta $\beta$}
+
+Beta decay occurs when a radionuclide's neutron-to-proton ratio is imbalanced. Depending on whether the unstable radioactive nuclide requires more or less protons to become stable, either a neutron is transformed to a proton, a $\beta^-$ particle and an electron anti-neutrino ($\beta^-$ decay) or, the other way around, a proton is transformed into a neutron, a $\beta^+$ particle, i.e. a \emph{positron}, and an electron neutrino ($\beta^+$ decay). Either way, the ratio and thus the nucleus is stabilized as necessary.
+
+\subsubsub{$\beta^-$ Decay}
+
+In a radioactive nucleus undergoing $\beta^-$ decay, a neutron $n$ is transformed into a $\beta^-$ particle, which is simply an electron ($e^-$), a proton $p^+$ as well as an electron anti-neutrino $\bar{\nu_{e}}$. The latter must be present because the mass of the electron and proton released do not equal that of the original neutron, thus the electron anti-neutrino must be responsible for containing the remaining mass in its energy, according to Eintein's mass-energy relationship $E = mc^2$. A general $\beta^-$ decay equation for a free neutron $n$ is therefore: $$n \rightarrow p^+ + \beta^- + \bar{\nu_{e}}$$
+
+Given that for $\beta^-$ decay the neutron count decreases and the proton count increases by one, it can be said that during $\beta^-$ decay, the mass number stays the same, as a neutron is exchanged for a proton, while the atomic / proton number increases by one.
+
+Equation \ref{eq:beta1} shows the decay equation for the $\beta^-$ decay of Polonium-218 and Equation \ref{eq:beta2} for Carbon-14.
+
+\begin{equation}
+  \ce{^{218}_{84}Po} \rightarrow \ce{^{218}_{85}As} + \beta^- + \bar{\nu_{e}}
+  \label{eq:beta1}
+\end{equation}
+
+\begin{equation}
+  \ce{^{14}_{6}C} \rightarrow \ce{^{14}_{7}N} + \beta^- + \bar{\nu_{e}}
+  \label{eq:beta2}
+\end{equation}
+
+\subsubsub{$\beta^+$ decay}
+
+Contrary to $\beta^- decay$, beta plus decay does not involve the transformation of a neutron to a proton, but in fact the other way around. Therefore, it can be said that during $\beta^+$ decay, a proton $p^+$ is converted into a neutron $n$, a $\beta^+$ particle, which is equivalent to a positron $e^+$, as well as an electron neutrino $\nu_{e}$, again for reasons of mass and energy conservation laws: $$p^+ = n + \beta^+ + \nu_{e}$$ It should be mentioned that, on the one hand, the $\beta^-$ (= electron $e^-$) and electron anti-neutrino $\bar{\nu_{e}}$ particles released during $\beta^-$ decay, and, on the other hand, the $\beta^+$ (= positron $e^+$) and electron neutrino $\nu_{e}$ released during $\beta^+$ decay, are \emph{anti-particles} of each other. This means that if two respective anti-particles collide, they annihilate and are transformed into $\gamma$ rays and thus into energy. This gives insight into why the particles released during $\beta^+$ and $\beta^-$ decay are specifically the ones mentioned above. The reason why is that either form of decay must be fully reversible to be in accordance with the laws of physics. Given an equation for $\beta^-$ decay, it should be considered what happens when the newly created proton $p^+$ undergoes the reverse decay equation which is $\beta^+$ decay: 
+
+\begin{table}[h!]
+\centering
+  \begin{tabular}{l l l}
+    \underline{n} & $\to$ & $p^+ + \bcancel{\beta^-} + \bcancel{\bar{\nu_{e}}}$
+    \\
+    && $p^+$ $\to  \text{\underline{n}} + \bcancel{\beta^+} + \bcancel{\nu_{e}}$
+  \end{tabular}
+\end{table}
+
+As can be seen, the particles created during the $\beta^-$ decay in the first line (electron / $\beta^-$ and electron anti-neutrino) cancel out with their anti-particles created from the subsequent $\beta^+$ decay (positron / $\beta^+$ and electron neutrino). The result of the second decay is again a neutron (underlined), thus proving that the two decays are perfect anti-reactions to each other, having neutralized all other particles.
+
+\subsub{Gamma $\gamma$}
+
+Gamma decay involves the emission of a $\gamma$ ray from the nucleus of an unstable radioactive atom. Because Gamma decay does not affect the nucleons of the atom and changes neither the neutron nor the proton count, the mass and atomic numbers and thus the element of the atom stay the same during and after $\gamma$ decay. The only change is that the atom goes from a high-energy, excited to a more stable, lower-energy state by emitting the quantum of energy that is a gamma ray. 
+
+Equation \ref{eq:gamma} shows the decay equation for the $\gamma$ decay of Cobalt-99, where $m$ denotes an excited or \emph{metastable} state.
+
+\begin{equation}
+  \ce{^{99m}_{43}Tc} \rightarrow \ce{^{99}_{43}Tc} + \gamma
+  \label{eq:gamma}
+\end{equation}
+
+\pagebreak
+
+\subsub{Applications of radioactive isotopes}
+
+\begin{itemize}
+  \item Smoke detectors
+  \item Medical uses
+  \item Irradiation in Pest Control
+  \item Archeological dating
+  \item Agricultural uses
+\end{itemize}
+
+\subsub{Nuclear medicine}
+
+A nowadays popular use of radioactivity is nuclear medicine and specifically medical imaging, for which radioactive substances are used as \emph{tracers}.
+
+\subsubsub{Tracers}
+
+A tracer is a sample of a radioactive isotope used in medical imaging that is injected into a medical patient to measure his or her metabolic pathways and blood flow. The radioisotope used, often Iodine-131 or Technetium-99, emits $\beta$ or $\gamma$ radiation, as only these two forms of radiation can penetrate tissue, especially $\gamma$ radiation, which has a very high penetration depth without decrease in intensity. In contrast, $\alpha$ radiation can be stopped very easily by tissue or paper and is thus unsuited for detection. Moreover, the radioisotope chosen must have a short half-life (e.g. 8 days for I-131, 6 hours for Tc-99), to minimize the radiation dose and radioactive exposure and thus the harm caused to the medical patient. The radiation produced can be detected by external detection apparatus to trace the flow and accumulation points of the radionuclide.
+
+\subsubsub{Scintigraphy}
+
+In Scintigraphy, a sample of a radioactive tracer is bound to a certain molecular carrier compound known to bind to the tissue of the body region of interest within the medical patient (e.g. kidney). This tracer is then introduced into the body via a radiopharmaceutical or injected into the blood stream of the patient, so that its flow and accumulation regions may be observed by detecting the radiation produced by the decay of the radioisotopes. The observation data is then converted into a 2D color image of the body (as opposed to PET, where a 3D image is produced).
+
+\subsubsub{Positron-Emission-Tomography (PET)}
+
+In Positron-Emission-Tomography (PET), $\beta^+$ or \emph{positron} ($e^+$) emitting radioisotopes such as Carbon-11 or Fluorine-18 are introduced into the body of the medical patient via a radiopharmaceutical or direct injection or inhalation. These radioisotopes are bound to molecular carrier compounds known to be taken up by the tissue of the body organ / tissue of interest, such as glucose molecules for cancerous tissue regions, so that the molecule together with the radionuclide may accumulate in those specific regions. When the unstable radioactive nucleus undergoes $\beta^+$ decay, a proton is converted into a neutron, a $\beta^+$, particle which is equivalent to a positron $e^+$, and an electron neutrino $\nu_{e}$. The $\beta^+$ particle is emitted and soon collides with an electron in its path. Because a $\beta^+$ particle is a positron ($e^+$), which is the anti-particle of an electron ($e^-$), the two (anti-)particles annihilate and transform into two $\gamma$ photons upon collision. The energy of the gamma rays was found to be 511 keV, which can be determined via Einstein's mass-energy-relationship $E=mc^2$. The two $\gamma$ rays produced travel in opposite directions due to momentum conservation laws and exit the body of the patient, as $\gamma$ rays have a high penetration depth and can easily cross the patient's body tissue with little loss in intensity. The patient undergoing PET is lying in a ring of detectors, which detect the two $\gamma$ photons comming out of the patient on the same line in space, at opposite sides of the body. By calculating the intersection points between the many lines from many different $\beta^+$ decays, the computer detecting the radiation can compute regions of high intensity within the body, which it visualizes on a 3D-image.
+
+\end{document}
+
+
+
+\end{document}
